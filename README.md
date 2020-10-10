@@ -1,4 +1,4 @@
-# Alipay AMS .net Bindings 
+# Alipay AMS(Alipay Merchant Services) C# Bindings 
 
 
 ## Documentation
