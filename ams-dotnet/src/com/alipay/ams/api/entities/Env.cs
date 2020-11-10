@@ -14,5 +14,28 @@ namespace com.alipay.ams.api.entities
 
         [JsonPropertyNameAttribute("storeTerminalRequestTime")]
         public string StoreTerminalRequestTime { get; internal set; }
+
+        [JsonConverter(typeof(JsonStringEnumConverter))]
+        [JsonPropertyNameAttribute("terminalType")]
+        public TerminalType TerminalType { get; set; }
+
+        [JsonPropertyNameAttribute("userAgent")]
+        public string UserAgent { get; set; }
+
+        [JsonConverter(typeof(JsonStringEnumConverter))]
+        [JsonPropertyNameAttribute("osType")]
+        public OsType OsType { get; set; }
+
+        [JsonPropertyNameAttribute("deviceTokenId")]
+        public string DeviceTokenId { get; set; }
+
+        [JsonPropertyNameAttribute("clientIp")]
+        public string ClientIp { get; set; }
+
+        [JsonPropertyNameAttribute("cookieId")]
+        public string CookieId { get; set; }
+
+        [JsonPropertyNameAttribute("extendInfo")]
+        public string ExtendInfo { get; set; }
     }
 }
