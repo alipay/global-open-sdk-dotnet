@@ -13,10 +13,13 @@ namespace com.alipay.ams.api.request.auth
     {
         [JsonPropertyNameAttribute("grantType")]
         public GrantType GrantType { get; set; }
+
         [JsonPropertyNameAttribute("customerBelongsTo")]
         public CustomerBelongsTo CustomerBelongsTo { get; set; }
+
         [JsonPropertyNameAttribute("authCode")]
         public String AuthCode { get; set; }
+
         [JsonPropertyNameAttribute("refreshToken")]
         public String RefreshToken { get; set; }
 

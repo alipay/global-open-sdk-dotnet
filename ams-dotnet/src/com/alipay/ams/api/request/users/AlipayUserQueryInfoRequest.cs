@@ -1,15 +1,12 @@
-﻿using com.alipay.ams.api.request;
-using com.alipay.ams.api.response.auth;
+﻿using com.alipay.ams.api.response.auth;
 using com.alipay.ams.util;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace com.alipay.ams.api.request.auth
 {
-    public class AlipayAuthRevokeTokenRequest : AMSRequest<AlipayAuthRevokeTokenResponse>
+    public class AlipayUserQueryInfoRequest : AMSRequest<AlipayUserQueryInfoResponse>
     {
         [JsonPropertyNameAttribute("accessToken")]
         public String AccessToken { get; set; }
@@ -22,7 +19,7 @@ namespace com.alipay.ams.api.request.auth
 
         public override string GetRequestURI()
         {
-            return "/ams/api/v1/authorizations/revoke";
+            return "/ams/api/v1/users/inquiryUserInfo";
         }
 
         public override void validate()
