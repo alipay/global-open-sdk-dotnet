@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Text.Json;
-using System.Text.Json.Serialization;
 using com.alipay.ams.api.entities;
 using com.alipay.ams.util;
 
@@ -11,20 +9,8 @@ namespace com.alipay.ams.api.response
 {
     public abstract class AMSResponse
     {
-        [JsonPropertyNameAttribute("result")]
+
         public Result Result { get; set; }
-
-        protected JsonSerializerOptions options = new JsonSerializerOptions
-        {
-            PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
-            IgnoreNullValues = true,
-            WriteIndented = true
-        };
-
-        public AMSResponse()
-        {
-            options.Converters.Add(new JsonStringEnumConverter(JsonNamingPolicy.CamelCase));
-        }
 
         public static TAMSResponse ParseResponse<TAMSResponse>(HttpResponseMessage ret, string requestURI, string clientId, string alipayPublicKey)
         {
@@ -54,7 +40,7 @@ namespace com.alipay.ams.api.response
 
 
                         //3. So far so good. continue to parse body content.
-                        return JsonSerializer.Deserialize<TAMSResponse>(responseBody);
+                        return JsonSerializer.Deserialize<TAMSResponse>(responseBody, JsonSerializerOptionsFactory.WriteNotIndented);
                         
                     }
 
@@ -65,7 +51,7 @@ namespace com.alipay.ams.api.response
 
         public override string ToString()
         {
-            return JsonSerializer.Serialize(this, this.GetType(), options);
+            return JsonSerializer.Serialize(this, this.GetType(), JsonSerializerOptionsFactory.WriteIndented);
         }
 
     }

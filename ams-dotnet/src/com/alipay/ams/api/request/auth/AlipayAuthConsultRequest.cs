@@ -6,34 +6,34 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Text.Json;
-using System.Text.Json.Serialization;
+
 
 namespace com.alipay.ams.api.request.auth
 {
     public class AlipayAuthConsultRequest : AMSRequest<AlipayAuthConsultResponse>
     {
-        [JsonPropertyNameAttribute("customerBelongsTo")]
+
         public CustomerBelongsTo CustomerBelongsTo { get; set; }
 
-        [JsonPropertyNameAttribute("authClientId")]
+
         public String AuthClientId { get; set; }
 
-        [JsonPropertyNameAttribute("authRedirectUrl")]
+
         public String AuthRedirectUrl { get; set; }
 
-        [JsonPropertyNameAttribute("scopes")]
+
         public ScopeType[] Scopes { get; set; }
 
-        [JsonPropertyNameAttribute("authState")]
+
         public String AuthState { get; set; }
 
-        [JsonPropertyNameAttribute("terminalType")]
+
         public TerminalType TerminalType { get; set; }
 
-        [JsonPropertyNameAttribute("osType")]
+
         public OsType OsType { get; set; }
 
-        [JsonPropertyNameAttribute("osVersion")]
+
         public String OsVersion { get; set; }
 
         public override string GetRequestURI()

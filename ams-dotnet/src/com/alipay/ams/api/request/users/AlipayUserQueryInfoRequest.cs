@@ -2,13 +2,13 @@
 using com.alipay.ams.util;
 using System;
 using System.Text.Json;
-using System.Text.Json.Serialization;
+
 
 namespace com.alipay.ams.api.request.auth
 {
     public class AlipayUserQueryInfoRequest : AMSRequest<AlipayUserQueryInfoResponse>
     {
-        [JsonPropertyNameAttribute("accessToken")]
+
         public String AccessToken { get; set; }
 
         public override string GetRequestURI()

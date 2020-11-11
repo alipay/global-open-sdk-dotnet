@@ -5,22 +5,22 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Text.Json;
-using System.Text.Json.Serialization;
+
 
 namespace com.alipay.ams.api.request.auth
 {
     public class AlipayAuthApplyTokenRequest : AMSRequest<AlipayAuthApplyTokenResponse>
     {
-        [JsonPropertyNameAttribute("grantType")]
+
         public GrantType GrantType { get; set; }
 
-        [JsonPropertyNameAttribute("customerBelongsTo")]
+
         public CustomerBelongsTo CustomerBelongsTo { get; set; }
 
-        [JsonPropertyNameAttribute("authCode")]
+
         public String AuthCode { get; set; }
 
-        [JsonPropertyNameAttribute("refreshToken")]
+
         public String RefreshToken { get; set; }
 
         public override string GetRequestURI()

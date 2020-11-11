@@ -5,13 +5,13 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Text.Json;
-using System.Text.Json.Serialization;
+
 
 namespace com.alipay.ams.api.request.auth
 {
     public class AlipayAuthRevokeTokenRequest : AMSRequest<AlipayAuthRevokeTokenResponse>
     {
-        [JsonPropertyNameAttribute("accessToken")]
+
         public String AccessToken { get; set; }
 
         public override string GetRequestURI()

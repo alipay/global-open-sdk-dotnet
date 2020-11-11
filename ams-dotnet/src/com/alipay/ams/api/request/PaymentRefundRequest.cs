@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text.Json;
-using System.Text.Json.Serialization;
+
 using com.alipay.ams.api.entities;
 using com.alipay.ams.util;
 
@@ -9,25 +9,25 @@ namespace com.alipay.ams.api.request
 {
     public class PaymentRefundRequest : AMSRequest<PaymentRefundResponse>
     {
-        [JsonPropertyNameAttribute("paymentId")]
+
         public string PaymentId { get; set; }
 
-        [JsonPropertyNameAttribute("refundRequestId")]
+
         public string RefundRequestId { get; set; }
 
-        [JsonPropertyNameAttribute("referenceRefundId")]
+
         public string ReferenceRefundId { get; set; }
 
-        [JsonPropertyNameAttribute("refundAmount")]
+
         public Amount RefundAmount { get; set; }
 
-        [JsonPropertyNameAttribute("refundReason")]
+
         public string RefundReason { get; set; }
 
-        [JsonPropertyNameAttribute("refundRequestTime")]
+
         public string RefundRequestTime { get; set; }
 
-        [JsonPropertyNameAttribute("isAsyncRefund")]
+
         public bool IsAsyncRefund { get; set; }
 
         public override string GetRequestURI()

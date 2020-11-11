@@ -3,19 +3,19 @@ using com.alipay.ams.api.response.auth;
 using com.alipay.ams.util;
 using System;
 using System.Text.Json;
-using System.Text.Json.Serialization;
+
 
 namespace com.alipay.ams.api.request.auth
 {
     public class AlipayVerifyAuthenticationRequest : AMSRequest<AlipayVerifyAuthenticationResponse>
     {
-        [JsonPropertyNameAttribute("authenticationType")]
+
         public AuthenticationType AuthenticationType { get; set; }
 
-        [JsonPropertyNameAttribute("authenticationType")]
+
         public String AuthenticationRequestId { get; set; }
 
-        [JsonPropertyNameAttribute("authenticationType")]
+
         public String AuthenticationValue { get; set; }
 
         public override string GetRequestURI()
