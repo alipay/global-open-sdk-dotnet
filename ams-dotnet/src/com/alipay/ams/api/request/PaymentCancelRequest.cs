@@ -13,15 +13,6 @@ namespace com.alipay.ams.api.request
         [JsonPropertyNameAttribute("paymentRequestId")]
         public string PaymentRequestId { get; set; }
 
-
-        public override string BuildBody()
-        {
-
-            validate();
-
-            return JsonSerializer.Serialize(this);
-        }
-
         public override string GetRequestURI()
         {
             return "/ams/api/v1/payments/cancel";

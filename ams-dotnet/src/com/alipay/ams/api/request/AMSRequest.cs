@@ -1,16 +1,33 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using com.alipay.ams.api.response;
 using com.alipay.ams.util;
 
 namespace com.alipay.ams.api.request
 {
     public abstract class AMSRequest<TAMSResponse>
-        where TAMSResponse:AMSResponse
+        where TAMSResponse : AMSResponse
     {
+        protected JsonSerializerOptions options = new JsonSerializerOptions
+        {
+            PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+            IgnoreNullValues = true,
+            WriteIndented = true
+        };
+
+        public AMSRequest() {
+            options.Converters.Add(new JsonStringEnumConverter(JsonNamingPolicy.CamelCase));
+        }
+
         public abstract string GetRequestURI();
 
-        public abstract String BuildBody();
+        public virtual String BuildBody()
+        {
+            validate();
+            return JsonSerializer.Serialize(this, this.GetType(), options);
+        }
 
         public abstract void validate();
 
@@ -45,6 +62,12 @@ namespace com.alipay.ams.api.request
 
         protected Dictionary<string, string> GetExtraHeaders() {
             return null;
+        }
+
+
+        public override string ToString()
+        {
+            return JsonSerializer.Serialize(this, this.GetType(), options);
         }
     }
 

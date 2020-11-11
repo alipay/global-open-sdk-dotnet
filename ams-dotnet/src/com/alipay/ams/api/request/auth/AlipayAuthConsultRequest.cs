@@ -36,14 +36,6 @@ namespace com.alipay.ams.api.request.auth
         [JsonPropertyNameAttribute("osVersion")]
         public String OsVersion { get; set; }
 
-
-        public override string BuildBody()
-        {
-            validate();
-            return JsonSerializer.Serialize(this);
-
-        }
-
         public override string GetRequestURI()
         {
             return "/ams/api/v1/authorizations/consult";

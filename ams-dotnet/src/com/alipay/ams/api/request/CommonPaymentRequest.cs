@@ -9,9 +9,8 @@ namespace com.alipay.ams.api.request
 {
     public class CommonPaymentRequest : AMSRequest<CommonPaymentResponse>
     {
-
         [JsonPropertyNameAttribute("productCode")]
-        public string ProductCodeType { get; set; }
+        public ProductCodeType ProductCodeType { get; set; }
 
         [JsonPropertyNameAttribute("paymentRequestId")]
         public string PaymentRequestId { get; set; }
@@ -60,15 +59,6 @@ namespace com.alipay.ams.api.request
 
         [JsonPropertyNameAttribute("creditPayPlan")]
         public CreditPayPlan CreditPayPlan { get; set; }
-
-
-
-        public override string BuildBody()
-        {
-
-            validate();
-            return JsonSerializer.Serialize(this);
-        }
 
         public override string GetRequestURI()
         {

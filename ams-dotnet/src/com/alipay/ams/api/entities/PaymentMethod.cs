@@ -7,6 +7,11 @@ namespace com.alipay.ams.api.entities
 {
     public class PaymentMethod
     {
+        public PaymentMethod(String paymentMethodType)
+        {
+            this.PaymentMethodType = paymentMethodType;
+        }
+
         [JsonPropertyNameAttribute("paymentMethodType")]
         public String PaymentMethodType { get; set; }
         [JsonPropertyNameAttribute("paymentMethodId")]

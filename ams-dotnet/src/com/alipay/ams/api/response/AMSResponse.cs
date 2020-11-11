@@ -14,6 +14,18 @@ namespace com.alipay.ams.api.response
         [JsonPropertyNameAttribute("result")]
         public Result Result { get; set; }
 
+        protected JsonSerializerOptions options = new JsonSerializerOptions
+        {
+            PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+            IgnoreNullValues = true,
+            WriteIndented = true
+        };
+
+        public AMSResponse()
+        {
+            options.Converters.Add(new JsonStringEnumConverter(JsonNamingPolicy.CamelCase));
+        }
+
         public static TAMSResponse ParseResponse<TAMSResponse>(HttpResponseMessage ret, string requestURI, string clientId, string alipayPublicKey)
         {
             switch(ret.StatusCode)
@@ -49,6 +61,11 @@ namespace com.alipay.ams.api.response
                 default:
                     throw new HttpRequestException("AMS API response HTTP StatusCode not 200: " + ret.StatusCode.ToString()+". Check your gatewayUrl and requestURI settings.");
             }            
+        }
+
+        public override string ToString()
+        {
+            return JsonSerializer.Serialize(this, this.GetType(), options);
         }
 
     }
