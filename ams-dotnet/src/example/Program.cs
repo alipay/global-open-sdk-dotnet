@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.Json;
 using com.alipay.ams.api;
 using com.alipay.ams.api.entities;
 using com.alipay.ams.api.request;
@@ -18,20 +19,24 @@ namespace ams_dotnet
         {
             var client = new DefaultAlipayClient(GatewayUrl, ClientId, MerchantPrivateKey, AlipayPublicKey);
 
-            string paymentId = testPay(client);
+            string paymentId = testInstorePayment(client);
 
             //testQuery(client);
 
             //testCancel(client);
 
-            testRefund(client, paymentId);
+            //testCashierPayment(client);
+
+            //testRefund(client, paymentId);
         }
 
-        private static string testPay(DefaultAlipayClient client)
+        private static string testInstorePayment(DefaultAlipayClient client)
         {
-            var request = new UserPresentedCodePaymentRequest();
+            var request = new UserPresentedCodePaymentRequest("288888888888888888");
+
 
             long amountInCents = 1000;
+            request.PaymentAmount = new Amount("JPY", amountInCents);
             Order order = new Order();
             order.OrderAmount = new Amount("JPY", amountInCents);
             order.OrderDescription = "New White Lace Sleeveless";
@@ -44,17 +49,17 @@ namespace ams_dotnet
             order.Env.StoreTerminalRequestTime = "2020-06-11T13:35:02+08:00";
 
             string paymentRequestId = "PR20190000000001_" + (DateTime.Now - new DateTime(1970, 1, 1)).TotalMilliseconds;
-            string buyerPaymentCode = "288888888888888888";
 
             request.PaymentRequestId = paymentRequestId;
-            request.PaymentCode = buyerPaymentCode;
             request.Order = order;
-            request.Currency = "JPY";
-            request.AmountInCents = amountInCents;
 
-            UserPresentedCodePaymentResponse response = client.Execute(request);
+            Console.WriteLine(request);
 
-            Console.WriteLine("response: \n" + response);
+            var response = client.Execute(request);
+
+            Console.WriteLine("\n============================================================\n");
+
+            Console.WriteLine(response);
 
             return response.PaymentId;
         }
@@ -90,6 +95,43 @@ namespace ams_dotnet
             PaymentRefundResponse paymentRefundResponse = client.Execute(paymentRefundRequest);
 
             Console.WriteLine("paymentRefundResponse: \n" + paymentRefundResponse);
+        }
+
+        private static string testCashierPayment(DefaultAlipayClient client)
+        {
+            var request = new CommonPaymentRequest<CommonPaymentResponse>();
+
+            request.ProductCode = ProductCodeType.CASHIER_PAYMENT;
+            request.PaymentAmount = new Amount("PHP", 300);
+            request.PaymentMethod = new PaymentMethod(WalletPaymentMethodType.GCASH.ToString());
+            request.PaymentNotifyUrl = "http://alipay.com";
+            request.PaymentRedirectUrl = "http://alipay.com";
+
+            long amountInCents = 1000;
+            Order order = new Order();
+            order.OrderAmount = new Amount("PHP", amountInCents);
+            order.OrderDescription = "New White Lace Sleeveless";
+            order.ReferenceOrderId = "0000000001";
+            order.Merchant = new Merchant("Some_Mer", "seller231117459", "7011", new Store(
+                "Some_store", "store231117459", "7011"));
+
+            order.Env = new Env();
+            order.Env.StoreTerminalId = "some_setStoreTerminalId";
+            order.Env.StoreTerminalRequestTime = "2020-06-11T13:35:02+08:00";
+
+            string paymentRequestId = "PR20190000000001_" + (DateTime.Now - new DateTime(1970, 1, 1)).TotalMilliseconds;
+
+            request.PaymentRequestId = paymentRequestId;
+            request.Order = order;
+
+            Console.WriteLine(request);
+
+            CommonPaymentResponse response = client.Execute(request);
+
+            Console.WriteLine("\n============================================================\n");
+            Console.WriteLine(response);
+
+            return response.PaymentId;
         }
     }
 }
