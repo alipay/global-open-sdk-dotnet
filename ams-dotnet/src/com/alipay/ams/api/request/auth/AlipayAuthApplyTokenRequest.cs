@@ -30,9 +30,23 @@ namespace com.alipay.ams.api.request.auth
 
         public override void validate()
         {
-            Asserts.NotNull(AuthCode, "authCode required.");
+
             Asserts.NotNull(CustomerBelongsTo, "customerBelongsTo required.");
             Asserts.NotNull(GrantType, "grantType required. ");
+
+            switch (GrantType)
+            {
+                case GrantType.AUTHORIZATION_CODE:
+                    Asserts.NotNull(AuthCode, "authCode required.");
+                    break;
+
+                case GrantType.REFRESH_TOKEN:
+                    Asserts.NotNull(RefreshToken, "refreshToken required.");
+                    break;
+
+                default:
+                    break;
+            }
         }
     }
 }

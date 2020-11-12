@@ -14,5 +14,6 @@
     <Folder Include="src\com\alipay\ams\util\" />
     <Folder Include="src\com\alipay\ams\api\request\users\" />
     <Folder Include="src\com\alipay\ams\api\response\users\" />
+    <Folder Include="src\example\tests\" />
   </ItemGroup>
 </Project>

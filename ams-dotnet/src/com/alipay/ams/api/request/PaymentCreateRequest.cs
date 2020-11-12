@@ -11,7 +11,7 @@ namespace com.alipay.ams.api.request
     {
 
 
-        public string ProductCodeType { get; set; }
+        public ProductCodeType ProductCode { get; set; }
 
 
         public string PaymentRequestId { get; set; }
@@ -36,7 +36,7 @@ namespace com.alipay.ams.api.request
         public override void validate()
         {
             Asserts.NotNull(PaymentRequestId, "paymentRequestId required.");
-            Asserts.NotNull(ProductCodeType, "productCodeType required.");
+            Asserts.NotNull(ProductCode, "productCode required.");
             Asserts.NotNull(PaymentAmount, "paymentAmount required.");
             Asserts.NotNull(Order, "order required.");
             Asserts.NotNull(PaymentRedirectUrl, "paymentRedirectUrl required.");
