@@ -17,7 +17,7 @@ alipayPublicKey=your_public_key_here
 gatewayUrl=the_alipay_gateway_endpoint
 ```
 
-Please see the [developer docs](https://global.alipay.com/doc/ams_upm/introduction) for help with getting the above information.
+Please see the [developer docs](https://global.alipay.com/docs/) for help with getting the above information.
 
 see `./ams-dotnet/src/example/Program.cs` for more demo usage.
 
