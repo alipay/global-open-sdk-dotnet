@@ -68,5 +68,6 @@ See [Digital signature](https://global.alipay.com/doc/ams/digital_signature) for
 
 |Date|Version|Content|Backward compatible?|
 |---|---|---|---|
+|2020/11/13|1.1|Add Cashier Payment and Auto Debit support.|YES|
 |2020/10/10|1.0|v1 release|-|
 
