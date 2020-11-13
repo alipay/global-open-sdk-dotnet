@@ -1,16 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json;
 using com.alipay.ams.api.response;
 using com.alipay.ams.util;
 
 namespace com.alipay.ams.api.request
 {
     public abstract class AMSRequest<TAMSResponse>
-        where TAMSResponse:AMSResponse
+        where TAMSResponse : AMSResponse
     {
+
         public abstract string GetRequestURI();
 
-        public abstract String BuildBody();
+        public virtual String BuildBody()
+        {
+            validate();
+            return JsonSerializer.Serialize(this, this.GetType(), JsonSerializerOptionsFactory.WriteNotIndented);
+        }
 
         public abstract void validate();
 
@@ -29,7 +35,7 @@ namespace com.alipay.ams.api.request
             
 
             headers.Add("request-time", requestTime);
-            headers.Add("X-sdkVersion", "ams-dotnet.20200929");
+            headers.Add("X-sdkVersion", "ams-dotnet.20201113");
 
             Dictionary<String, String> extraHeaders = GetExtraHeaders();
             if (extraHeaders != null)
@@ -45,6 +51,12 @@ namespace com.alipay.ams.api.request
 
         protected Dictionary<string, string> GetExtraHeaders() {
             return null;
+        }
+
+
+        public override string ToString()
+        {
+            return JsonSerializer.Serialize(this, this.GetType(), JsonSerializerOptionsFactory.WriteIndented);
         }
     }
 

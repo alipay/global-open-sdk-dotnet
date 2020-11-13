@@ -44,7 +44,6 @@ namespace com.alipay.ams.api
                 requestMessage.Headers.Add(header.Key, header.Value);
             }
 
-            Console.WriteLine("Request --> " + body);
             requestMessage.Content = new ByteArrayContent(Encoding.UTF8.GetBytes(body));
             requestMessage.Content.Headers.Add("Content-Type", "application/json; charset=UTF-8");
 

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Text.Json.Serialization;
+﻿
 
 namespace com.alipay.ams.api.entities
 {
@@ -9,10 +8,28 @@ namespace com.alipay.ams.api.entities
         {
         }
 
-        [JsonPropertyNameAttribute("storeTerminalId")]
+
         public string StoreTerminalId { get; internal set; }
 
-        [JsonPropertyNameAttribute("storeTerminalRequestTime")]
+
         public string StoreTerminalRequestTime { get; internal set; }
+
+        public TerminalType TerminalType { get; set; }
+
+        public string UserAgent { get; set; }
+
+        public OsType OsType { get; set; }
+
+
+        public string DeviceTokenId { get; set; }
+
+
+        public string ClientIp { get; set; }
+
+
+        public string CookieId { get; set; }
+
+
+        public string ExtendInfo { get; set; }
     }
 }

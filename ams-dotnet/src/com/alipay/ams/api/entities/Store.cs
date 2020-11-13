@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Text.Json.Serialization;
+
 
 namespace com.alipay.ams.api.entities
 {
@@ -13,13 +13,13 @@ namespace com.alipay.ams.api.entities
             this.StoreMCC = storeMCC;
         }
 
-        [JsonPropertyNameAttribute("referenceStoreId")]
+
         public string ReferenceStoreId { get; internal set; }
 
-        [JsonPropertyNameAttribute("storeName")]
+
         public string StoreName { get; internal set; }
 
-        [JsonPropertyNameAttribute("storeMCC")]
+
         public string StoreMCC { get; internal set; }
     }
 }

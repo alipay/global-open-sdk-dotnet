@@ -1,73 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using com.alipay.ams.api.entities;
 using com.alipay.ams.util;
 
 namespace com.alipay.ams.api.request
 {
-    public class UserPresentedCodePaymentRequest : AMSRequest<UserPresentedCodePaymentResponse>
+    public class UserPresentedCodePaymentRequest : CommonPaymentRequest<UserPresentedCodePaymentResponse>
     {
 
-        public string PaymentRequestId { get; set; }
-        public entities.Order Order { get; set; }
-        public string Currency { get; set; }
-        public long AmountInCents { get; set; }
-        public string PaymentCode { get; set; }
-        public string PaymentNotifyUrl { get; set; }
-        public DateTime PaymentExpiryTime { get; set; }
-
-
-
-        public override string BuildBody()
+        public UserPresentedCodePaymentRequest(string paymentCode)
         {
+            this.ProductCode = ProductCodeType.IN_STORE_PAYMENT;
+            this.PaymentMethod = new PaymentMethod(WalletPaymentMethodType.CONNECT_WALLET.ToString());
+            this.PaymentFactor = new PaymentFactor();
+            this.PaymentFactor.InStorePaymentScenario = InStorePaymentScenario.PaymentCode;
 
-            validate();
-
-            var body = new Dictionary<string,object>();
-
-            body.Add("productCode", "IN_STORE_PAYMENT");
-            body.Add("paymentRequestId", PaymentRequestId);
-
-            body.Add("order", Order);
-
-            if (PaymentNotifyUrl != null)
-            {
-                body.Add("paymentNotifyUrl", PaymentNotifyUrl);
-            }
-
-            if (PaymentExpiryTime != null)
-            {
-                body.Add("paymentExpiryTime", PaymentExpiryTime.ToString("o"));
-            }
-
-            var paymentAmount = new Amount(Currency, AmountInCents);
-            body.Add("paymentAmount", paymentAmount);
-
-            var paymentMethod = new Dictionary<String, String>();
-            paymentMethod.Add("paymentMethodType", "CONNECT_WALLET");
-            paymentMethod.Add("paymentMethodId", PaymentCode);
-            body.Add("paymentMethod", paymentMethod);
-
-            var paymentFactor = new Dictionary<String, Object>();
-            paymentFactor.Add("inStorePaymentScenario", "PaymentCode");
-            body.Add("paymentFactor", paymentFactor);
-
-
-            return JsonSerializer.Serialize(body);
-        }
-
-        public override string GetRequestURI()
-        {
-            return "/ams/api/v1/payments/pay";
+            this.PaymentMethod.PaymentMethodId = paymentCode;
         }
 
         public override void validate()
         {
             Asserts.NotNull(PaymentRequestId, "paymentRequestId required.");
-            Asserts.NotNull(PaymentCode, "paymentCode required.");
-            Asserts.NotNull(Currency, "currency required.");
-            Asserts.NotNull(AmountInCents, "amountInCents required.");
+            Asserts.NotNull(PaymentAmount, "paymentAmount required.");
             Asserts.NotNull(Order, "order required.");
             Asserts.NotNull(Order.Merchant, "order.merchant required.");
             Asserts.NotNull(Order.OrderAmount, "order.orderAmount required.");

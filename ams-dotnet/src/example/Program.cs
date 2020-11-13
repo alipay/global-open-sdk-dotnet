@@ -1,7 +1,5 @@
-﻿using System;
+﻿using ams_dotnet.example.tests;
 using com.alipay.ams.api;
-using com.alipay.ams.api.entities;
-using com.alipay.ams.api.request;
 
 namespace ams_dotnet
 {
@@ -16,80 +14,13 @@ namespace ams_dotnet
 
         static void Main(string[] args)
         {
-            var client = new DefaultAlipayClient(GatewayUrl, ClientId, MerchantPrivateKey, AlipayPublicKey);
 
-            string paymentId = testPay(client);
+            //InstorePaymentTest.run(new DefaultAlipayClient(GatewayUrl, ClientId, MerchantPrivateKey, AlipayPublicKey), "SGD");
 
-            //testQuery(client);
+            CashierPaymentTest.run(new DefaultAlipayClient(GatewayUrl, ClientId, MerchantPrivateKey, AlipayPublicKey), "PHP");
 
-            //testCancel(client);
-
-            testRefund(client, paymentId);
-        }
-
-        private static string testPay(DefaultAlipayClient client)
-        {
-            var request = new UserPresentedCodePaymentRequest();
-
-            long amountInCents = 1000;
-            Order order = new Order();
-            order.OrderAmount = new Amount("JPY", amountInCents);
-            order.OrderDescription = "New White Lace Sleeveless";
-            order.ReferenceOrderId = "0000000001";
-            order.Merchant = new Merchant("Some_Mer", "seller231117459", "7011", new Store(
-                "Some_store", "store231117459", "7011"));
-
-            order.Env = new Env();
-            order.Env.StoreTerminalId = "some_setStoreTerminalId";
-            order.Env.StoreTerminalRequestTime = "2020-06-11T13:35:02+08:00";
-
-            string paymentRequestId = "PR20190000000001_" + (DateTime.Now - new DateTime(1970, 1, 1)).TotalMilliseconds;
-            string buyerPaymentCode = "288888888888888888";
-
-            request.PaymentRequestId = paymentRequestId;
-            request.PaymentCode = buyerPaymentCode;
-            request.Order = order;
-            request.Currency = "JPY";
-            request.AmountInCents = amountInCents;
-
-            UserPresentedCodePaymentResponse response = client.Execute(request);
-
-            Console.WriteLine("response: \n" + response);
-
-            return response.PaymentId;
-        }
-
-        private static void testQuery(DefaultAlipayClient client)
-        {
-            PaymentInquiryRequest paymentInquiryRequest = new PaymentInquiryRequest();
-            paymentInquiryRequest.PaymentRequestId = "PR20190000000001_575";
-
-            PaymentInquiryResponse paymentInquiryResponse = client.Execute(paymentInquiryRequest);
-
-            Console.WriteLine("paymentInquiryResponse: \n" + paymentInquiryResponse);
-        }
-
-        private static void testCancel(DefaultAlipayClient client)
-        {
-            PaymentCancelRequest paymentCancelRequest = new PaymentCancelRequest();
-            paymentCancelRequest.PaymentRequestId = "PR20190000000001_575";
-
-            PaymentCancelResponse paymentCancelResponse = client.Execute(paymentCancelRequest);
-
-            Console.WriteLine("paymentCancelResponse: \n" + paymentCancelResponse);
-        }
-
-        private static void testRefund(DefaultAlipayClient client, string paymentId)
-        {
-            PaymentRefundRequest paymentRefundRequest = new PaymentRefundRequest();
-            paymentRefundRequest.PaymentId = paymentId;
-            paymentRefundRequest.RefundRequestId = "erf_PR20190000000001_575" + (DateTime.Now - new DateTime(1970, 1, 1)).TotalMilliseconds;
-            paymentRefundRequest.RefundAmount = new Amount("JPY", 1000);
-            paymentRefundRequest.RefundRequestTime = DateTime.UtcNow.ToString("o");
-
-            PaymentRefundResponse paymentRefundResponse = client.Execute(paymentRefundRequest);
-
-            Console.WriteLine("paymentRefundResponse: \n" + paymentRefundResponse);
+            //AutoDebitTest.run(new DefaultAlipayClient(GatewayUrl, ClientIdAD, MerchantPrivateKey, AlipayPublicKeyAD), "PHP");
+            
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using System.Text.Json.Serialization;
+﻿
 
 namespace com.alipay.ams.api.entities
 {
@@ -6,10 +6,10 @@ namespace com.alipay.ams.api.entities
     {
         public Amount() { }
 
-        [JsonPropertyNameAttribute("currency")]
+
         public string Currency { get; set; }
 
-        [JsonPropertyNameAttribute("value")]
+
         public string Value { get; set; }
 
         public Amount(string currency, string amountInCents)

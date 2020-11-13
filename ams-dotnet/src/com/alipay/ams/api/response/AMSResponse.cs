@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Text.Json;
-using System.Text.Json.Serialization;
 using com.alipay.ams.api.entities;
 using com.alipay.ams.util;
 
@@ -11,7 +9,7 @@ namespace com.alipay.ams.api.response
 {
     public abstract class AMSResponse
     {
-        [JsonPropertyNameAttribute("result")]
+
         public Result Result { get; set; }
 
         public static TAMSResponse ParseResponse<TAMSResponse>(HttpResponseMessage ret, string requestURI, string clientId, string alipayPublicKey)
@@ -42,13 +40,18 @@ namespace com.alipay.ams.api.response
 
 
                         //3. So far so good. continue to parse body content.
-                        return JsonSerializer.Deserialize<TAMSResponse>(responseBody);
+                        return JsonSerializer.Deserialize<TAMSResponse>(responseBody, JsonSerializerOptionsFactory.WriteNotIndented);
                         
                     }
 
                 default:
                     throw new HttpRequestException("AMS API response HTTP StatusCode not 200: " + ret.StatusCode.ToString()+". Check your gatewayUrl and requestURI settings.");
             }            
+        }
+
+        public override string ToString()
+        {
+            return JsonSerializer.Serialize(this, this.GetType(), JsonSerializerOptionsFactory.WriteIndented);
         }
 
     }
