@@ -7,17 +7,15 @@ using com.alipay.ams.util;
 
 namespace com.alipay.ams.api.request
 {
-    public class UserPresentedCodePaymentRequest : CommonPaymentRequest<UserPresentedCodePaymentResponse>
+    public class OrderCodePaymentRequest : CommonPaymentRequest<OrderCodePaymentResponse>
     {
 
-        public UserPresentedCodePaymentRequest(string paymentCode)
+        public OrderCodePaymentRequest()
         {
             this.ProductCode = ProductCodeType.IN_STORE_PAYMENT;
             this.PaymentMethod = new PaymentMethod(WalletPaymentMethodType.CONNECT_WALLET.ToString());
             this.PaymentFactor = new PaymentFactor();
-            this.PaymentFactor.InStorePaymentScenario = InStorePaymentScenario.PaymentCode;
-
-            this.PaymentMethod.PaymentMethodId = paymentCode;
+            this.PaymentFactor.InStorePaymentScenario = InStorePaymentScenario.OrderCode;
         }
 
         public override void validate()
@@ -42,10 +40,6 @@ namespace com.alipay.ams.api.request
                 "order.merchant.store.storeName required.");
             Asserts.NotNull(Order.Merchant.Store.StoreMCC,
                 "order.merchant.store.storeMcc required.");
-            Asserts.NotNull(Order.Env, "order.env required.");
-            Asserts.NotNull(Order.Env.StoreTerminalId, "order.env.storeTerminalId required.");
-            Asserts.NotNull(Order.Env.StoreTerminalRequestTime,
-                "order.env.storeTerminalRequestTime required.");
         }
     }
 }
