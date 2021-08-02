@@ -21,7 +21,7 @@ namespace com.alipay.ams.api.request
         public override void validate()
         {
             Asserts.NotNull(PaymentRequestId, "paymentRequestId required.");
-            Asserts.NotNull(PaymentRedirectUrl, "paymentRedirectUrl required.");
+            Asserts.NotNull(PaymentNotifyUrl, "paymentNotifyUrl required.");
             Asserts.NotNull(PaymentAmount, "paymentAmount required.");
             Asserts.NotNull(Order, "order required.");
             Asserts.NotNull(Order.Merchant, "order.merchant required.");
