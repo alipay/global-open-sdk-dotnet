@@ -20,7 +20,10 @@ namespace ams_dotnet
             OrderCodeTest.run(new DefaultAlipayClient(GatewayUrl, ClientId, MerchantPrivateKey, AlipayPublicKey), "MOP");
 
             //AutoDebitTest.run(new DefaultAlipayClient(GatewayUrl, ClientIdAD, MerchantPrivateKey, AlipayPublicKeyAD), "PHP");
-            
+
+
+            //RegistrationTest.run(new DefaultAlipayClient(GatewayUrl, ClientId, MerchantPrivateKey, AlipayPublicKey));
+
         }
     }
 }
