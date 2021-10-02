@@ -1,6 +1,4 @@
 ﻿using System;
-
-
 namespace com.alipay.ams.api.entities
 {
     public class Merchant
@@ -13,6 +11,8 @@ namespace com.alipay.ams.api.entities
             this.MerchantMCC = merchantMCC;
             this.Store = store;
         }
+
+        public MerchantType MerchantType { get; set; }
 
 
         public string ReferenceMerchantId { get; internal set; }

@@ -18,5 +18,7 @@ namespace com.alipay.ams.api.entities
 
 
         public Env Env { get; set; }
+
+        public string ExtendInfo { get; set; }
     }
 }
