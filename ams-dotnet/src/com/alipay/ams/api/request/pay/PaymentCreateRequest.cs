@@ -27,10 +27,28 @@ namespace com.alipay.ams.api.request
 
 
         public string PaymentNotifyUrl { get; set; }
+        
+        public PaymentMethod PaymentMethod { get; set; }
+        
+        public string PaymentExpiryTime { get; set; }
+        
+        public PaymentFactor PaymentFactor  { get; set; }
+        public SettlementStrategy SettlementStrategy  { get; set; }
+        public CreditPayPlan CreditPayPlan  { get; set; }
+        public string AppId  { get; set; }
+        public string MerchantRegion  { get; set; }
+        public string UserRegion  { get; set; }
+        public Env Env  { get; set; }
+        public PaymentMethod PayToMethod  { get; set; }
+        public Boolean IsAuthorization  { get; set; }
+        public Merchant Merchant  { get; set; }
+        public PaymentVerificationData PaymentVerificationData  { get; set; }
+        public string ExtendInfo  { get; set; }
+        public string MerchantAccountId  { get; set; }
 
         public override string GetRequestURI()
         {
-            return "/ams/api/v1/payments/create";
+            return AntomPathConstants.PAYMENT_PATH;
         }
 
         public override void validate()

@@ -18,14 +18,18 @@ namespace com.alipay.ams.api.request.auth
         public CustomerBelongsTo CustomerBelongsTo { get; set; }
 
 
-        public String AuthCode { get; set; }
-
-
-        public String RefreshToken { get; set; }
+        public string AuthCode { get; set; }
+        
+        public string RefreshToken { get; set; }
+        
+        public string ExtendInfo { get; set; }
+        
+        public string MerchantRegion { get; set; }
+        
 
         public override string GetRequestURI()
         {
-            return "/ams/api/v1/authorizations/applyToken";
+            return AntomPathConstants.AUTH_APPLY_TOKEN_PATH;
         }
 
         public override void validate()

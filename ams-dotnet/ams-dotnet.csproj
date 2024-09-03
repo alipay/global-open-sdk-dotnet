@@ -8,9 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="src\com\alipay\ams\api\request\" />
-    <Folder Include="src\com\alipay\ams\api\response\" />
-    <Folder Include="src\com\alipay\ams\api\entities\" />
     <Folder Include="src\com\alipay\ams\util\" />
     <Folder Include="src\com\alipay\ams\api\request\users\" />
     <Folder Include="src\com\alipay\ams\api\response\users\" />

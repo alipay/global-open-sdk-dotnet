@@ -7,20 +7,22 @@ using com.alipay.ams.util;
 
 namespace com.alipay.ams.api.request
 {
-    public class PaymentInquiryRequest : AMSRequest<PaymentInquiryResponse>
+    public class PaymentCancelRequest : AMSRequest<PaymentCancelResponse>
     {
 
-
+        public string PaymentId { get; set; }
         public string PaymentRequestId { get; set; }
+        
+        public string MerchantAccountId { get; set; }
 
         public override string GetRequestURI()
         {
-            return "/ams/api/v1/payments/inquiryPayment";
+            return AntomPathConstants.CANCEL_PATH;
         }
 
         public override void validate()
         {
-            Asserts.NotNull(PaymentRequestId, "paymentRequestId required.");
+           
         }
     }
 }

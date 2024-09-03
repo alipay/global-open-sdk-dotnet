@@ -2,5 +2,6 @@
 {
     public class AlipayAuthRevokeTokenResponse : AMSResponse
     {
+        public string ExtendInfo { get; set; }
     }
 }

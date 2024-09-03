@@ -15,7 +15,12 @@ namespace com.alipay.ams.api.entities
 
 
         public string PspName { get; set; }
-
-
+        
+        public string DisplayCustomerName { get; set; }
+        
+        public string Customer2088Id { get; set; }
+        
+        public string ExtendInfo { get; set; }
+        
     }
 }

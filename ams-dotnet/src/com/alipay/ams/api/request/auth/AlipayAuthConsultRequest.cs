@@ -16,16 +16,16 @@ namespace com.alipay.ams.api.request.auth
         public CustomerBelongsTo CustomerBelongsTo { get; set; }
 
 
-        public String AuthClientId { get; set; }
+        public string AuthClientId { get; set; }
 
 
-        public String AuthRedirectUrl { get; set; }
+        public string AuthRedirectUrl { get; set; }
 
 
         public ScopeType[] Scopes { get; set; }
 
 
-        public String AuthState { get; set; }
+        public string AuthState { get; set; }
 
 
         public TerminalType TerminalType { get; set; }
@@ -34,11 +34,17 @@ namespace com.alipay.ams.api.request.auth
         public OsType OsType { get; set; }
 
 
-        public String OsVersion { get; set; }
+        public string OsVersion { get; set; }
+        
+        public string ExtendInfo { get; set; }
+        
+        public string MerchantRegion { get; set; }
+        
+        public Boolean RecurringPayment { get; set; }
 
         public override string GetRequestURI()
         {
-            return "/ams/api/v1/authorizations/consult";
+            return AntomPathConstants.AUTH_CONSULT_PATH;
         }
 
         public override void validate()
