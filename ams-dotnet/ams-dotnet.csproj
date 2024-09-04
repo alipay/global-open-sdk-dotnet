@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>netcoreapp8</TargetFramework>
     <RootNamespace>ams_dotnet</RootNamespace>
     <BaseDirectory>src</BaseDirectory>
   </PropertyGroup>

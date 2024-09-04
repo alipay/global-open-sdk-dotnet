@@ -143,7 +143,7 @@ namespace ams_dotnet.example.tests
             sandboxAlipayAuthConsultRequest.OsType = OsType.IOS;
             sandboxAlipayAuthConsultRequest.OsVersion = "bar";
 
-            com.alipay.ams.api.response.auth.AlipayAuthConsultResponse response = client.Execute(sandboxAlipayAuthConsultRequest);
+            AlipayAuthConsultResponse response = client.Execute(sandboxAlipayAuthConsultRequest);
 
             Console.WriteLine("\n============================================================\n");
             Console.WriteLine(response);

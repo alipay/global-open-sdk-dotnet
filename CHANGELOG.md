@@ -1,0 +1,1 @@
+# Changelog## 2.0.0 - 2024-09-04*  Init object library    * Add pay - request response    * Add auth - request response    * Add customs - request response    * Add subscription - request response    * Add example - auth customs pay    * Add Changelog## 1.0.0 - 2021-08-02*  Init object library

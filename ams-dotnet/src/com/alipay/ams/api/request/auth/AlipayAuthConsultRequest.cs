@@ -40,7 +40,7 @@ namespace com.alipay.ams.api.request.auth
         
         public string MerchantRegion { get; set; }
         
-        public Boolean RecurringPayment { get; set; }
+        public bool? RecurringPayment { get; set; }
 
         public override string GetRequestURI()
         {
@@ -49,12 +49,6 @@ namespace com.alipay.ams.api.request.auth
 
         public override void validate()
         {
-            Asserts.NotNull(TerminalType, "terminalType required.");
-            Asserts.NotNull(Scopes, "scopes required.");
-            Asserts.NotNull(AuthClientId, "authClientId required. ");
-            Asserts.NotNull(CustomerBelongsTo, "customerBelongsTo required. ");
-            Asserts.NotNull(AuthState, "authState required. ");
-            Asserts.NotNull(AuthRedirectUrl, "authRedirectUrl required. ");
             
         }
     }

@@ -20,6 +20,7 @@
 
         EASYPAISA,
 
-        CONNECT_WALLET
+        CONNECT_WALLET,
+        SHOPEEPAY_SG
     }
 }
