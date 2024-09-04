@@ -10,7 +10,7 @@ namespace com.alipay.ams.api.entities
         public string BuyerEmail  { get; set; }
         public string BuyerRegistrationTime { get; set; }
 
-        public Boolean IsAccountVerified  { get; set; }
+        public bool? IsAccountVerified  { get; set; }
 
         public Int64 SuccessfulOrderCount { get; set; }
     }

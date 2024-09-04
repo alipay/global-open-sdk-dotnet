@@ -13,5 +13,7 @@ namespace com.alipay.ams.api.entities
         public String Parameters { get; set; }
 
         public String RedirectUrl { get; set; }
+        
+        public String ActionFormType { get; set; }
     }
 }

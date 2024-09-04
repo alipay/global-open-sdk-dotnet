@@ -14,12 +14,19 @@ namespace com.alipay.ams.api.entities
         }
 
 
-        public string ReferenceStoreId { get; internal set; }
+        public string ReferenceStoreId { get;  set; }
 
 
-        public string StoreName { get; internal set; }
+        public string StoreName { get;  set; }
 
 
-        public string StoreMCC { get; internal set; }
+        public string StoreMCC { get;  set; }
+        
+        
+        public string StoreDisplayName { get;  set; }
+        public string StoreTerminalId { get;  set; }
+        public string StoreOperatorId { get;  set; }
+        public Address StoreAddress { get;  set; }
+        public string StorePhoneNo { get;  set; }
     }
 }

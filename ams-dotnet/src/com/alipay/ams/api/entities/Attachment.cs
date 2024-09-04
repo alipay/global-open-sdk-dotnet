@@ -8,5 +8,7 @@ namespace com.alipay.ams.api.entities
         public string File { get; set; }
 
         public string AttachmentName { get; set; }
+        
+        public string FileKey { get; set; }
     }
 }
