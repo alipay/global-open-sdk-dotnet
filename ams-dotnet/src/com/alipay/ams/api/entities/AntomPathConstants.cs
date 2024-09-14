@@ -14,6 +14,8 @@ namespace com.alipay.ams.api.entities
         public const string CAPTURE_PATH = "/ams/api/v1/payments/capture";
         public const string INQUIRY_PAYMENT_PATH = "/ams/api/v1/payments/inquiryPayment";
         public const string CANCEL_PATH = "/ams/api/v1/payments/cancel";
+        public const  string SYNC_ARREAR_PATH = "/ams/api/v1/payments/syncArrear";
+        public const  string CREATE_DEVICE_CERTIFICATE_PATH = "/ams/api/v1/payments/createDeviceCertificate";
         public const string SUBSCRIPTION_CREATE_PATH = "/ams/api/v1/subscriptions/create";
         public const string SUBSCRIPTION_CHANGE_PATH = "/ams/api/v1/subscriptions/change";
         public const string SUBSCRIPTION_CANCEL_PATH = "/ams/api/v1/subscriptions/cancel";
