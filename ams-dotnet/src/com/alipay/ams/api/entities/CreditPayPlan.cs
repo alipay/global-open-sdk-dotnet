@@ -7,6 +7,8 @@ namespace com.alipay.ams.api.entities
 
         public int InstallmentNum { get; set; }
 
+        
+        public string Interval { get; set; }
 
         public CreditPayFeeType CreditPayFeeType { get; set; }
 

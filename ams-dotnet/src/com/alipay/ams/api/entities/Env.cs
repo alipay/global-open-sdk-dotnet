@@ -31,5 +31,16 @@ namespace com.alipay.ams.api.entities
 
 
         public string ExtendInfo { get; set; }
+        
+        public BrowserInfo BrowserInfo  { get; set; }
+        public string ColorDepth  { get; set; }
+        public string ScreenHeight  { get; set; }
+        public string ScreenWidth  { get; set; }
+        public int TimeZoneOffset  { get; set; }
+        public string DeviceBrand  { get; set; }
+        public string DeviceModel  { get; set; }
+        public string DeviceLanguage  { get; set; }
+        public string DeviceId  { get; set; }
+        
     }
 }

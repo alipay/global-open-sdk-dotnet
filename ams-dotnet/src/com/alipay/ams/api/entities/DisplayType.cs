@@ -2,6 +2,6 @@
 {
     public enum DisplayType
     {
-        TEXT, MIDDLEIMAGE, SMALLIMAGE, BIGIMAGE
+        TEXT, MIDDLEIMAGE, SMALLIMAGE, BIGIMAGE, IMAGE
     }
 }

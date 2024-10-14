@@ -15,6 +15,12 @@ namespace com.alipay.ams.api.entities
 
 
         public decimal QuotePrice { get; set; }
+        
+        public string QuoteId  { get; set; }
+        
+        public string QuoteStartTime  { get; set; }
+        
+        public string QuoteExpiryTime  { get; set; }
 
     }
 }

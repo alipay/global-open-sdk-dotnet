@@ -25,5 +25,12 @@ namespace com.alipay.ams.api.entities
 
 
         public Store Store { get; internal set; }
+        
+        
+        public string MerchantDisplayName  { get;  set; }
+        
+        public Address MerchantAddress  { get;  set; }
+        
+        public string MerchantRegisterDate  { get;  set; }
     }
 }

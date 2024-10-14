@@ -8,5 +8,7 @@ namespace com.alipay.ams.api.entities
         public string Url { get; set; }
 
         public string Desc { get; set; }
+        
+        public string Type { get; set; }
     }
 }

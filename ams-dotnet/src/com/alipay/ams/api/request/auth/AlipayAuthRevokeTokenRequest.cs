@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Text.Json;
+using com.alipay.ams.api.entities;
 
 
 namespace com.alipay.ams.api.request.auth
@@ -12,11 +13,13 @@ namespace com.alipay.ams.api.request.auth
     public class AlipayAuthRevokeTokenRequest : AMSRequest<AlipayAuthRevokeTokenResponse>
     {
 
-        public String AccessToken { get; set; }
+        public string AccessToken { get; set; }
+        
+        public string ExtendInfo { get; set; }
 
         public override string GetRequestURI()
         {
-            return "/ams/api/v1/authorizations/revoke";
+            return AntomPathConstants.AUTH_REVOKE_PATH;
         }
 
         public override void validate()
