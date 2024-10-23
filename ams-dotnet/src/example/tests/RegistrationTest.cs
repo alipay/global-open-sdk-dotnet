@@ -58,7 +58,7 @@ namespace ams_dotnet.example.tests
             request.RegistrationRequestId = registrationRequestId;
             request.ProductCodes = new List<ProductCodeType> { ProductCodeType.CASHIER_PAYMENT };
             request.passThroughInfo = "{\"extraInfo\":\"extra\"}";
-            request.RegistrationNotifyURL = "https://merchant/example";
+            request.RegistrationNotifyURL = "https://www.yourNotifyUrl.com";
 
             MerchantRegistrationInfo merchant = new MerchantRegistrationInfo();
             Logo logo = new Logo();
@@ -88,7 +88,7 @@ namespace ams_dotnet.example.tests
             List<Attachment> attachments = new List<Attachment>();
             Attachment attachment = new Attachment();
             attachment.AttachmentName = "attachmentTestName";
-            attachment.AttachmentType = "ARTICLES_OF_ASSOCIATION";
+            attachment.AttachmentType = AttachmentType.ARTICLES_OF_ASSOCIATION;
             attachment.File = "testFile";
             attachments.Add(attachment);
             detail.Attachments = attachments;

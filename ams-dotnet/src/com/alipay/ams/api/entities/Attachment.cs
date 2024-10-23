@@ -3,7 +3,7 @@ namespace com.alipay.ams.api.entities
 {
     public class Attachment
     {
-        public string AttachmentType { get; set; }
+        public AttachmentType AttachmentType { get; set; }
 
         public string File { get; set; }
 

@@ -20,5 +20,8 @@ namespace com.alipay.ams.api.entities
         public String PaymentMethodMetaData { get; set; }
 
         public String CustomerId { get; set; }
+        
+        public string ExtendInfo { get; set; }
+        public bool RequireIssuerAuthentication { get; set; }
     }
 }

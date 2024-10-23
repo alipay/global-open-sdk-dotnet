@@ -7,7 +7,7 @@ namespace com.alipay.ams.api.request.subscription
     {
         public string SubscriptionId { get; set; }
         public string SubscriptionRequestId { get; set; }
-        public string CancellationType { get; set; }
+        public CancellationType CancellationType { get; set; }
         
         public override string GetRequestURI()
         {

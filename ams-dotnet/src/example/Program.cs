@@ -7,13 +7,14 @@ namespace ams_dotnet
 {
     class Program
     {
+
         private const string GatewayUrl = "";
         private const string ClientId = "";
 
         // Below are fake keys that are for demo purpose. Replace them with your own ones.
         private const string MerchantPrivateKey = "";
         private const string AlipayPublicKey = "";
-        
+
         static void Main(string[] args)
         {
             //PayDemo.alipay(new DefaultAlipayClient(GatewayUrl, ClientId, MerchantPrivateKey, AlipayPublicKey));
@@ -30,9 +31,18 @@ namespace ams_dotnet
            //AuthDemo.revokeToken(defaultAlipayClient,"28288803001291161724296551000BgIrDiWzU0171000529");
            
            //CustomsDemo.declare(defaultAlipayClient,"202408221940108001001887E0207467163");
-           List<string> ids = new List<string>() {"12343543543"};
-           CustomsDemo.inquiryDeclaration(defaultAlipayClient,ids);
+           //List<string> ids = new List<string>() {"12343543543"};
+           //CustomsDemo.inquiryDeclaration(defaultAlipayClient,ids);
            
+          // MarketplaceDemo.register(defaultAlipayClient);
+          //MarketplaceDemo.update(defaultAlipayClient,"mid_zhangtianren_ztr_20230807_180716_981");
+          // MarketplaceDemo.queryBalance(defaultAlipayClient,"mid_zhangtianren_ztr_20230807_180716_981");
+          //SubscriptionDemo.SubscriptionsCreate(defaultAlipayClient);
+          //SubscriptionDemo.SubscriptionsChange(defaultAlipayClient,"202410221900000000000001J0000010626");
+          //SubscriptionDemo.subscriptionCancel(defaultAlipayClient,"202410221900000000000001J0000010626");
+          //VaultingDemo.createVaultingSession(defaultAlipayClient);
+          //VaultingDemo.inquireVaulting(defaultAlipayClient,"vaultingRequestId26bc8b51-1617-455f-ab32-9572da9cb99d");
         }
+        
     }
 }
