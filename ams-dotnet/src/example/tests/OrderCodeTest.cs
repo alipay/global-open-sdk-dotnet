@@ -24,7 +24,7 @@ namespace ams_dotnet.example.tests
 
             long amountInCents = 1000;
             request.PaymentAmount = new Amount(currency, amountInCents);
-            request.PaymentNotifyUrl = "https://www.gaga.com/notify";
+            request.PaymentNotifyUrl = "https://www.yourNotifyUrl.com";
             Order order = new Order();
             order.OrderAmount = new Amount(currency, amountInCents);
             order.OrderDescription = "New White Lace Sleeveless";

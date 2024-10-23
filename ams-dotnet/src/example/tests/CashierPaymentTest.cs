@@ -80,8 +80,8 @@ namespace ams_dotnet.example.tests
             request.ProductCode = ProductCodeType.CASHIER_PAYMENT;
             request.PaymentAmount = new Amount(currency, 300);
             request.PaymentMethod = new PaymentMethod(WalletPaymentMethodType.GCASH.ToString());
-            request.PaymentNotifyUrl = "http://alipay.com";
-            request.PaymentRedirectUrl = "http://alipay.com";
+            request.PaymentNotifyUrl = "https://www.yourNotifyUrl.com";
+            request.PaymentRedirectUrl = "https://www.yourRedirectUrl.com";
 
             long amountInCents = 1000;
             Order order = new Order();
@@ -114,8 +114,8 @@ namespace ams_dotnet.example.tests
 
             request.ProductCode = ProductCodeType.CASHIER_PAYMENT;
             request.PaymentAmount = new Amount(currency, 3000);
-            request.PaymentNotifyUrl = "http://alipay.com";
-            request.PaymentRedirectUrl = "http://alipay.com";
+            request.PaymentNotifyUrl = "https://www.yourNotifyUrl.com";
+            request.PaymentRedirectUrl = "https://www.yourRedirectUrl.com";
 
             long amountInCents = 1000;
             Order order = new Order();

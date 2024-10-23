@@ -10,7 +10,7 @@ public class AuthDemo
     public static void authConsult(DefaultAlipayClient client)
     {
         var alipayAuthConsultRequest = new AlipayAuthConsultRequest();
-        alipayAuthConsultRequest.AuthRedirectUrl = "https://www.alipay.com";
+        alipayAuthConsultRequest.AuthRedirectUrl = "https://www.yourRedirectUrl.com";
         alipayAuthConsultRequest.AuthState = "123456";
         alipayAuthConsultRequest.CustomerBelongsTo = CustomerBelongsTo.ALIPAY_CN;
         alipayAuthConsultRequest.OsType = OsType.ANDROID;

@@ -24,7 +24,7 @@ namespace ams_dotnet.com.alipay.ams.api.request.subscription
         public List<Trial> Trials  { get; set; }
         public override string GetRequestURI()
         {
-            return AntomPathConstants.SUBSCRIPTION_CANCEL_PATH;
+            return AntomPathConstants.SUBSCRIPTION_CREATE_PATH;
         }
 
         public override void validate()

@@ -135,7 +135,7 @@ namespace ams_dotnet.example.tests
         {
             SandboxAlipayAuthConsultRequest sandboxAlipayAuthConsultRequest = new SandboxAlipayAuthConsultRequest();
             sandboxAlipayAuthConsultRequest.AuthClientId = "FOO";
-            sandboxAlipayAuthConsultRequest.AuthRedirectUrl= "http://alipay.com";
+            sandboxAlipayAuthConsultRequest.AuthRedirectUrl= "https://www.yourRedirectUrl.com";
             sandboxAlipayAuthConsultRequest.CustomerBelongsTo = CustomerBelongsTo.GCASH;
             sandboxAlipayAuthConsultRequest.Scopes = new ScopeType[] { ScopeType.AGREEMENT_PAY};
             sandboxAlipayAuthConsultRequest.AuthState = authState;
@@ -253,8 +253,8 @@ namespace ams_dotnet.example.tests
             request.PaymentAmount = new Amount(currency, 3000);
             request.PaymentMethod = new PaymentMethod(WalletPaymentMethodType.GCASH.ToString());
             request.PaymentMethod.PaymentMethodId = accessToken;
-            request.PaymentNotifyUrl = "http://alipay.com";
-            request.PaymentRedirectUrl = "http://alipay.com";
+            request.PaymentNotifyUrl = "https://www.yourNotifyUrl.com";
+            request.PaymentRedirectUrl = "https://www.yourRedirectUrl.com";
 
             long amountInCents = 1000;
             Order order = new Order();

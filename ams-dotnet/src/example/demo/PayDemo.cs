@@ -18,8 +18,8 @@ namespace ams_dotnet.demo
             var paymentMethod = new PaymentMethod(WalletPaymentMethodType.ALIPAY_HK.ToString());
             paymentMethod.PaymentMethodId = "1213213423";
             request.PaymentMethod = paymentMethod;
-            request.PaymentNotifyUrl = "http  //alipay.com";
-            request.PaymentRedirectUrl = "http  //alipay.com";
+            request.PaymentNotifyUrl = "https://www.yourNotifyUrl.com";
+            request.PaymentRedirectUrl = "https://www.yourRedirectUrl.com";
 
             Order order = new Order();
             order.OrderAmount = new Amount("HKD", 100);
@@ -130,8 +130,8 @@ namespace ams_dotnet.demo
             request.PaymentAmount = new Amount("HKD", 100);
             var paymentMethod = new PaymentMethod(WalletPaymentMethodType.SHOPEEPAY_SG.ToString());
             request.PaymentMethod = paymentMethod;
-            request.PaymentNotifyUrl = "http://alipay.com";
-            request.PaymentRedirectUrl = "http://alipay.com";
+            request.PaymentNotifyUrl = "https://www.yourNotifyUrl.com";
+            request.PaymentRedirectUrl = "https://www.yourRedirectUrl.com";
             
             var response = client.Execute(request);
 
