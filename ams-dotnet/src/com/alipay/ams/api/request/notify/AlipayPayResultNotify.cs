@@ -63,5 +63,7 @@ public class AlipayPayResultNotify:AlipayNotify
      * The information of the acquirer that processes the payment.
      */
     public AcquirerInfo AcquirerInfo { get; set; }
+    
+    public PromotionResult[] PromotionResult { get; set; }
 
 }
