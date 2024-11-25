@@ -66,4 +66,7 @@ public class AlipayPayResultNotify:AlipayNotify
     
     public PromotionResult[] PromotionResult { get; set; }
 
+
+    public string PaymentMethodType { get; set; }
+
 }

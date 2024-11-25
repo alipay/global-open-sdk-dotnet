@@ -14,6 +14,8 @@ namespace com.alipay.ams.api.request
         public string PaymentId { get; set; }
         
         public string MerchantAccountId { get; set; }
+        
+        public string PaymentMethodType { get; set; }
 
         public override string GetRequestURI()
         {
