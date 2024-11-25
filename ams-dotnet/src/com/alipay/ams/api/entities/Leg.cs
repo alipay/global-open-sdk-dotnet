@@ -9,4 +9,6 @@ public class Leg
     public string CarrierName { get; set; }
     public string CarrierNo { get; set; }
     public ClassType ClassType { get; set; }
+    public string DepartureAirportCode { get; set; }
+    public string ArrivalAirportCode { get; set; }
 }
