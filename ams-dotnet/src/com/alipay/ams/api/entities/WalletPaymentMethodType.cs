@@ -71,5 +71,7 @@
         SETTLEMENT_CARD,
 
         BALANCE_ACCOUNT,
+        
+        APPLEPAY,
     }
 }
