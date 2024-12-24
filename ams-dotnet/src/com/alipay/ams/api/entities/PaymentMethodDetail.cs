@@ -9,4 +9,5 @@ public class PaymentMethodDetail
     public CouponPaymentMethodDetail Coupon { get; set; }
     public string PaymentMethodType { get; set; }
     public string ExtendInfo { get; set; }
+    public bool Is3DSAuthentication { get; set; }
 }

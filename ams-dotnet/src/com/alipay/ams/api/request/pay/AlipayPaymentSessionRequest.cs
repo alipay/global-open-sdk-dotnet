@@ -46,6 +46,8 @@ namespace com.alipay.ams.api.request
 
     public string Locale { get; set; }
     
+    public AvailablePaymentMethod AvailablePaymentMethod { get; set; }
+    
     public override string GetRequestURI()
     {
         return AntomPathConstants.CREATE_SESSION_PATH;
