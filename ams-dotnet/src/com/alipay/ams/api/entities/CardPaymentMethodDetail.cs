@@ -51,4 +51,6 @@ public class CardPaymentMethodDetail
     public string PayerEmail { get; set; }
 
     public string NetworkTransactionId { get; set; }
+    
+    public bool Is3DSAuthentication { get; set; }
 }
