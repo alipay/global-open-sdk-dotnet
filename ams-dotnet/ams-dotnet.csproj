@@ -1,18 +1,25 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
+
   <PropertyGroup>
+    <PackageId>global-open-sdk-dotnet</PackageId>
+    <Version>1.0.1</Version>
+    <Authors>wanglele</Authors>
+    <Company>antom</Company>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp8</TargetFramework>
     <RootNamespace>ams_dotnet</RootNamespace>
     <BaseDirectory>src</BaseDirectory>
   </PropertyGroup>
-
+  
   <ItemGroup>
-    <Folder Include="src\com\alipay\ams\util\" />
-    <Folder Include="src\com\alipay\ams\api\request\users\" />
-    <Folder Include="src\com\alipay\ams\api\response\users\" />
-    <Folder Include="src\example\tests\" />
-    <Folder Include="src\com\alipay\ams\api\request\merchant\" />
-    <Folder Include="src\com\alipay\ams\api\response\merchant\" />
+    <Folder Include="src\com\alipay\ams\util\*.cs" />
+    <Folder Include="src\com\alipay\ams\api\request\**\*.cs" />
+    <Folder Include="src\com\alipay\ams\api\response\**\*.cs" />
+    <Folder Include="src\com\alipay\ams\api\request\*.cs" />
+    <Folder Include="src\com\alipay\ams\api\response\*.cs" />
+    <Folder Include="src\com\alipay\ams\api\entities\*.cs" />
+    <Folder Include="src\example\tests\*.cs" />
+    <Folder Include="src\example\demo\*.cs" />
   </ItemGroup>
 </Project>
