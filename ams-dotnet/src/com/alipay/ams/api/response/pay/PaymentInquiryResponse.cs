@@ -46,7 +46,7 @@ namespace com.alipay.ams.api.request
        public PaymentResultInfo PaymentResultInfo  { get; set; }
        public AcquirerInfo AcquirerInfo  { get; set; }
        public string MerchantAccountId  { get; set; }
-       public List<PromotionResult> PromotionResult  { get; set; }
+       public List<PromotionResult> PromotionResults  { get; set; }
        public string EarliestSettlementTime  { get; set; }
        public string PaymentMethodType { get; set; }
 
