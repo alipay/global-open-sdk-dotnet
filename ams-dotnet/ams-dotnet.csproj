@@ -3,8 +3,8 @@
 
   <PropertyGroup>
     <PackageId>global-open-sdk-dotnet</PackageId>
-    <Version>2.0.7</Version>
-    <Authors>wanglele</Authors>
+    <Version>2.0.8</Version>
+    <Authors>wangzunjiao</Authors>
     <Company>antom</Company>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp8</TargetFramework>
