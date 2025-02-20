@@ -23,5 +23,15 @@ namespace com.alipay.ams.api.entities
         public string NetworkTransactionId  { get; set; }
         
         public CreditPayPlan CreditPayPlan  { get; set; }
+        
+        public string CardholderName  { get; set; }
+
+        public string CardBin  { get; set; }
+
+        public string LastFour  { get; set; }
+
+        public string ExpiryMonth  { get; set; }
+
+        public string ExpiryYear  { get; set; }
     }
 }
