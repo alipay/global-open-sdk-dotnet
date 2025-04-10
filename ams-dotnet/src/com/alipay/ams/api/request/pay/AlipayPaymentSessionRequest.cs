@@ -48,6 +48,8 @@ namespace com.alipay.ams.api.request
     
     public AvailablePaymentMethod AvailablePaymentMethod { get; set; }
     
+    public List<string> AllowedPaymentMethodRegions  { get; set; }
+    
     public override string GetRequestURI()
     {
         return AntomPathConstants.CREATE_SESSION_PATH;
