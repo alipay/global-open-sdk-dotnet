@@ -50,6 +50,8 @@ namespace com.alipay.ams.api.request
     
     public List<string> AllowedPaymentMethodRegions  { get; set; }
     
+    public SubscriptionInfo SubscriptionInfo  { get; set; }
+    
     public override string GetRequestURI()
     {
         return AntomPathConstants.CREATE_SESSION_PATH;

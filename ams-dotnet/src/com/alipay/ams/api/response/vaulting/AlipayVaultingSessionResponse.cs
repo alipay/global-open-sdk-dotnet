@@ -7,4 +7,6 @@ public class AlipayVaultingSessionResponse:AMSResponse
     public string VaultingSessionData { get; set; }
     public string VaultingSessionId { get; set; }
     public string VaultingSessionExpiryTime { get; set; }
+    public string NormalUrl { get; set; }
+
 }

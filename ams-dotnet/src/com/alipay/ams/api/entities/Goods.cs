@@ -13,4 +13,6 @@ public class Goods
     public string DeliveryMethodType { get; set; }
     public string GoodsImageUrl { get; set; }
     public string PriceId { get; set; }
+    public Amount GoodsDiscountAmount { get; set; }
+    public Goods CrossSell { get; set; }
 }
