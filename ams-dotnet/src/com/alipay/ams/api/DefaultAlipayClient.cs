@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Net.Http;
 using System.Text;
+using System.Text.RegularExpressions;
 using com.alipay.ams.api.response;
 
 namespace com.alipay.ams.api
@@ -32,8 +33,9 @@ namespace com.alipay.ams.api
         public  TAMSResponse Execute<TAMSResponse>(request.AMSRequest<TAMSResponse> request)
             where TAMSResponse : AMSResponse
         {
-            
-            var requestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, this.GatewayUrl+ request.GetRequestURI());
+            var requestUrl = BuildRequestUrl(request.GetRequestURI());
+
+            var requestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUrl );
 
             var body = request.BuildBody();
             var headers = request.BuildRequestHeader(this.ClientId,this.AgentToken,this.MerchantPrivateKey);
@@ -51,6 +53,19 @@ namespace com.alipay.ams.api
             var ret = client.SendAsync(requestMessage).ConfigureAwait(false).GetAwaiter().GetResult(); ;
 
             return AMSResponse.ParseResponse<TAMSResponse>(ret, request.GetRequestURI(), this.ClientId,this.AlipayPublicKey);
+        }
+        
+        public string BuildRequestUrl(string originPath)
+        {
+
+            if (ClientId != null && ClientId.StartsWith("SANDBOX_", StringComparison.Ordinal))
+            {
+                originPath = originPath.Replace("/ams/api", "/ams/sandbox/api");
+            }
+
+            var baseUri = new Uri(this.GatewayUrl, UriKind.Absolute);
+            var fullUri = new Uri(baseUri, originPath);
+            return fullUri.ToString();
         }
     }
 }
