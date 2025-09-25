@@ -51,8 +51,9 @@ namespace com.alipay.ams.api
 
 
             var ret = client.SendAsync(requestMessage).ConfigureAwait(false).GetAwaiter().GetResult(); ;
+            
 
-            return AMSResponse.ParseResponse<TAMSResponse>(ret, request.GetRequestURI(), this.ClientId,this.AlipayPublicKey);
+            return AMSResponse.ParseResponse<TAMSResponse>(ret, BuildRequestUri(request.GetRequestURI()), this.ClientId,this.AlipayPublicKey);
         }
         
         public string BuildRequestUrl(string originPath)
@@ -67,5 +68,15 @@ namespace com.alipay.ams.api
             var fullUri = new Uri(baseUri, originPath);
             return fullUri.ToString();
         }
+        
+        public string BuildRequestUri(string originPath)
+        {
+
+            if (ClientId != null && ClientId.StartsWith("SANDBOX_", StringComparison.Ordinal))
+            {
+                originPath = originPath.Replace("/ams/api", "/ams/sandbox/api");
+            }
+            return originPath;
+        } 
     }
 }
