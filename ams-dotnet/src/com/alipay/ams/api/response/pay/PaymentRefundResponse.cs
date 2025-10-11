@@ -33,6 +33,11 @@ namespace com.alipay.ams.api.request
 
 
         public Quote SettlementQuote { get; set; }
+        
+        public AcquirerInfo AcquirerInfo { get; set; }
+        public string AcquirerReferenceNo { get; set; }
+
+        public Amount ActualRefundAmount { get; set; }
 
     }
 }

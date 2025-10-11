@@ -22,5 +22,7 @@ namespace com.alipay.ams.api.entities
         
         public string QuoteExpiryTime  { get; set; }
 
+        public Amount ExchangeAmount { get; set; }
+
     }
 }

@@ -38,4 +38,11 @@ public class AlipayRefundNotify:AlipayNotify
      * The exchange rate between the settlement currency and transaction currency
      */
     public Quote SettlementQuote { get; set; }
+    
+    
+    public CustomizedInfo CustomizedInfo { get; set; }
+
+    public string Arn { get; set; }
+
+    public Amount ActualRefundAmount { get; set; }
 }
