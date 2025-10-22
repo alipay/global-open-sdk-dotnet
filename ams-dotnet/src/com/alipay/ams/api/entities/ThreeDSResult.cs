@@ -7,5 +7,7 @@ namespace com.alipay.ams.api.entities
        public string Cavv  { get; set; }
        public string DsTransactionId  { get; set; }
        public string Xid  { get; set; }
+       public bool Challenged  { get; set; }
+       public string ExemptionType  { get; set; }
     }
 }

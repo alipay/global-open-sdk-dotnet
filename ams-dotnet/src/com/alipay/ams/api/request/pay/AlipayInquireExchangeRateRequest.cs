@@ -11,6 +11,7 @@ public class AlipayInquireExchangeRateRequest  : AMSRequest<AlipayInquireExchang
     public CurrencyPair[] CurrencyPairs { get; set; }
     public string SellCurrency { get; set; }
     public string BuyCurrency { get; set; }
+    public ProductCodeType ProductCode { get; set; }
     
     
     public override string GetRequestURI()

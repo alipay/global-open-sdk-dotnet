@@ -33,5 +33,12 @@ namespace com.alipay.ams.api.entities
         public string ExpiryMonth  { get; set; }
 
         public string ExpiryYear  { get; set; }
+        public string AccountNo  { get; set; }
+        public string RefusalCodeRaw  { get; set; }
+        public string RefusalReasonRaw  { get; set; }
+        public string MerchantAdviceCode  { get; set; }
+        public AcquirerInfo AcquirerInfo  { get; set; }
+        public string ExemptionRequested { get; set; }
+
     }
 }
