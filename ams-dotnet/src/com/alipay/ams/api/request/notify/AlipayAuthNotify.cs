@@ -42,4 +42,5 @@ public class AlipayAuthNotify:AlipayNotify
      */
     public string UserId { get; set; }
 
+    public string PassThroughInfo  { get; set; }
 }

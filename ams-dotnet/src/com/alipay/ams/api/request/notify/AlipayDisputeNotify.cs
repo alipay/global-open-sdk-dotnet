@@ -19,6 +19,10 @@ public class AlipayDisputeNotify:AlipayNotify
     public string DisputeSource{ get; set; }
     public string Arn{ get; set; }
     public DisputeAcceptReasonType DisputeAcceptReason{ get; set; }
-    public string disputeType{ get; set; }
-    public bool defendable{ get; set; }
+    public string DisputeType{ get; set; }
+    public bool Defendable{ get; set; }
+    public string CaptureId { get; set; }
+    public string AutoDefendReason { get; set; }
+    public AcquirerInfo AcquirerInfo { get; set; }
+
 }

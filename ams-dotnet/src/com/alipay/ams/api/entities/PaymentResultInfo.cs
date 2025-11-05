@@ -39,6 +39,9 @@ namespace com.alipay.ams.api.entities
         public string MerchantAdviceCode  { get; set; }
         public AcquirerInfo AcquirerInfo  { get; set; }
         public string ExemptionRequested { get; set; }
+        public string CardCategory { get; set; }
+        public string CredentialTypeUsed { get; set; }
+
 
     }
 }

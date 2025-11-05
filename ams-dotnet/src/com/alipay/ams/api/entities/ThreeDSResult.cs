@@ -9,5 +9,6 @@ namespace com.alipay.ams.api.entities
        public string Xid  { get; set; }
        public bool Challenged  { get; set; }
        public string ExemptionType  { get; set; }
+       public bool ThreeDSOffered { get; set; }
     }
 }
