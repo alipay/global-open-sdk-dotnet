@@ -11,4 +11,6 @@ public class Shipping
     public Amount ShippingFee { get; set; }
     public string ShippingDescription { get; set; }
     public DeliveryEstimate DeliveryEstimate { get; set; }
+    public string ShippingNumber { get; set; }
+    public string Notes { get; set; }
 }

@@ -12,12 +12,13 @@ namespace ams_dotnet
         private const string ClientId = "";
 
         // Below are fake keys that are for demo purpose. Replace them with your own ones.
-        private const string MerchantPrivateKey = "";
-        private const string AlipayPublicKey = "";
+        private const string MerchantPrivateKey =  "";
+        private const string AlipayPublicKey =  "";
+
 
         static void Main(string[] args)
         {
-            //PayDemo.alipay(new DefaultAlipayClient(GatewayUrl, ClientId, MerchantPrivateKey, AlipayPublicKey));
+            PayDemo.alipay(new DefaultAlipayClient(GatewayUrl, ClientId, MerchantPrivateKey, AlipayPublicKey));
             //PayDemo.query(new DefaultAlipayClient(GatewayUrl, ClientId, MerchantPrivateKey, AlipayPublicKey),"PR20190000000001_1725381379719.623");
            // PayDemo.cancel(new DefaultAlipayClient(GatewayUrl, ClientId, MerchantPrivateKey, AlipayPublicKey),"PR20190000000001_1725381024794.669");
            //PayDemo.refund(new DefaultAlipayClient(GatewayUrl, ClientId, MerchantPrivateKey, AlipayPublicKey),"202409031940108001001889B0209199607");

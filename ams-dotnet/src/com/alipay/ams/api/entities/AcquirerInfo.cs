@@ -8,5 +8,7 @@ namespace com.alipay.ams.api.entities
         public string AcquirerMerchantId { get; set; }
         public string AcquirerResultCode { get; set; }
         public string AcquirerResultMessage { get; set; }
+        public string AcquirerReasonDescription { get; set; }
+
     }
 }

@@ -30,5 +30,8 @@ namespace com.alipay.ams.api.entities
         public Transit Transit { get; set; }
         public Lodging Lodging { get; set; }
         public Gaming Gaming { get; set; }
+        public Amount OrderDiscountAmount { get; set; }
+        public Amount SubTotalOrderAmount { get; set; }
+        public Declaration Declaration { get; set; }
     }
 }

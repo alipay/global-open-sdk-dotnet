@@ -7,8 +7,12 @@ public class PaymentResultInfo
 
         public PaymentResultInfo() { }
 
-        public PaymentResultInfo( string cardNo , string cardBrand , string cardToken , string issuingCountry , string funding , string paymentMethodRegion , ThreeDSResult threeDSResult , string avsResultRaw , string cvvResultRaw , string networkTransactionId , CreditPayPlan creditPayPlan , string cardholderName , string cardBin , string lastFour , string expiryMonth , string expiryYear)
+        public PaymentResultInfo( string refusalCodeRaw , string refusalReasonRaw , string merchantAdviceCode , AcquirerInfo acquirerInfo , string cardNo , string cardBrand , string cardToken , string issuingCountry , string funding , string paymentMethodRegion , ThreeDSResult threeDSResult , string avsResultRaw , string cvvResultRaw , string networkTransactionId , CreditPayPlan creditPayPlan , string cardholderName , string cardBin , string lastFour , string expiryMonth , string expiryYear)
         {
+            this.RefusalCodeRaw = refusalCodeRaw;
+            this.RefusalReasonRaw = refusalReasonRaw;
+            this.MerchantAdviceCode = merchantAdviceCode;
+            this.AcquirerInfo = acquirerInfo;
             this.CardNo = cardNo;
             this.CardBrand = cardBrand;
             this.CardToken = cardToken;
@@ -27,6 +31,10 @@ public class PaymentResultInfo
             this.ExpiryYear = expiryYear;
         }
 
+            public string RefusalCodeRaw { get; set; }
+            public string RefusalReasonRaw { get; set; }
+            public string MerchantAdviceCode { get; set; }
+            public AcquirerInfo AcquirerInfo { get; set; }
             public string CardNo { get; set; }
             public string CardBrand { get; set; }
             public string CardToken { get; set; }

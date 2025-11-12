@@ -26,7 +26,7 @@ namespace com.alipay.ams.api.request
 
             var requestTime = DateTime.UtcNow.ToString("o"); 
             headers.Add("client-id", clientId);
-            headers.Add("signature", "algorithm=RSA256,keyVersion=1,signature=" + SignatureUtil.sign(GetRequestURI(), clientId, requestTime, privateKey, BuildBody()));
+            headers.Add("signature", "algorithm=RSA256,keyVersion=1,signature=" + SignatureUtil.sign(BuildRequestUrl(clientId,GetRequestURI()), clientId, requestTime, privateKey, BuildBody()));
 
             if(agentToken != null)
             {
@@ -57,6 +57,17 @@ namespace com.alipay.ams.api.request
         public override string ToString()
         {
             return JsonSerializer.Serialize(this, this.GetType(), JsonSerializerOptionsFactory.WriteIndented);
+        }
+        
+        public string BuildRequestUrl(string clientId,string originPath)
+        {
+
+            if (clientId != null && clientId.StartsWith("SANDBOX_", StringComparison.Ordinal))
+            {
+                originPath = originPath.Replace("/ams/api", "/ams/sandbox/api");
+            }
+
+            return originPath;
         }
     }
 

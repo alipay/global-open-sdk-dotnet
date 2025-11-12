@@ -7,7 +7,7 @@ public class Order
 
         public Order() { }
 
-        public Order( string referenceOrderId , string orderDescription , Amount orderAmount , Merchant merchant , List<Goods> goods , Shipping shipping , Buyer buyer , Env env , string extendInfo , Transit transit , Lodging lodging , Gaming gaming , bool? needDeclaration , string orderType)
+        public Order( string referenceOrderId , string orderDescription , Amount orderAmount , Merchant merchant , List<Goods> goods , Shipping shipping , Buyer buyer , Env env , string extendInfo , Transit transit , Lodging lodging , Gaming gaming , bool? needDeclaration , string orderTest , Declaration declaration , string orderType)
         {
             this.ReferenceOrderId = referenceOrderId;
             this.OrderDescription = orderDescription;
@@ -22,6 +22,8 @@ public class Order
             this.Lodging = lodging;
             this.Gaming = gaming;
             this.NeedDeclaration = needDeclaration;
+            this.OrderTest = orderTest;
+            this.Declaration = declaration;
             this.OrderType = orderType;
         }
 
@@ -38,6 +40,8 @@ public class Order
             public Lodging Lodging { get; set; }
             public Gaming Gaming { get; set; }
             public bool? NeedDeclaration { get; set; }
+            public string OrderTest { get; set; }
+            public Declaration Declaration { get; set; }
             public string OrderType { get; set; }
 
         

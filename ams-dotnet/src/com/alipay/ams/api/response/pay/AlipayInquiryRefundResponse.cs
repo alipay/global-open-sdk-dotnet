@@ -14,5 +14,12 @@ namespace ams_dotnet.com.alipay.ams.api.response.pay
         public Amount GrossSettlementAmount { get; set; }
         public Quote SettlementQuote { get; set; }
         public AcquirerInfo AcquirerInfo { get; set; }
+        
+            
+        public CustomizedInfo CustomizedInfo { get; set; }
+
+        public string Arn { get; set; }
+
+        public Amount ActualRefundAmount { get; set; }
     }
 }

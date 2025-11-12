@@ -45,6 +45,8 @@ namespace com.alipay.ams.api.request
         public PaymentVerificationData PaymentVerificationData  { get; set; }
         public string ExtendInfo  { get; set; }
         public string MerchantAccountId  { get; set; }
+        
+        public SubscriptionInfo SubscriptionInfo  { get; set; }
 
         public override string GetRequestURI()
         {
