@@ -4,6 +4,8 @@ public class {{classname}}{{#lambdas.DotNetParent}} {{classname}} {{serverUrl}} 
 
         public {{classname}}() { }
 
+        {{#lambdas.specificConstructor}} {{classname}} {{/lambdas.specificConstructor}}
+
         public {{classname}}( {{#vars}}{{{dataType}}} {{#lambda.camelcase_param}}{{name}}{{/lambda.camelcase_param}}{{^-last}} , {{/-last}}{{/vars}})
         {
         {{#vars}}
