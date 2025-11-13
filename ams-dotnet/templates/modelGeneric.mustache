@@ -6,7 +6,7 @@ public class {{classname}}{{#lambdas.DotNetParent}} {{classname}} {{serverUrl}} 
 
         {{#lambdas.specificConstructor}} {{classname}} {{/lambdas.specificConstructor}}
 
-        public {{classname}}( {{#vars}}{{{dataType}}} {{#lambda.camelcase_param}}{{name}}{{/lambda.camelcase_param}}{{^-last}} , {{/-last}}{{/vars}})
+        public {{classname}}( {{#vars}}{{#lambdas.specificList}} {{name}}|{{{dataType}}}|{{classname}} {{/lambdas.specificList}} {{#lambda.camelcase_param}}{{name}}{{/lambda.camelcase_param}}{{^-last}} , {{/-last}}{{/vars}})
         {
         {{#vars}}
             this.{{name}} = {{#lambda.camelcase_param}}{{name}}{{/lambda.camelcase_param}};
@@ -15,7 +15,7 @@ public class {{classname}}{{#lambdas.DotNetParent}} {{classname}} {{serverUrl}} 
 
         {{#vars}}
             {{#lambdas.skipResult}}
-            public {{{dataType}}} {{name}} { get; set; }
+            public {{#lambdas.specificList}} {{name}}|{{{dataType}}}|{{classname}} {{/lambdas.specificList}} {{name}} { get; set; }
             {{/lambdas.skipResult}}
         {{/vars}}
 
