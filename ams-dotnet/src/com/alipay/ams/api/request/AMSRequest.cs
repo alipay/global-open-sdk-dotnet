@@ -18,7 +18,7 @@ namespace com.alipay.ams.api.request
             return JsonSerializer.Serialize(this, this.GetType(), JsonSerializerOptionsFactory.WriteNotIndented);
         }
 
-        public abstract void validate();
+        public virtual void validate(){}
 
         public Dictionary<string, string> BuildRequestHeader(string clientId, string agentToken, string privateKey)
         {
