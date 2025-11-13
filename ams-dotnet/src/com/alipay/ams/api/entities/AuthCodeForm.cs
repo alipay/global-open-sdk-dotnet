@@ -1,7 +1,25 @@
+using System;
+using System.Collections.Generic;
+    
 namespace com.alipay.ams.api.entities
 {
-    public class AuthCodeForm
+
+public class AuthCodeForm
     {
-        public CodeDetail[] CodeDetails { get; set; }
+
+        public AuthCodeForm() { }
+
+        
+
+        public AuthCodeForm(  List<CodeDetail>  codeDetails)
+        {
+            this.CodeDetails = codeDetails;
+        }
+
+            public  List<CodeDetail>  CodeDetails { get; set; }
+
+        
+
     }
+
 }

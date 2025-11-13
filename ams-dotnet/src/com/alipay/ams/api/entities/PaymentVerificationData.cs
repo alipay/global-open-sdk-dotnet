@@ -1,24 +1,27 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
-using System.Text;
-
-
+    
 namespace com.alipay.ams.api.entities
 {
-    public class PaymentVerificationData
+
+public class PaymentVerificationData
     {
 
-        public string VerifyRequestId
+        public PaymentVerificationData() { }
+
+        
+
+        public PaymentVerificationData(  string  verifyRequestId ,  string  authenticationCode)
         {
-            get; internal set;
+            this.VerifyRequestId = verifyRequestId;
+            this.AuthenticationCode = authenticationCode;
         }
 
-        public string AuthenticationCode { get; internal set; }
+            public  string  VerifyRequestId { get; set; }
+            public  string  AuthenticationCode { get; set; }
 
-        public PaymentVerificationData(string verifyRequestId, string authenticationCode)
-        {
-            VerifyRequestId = verifyRequestId;
-            AuthenticationCode = authenticationCode;
-        }
+        
+
     }
+
 }

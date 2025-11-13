@@ -1,8 +1,28 @@
-using com.alipay.ams.api.response;
-
-namespace ams_dotnet.com.alipay.ams.api.response.marketplace;
-
-public class AlipaySettlementInfoUpdateResponse:AMSResponse
+using com.alipay.ams.api.entities;
+using System;
+using System.Collections.Generic;
+    
+namespace com.alipay.ams.api.response.marketplace
 {
-    public string UpdateStatus { get; set; }
+
+public class AlipaySettlementInfoUpdateResponse : AMSResponse
+    {
+
+        public AlipaySettlementInfoUpdateResponse() { }
+
+        
+
+        public AlipaySettlementInfoUpdateResponse(  Result  result ,  string  updateStatus)
+        {
+            this.Result = result;
+            this.UpdateStatus = updateStatus;
+        }
+
+            public  Result  Result { get; set; }
+            public  string  UpdateStatus { get; set; }
+
+        
+
+    }
+
 }

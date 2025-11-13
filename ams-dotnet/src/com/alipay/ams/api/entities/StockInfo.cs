@@ -1,7 +1,27 @@
-namespace com.alipay.ams.api.entities;
+using System;
+using System.Collections.Generic;
+    
+namespace com.alipay.ams.api.entities
+{
 
 public class StockInfo
-{
-    public string ListedRegion { get; set; }
-    public string TickerSymbol { get; set; }
+    {
+
+        public StockInfo() { }
+
+        
+
+        public StockInfo(  string  listedRegion ,  string  tickerSymbol)
+        {
+            this.ListedRegion = listedRegion;
+            this.TickerSymbol = tickerSymbol;
+        }
+
+            public  string  ListedRegion { get; set; }
+            public  string  TickerSymbol { get; set; }
+
+        
+
+    }
+
 }

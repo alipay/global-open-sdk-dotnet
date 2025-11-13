@@ -1,22 +1,31 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
-using System.Text;
-
-
+    
 namespace com.alipay.ams.api.entities
 {
-    public class OrderCodeForm
+
+public class OrderCodeForm
     {
 
-        public String PaymentMethodType { get; set; }
+        public OrderCodeForm() { }
 
+        
 
-        public String ExpireTime { get; set; }
+        public OrderCodeForm(  string  paymentMethodType ,  string  expireTime ,  List<CodeDetail>  codeDetails ,  string  extendInfo)
+        {
+            this.PaymentMethodType = paymentMethodType;
+            this.ExpireTime = expireTime;
+            this.CodeDetails = codeDetails;
+            this.ExtendInfo = extendInfo;
+        }
 
+            public  string  PaymentMethodType { get; set; }
+            public  string  ExpireTime { get; set; }
+            public  List<CodeDetail>  CodeDetails { get; set; }
+            public  string  ExtendInfo { get; set; }
 
-        public List<CodeDetail> CodeDetails { get; set; }
+        
 
-
-        public String ExtendInfo { get; set; }
     }
+
 }

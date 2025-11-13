@@ -1,8 +1,28 @@
-using com.alipay.ams.api.response;
-
-namespace ams_dotnet.com.alipay.ams.api.response.marketplace;
-
-public class AlipayRegisterResponse:AMSResponse
+using com.alipay.ams.api.entities;
+using System;
+using System.Collections.Generic;
+    
+namespace com.alipay.ams.api.response.marketplace
 {
-    public string RegistrationStatus { get; set; }
+
+public class AlipayRegisterResponse : AMSResponse
+    {
+
+        public AlipayRegisterResponse() { }
+
+        
+
+        public AlipayRegisterResponse(  Result  result ,  string  registrationStatus)
+        {
+            this.Result = result;
+            this.RegistrationStatus = registrationStatus;
+        }
+
+            public  Result  Result { get; set; }
+            public  string  RegistrationStatus { get; set; }
+
+        
+
+    }
+
 }

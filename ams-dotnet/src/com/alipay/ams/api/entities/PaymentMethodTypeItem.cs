@@ -1,8 +1,29 @@
-namespace com.alipay.ams.api.entities;
+using System;
+using System.Collections.Generic;
+    
+namespace com.alipay.ams.api.entities
+{
 
 public class PaymentMethodTypeItem
-{
-    public string PaymentMethodType { get; set; }
-    public int PaymentMethodOrder { get; set; }
-    public bool ExpressCheckout { get; set; }
+    {
+
+        public PaymentMethodTypeItem() { }
+
+        
+
+        public PaymentMethodTypeItem(  string  paymentMethodType ,  string  paymentMethodOrder ,  string  expressCheckout)
+        {
+            this.PaymentMethodType = paymentMethodType;
+            this.PaymentMethodOrder = paymentMethodOrder;
+            this.ExpressCheckout = expressCheckout;
+        }
+
+            public  string  PaymentMethodType { get; set; }
+            public  string  PaymentMethodOrder { get; set; }
+            public  string  ExpressCheckout { get; set; }
+
+        
+
+    }
+
 }

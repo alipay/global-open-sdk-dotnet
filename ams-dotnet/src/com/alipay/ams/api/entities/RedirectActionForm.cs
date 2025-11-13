@@ -1,19 +1,31 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
-using System.Text;
-
-
+    
 namespace com.alipay.ams.api.entities
 {
-    public class RedirectActionForm
+
+public class RedirectActionForm
     {
 
-        public String Method { get; set; }
+        public RedirectActionForm() { }
 
-        public String Parameters { get; set; }
-
-        public String RedirectUrl { get; set; }
         
-        public String ActionFormType { get; set; }
+
+        public RedirectActionForm(  string  method ,  string  parameters ,  string  redirectUrl ,  string  actionFormType)
+        {
+            this.Method = method;
+            this.Parameters = parameters;
+            this.RedirectUrl = redirectUrl;
+            this.ActionFormType = actionFormType;
+        }
+
+            public  string  Method { get; set; }
+            public  string  Parameters { get; set; }
+            public  string  RedirectUrl { get; set; }
+            public  string  ActionFormType { get; set; }
+
+        
+
     }
+
 }

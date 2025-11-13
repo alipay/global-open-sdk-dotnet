@@ -1,24 +1,33 @@
-using ams_dotnet.com.alipay.ams.api.response.pay;
+using com.alipay.ams.api.response.pay;
+using com.alipay.ams.api.request;
 using com.alipay.ams.api.entities;
-using com.alipay.ams.util;
-
-namespace com.alipay.ams.api.request
+using System;
+using System.Collections.Generic;
+    
+namespace com.alipay.ams.api.request.pay
 {
-    public class AlipayInquiryRefundRequest : AMSRequest<AlipayInquiryRefundResponse>
+
+public class AlipayInquiryRefundRequest : AMSRequest<AlipayInquiryRefundResponse>
     {
-        public string RefundRequestId { get; set; }
-        public string RefundId { get; set; }
-        public string MerchantAccountId { get; set; }
+
+        public AlipayInquiryRefundRequest() { }
+
         
-        public override string GetRequestURI()
+
+        public AlipayInquiryRefundRequest(  string  refundRequestId ,  string  refundId ,  string  merchantAccountId)
         {
-            return AntomPathConstants.INQUIRY_REFUND_PATH;
+            this.RefundRequestId = refundRequestId;
+            this.RefundId = refundId;
+            this.MerchantAccountId = merchantAccountId;
         }
 
-        public override void validate()
-        {
-           
-        }
+            public  string  RefundRequestId { get; set; }
+            public  string  RefundId { get; set; }
+            public  string  MerchantAccountId { get; set; }
+
+        public override string GetRequestURI(){ return "/ams/api/v1/payments/inquiryRefund"; } 
+
 
     }
+
 }

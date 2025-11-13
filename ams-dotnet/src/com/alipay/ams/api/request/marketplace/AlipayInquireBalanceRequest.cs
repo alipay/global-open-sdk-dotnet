@@ -1,21 +1,29 @@
-using ams_dotnet.com.alipay.ams.api.response.marketplace;
+using com.alipay.ams.api.response.marketplace;
+using com.alipay.ams.api.request;
 using com.alipay.ams.api.entities;
-
-namespace com.alipay.ams.api.request.marketplace;
-
-public class AlipayInquireBalanceRequest:AMSRequest<AlipayInquireBalanceResponse>
+using System;
+using System.Collections.Generic;
+    
+namespace com.alipay.ams.api.request.marketplace
 {
 
-    public string ReferenceMerchantId { get; set; }
+public class AlipayInquireBalanceRequest : AMSRequest<AlipayInquireBalanceResponse>
+    {
 
-    public override string GetRequestURI()
-    {
-        return AntomPathConstants.MARKETPLACE_INQUIREBALANCE_PATH;
+        public AlipayInquireBalanceRequest() { }
+
+        
+
+        public AlipayInquireBalanceRequest(  string  referenceMerchantId)
+        {
+            this.ReferenceMerchantId = referenceMerchantId;
+        }
+
+            public  string  ReferenceMerchantId { get; set; }
+
+        public override string GetRequestURI(){ return "/ams/api/v1/accounts/inquireBalance"; } 
+
+
     }
-    
-    public override void validate()
-    {
-           
-    }
-    
+
 }
