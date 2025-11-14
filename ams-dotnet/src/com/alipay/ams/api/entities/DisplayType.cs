@@ -1,7 +1,15 @@
-﻿namespace com.alipay.ams.api.entities
+using System;
+using System.Collections.Generic;
+    
+namespace com.alipay.ams.api.entities
 {
-    public enum DisplayType
+
+public enum DisplayType
     {
-        TEXT, MIDDLEIMAGE, SMALLIMAGE, BIGIMAGE, IMAGE
+            TEXT,
+            MIDDLEIMAGE,
+            SMALLIMAGE,
+            BIGIMAGE,
+            IMAGE,
     }
 }

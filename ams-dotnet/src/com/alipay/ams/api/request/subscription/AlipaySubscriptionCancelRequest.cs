@@ -1,22 +1,33 @@
-using ams_dotnet.com.alipay.ams.api.response.subscription;
+using com.alipay.ams.api.response.subscription;
+using com.alipay.ams.api.request;
 using com.alipay.ams.api.entities;
-
+using System;
+using System.Collections.Generic;
+    
 namespace com.alipay.ams.api.request.subscription
 {
-    public class AlipaySubscriptionCancelRequest : AMSRequest<AlipaySubscriptionCancelResponse>
+
+public class AlipaySubscriptionCancelRequest : AMSRequest<AlipaySubscriptionCancelResponse>
     {
-        public string SubscriptionId { get; set; }
-        public string SubscriptionRequestId { get; set; }
-        public CancellationType CancellationType { get; set; }
+
+        public AlipaySubscriptionCancelRequest() { }
+
         
-        public override string GetRequestURI()
+
+        public AlipaySubscriptionCancelRequest( string subscriptionId , string subscriptionRequestId , CancellationType cancellationType)
         {
-            return AntomPathConstants.SUBSCRIPTION_CANCEL_PATH;
+            this.SubscriptionId = subscriptionId;
+            this.SubscriptionRequestId = subscriptionRequestId;
+            this.CancellationType = cancellationType;
         }
 
-        public override void validate()
-        {
-            
-        }
+            public string SubscriptionId { get; set; }
+            public string SubscriptionRequestId { get; set; }
+            public CancellationType CancellationType { get; set; }
+
+        public override string GetRequestURI(){ return "/ams/api/v1/subscriptions/cancel"; } 
+
+
     }
+
 }
