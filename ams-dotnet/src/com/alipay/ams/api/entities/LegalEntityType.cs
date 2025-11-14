@@ -1,6 +1,12 @@
-namespace com.alipay.ams.api.entities;
+using System;
+using System.Collections.Generic;
+    
+namespace com.alipay.ams.api.entities
+{
 
 public enum LegalEntityType
-{
-    COMPANY, INDIVIDUAL
+    {
+            COMPANY,
+            INDIVIDUAL,
+    }
 }

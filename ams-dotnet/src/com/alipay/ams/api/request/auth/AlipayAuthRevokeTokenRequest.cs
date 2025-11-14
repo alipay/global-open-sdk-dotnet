@@ -1,30 +1,31 @@
-﻿using com.alipay.ams.api.request;
 using com.alipay.ams.api.response.auth;
-using com.alipay.ams.util;
+using com.alipay.ams.api.request;
+using com.alipay.ams.api.entities;
 using System;
 using System.Collections.Generic;
-using System.Text;
-using System.Text.Json;
-using com.alipay.ams.api.entities;
-
-
+    
 namespace com.alipay.ams.api.request.auth
 {
-    public class AlipayAuthRevokeTokenRequest : AMSRequest<AlipayAuthRevokeTokenResponse>
+
+public class AlipayAuthRevokeTokenRequest : AMSRequest<AlipayAuthRevokeTokenResponse>
     {
 
-        public string AccessToken { get; set; }
+        public AlipayAuthRevokeTokenRequest() { }
+
         
-        public string ExtendInfo { get; set; }
 
-        public override string GetRequestURI()
+        public AlipayAuthRevokeTokenRequest( string accessToken , string extendInfo)
         {
-            return AntomPathConstants.AUTH_REVOKE_PATH;
+            this.AccessToken = accessToken;
+            this.ExtendInfo = extendInfo;
         }
 
-        public override void validate()
-        {
-            Asserts.NotNull(AccessToken, "accessToken required.");
-        }
+            public string AccessToken { get; set; }
+            public string ExtendInfo { get; set; }
+
+        public override string GetRequestURI(){ return "/ams/api/v1/authorizations/revoke"; } 
+
+
     }
+
 }
