@@ -1,7 +1,12 @@
-﻿namespace com.alipay.ams.api.entities
+using System;
+using System.Collections.Generic;
+    
+namespace com.alipay.ams.api.entities
 {
-    public enum MerchantType
+
+public enum MerchantType
     {
-        INDIVIDUAL, ENTERPRISE
+            INDIVIDUAL,
+            ENTERPRISE,
     }
 }

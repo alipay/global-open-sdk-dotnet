@@ -1,7 +1,27 @@
-namespace com.alipay.ams.api.entities;
+using System;
+using System.Collections.Generic;
+    
+namespace com.alipay.ams.api.entities
+{
 
 public class CurrencyPair
-{
-    public string SellCurrency { set; get; }
-    public string BuyCurrency { set; get; }
+    {
+
+        public CurrencyPair() { }
+
+        
+
+        public CurrencyPair( string sellCurrency , string buyCurrency)
+        {
+            this.SellCurrency = sellCurrency;
+            this.BuyCurrency = buyCurrency;
+        }
+
+            public string SellCurrency { get; set; }
+            public string BuyCurrency { get; set; }
+
+        
+
+    }
+
 }
