@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+    
 namespace com.alipay.ams.api.entities
 {
 
@@ -10,6 +13,5 @@ public enum PaymentMethodCategoryType
             ONLINE_BANKING,
             CARD,
             OTC,
-            MPESA,VIETTELMONEY,CREDIT_PAY,CHECKOUT,DIGITAL_WALLET
     }
 }

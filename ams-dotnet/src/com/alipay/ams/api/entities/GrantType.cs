@@ -1,11 +1,12 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
-using System.Text;
-
+    
 namespace com.alipay.ams.api.entities
 {
-    public enum GrantType
+
+public enum GrantType
     {
-        AUTHORIZATION_CODE, REFRESH_TOKEN
+            AUTHORIZATION_CODE,
+            REFRESH_TOKEN,
     }
 }
