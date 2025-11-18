@@ -40,6 +40,8 @@ namespace com.alipay.ams.api.entities
         public const string RISK_SEND_REFUND_RESULT_PATH = "/ams/api/v1/risk/payments/sendRefundResult";
         public const string RETRIEVE_PATH = "/ams/api//v1/payments/retrievePaymentSession";
         public const string PAYMENT_INQUIRE_EXCHANGE_RATE_PATH = "/ams/api/v1/payments/inquireExchangeRate";
+        public const string ABA_INQUERY_STATEMENT_LIST_PATH = "/ams/api/v1/aba/accounts/inquiryStatementList";
+
 
     }
 }

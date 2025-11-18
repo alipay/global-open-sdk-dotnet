@@ -41,6 +41,8 @@ namespace com.alipay.ams.api.request.auth
         public string MerchantRegion { get; set; }
         
         public bool? RecurringPayment { get; set; }
+        
+        public string AuthNotifyUrl { get; set; }
 
         public override string GetRequestURI()
         {

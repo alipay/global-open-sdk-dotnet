@@ -42,5 +42,8 @@ namespace com.alipay.ams.api.entities
         public string DeviceLanguage  { get; set; }
         public string DeviceId  { get; set; }
         
+        public string OsVersion { get; set; }
+
+        
     }
 }

@@ -54,6 +54,8 @@ namespace com.alipay.ams.api.request
     
     public List<string> Scopes   { get; set; }
     
+    public string PaymentExpiryTime { get; set; }
+    
     public override string GetRequestURI()
     {
         return AntomPathConstants.CREATE_SESSION_PATH;

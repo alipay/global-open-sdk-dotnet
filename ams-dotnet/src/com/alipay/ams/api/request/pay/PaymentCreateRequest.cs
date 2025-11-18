@@ -47,6 +47,9 @@ namespace com.alipay.ams.api.request
         public string MerchantAccountId  { get; set; }
         
         public SubscriptionInfo SubscriptionInfo  { get; set; }
+        
+        public AgreementInfo AgreementInfo { get; set; }
+
 
         public override string GetRequestURI()
         {
