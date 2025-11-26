@@ -1,29 +1,39 @@
-using System;
-using ams_dotnet.com.alipay.ams.api.response.pay;
+using com.alipay.ams.api.response.pay;
+using com.alipay.ams.api.request;
 using com.alipay.ams.api.entities;
-using com.alipay.ams.util;
-
-namespace com.alipay.ams.api.request
-{
-    public class AlipayCaptureRequest : AMSRequest<AlipayCaptureResponse>
-    {
-        public string CaptureRequestId { get; set; }
-        public string PaymentId { get; set; }
-        public Amount CaptureAmount { get; set; }
-        public Boolean IsLastCapture { get; set; }
-        
-        
-        public override string GetRequestURI()
-        {
-            return AntomPathConstants.CAPTURE_PATH;
-        }
-
-        public override void validate()
-        {
-            Asserts.NotNull(PaymentId, "PaymentId required.");
-        }
-        
-    }
+using System;
+using System.Collections.Generic;
     
-   
+namespace com.alipay.ams.api.request.pay
+{
+
+public class AlipayCaptureRequest : AMSRequest<AlipayCaptureResponse>
+    {
+
+        public AlipayCaptureRequest() { }
+
+        
+
+        public AlipayCaptureRequest( string captureRequestId , string paymentId , Amount captureAmount , bool? isLastCapture , string captureType , Transit transit)
+        {
+            this.CaptureRequestId = captureRequestId;
+            this.PaymentId = paymentId;
+            this.CaptureAmount = captureAmount;
+            this.IsLastCapture = isLastCapture;
+            this.CaptureType = captureType;
+            this.Transit = transit;
+        }
+
+            public string CaptureRequestId { get; set; }
+            public string PaymentId { get; set; }
+            public Amount CaptureAmount { get; set; }
+            public bool? IsLastCapture { get; set; }
+            public string CaptureType { get; set; }
+            public Transit Transit { get; set; }
+
+        public override string GetRequestURI(){ return "/ams/api/v1/payments/capture"; } 
+
+
+    }
+
 }

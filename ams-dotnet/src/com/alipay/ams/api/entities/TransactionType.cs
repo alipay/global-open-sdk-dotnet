@@ -1,29 +1,16 @@
-namespace com.alipay.ams.api.entities;
+using System;
+using System.Collections.Generic;
+    
+namespace com.alipay.ams.api.entities
+{
 
 public enum TransactionType
-{
-    /**
-     * PAYMENT
-     */
-    PAYMENT,
-    /**
-     * REFUND
-     */
-    REFUND,
-    /**
-     * CAPTURE
-     */
-    CAPTURE,
-    /**
-     * CANCEL
-     */
-    CANCEL,
-    /**
-     * AUTH
-     */
-    AUTHORIZATION,
-    /**
-     * VOID
-     */
-    VOID
+    {
+            PAYMENT,
+            REFUND,
+            CAPTURE,
+            CANCEL,
+            AUTHORIZATION,
+            VOID,
+    }
 }

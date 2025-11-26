@@ -1,19 +1,33 @@
-﻿using System;
-
-
+using System;
+using System.Collections.Generic;
+    
 namespace com.alipay.ams.api.entities
 {
-    public class PaymentFactor
-    { 
-        public bool? IsPaymentEvaluation { get; set; }
 
-        public PresentmentMode PresentmentMode { get; set; }
+public class PaymentFactor
+    {
 
-        public String CaptureMode { get; set; }
+        public PaymentFactor() { }
 
-        public bool? IsAuthorization { get; set; }
+        
 
+        public PaymentFactor( bool? isPaymentEvaluation , InStorePaymentScenario inStorePaymentScenario , PresentmentMode presentmentMode , string captureMode , bool? isAuthorization)
+        {
+            this.IsPaymentEvaluation = isPaymentEvaluation;
+            this.InStorePaymentScenario = inStorePaymentScenario;
+            this.PresentmentMode = presentmentMode;
+            this.CaptureMode = captureMode;
+            this.IsAuthorization = isAuthorization;
+        }
 
-        public InStorePaymentScenario InStorePaymentScenario { get; set; }
+            public bool? IsPaymentEvaluation { get; set; }
+            public InStorePaymentScenario InStorePaymentScenario { get; set; }
+            public PresentmentMode PresentmentMode { get; set; }
+            public string CaptureMode { get; set; }
+            public bool? IsAuthorization { get; set; }
+
+        
+
     }
+
 }
