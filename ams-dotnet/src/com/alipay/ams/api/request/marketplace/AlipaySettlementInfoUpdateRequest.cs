@@ -1,23 +1,35 @@
-using ams_dotnet.com.alipay.ams.api.response.marketplace;
-using com.alipay.ams.api.entities;
+using com.alipay.ams.api.response.marketplace;
 using com.alipay.ams.api.request;
-
-namespace com.alipay.ams.api.request.marketplace;
-
-public class AlipaySettlementInfoUpdateRequest:AMSRequest<AlipaySettlementInfoUpdateResponse>
+using com.alipay.ams.api.entities;
+using System;
+using System.Collections.Generic;
+    
+namespace com.alipay.ams.api.request.marketplace
 {
-    public string UpdateRequestId { get; set; }
-    public string ReferenceMerchantId { get; set; }
-    public string SettlementCurrency { get; set; }
-    public SettlementBankAccount SettlementBankAccount { get; set; }
-    
-    public override string GetRequestURI()
+
+public class AlipaySettlementInfoUpdateRequest : AMSRequest<AlipaySettlementInfoUpdateResponse>
     {
-        return AntomPathConstants.MARKETPLACE_SETTLEMENTINFO_UPDATE_PATH;
+
+        public AlipaySettlementInfoUpdateRequest() { }
+
+        
+
+        public AlipaySettlementInfoUpdateRequest( string updateRequestId , string referenceMerchantId , string settlementCurrency , SettlementBankAccount settlementBankAccount)
+        {
+            this.UpdateRequestId = updateRequestId;
+            this.ReferenceMerchantId = referenceMerchantId;
+            this.SettlementCurrency = settlementCurrency;
+            this.SettlementBankAccount = settlementBankAccount;
+        }
+
+            public string UpdateRequestId { get; set; }
+            public string ReferenceMerchantId { get; set; }
+            public string SettlementCurrency { get; set; }
+            public SettlementBankAccount SettlementBankAccount { get; set; }
+
+        public override string GetRequestURI(){ return "/ams/api/v1/merchants/settlementInfo/update"; } 
+
+
     }
-    
-    public override void validate()
-    {
-           
-    }
+
 }

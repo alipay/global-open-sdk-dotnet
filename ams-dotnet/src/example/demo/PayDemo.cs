@@ -1,8 +1,8 @@
 using System;
-using ams_dotnet.com.alipay.ams.api.request.subscription;
 using com.alipay.ams.api;
 using com.alipay.ams.api.entities;
 using com.alipay.ams.api.request;
+using com.alipay.ams.api.request.pay;
 
 namespace ams_dotnet.demo
 {

@@ -1,6 +1,4 @@
 using System;
-using ams_dotnet.com.alipay.ams.api.request.subscription;
-using ams_dotnet.com.alipay.ams.api.response.subscription;
 using com.alipay.ams.api;
 using com.alipay.ams.api.entities;
 using com.alipay.ams.api.request.subscription;

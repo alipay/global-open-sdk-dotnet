@@ -1,20 +1,29 @@
-using ams_dotnet.com.alipay.ams.api.response.dispute;
+using com.alipay.ams.api.response.dispute;
+using com.alipay.ams.api.request;
 using com.alipay.ams.api.entities;
-
-namespace com.alipay.ams.api.request.dispute;
-
-public class AlipayAcceptDisputeRequest:AMSRequest<AlipayAcceptDisputeResponse>
+using System;
+using System.Collections.Generic;
+    
+namespace com.alipay.ams.api.request.dispute
 {
-    public string DisputeId { get; set; }
-    
-    
-    public override string GetRequestURI()
+
+public class AlipayAcceptDisputeRequest : AMSRequest<AlipayAcceptDisputeResponse>
     {
-        return AntomPathConstants.ACCEPT_DISPUTE_PATH;
+
+        public AlipayAcceptDisputeRequest() { }
+
+        
+
+        public AlipayAcceptDisputeRequest( string disputeId)
+        {
+            this.DisputeId = disputeId;
+        }
+
+            public string DisputeId { get; set; }
+
+        public override string GetRequestURI(){ return "/ams/api/v1/payments/acceptDispute"; } 
+
+
     }
-    
-    public override void validate()
-    {
-           
-    }
+
 }

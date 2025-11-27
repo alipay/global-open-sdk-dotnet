@@ -1,25 +1,48 @@
-using System;
 using com.alipay.ams.api.entities;
-using com.alipay.ams.api.response;
-
-namespace ams_dotnet.com.alipay.ams.api.response.pay
+using System;
+using System.Collections.Generic;
+    
+namespace com.alipay.ams.api.response.pay
 {
-    public class AlipayInquiryRefundResponse : AMSResponse
+
+public class AlipayInquiryRefundResponse : AMSResponse
     {
-        public string RefundId { get; set; }
-        public string RefundRequestId { get; set; }
-        public Amount RefundAmount { get; set; }
-        public TransactionStatusType RefundStatus { get; set; }
-        public string RefundTime { get; set; }
-        public Amount GrossSettlementAmount { get; set; }
-        public Quote SettlementQuote { get; set; }
-        public AcquirerInfo AcquirerInfo { get; set; }
+
+        public AlipayInquiryRefundResponse() { }
+
         
-            
-        public CustomizedInfo CustomizedInfo { get; set; }
 
-        public string Arn { get; set; }
+        public AlipayInquiryRefundResponse( CustomizedInfo customizedInfo , string arn , Amount actualRefundAmount , Result result , string refundId , string refundRequestId , Amount refundAmount , TransactionStatusType refundStatus , string refundTime , Amount grossSettlementAmount , Quote settlementQuote , AcquirerInfo acquirerInfo)
+        {
+            this.CustomizedInfo = customizedInfo;
+            this.Arn = arn;
+            this.ActualRefundAmount = actualRefundAmount;
+            this.Result = result;
+            this.RefundId = refundId;
+            this.RefundRequestId = refundRequestId;
+            this.RefundAmount = refundAmount;
+            this.RefundStatus = refundStatus;
+            this.RefundTime = refundTime;
+            this.GrossSettlementAmount = grossSettlementAmount;
+            this.SettlementQuote = settlementQuote;
+            this.AcquirerInfo = acquirerInfo;
+        }
 
-        public Amount ActualRefundAmount { get; set; }
+            public CustomizedInfo CustomizedInfo { get; set; }
+            public string Arn { get; set; }
+            public Amount ActualRefundAmount { get; set; }
+            public Result Result { get; set; }
+            public string RefundId { get; set; }
+            public string RefundRequestId { get; set; }
+            public Amount RefundAmount { get; set; }
+            public TransactionStatusType RefundStatus { get; set; }
+            public string RefundTime { get; set; }
+            public Amount GrossSettlementAmount { get; set; }
+            public Quote SettlementQuote { get; set; }
+            public AcquirerInfo AcquirerInfo { get; set; }
+
+        
+
     }
+
 }

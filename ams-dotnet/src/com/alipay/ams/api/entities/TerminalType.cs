@@ -1,11 +1,14 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
-using System.Text;
-
+    
 namespace com.alipay.ams.api.entities
 {
-    public enum TerminalType
+
+public enum TerminalType
     {
-        WEB, WAP, APP, MINI_AP
+            WEB,
+            WAP,
+            APP,
+            MINI_APP,
     }
 }

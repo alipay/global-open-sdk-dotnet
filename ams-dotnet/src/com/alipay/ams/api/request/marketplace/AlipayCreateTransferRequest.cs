@@ -1,21 +1,33 @@
-using ams_dotnet.com.alipay.ams.api.response.marketplace;
+using com.alipay.ams.api.response.marketplace;
+using com.alipay.ams.api.request;
 using com.alipay.ams.api.entities;
-
-namespace com.alipay.ams.api.request.marketplace;
-
-public class AlipayCreateTransferRequest:AMSRequest<AlipayCreateTransferResponse>
+using System;
+using System.Collections.Generic;
+    
+namespace com.alipay.ams.api.request.marketplace
 {
-    public string TransferRequestId { get; set; }
-    public TransferFromDetail TransferFromDetail { get; set; }
-    public TransferToDetail TransferToDetail { get; set; }
-    
-    public override string GetRequestURI()
+
+public class AlipayCreateTransferRequest : AMSRequest<AlipayCreateTransferResponse>
     {
-        return AntomPathConstants.MARKETPLACE_CREATETRANSFER_PATH;
+
+        public AlipayCreateTransferRequest() { }
+
+        
+
+        public AlipayCreateTransferRequest( string transferRequestId , TransferFromDetail transferFromDetail , TransferToDetail transferToDetail)
+        {
+            this.TransferRequestId = transferRequestId;
+            this.TransferFromDetail = transferFromDetail;
+            this.TransferToDetail = transferToDetail;
+        }
+
+            public string TransferRequestId { get; set; }
+            public TransferFromDetail TransferFromDetail { get; set; }
+            public TransferToDetail TransferToDetail { get; set; }
+
+        public override string GetRequestURI(){ return "/ams/api/v1/funds/createTransfer"; } 
+
+
     }
-    
-    public override void validate()
-    {
-           
-    }
+
 }

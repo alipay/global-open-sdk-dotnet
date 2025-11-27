@@ -1,7 +1,19 @@
-namespace com.alipay.ams.api.entities;
+using System;
+using System.Collections.Generic;
+    
+namespace com.alipay.ams.api.entities
+{
 
 public enum PassengerIdType
-{
-    PASSPORT, NATIONAL_ID_CARD, DRIVER_LICENSE, MILITARY_ID, GREEN_CARD, TRAVEL_DOCUMENT, ALIEN_REGISTRATION_CARD, BIRTH_CERTIFICATE, OTHERS
-
+    {
+            PASSPORT,
+            NATIONAL_ID_CARD,
+            DRIVER_LICENSE,
+            MILITARY_ID,
+            GREEN_CARD,
+            TRAVEL_DOCUMENT,
+            ALIEN_REGISTRATION_CARD,
+            BIRTH_CERTIFICATE,
+            OTHERS,
+    }
 }
