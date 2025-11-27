@@ -1,8 +1,13 @@
-namespace com.alipay.ams.api.entities;
+using System;
+using System.Collections.Generic;
+    
+namespace com.alipay.ams.api.entities
+{
 
 public enum ClassType
-{
-    FIRSTLEVEL,
-    SECONDLEVEL,
-    THIRDLEVEL,
+    {
+            FIRSTLEVEL,
+            SECONDLEVEL,
+            THIRDLEVEL,
+    }
 }

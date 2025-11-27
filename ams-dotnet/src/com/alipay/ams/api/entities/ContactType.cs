@@ -1,8 +1,13 @@
-namespace com.alipay.ams.api.entities;
+using System;
+using System.Collections.Generic;
+    
+namespace com.alipay.ams.api.entities
+{
 
 public enum ContactType
-{
-    EMAIL,
-    PHONE_NO,
-    COMMERCIAL_PHONE_NO,
+    {
+            EMAIL,
+            PHONE_NO,
+            COMMERCIAL_PHONE_NO,
+    }
 }

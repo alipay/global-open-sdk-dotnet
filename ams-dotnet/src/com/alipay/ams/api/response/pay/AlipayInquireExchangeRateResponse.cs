@@ -1,10 +1,28 @@
-using System.Collections;
 using com.alipay.ams.api.entities;
-using com.alipay.ams.api.response;
-
-namespace ams_dotnet.com.alipay.ams.api.response.pay;
+using System;
+using System.Collections.Generic;
+    
+namespace com.alipay.ams.api.response.pay
+{
 
 public class AlipayInquireExchangeRateResponse : AMSResponse
-{
-    public Quote[] Quotes { get; set; }
+    {
+
+        public AlipayInquireExchangeRateResponse() { }
+
+        
+
+        public AlipayInquireExchangeRateResponse( Quote[] quotes , Result result)
+        {
+            this.Quotes = quotes;
+            this.Result = result;
+        }
+
+            public Quote[] Quotes { get; set; }
+            public Result Result { get; set; }
+
+        
+
+    }
+
 }
