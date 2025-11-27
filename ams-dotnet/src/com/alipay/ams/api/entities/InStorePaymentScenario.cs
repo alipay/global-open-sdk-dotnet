@@ -1,7 +1,13 @@
-﻿namespace com.alipay.ams.api.entities
+using System;
+using System.Collections.Generic;
+    
+namespace com.alipay.ams.api.entities
 {
-    public enum InStorePaymentScenario
+
+public enum InStorePaymentScenario
     {
-        PaymentCode, OrderCode, EntryCode
+            PaymentCode,
+            OrderCode,
+            EntryCode,
     }
 }
