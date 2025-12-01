@@ -12,7 +12,7 @@ public class AlipayInquiryRefundResponse : AMSResponse
 
         
 
-        public AlipayInquiryRefundResponse( CustomizedInfo customizedInfo , string arn , Amount actualRefundAmount , Result result , string refundId , string refundRequestId , Amount refundAmount , TransactionStatusType refundStatus , string refundTime , Amount grossSettlementAmount , Quote settlementQuote , AcquirerInfo acquirerInfo)
+        public AlipayInquiryRefundResponse( CustomizedInfo customizedInfo , string arn , Amount actualRefundAmount , Result result , string refundId , string refundRequestId , Amount refundAmount , TransactionStatusType refundStatus , string refundTime , Amount grossSettlementAmount , Quote settlementQuote , AcquirerInfo acquirerInfo , string rrn)
         {
             this.CustomizedInfo = customizedInfo;
             this.Arn = arn;
@@ -26,6 +26,7 @@ public class AlipayInquiryRefundResponse : AMSResponse
             this.GrossSettlementAmount = grossSettlementAmount;
             this.SettlementQuote = settlementQuote;
             this.AcquirerInfo = acquirerInfo;
+            this.Rrn = rrn;
         }
 
             public CustomizedInfo CustomizedInfo { get; set; }
@@ -40,6 +41,7 @@ public class AlipayInquiryRefundResponse : AMSResponse
             public Amount GrossSettlementAmount { get; set; }
             public Quote SettlementQuote { get; set; }
             public AcquirerInfo AcquirerInfo { get; set; }
+            public string Rrn { get; set; }
 
         
 

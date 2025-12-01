@@ -11,7 +11,7 @@ public class PaymentResultInfo
 
         
 
-        public PaymentResultInfo( string refusalCodeRaw , string refusalReasonRaw , string merchantAdviceCode , AcquirerInfo acquirerInfo , string cardNo , string cardBrand , string cardToken , string issuingCountry , string funding , string paymentMethodRegion , ThreeDSResult threeDSResult , string avsResultRaw , string cvvResultRaw , string networkTransactionId , CreditPayPlan creditPayPlan , string cardholderName , string cardBin , string lastFour , string expiryMonth , string expiryYear , string cardCategory , string accountNo , string exemptionRequested , string credentialTypeUsed)
+        public PaymentResultInfo( string refusalCodeRaw , string refusalReasonRaw , string merchantAdviceCode , AcquirerInfo acquirerInfo , string cardNo , string cardBrand , string cardToken , string issuingCountry , string funding , string paymentMethodRegion , ThreeDSResult threeDSResult , string avsResultRaw , string cvvResultRaw , string networkTransactionId , CreditPayPlan creditPayPlan , string cardholderName , string cardBin , string lastFour , string expiryMonth , string expiryYear , string cardCategory , string accountNo , string exemptionRequested , string credentialTypeUsed , string rrn)
         {
             this.RefusalCodeRaw = refusalCodeRaw;
             this.RefusalReasonRaw = refusalReasonRaw;
@@ -37,6 +37,7 @@ public class PaymentResultInfo
             this.AccountNo = accountNo;
             this.ExemptionRequested = exemptionRequested;
             this.CredentialTypeUsed = credentialTypeUsed;
+            this.Rrn = rrn;
         }
 
             public string RefusalCodeRaw { get; set; }
@@ -63,6 +64,7 @@ public class PaymentResultInfo
             public string AccountNo { get; set; }
             public string ExemptionRequested { get; set; }
             public string CredentialTypeUsed { get; set; }
+            public string Rrn { get; set; }
 
         
 
