@@ -11,8 +11,9 @@ public class CardPaymentMethodDetail
 
         
 
-        public CardPaymentMethodDetail( string cardToken , string cardNo , CardBrand brand , CardBrand selectedCardBrand , string cardIssuer , string countryIssue , UserName instUserName , string expiryYear , string expiryMonth , Address billingAddress , string mask , string last4 , string paymentMethodDetailMetadata , string maskedCardNo , string fingerprint , string authenticationFlow , string funding , string avsResultRaw , string cvvResultRaw , string bin , string issuerName , string issuingCountry , string lastFour , UserName cardholderName , string cvv , string dateOfBirth , string businessNo , string cardPasswordDigest , string cpf , string payerEmail , string networkTransactionId , bool? is3DSAuthentication , string request3DS , string scaExemptionIndicator , string enableAuthenticationUpgrade , MpiData mpiData)
+        public CardPaymentMethodDetail( string supportedBrands , string cardToken , string cardNo , CardBrand brand , CardBrand selectedCardBrand , string cardIssuer , string countryIssue , UserName instUserName , string expiryYear , string expiryMonth , Address billingAddress , string mask , string last4 , string paymentMethodDetailMetadata , string maskedCardNo , string fingerprint , string authenticationFlow , string funding , string avsResultRaw , string cvvResultRaw , string bin , string issuerName , string issuingCountry , string lastFour , UserName cardholderName , string cvv , string dateOfBirth , string businessNo , string cardPasswordDigest , string cpf , string payerEmail , string networkTransactionId , bool? is3DSAuthentication , string request3DS , string scaExemptionIndicator , string enableAuthenticationUpgrade , MpiData mpiData)
         {
+            this.SupportedBrands = supportedBrands;
             this.CardToken = cardToken;
             this.CardNo = cardNo;
             this.Brand = brand;
@@ -51,6 +52,7 @@ public class CardPaymentMethodDetail
             this.MpiData = mpiData;
         }
 
+            public string SupportedBrands { get; set; }
             public string CardToken { get; set; }
             public string CardNo { get; set; }
             public CardBrand Brand { get; set; }
