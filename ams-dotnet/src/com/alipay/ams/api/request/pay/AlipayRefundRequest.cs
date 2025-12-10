@@ -14,8 +14,9 @@ public class AlipayRefundRequest : AMSRequest<AlipayRefundResponse>
 
         
 
-        public AlipayRefundRequest( CustomizedInfo customizedInfo , string captureId , RefundToBankInfo refundToBankInfo , string refundRequestId , string paymentId , string referenceRefundId , Amount refundAmount , string refundReason , string refundNotifyUrl , bool? isAsyncRefund , string extendInfo , List<RefundDetail> refundDetails , string refundSourceAccountNo)
+        public AlipayRefundRequest( string metadata , CustomizedInfo customizedInfo , string captureId , RefundToBankInfo refundToBankInfo , string refundRequestId , string paymentId , string referenceRefundId , Amount refundAmount , string refundReason , string refundNotifyUrl , bool? isAsyncRefund , string extendInfo , List<RefundDetail> refundDetails , string refundSourceAccountNo)
         {
+            this.Metadata = metadata;
             this.CustomizedInfo = customizedInfo;
             this.CaptureId = captureId;
             this.RefundToBankInfo = refundToBankInfo;
@@ -31,6 +32,7 @@ public class AlipayRefundRequest : AMSRequest<AlipayRefundResponse>
             this.RefundSourceAccountNo = refundSourceAccountNo;
         }
 
+            public string Metadata { get; set; }
             public CustomizedInfo CustomizedInfo { get; set; }
             public string CaptureId { get; set; }
             public RefundToBankInfo RefundToBankInfo { get; set; }
