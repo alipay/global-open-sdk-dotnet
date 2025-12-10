@@ -14,8 +14,9 @@ public class AlipayPayRequest : AMSRequest<AlipayPayResponse>
 
         
 
-        public AlipayPayRequest( CustomizedInfo customizedInfo , Quote paymentQuote , AgreementInfo agreementInfo , SubscriptionInfo subscriptionInfo , Amount processingAmount , ProductCodeType productCode , string paymentRequestId , Order order , Amount paymentAmount , PaymentMethod paymentMethod , string paymentExpiryTime , string paymentRedirectUrl , string paymentNotifyUrl , PaymentFactor paymentFactor , SettlementStrategy settlementStrategy , CreditPayPlan creditPayPlan , string appId , string merchantRegion , string userRegion , Env env , PaymentMethod payToMethod , bool? isAuthorization , Merchant merchant , PaymentVerificationData paymentVerificationData , string extendInfo , string merchantAccountId , bool? dualOfflinePayment)
+        public AlipayPayRequest( string metadata , CustomizedInfo customizedInfo , Quote paymentQuote , AgreementInfo agreementInfo , SubscriptionInfo subscriptionInfo , Amount processingAmount , ProductCodeType productCode , string paymentRequestId , Order order , Amount paymentAmount , PaymentMethod paymentMethod , string paymentExpiryTime , string paymentRedirectUrl , string paymentNotifyUrl , PaymentFactor paymentFactor , SettlementStrategy settlementStrategy , CreditPayPlan creditPayPlan , string appId , string merchantRegion , string userRegion , Env env , PaymentMethod payToMethod , bool? isAuthorization , Merchant merchant , PaymentVerificationData paymentVerificationData , string extendInfo , string merchantAccountId , bool? dualOfflinePayment)
         {
+            this.Metadata = metadata;
             this.CustomizedInfo = customizedInfo;
             this.PaymentQuote = paymentQuote;
             this.AgreementInfo = agreementInfo;
@@ -45,6 +46,7 @@ public class AlipayPayRequest : AMSRequest<AlipayPayResponse>
             this.DualOfflinePayment = dualOfflinePayment;
         }
 
+            public string Metadata { get; set; }
             public CustomizedInfo CustomizedInfo { get; set; }
             public Quote PaymentQuote { get; set; }
             public AgreementInfo AgreementInfo { get; set; }
