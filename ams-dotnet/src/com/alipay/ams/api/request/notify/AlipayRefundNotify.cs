@@ -45,4 +45,6 @@ public class AlipayRefundNotify:AlipayNotify
     public string Arn { get; set; }
 
     public Amount ActualRefundAmount { get; set; }
+    
+    public string Metadata { get; set; }
 }

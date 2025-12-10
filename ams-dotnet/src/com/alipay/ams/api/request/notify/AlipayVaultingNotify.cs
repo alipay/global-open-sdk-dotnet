@@ -17,4 +17,6 @@ public class AlipayVaultingNotify:AlipayNotify
     public string VaultingCreateTime { get; set; }
 
     public AcquirerInfo AcquirerInfo { get; set; }
+    
+    public string Metadata { get; set; }
 }
