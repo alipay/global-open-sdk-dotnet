@@ -14,12 +14,14 @@ public class AlipayVaultingQueryRequest : AMSRequest<AlipayVaultingQueryResponse
 
         
 
-        public AlipayVaultingQueryRequest( string vaultingRequestId)
+        public AlipayVaultingQueryRequest( string vaultingRequestId , string merchantAccountId)
         {
             this.VaultingRequestId = vaultingRequestId;
+            this.MerchantAccountId = merchantAccountId;
         }
 
             public string VaultingRequestId { get; set; }
+            public string MerchantAccountId { get; set; }
 
         public override string GetRequestURI(){ return "/ams/api/v1/vaults/inquireVaulting"; } 
 

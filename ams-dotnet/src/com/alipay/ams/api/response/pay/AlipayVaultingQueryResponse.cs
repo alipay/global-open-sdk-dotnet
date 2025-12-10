@@ -12,7 +12,7 @@ public class AlipayVaultingQueryResponse : AMSResponse
 
         
 
-        public AlipayVaultingQueryResponse( Result result , string vaultingRequestId , string normalUrl , string schemeUrl , string applinkUrl , string vaultingStatus , PaymentMethodDetail paymentMethodDetail)
+        public AlipayVaultingQueryResponse( Result result , string vaultingRequestId , string normalUrl , string schemeUrl , string applinkUrl , string vaultingStatus , PaymentMethodDetail paymentMethodDetail , string metadata)
         {
             this.Result = result;
             this.VaultingRequestId = vaultingRequestId;
@@ -21,6 +21,7 @@ public class AlipayVaultingQueryResponse : AMSResponse
             this.ApplinkUrl = applinkUrl;
             this.VaultingStatus = vaultingStatus;
             this.PaymentMethodDetail = paymentMethodDetail;
+            this.Metadata = metadata;
         }
 
             public Result Result { get; set; }
@@ -30,6 +31,7 @@ public class AlipayVaultingQueryResponse : AMSResponse
             public string ApplinkUrl { get; set; }
             public string VaultingStatus { get; set; }
             public PaymentMethodDetail PaymentMethodDetail { get; set; }
+            public string Metadata { get; set; }
 
         
 
