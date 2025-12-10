@@ -14,8 +14,9 @@ public class AlipayAuthApplyTokenRequest : AMSRequest<AlipayAuthApplyTokenRespon
 
         
 
-        public AlipayAuthApplyTokenRequest( GrantType grantType , CustomerBelongsTo customerBelongsTo , string authCode , string refreshToken , string extendInfo , string merchantRegion)
+        public AlipayAuthApplyTokenRequest( string merchantAccountId , GrantType grantType , CustomerBelongsTo customerBelongsTo , string authCode , string refreshToken , string extendInfo , string merchantRegion)
         {
+            this.MerchantAccountId = merchantAccountId;
             this.GrantType = grantType;
             this.CustomerBelongsTo = customerBelongsTo;
             this.AuthCode = authCode;
@@ -24,6 +25,7 @@ public class AlipayAuthApplyTokenRequest : AMSRequest<AlipayAuthApplyTokenRespon
             this.MerchantRegion = merchantRegion;
         }
 
+            public string MerchantAccountId { get; set; }
             public GrantType GrantType { get; set; }
             public CustomerBelongsTo CustomerBelongsTo { get; set; }
             public string AuthCode { get; set; }
