@@ -14,14 +14,16 @@ public class AlipayAuthRevokeTokenRequest : AMSRequest<AlipayAuthRevokeTokenResp
 
         
 
-        public AlipayAuthRevokeTokenRequest( string accessToken , string extendInfo)
+        public AlipayAuthRevokeTokenRequest( string accessToken , string extendInfo , string merchantAccountId)
         {
             this.AccessToken = accessToken;
             this.ExtendInfo = extendInfo;
+            this.MerchantAccountId = merchantAccountId;
         }
 
             public string AccessToken { get; set; }
             public string ExtendInfo { get; set; }
+            public string MerchantAccountId { get; set; }
 
         public override string GetRequestURI(){ return "/ams/api/v1/authorizations/revoke"; } 
 
