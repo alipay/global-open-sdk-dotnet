@@ -14,8 +14,10 @@ public class AlipayPaymentSessionRequest : AMSRequest<AlipayPaymentSessionRespon
 
         
 
-        public AlipayPaymentSessionRequest( string allowedPaymentMethodRegions , CustomizedInfo customizedInfo , Quote paymentQuote , Amount processingAmount , SubscriptionPlan subscriptionPlan , SubscriptionInfo subscriptionInfo , string userRegion , List<string> scopes , ProductCodeType productCode , string paymentRequestId , Order order , Amount paymentAmount , PaymentMethod paymentMethod , string paymentSessionExpiryTime , string paymentRedirectUrl , string paymentNotifyUrl , PaymentFactor paymentFactor , SettlementStrategy settlementStrategy , bool? enableInstallmentCollection , CreditPayPlan creditPayPlan , string merchantRegion , Env env , AgreementInfo agreementInfo , RiskData riskData , string productScene , List<PaymentMethod> savedPaymentMethods , string locale , AvailablePaymentMethod availablePaymentMethod , string paymentExpiryTime)
+        public AlipayPaymentSessionRequest( string merchantAccountId , string metadata , string allowedPaymentMethodRegions , CustomizedInfo customizedInfo , Quote paymentQuote , Amount processingAmount , SubscriptionPlan subscriptionPlan , SubscriptionInfo subscriptionInfo , string userRegion , List<string> scopes , ProductCodeType productCode , string paymentRequestId , Order order , Amount paymentAmount , PaymentMethod paymentMethod , string paymentSessionExpiryTime , string paymentRedirectUrl , string paymentNotifyUrl , PaymentFactor paymentFactor , SettlementStrategy settlementStrategy , bool? enableInstallmentCollection , CreditPayPlan creditPayPlan , string merchantRegion , Env env , AgreementInfo agreementInfo , RiskData riskData , string productScene , List<PaymentMethod> savedPaymentMethods , string locale , AvailablePaymentMethod availablePaymentMethod , string paymentExpiryTime)
         {
+            this.MerchantAccountId = merchantAccountId;
+            this.Metadata = metadata;
             this.AllowedPaymentMethodRegions = allowedPaymentMethodRegions;
             this.CustomizedInfo = customizedInfo;
             this.PaymentQuote = paymentQuote;
@@ -47,6 +49,8 @@ public class AlipayPaymentSessionRequest : AMSRequest<AlipayPaymentSessionRespon
             this.PaymentExpiryTime = paymentExpiryTime;
         }
 
+            public string MerchantAccountId { get; set; }
+            public string Metadata { get; set; }
             public string AllowedPaymentMethodRegions { get; set; }
             public CustomizedInfo CustomizedInfo { get; set; }
             public Quote PaymentQuote { get; set; }

@@ -11,14 +11,14 @@ public class AvailablePaymentMethod
 
         
 
-        public AvailablePaymentMethod( PaymentMethodTypeItem[] paymentMethodTypeList , Dictionary<string, Object> paymentMethodMetaData)
+        public AvailablePaymentMethod( Dictionary<string, Object> paymentMethodMetaData , PaymentMethodTypeItem[] paymentMethodTypeList)
         {
-            this.PaymentMethodTypeList = paymentMethodTypeList;
             this.PaymentMethodMetaData = paymentMethodMetaData;
+            this.PaymentMethodTypeList = paymentMethodTypeList;
         }
 
-            public PaymentMethodTypeItem[] PaymentMethodTypeList { get; set; }
             public Dictionary<string, Object> PaymentMethodMetaData { get; set; }
+            public PaymentMethodTypeItem[] PaymentMethodTypeList { get; set; }
 
         
 
