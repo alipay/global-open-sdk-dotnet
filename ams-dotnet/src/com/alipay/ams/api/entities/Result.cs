@@ -11,7 +11,7 @@ public class Result
 
         
 
-        public Result( string resultCode , ResultStatusType resultStatus , string resultMessage)
+        public Result( string resultCode , Object resultStatus , string resultMessage)
         {
             this.ResultCode = resultCode;
             this.ResultStatus = resultStatus;
@@ -19,7 +19,7 @@ public class Result
         }
 
             public string ResultCode { get; set; }
-            public ResultStatusType ResultStatus { get; set; }
+            public Object ResultStatus { get; set; }
             public string ResultMessage { get; set; }
 
         
