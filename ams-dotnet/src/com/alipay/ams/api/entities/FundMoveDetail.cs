@@ -11,14 +11,18 @@ public class FundMoveDetail
 
         
 
-        public FundMoveDetail( string memo , string referenceTransactionId)
+        public FundMoveDetail( string memo , string referenceTransactionId , string payerAssetId , string beneficiaryAssetId)
         {
             this.Memo = memo;
             this.ReferenceTransactionId = referenceTransactionId;
+            this.PayerAssetId = payerAssetId;
+            this.BeneficiaryAssetId = beneficiaryAssetId;
         }
 
             public string Memo { get; set; }
             public string ReferenceTransactionId { get; set; }
+            public string PayerAssetId { get; set; }
+            public string BeneficiaryAssetId { get; set; }
 
         
 
