@@ -14,8 +14,9 @@ public class AlipayPayConsultRequest : AMSRequest<AlipayPayConsultResponse>
 
         
 
-        public AlipayPayConsultRequest( ProductCodeType productCode , Amount paymentAmount , string merchantRegion , string[] allowedPaymentMethodRegions , string[] allowedPaymentMethods , string[] blockedPaymentMethods , string region , string customerId , string referenceUserId , Env env , string extendInfo , string userRegion , PaymentFactor paymentFactor , SettlementStrategy settlementStrategy , Merchant merchant , string[] allowedPspRegions , Buyer buyer , string merchantAccountId)
+        public AlipayPayConsultRequest( PaymentEvaluation paymentEvaluation , ProductCodeType productCode , Amount paymentAmount , string merchantRegion , string[] allowedPaymentMethodRegions , string[] allowedPaymentMethods , string[] blockedPaymentMethods , string region , string customerId , string referenceUserId , Env env , string extendInfo , string userRegion , PaymentFactor paymentFactor , SettlementStrategy settlementStrategy , Merchant merchant , string[] allowedPspRegions , Buyer buyer , string merchantAccountId)
         {
+            this.PaymentEvaluation = paymentEvaluation;
             this.ProductCode = productCode;
             this.PaymentAmount = paymentAmount;
             this.MerchantRegion = merchantRegion;
@@ -36,6 +37,7 @@ public class AlipayPayConsultRequest : AMSRequest<AlipayPayConsultResponse>
             this.MerchantAccountId = merchantAccountId;
         }
 
+            public PaymentEvaluation PaymentEvaluation { get; set; }
             public ProductCodeType ProductCode { get; set; }
             public Amount PaymentAmount { get; set; }
             public string MerchantRegion { get; set; }
