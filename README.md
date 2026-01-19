@@ -1,7 +1,7 @@
 # Alipay AMS(Alipay Merchant Services) C# Bindings 
 ```
 Language：C#
-Releass ^2.1.14
+Releass ^2.1.15
 Copyright：Ant financial services group
 ```
 
