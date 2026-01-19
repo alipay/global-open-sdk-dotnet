@@ -14,7 +14,7 @@ public class AlipayInquireExchangeRateRequest : AMSRequest<AlipayInquireExchange
 
         
 
-        public AlipayInquireExchangeRateRequest( string merchantAccountId , string paymentCurrency , CurrencyPair[] currencyPairs , string sellCurrency , string buyCurrency , ProductCodeType productCode)
+        public AlipayInquireExchangeRateRequest( string merchantAccountId , string paymentCurrency , CurrencyPair[] currencyPairs , string sellCurrency , string buyCurrency , ProductCodeType productCode , RateType rateType)
         {
             this.MerchantAccountId = merchantAccountId;
             this.PaymentCurrency = paymentCurrency;
@@ -22,6 +22,7 @@ public class AlipayInquireExchangeRateRequest : AMSRequest<AlipayInquireExchange
             this.SellCurrency = sellCurrency;
             this.BuyCurrency = buyCurrency;
             this.ProductCode = productCode;
+            this.RateType = rateType;
         }
 
             public string MerchantAccountId { get; set; }
@@ -30,6 +31,7 @@ public class AlipayInquireExchangeRateRequest : AMSRequest<AlipayInquireExchange
             public string SellCurrency { get; set; }
             public string BuyCurrency { get; set; }
             public ProductCodeType ProductCode { get; set; }
+            public RateType RateType { get; set; }
 
         public override string GetRequestURI(){ return "/ams/api/v1/payments/inquireExchangeRate"; } 
 
