@@ -11,7 +11,7 @@ public class Leg
 
         
 
-        public Leg( string departureTime , string arrivalTime , Address departureAddress , Address arrivalAddress , string carrierName , string carrierNo , ClassType classType , string departureAirportCode , string arrivalAirportCode , string fareBasis , string couponNumber , string flightNumber)
+        public Leg( string departureTime , string arrivalTime , Address departureAddress , Address arrivalAddress , string carrierName , string carrierNo , ClassType classType , string departureAirportCode , string arrivalAirportCode , string fareBasis , string couponNumber , string flightNumber , string passengerNameRecord)
         {
             this.DepartureTime = departureTime;
             this.ArrivalTime = arrivalTime;
@@ -25,6 +25,7 @@ public class Leg
             this.FareBasis = fareBasis;
             this.CouponNumber = couponNumber;
             this.FlightNumber = flightNumber;
+            this.PassengerNameRecord = passengerNameRecord;
         }
 
             public string DepartureTime { get; set; }
@@ -39,6 +40,7 @@ public class Leg
             public string FareBasis { get; set; }
             public string CouponNumber { get; set; }
             public string FlightNumber { get; set; }
+            public string PassengerNameRecord { get; set; }
 
         
 

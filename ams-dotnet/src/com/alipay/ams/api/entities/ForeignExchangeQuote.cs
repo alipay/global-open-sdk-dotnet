@@ -1,0 +1,33 @@
+using System;
+using System.Collections.Generic;
+    
+namespace com.alipay.ams.api.entities
+{
+
+public class ForeignExchangeQuote
+    {
+
+        public ForeignExchangeQuote() { }
+
+        
+
+        public ForeignExchangeQuote( string exchangeRate , string sourceCurrency , string targetCurrency , string quoteTime , string quotePrice)
+        {
+            this.ExchangeRate = exchangeRate;
+            this.SourceCurrency = sourceCurrency;
+            this.TargetCurrency = targetCurrency;
+            this.QuoteTime = quoteTime;
+            this.QuotePrice = quotePrice;
+        }
+
+            public string ExchangeRate { get; set; }
+            public string SourceCurrency { get; set; }
+            public string TargetCurrency { get; set; }
+            public string QuoteTime { get; set; }
+            public string QuotePrice { get; set; }
+
+        
+
+    }
+
+}
