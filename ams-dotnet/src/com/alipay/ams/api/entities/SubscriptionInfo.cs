@@ -11,7 +11,7 @@ public class SubscriptionInfo
 
         
 
-        public SubscriptionInfo( string subscriptionDescription , string subscriptionStartTime , string subscriptionEndTime , PeriodRule periodRule , List<Trial> trials , string subscriptionNotifyUrl , string subscriptionExpiryTime)
+        public SubscriptionInfo( string subscriptionDescription , string subscriptionStartTime , string subscriptionEndTime , PeriodRule periodRule , List<Trial> trials , string subscriptionNotifyUrl , string subscriptionExpiryTime , bool? allowRetry , Amount maxAmountFloor)
         {
             this.SubscriptionDescription = subscriptionDescription;
             this.SubscriptionStartTime = subscriptionStartTime;
@@ -20,6 +20,8 @@ public class SubscriptionInfo
             this.Trials = trials;
             this.SubscriptionNotifyUrl = subscriptionNotifyUrl;
             this.SubscriptionExpiryTime = subscriptionExpiryTime;
+            this.AllowRetry = allowRetry;
+            this.MaxAmountFloor = maxAmountFloor;
         }
 
             public string SubscriptionDescription { get; set; }
@@ -29,6 +31,8 @@ public class SubscriptionInfo
             public List<Trial> Trials { get; set; }
             public string SubscriptionNotifyUrl { get; set; }
             public string SubscriptionExpiryTime { get; set; }
+            public bool? AllowRetry { get; set; }
+            public Amount MaxAmountFloor { get; set; }
 
         
 
