@@ -14,12 +14,14 @@ public class AlipaySubscriptionCreateRequest : AMSRequest<AlipaySubscriptionCrea
 
         
 
-        public AlipaySubscriptionCreateRequest( CustomizedInfo customizedInfo , string merchantAccountId , bool? allowAccumulate , Amount maxAccumulateAmount , string subscriptionRequestId , string subscriptionDescription , string subscriptionRedirectUrl , string subscriptionStartTime , string subscriptionEndTime , PeriodRule periodRule , string subscriptionExpiryTime , PaymentMethod paymentMethod , string subscriptionNotificationUrl , string paymentNotificationUrl , OrderInfo orderInfo , Amount paymentAmount , SettlementStrategy settlementStrategy , Env env , List<Trial> trials)
+        public AlipaySubscriptionCreateRequest( CustomizedInfo customizedInfo , string merchantAccountId , bool? allowAccumulate , Amount maxAccumulateAmount , bool? allowRetry , Amount maxAmountFloor , string subscriptionRequestId , string subscriptionDescription , string subscriptionRedirectUrl , string subscriptionStartTime , string subscriptionEndTime , PeriodRule periodRule , string subscriptionExpiryTime , PaymentMethod paymentMethod , string subscriptionNotificationUrl , string paymentNotificationUrl , OrderInfo orderInfo , Amount paymentAmount , SettlementStrategy settlementStrategy , Env env , List<Trial> trials)
         {
             this.CustomizedInfo = customizedInfo;
             this.MerchantAccountId = merchantAccountId;
             this.AllowAccumulate = allowAccumulate;
             this.MaxAccumulateAmount = maxAccumulateAmount;
+            this.AllowRetry = allowRetry;
+            this.MaxAmountFloor = maxAmountFloor;
             this.SubscriptionRequestId = subscriptionRequestId;
             this.SubscriptionDescription = subscriptionDescription;
             this.SubscriptionRedirectUrl = subscriptionRedirectUrl;
@@ -41,6 +43,8 @@ public class AlipaySubscriptionCreateRequest : AMSRequest<AlipaySubscriptionCrea
             public string MerchantAccountId { get; set; }
             public bool? AllowAccumulate { get; set; }
             public Amount MaxAccumulateAmount { get; set; }
+            public bool? AllowRetry { get; set; }
+            public Amount MaxAmountFloor { get; set; }
             public string SubscriptionRequestId { get; set; }
             public string SubscriptionDescription { get; set; }
             public string SubscriptionRedirectUrl { get; set; }
