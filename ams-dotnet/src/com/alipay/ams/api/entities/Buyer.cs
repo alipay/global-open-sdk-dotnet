@@ -11,7 +11,7 @@ public class Buyer
 
         
 
-        public Buyer( string referenceBuyerId , UserName buyerName , string buyerPhoneNo , string buyerEmail , string buyerRegistrationTime , bool? isAccountVerified , int? successfulOrderCount)
+        public Buyer( string referenceBuyerId , UserName buyerName , string buyerPhoneNo , string buyerEmail , string buyerRegistrationTime , bool? isAccountVerified , int? successfulOrderCount , string buyerPhoneNoContryCode)
         {
             this.ReferenceBuyerId = referenceBuyerId;
             this.BuyerName = buyerName;
@@ -20,6 +20,7 @@ public class Buyer
             this.BuyerRegistrationTime = buyerRegistrationTime;
             this.IsAccountVerified = isAccountVerified;
             this.SuccessfulOrderCount = successfulOrderCount;
+            this.BuyerPhoneNoContryCode = buyerPhoneNoContryCode;
         }
 
             public string ReferenceBuyerId { get; set; }
@@ -29,6 +30,7 @@ public class Buyer
             public string BuyerRegistrationTime { get; set; }
             public bool? IsAccountVerified { get; set; }
             public int? SuccessfulOrderCount { get; set; }
+            public string BuyerPhoneNoContryCode { get; set; }
 
         
 
