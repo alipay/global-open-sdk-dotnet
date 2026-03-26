@@ -25,7 +25,7 @@ public class AlipayInquiryBalanceRequest : AMSRequest<AlipayInquiryBalanceRespon
             public string Accesstoken { get; set; }
             public string CustomerId { get; set; }
 
-        public override string GetRequestURI(){ return "/ams/v1/aba/accounts/inquiryBalance"; } 
+        public override string GetRequestURI(){ return "/ams/api/v1/aba/accounts/inquiryBalance"; } 
 
 
     }
