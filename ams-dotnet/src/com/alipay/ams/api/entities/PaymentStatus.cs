@@ -4,10 +4,9 @@ using System.Collections.Generic;
 namespace com.alipay.ams.api.entities
 {
 
-public enum SubscriptionStatus
+public enum PaymentStatus
     {
-            ACTIVE,
-            CANCELLED,
-            TERMINATED,
+            SUCCESS,
+            FAIL,
     }
 }
