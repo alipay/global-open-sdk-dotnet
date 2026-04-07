@@ -21,7 +21,7 @@ public class AlipayInquiryRateRequest : AMSRequest<AlipayInquiryRateResponse>
 
             public List<InquiryRateCondition> RateConditionList { get; set; }
 
-        public override string GetRequestURI(){ return "/ams/v1/aba/funds/inquireRate"; } 
+        public override string GetRequestURI(){ return "/ams/api/v1/aba/funds/inquireRate"; } 
 
 
     }
