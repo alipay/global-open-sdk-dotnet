@@ -21,7 +21,7 @@ public class AlipayInquireAvailableQuotaRequest : AMSRequest<AlipayInquireAvaila
 
             public string Currency { get; set; }
 
-        public override string GetRequestURI(){ return "/ams/v1/aba/account/inquireAvailableQuota"; } 
+        public override string GetRequestURI(){ return "/ams/api/v1/aba/account/inquireAvailableQuota"; } 
 
 
     }

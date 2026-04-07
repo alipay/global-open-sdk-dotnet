@@ -25,7 +25,7 @@ public class AlipayCreateQuoteRequest : AMSRequest<AlipayCreateQuoteResponse>
             public Amount SellAmount { get; set; }
             public string ExchangeTradeType { get; set; }
 
-        public override string GetRequestURI(){ return "/ams/v1/aba/funds/createQuote"; } 
+        public override string GetRequestURI(){ return "/ams/api/v1/aba/funds/createQuote"; } 
 
 
     }
