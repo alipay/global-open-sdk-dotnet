@@ -14,7 +14,7 @@ public class AlipaySubscriptionUpdateRequest : AMSRequest<AlipaySubscriptionUpda
 
         
 
-        public AlipaySubscriptionUpdateRequest( string subscriptionUpdateRequestId , string subscriptionId , string subscriptionDescription , PeriodRule periodRule , Amount paymentAmount , string subscriptionEndTime , OrderInfo orderInfo)
+        public AlipaySubscriptionUpdateRequest( string subscriptionUpdateRequestId , string subscriptionId , string subscriptionDescription , PeriodRule periodRule , Amount paymentAmount , string subscriptionEndTime , OrderInfo orderInfo , ProrationSettings prorationSettings , string nextSubscriptionDate)
         {
             this.SubscriptionUpdateRequestId = subscriptionUpdateRequestId;
             this.SubscriptionId = subscriptionId;
@@ -23,6 +23,8 @@ public class AlipaySubscriptionUpdateRequest : AMSRequest<AlipaySubscriptionUpda
             this.PaymentAmount = paymentAmount;
             this.SubscriptionEndTime = subscriptionEndTime;
             this.OrderInfo = orderInfo;
+            this.ProrationSettings = prorationSettings;
+            this.NextSubscriptionDate = nextSubscriptionDate;
         }
 
             public string SubscriptionUpdateRequestId { get; set; }
@@ -32,6 +34,8 @@ public class AlipaySubscriptionUpdateRequest : AMSRequest<AlipaySubscriptionUpda
             public Amount PaymentAmount { get; set; }
             public string SubscriptionEndTime { get; set; }
             public OrderInfo OrderInfo { get; set; }
+            public ProrationSettings ProrationSettings { get; set; }
+            public string NextSubscriptionDate { get; set; }
 
         public override string GetRequestURI(){ return "/ams/api/v1/subscriptions/update"; } 
 
