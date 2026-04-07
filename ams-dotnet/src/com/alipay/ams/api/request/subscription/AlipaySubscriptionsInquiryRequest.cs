@@ -23,7 +23,7 @@ public class AlipaySubscriptionsInquiryRequest : AMSRequest<AlipaySubscriptionsI
             public string SubscriptionId { get; set; }
             public string SubscriptionRequestId { get; set; }
 
-        public override string GetRequestURI(){ return "/ams/v1/subscriptions/inquiry"; } 
+        public override string GetRequestURI(){ return "/ams/api/v1/subscriptions/inquiry"; } 
 
 
     }

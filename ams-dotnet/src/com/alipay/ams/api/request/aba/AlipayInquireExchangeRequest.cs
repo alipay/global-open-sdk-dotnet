@@ -21,7 +21,7 @@ public class AlipayInquireExchangeRequest : AMSRequest<AlipayInquireExchangeResp
 
             public string ExchangeRequestId { get; set; }
 
-        public override string GetRequestURI(){ return "/ams/v1/aba/funds/inquireExchange"; } 
+        public override string GetRequestURI(){ return "/ams/api/v1/aba/funds/inquireExchange"; } 
 
 
     }
