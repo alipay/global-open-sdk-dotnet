@@ -11,7 +11,7 @@ public class PaymentResultInfo
 
         
 
-        public PaymentResultInfo( string issuerName , string refusalCodeRaw , string refusalReasonRaw , string merchantAdviceCode , AcquirerInfo acquirerInfo , string cardNo , string cardBrand , string cardToken , string issuingCountry , string funding , string paymentMethodRegion , ThreeDSResult threeDSResult , string avsResultRaw , string cvvResultRaw , string networkTransactionId , CreditPayPlan creditPayPlan , string cardholderName , string cardBin , string lastFour , string expiryMonth , string expiryYear , string cardCategory , string accountNo , string exemptionRequested , string credentialTypeUsed , string rrn , string userAuthorizationStatus)
+        public PaymentResultInfo( string issuerName , string refusalCodeRaw , string refusalReasonRaw , string merchantAdviceCode , AcquirerInfo acquirerInfo , string cardNo , string cardBrand , string cardToken , string issuingCountry , string funding , string paymentMethodRegion , ThreeDSResult threeDSResult , string avsResultRaw , string cvvResultRaw , string networkTransactionId , CreditPayPlan creditPayPlan , string cardholderName , string cardBin , string lastFour , string expiryMonth , string expiryYear , string cardCategory , string accountNo , string exemptionRequested , string credentialTypeUsed , string rrn , string userAuthorizationStatus , string authorizationCode)
         {
             this.IssuerName = issuerName;
             this.RefusalCodeRaw = refusalCodeRaw;
@@ -40,6 +40,7 @@ public class PaymentResultInfo
             this.CredentialTypeUsed = credentialTypeUsed;
             this.Rrn = rrn;
             this.UserAuthorizationStatus = userAuthorizationStatus;
+            this.AuthorizationCode = authorizationCode;
         }
 
             public string IssuerName { get; set; }
@@ -69,6 +70,7 @@ public class PaymentResultInfo
             public string CredentialTypeUsed { get; set; }
             public string Rrn { get; set; }
             public string UserAuthorizationStatus { get; set; }
+            public string AuthorizationCode { get; set; }
 
         
 
