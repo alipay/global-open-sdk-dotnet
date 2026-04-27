@@ -13,5 +13,6 @@ public enum PaymentMethodCategoryType
             ONLINE_BANKING,
             CARD,
             OTC,
+            VA,
     }
 }

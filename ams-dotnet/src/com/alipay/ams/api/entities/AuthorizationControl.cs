@@ -11,7 +11,7 @@ public class AuthorizationControl
 
         
 
-        public AuthorizationControl( string cardActiveTime , string cardCancelTime , List<string> allowedMerchantCategoryList , int? allowedAuthTimes , List<string> allowedCurrencies , CardLimitDetail cardLimitDetail , CardLimitInfo cardLimitInfo)
+        public AuthorizationControl( string cardActiveTime , string cardCancelTime , List<string> allowedMerchantCategoryList , int? allowedAuthTimes , List<string> allowedCurrencies , CardLimitDetail cardLimitDetail , CardLimitInfo cardLimitInfo , RefundPreference refundPreference)
         {
             this.CardActiveTime = cardActiveTime;
             this.CardCancelTime = cardCancelTime;
@@ -20,6 +20,7 @@ public class AuthorizationControl
             this.AllowedCurrencies = allowedCurrencies;
             this.CardLimitDetail = cardLimitDetail;
             this.CardLimitInfo = cardLimitInfo;
+            this.RefundPreference = refundPreference;
         }
 
             public string CardActiveTime { get; set; }
@@ -29,6 +30,7 @@ public class AuthorizationControl
             public List<string> AllowedCurrencies { get; set; }
             public CardLimitDetail CardLimitDetail { get; set; }
             public CardLimitInfo CardLimitInfo { get; set; }
+            public RefundPreference RefundPreference { get; set; }
 
         
 
