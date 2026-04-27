@@ -12,20 +12,20 @@ public class AlipayCreateTransferResponse : AMSResponse
 
         
 
-        public AlipayCreateTransferResponse( Result result , string transferId , string transferRequestId , TransferFromDetail transferFromDetail , TransferToDetail transferToDetail)
+        public AlipayCreateTransferResponse( Result result , string transferRequestId , string transferId , TransferFromDetailResponse transferFromDetail , TransferToDetailResponse transferToDetail)
         {
             this.Result = result;
-            this.TransferId = transferId;
             this.TransferRequestId = transferRequestId;
+            this.TransferId = transferId;
             this.TransferFromDetail = transferFromDetail;
             this.TransferToDetail = transferToDetail;
         }
 
             public Result Result { get; set; }
-            public string TransferId { get; set; }
             public string TransferRequestId { get; set; }
-            public TransferFromDetail TransferFromDetail { get; set; }
-            public TransferToDetail TransferToDetail { get; set; }
+            public string TransferId { get; set; }
+            public TransferFromDetailResponse TransferFromDetail { get; set; }
+            public TransferToDetailResponse TransferToDetail { get; set; }
 
         
 
