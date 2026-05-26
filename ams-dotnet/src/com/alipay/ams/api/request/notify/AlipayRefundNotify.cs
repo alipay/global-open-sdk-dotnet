@@ -22,7 +22,7 @@ public class AlipayRefundNotify:AlipayNotify
     /**
      * The refund amount that is initiated by the merchant
      */
-    public string RefundAmount { get; set; }
+    public Amount RefundAmount { get; set; }
 
     /**
      * The date and time when the refund reaches a final state of success or failure
