@@ -14,7 +14,7 @@ public class AlipayPayRequest : AMSRequest<AlipayPayResponse>
 
         
 
-        public AlipayPayRequest( string metadata , CustomizedInfo customizedInfo , Quote paymentQuote , AgreementInfo agreementInfo , SubscriptionInfo subscriptionInfo , Amount processingAmount , ProductCodeType productCode , string paymentRequestId , Order order , Amount paymentAmount , PaymentMethod paymentMethod , string paymentExpiryTime , string paymentRedirectUrl , string paymentNotifyUrl , PaymentFactor paymentFactor , SettlementStrategy settlementStrategy , CreditPayPlan creditPayPlan , string appId , string merchantRegion , string userRegion , Env env , PaymentMethod payToMethod , bool? isAuthorization , Merchant merchant , PaymentVerificationData paymentVerificationData , string extendInfo , string merchantAccountId , bool? dualOfflinePayment)
+        public AlipayPayRequest( string metadata , CustomizedInfo customizedInfo , Quote paymentQuote , AgreementInfo agreementInfo , SubscriptionInfo subscriptionInfo , Amount processingAmount , ProductCodeType productCode , string paymentRequestId , Order order , Amount paymentAmount , PaymentMethod paymentMethod , string paymentExpiryTime , string paymentRedirectUrl , string paymentNotifyUrl , PaymentFactor paymentFactor , SettlementStrategy settlementStrategy , CreditPayPlan creditPayPlan , string appId , string merchantRegion , string userRegion , Env env , PaymentMethod payToMethod , bool? isAuthorization , Merchant merchant , PaymentVerificationData paymentVerificationData , string extendInfo , string merchantAccountId , bool? dualOfflinePayment , string teaDrinkerPlusTest)
         {
             this.Metadata = metadata;
             this.CustomizedInfo = customizedInfo;
@@ -44,6 +44,7 @@ public class AlipayPayRequest : AMSRequest<AlipayPayResponse>
             this.ExtendInfo = extendInfo;
             this.MerchantAccountId = merchantAccountId;
             this.DualOfflinePayment = dualOfflinePayment;
+            this.TeaDrinkerPlusTest = teaDrinkerPlusTest;
         }
 
             public string Metadata { get; set; }
@@ -74,6 +75,7 @@ public class AlipayPayRequest : AMSRequest<AlipayPayResponse>
             public string ExtendInfo { get; set; }
             public string MerchantAccountId { get; set; }
             public bool? DualOfflinePayment { get; set; }
+            public string TeaDrinkerPlusTest { get; set; }
 
         public override string GetRequestURI(){ return "/ams/api/v1/payments/pay"; } 
 
