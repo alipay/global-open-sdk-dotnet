@@ -11,13 +11,11 @@ public class TransferFromDetail
 
         
 
-        public TransferFromDetail( PaymentMethod transferFromMethod , Amount transferFromAmount)
+        public TransferFromDetail( Amount transferFromAmount)
         {
-            this.TransferFromMethod = transferFromMethod;
             this.TransferFromAmount = transferFromAmount;
         }
 
-            public PaymentMethod TransferFromMethod { get; set; }
             public Amount TransferFromAmount { get; set; }
 
         
