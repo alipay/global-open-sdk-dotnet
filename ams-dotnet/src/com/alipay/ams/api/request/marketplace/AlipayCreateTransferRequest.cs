@@ -25,7 +25,7 @@ public class AlipayCreateTransferRequest : AMSRequest<AlipayCreateTransferRespon
             public TransferFromDetail TransferFromDetail { get; set; }
             public TransferToDetail TransferToDetail { get; set; }
 
-        public override string GetRequestURI(){ return "/ams/api/v1/funds/createTransfer"; } 
+        public override string GetRequestURI(){ return "/ams/api/v1/aba/funds/createTransfer"; } 
 
 
     }
