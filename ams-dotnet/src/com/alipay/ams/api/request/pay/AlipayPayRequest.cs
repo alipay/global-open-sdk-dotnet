@@ -14,7 +14,7 @@ public class AlipayPayRequest : AMSRequest<AlipayPayResponse>
 
         
 
-        public AlipayPayRequest( string metadata , CustomizedInfo customizedInfo , Quote paymentQuote , AgreementInfo agreementInfo , SubscriptionInfo subscriptionInfo , Amount processingAmount , ProductCodeType productCode , string paymentRequestId , Order order , Amount paymentAmount , PaymentMethod paymentMethod , string paymentExpiryTime , string paymentRedirectUrl , string paymentNotifyUrl , PaymentFactor paymentFactor , SettlementStrategy settlementStrategy , CreditPayPlan creditPayPlan , string appId , string merchantRegion , string userRegion , Env env , PaymentMethod payToMethod , bool? isAuthorization , Merchant merchant , PaymentVerificationData paymentVerificationData , string extendInfo , string merchantAccountId , bool? dualOfflinePayment)
+        public AlipayPayRequest( string metadata , CustomizedInfo customizedInfo , Quote paymentQuote , AgreementInfo agreementInfo , SubscriptionInfo subscriptionInfo , Amount processingAmount , ProductCodeType productCode , string paymentRequestId , Order order , Amount paymentAmount , PaymentMethod paymentMethod , string paymentExpiryTime , string paymentRedirectUrl , string paymentNotifyUrl , PaymentFactor paymentFactor , SettlementStrategy settlementStrategy , CreditPayPlan creditPayPlan , string appId , string merchantRegion , string userRegion , Env env , PaymentMethod payToMethod , bool? isAuthorization , Merchant merchant , PaymentVerificationData paymentVerificationData , string extendInfo , string ordertestrequest , string merchantAccountId , bool? dualOfflinePayment)
         {
             this.Metadata = metadata;
             this.CustomizedInfo = customizedInfo;
@@ -42,6 +42,7 @@ public class AlipayPayRequest : AMSRequest<AlipayPayResponse>
             this.Merchant = merchant;
             this.PaymentVerificationData = paymentVerificationData;
             this.ExtendInfo = extendInfo;
+            this.Ordertestrequest = ordertestrequest;
             this.MerchantAccountId = merchantAccountId;
             this.DualOfflinePayment = dualOfflinePayment;
         }
@@ -72,6 +73,7 @@ public class AlipayPayRequest : AMSRequest<AlipayPayResponse>
             public Merchant Merchant { get; set; }
             public PaymentVerificationData PaymentVerificationData { get; set; }
             public string ExtendInfo { get; set; }
+            public string Ordertestrequest { get; set; }
             public string MerchantAccountId { get; set; }
             public bool? DualOfflinePayment { get; set; }
 
