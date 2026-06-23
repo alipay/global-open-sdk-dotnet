@@ -1,31 +1,31 @@
-﻿using System.Text.Json;
-using System.Text.Json.Serialization;
-using com.alipay.ams.api.entities;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Serialization;
 
 namespace com.alipay.ams.util
 {
     public class JsonSerializerOptionsFactory
     {
 
-        public static JsonSerializerOptions WriteIndented = new JsonSerializerOptions
+        public static readonly JsonSerializerSettings WriteIndented = new JsonSerializerSettings
         {
-            PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
-            IgnoreNullValues = true,
-            WriteIndented = true
+            ContractResolver = new CamelCasePropertyNamesContractResolver(),
+            NullValueHandling = NullValueHandling.Ignore,
+            Formatting = Formatting.Indented
         };
 
-        public static JsonSerializerOptions WriteNotIndented = new JsonSerializerOptions
+        public static readonly JsonSerializerSettings WriteNotIndented = new JsonSerializerSettings
         {
-            PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
-            IgnoreNullValues = false,
-            WriteIndented = false,
-            Converters = {  new SafeEnumConverterFactory() }
+            ContractResolver = new CamelCasePropertyNamesContractResolver(),
+            NullValueHandling = NullValueHandling.Include,
+            Formatting = Formatting.None,
+            Converters = { new SafeEnumConverter() }
         };
 
         static JsonSerializerOptionsFactory()
         {
-            WriteIndented.Converters.Add(new JsonStringEnumConverter());
-            WriteNotIndented.Converters.Add(new JsonStringEnumConverter());
+            WriteIndented.Converters.Add(new StringEnumConverter());
+            WriteNotIndented.Converters.Add(new StringEnumConverter());
         }
     }
 }

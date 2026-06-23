@@ -1,87 +1,46 @@
 namespace com.alipay.ams.util;
 
 using System;
-using System.Text.Json;
-using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 
-public class SafeEnumConverterFactory : JsonConverterFactory
+public class SafeEnumConverter : JsonConverter
 {
-    public override bool CanConvert(Type typeToConvert)
+    public override bool CanConvert(Type objectType)
     {
-        var type = Nullable.GetUnderlyingType(typeToConvert) ?? typeToConvert;
+        var type = Nullable.GetUnderlyingType(objectType) ?? objectType;
         return type.IsEnum;
     }
 
-    public override JsonConverter CreateConverter(Type typeToConvert, JsonSerializerOptions options)
+    public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
     {
-        var underlyingType = Nullable.GetUnderlyingType(typeToConvert);
-        var converterType = underlyingType == null
-            ? typeof(SafeEnumConverterInner<>).MakeGenericType(typeToConvert)
-            : typeof(SafeNullableEnumConverterInner<>).MakeGenericType(underlyingType);
+        if (reader.TokenType == JsonToken.Null)
+            return Nullable.GetUnderlyingType(objectType) != null ? null : Activator.CreateInstance(Nullable.GetUnderlyingType(objectType) ?? objectType);
 
-        return (JsonConverter)Activator.CreateInstance(converterType)!;
+        var type = Nullable.GetUnderlyingType(objectType) ?? objectType;
+
+        if (reader.TokenType == JsonToken.String)
+        {
+            var value = reader.Value.ToString();
+            if (Enum.TryParse(type, value, true, out var result))
+                return result;
+        }
+        else if (reader.TokenType == JsonToken.Integer)
+        {
+            int intValue = Convert.ToInt32(reader.Value);
+            if (Enum.IsDefined(type, intValue))
+                return Enum.ToObject(type, intValue);
+        }
+
+        return Nullable.GetUnderlyingType(objectType) != null ? null : Activator.CreateInstance(type);
     }
 
-    private class SafeEnumConverterInner<T> : JsonConverter<T> where T : struct, Enum
+    public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
     {
-        public override T Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        if (value == null)
         {
-            try
-            {
-                if (reader.TokenType == JsonTokenType.String)
-                {
-                    var value = reader.GetString();
-                    if (Enum.TryParse<T>(value, true, out var result))
-                        return result;
-                }
-                else if (reader.TokenType == JsonTokenType.Number)
-                {
-                    int intValue = reader.GetInt32();
-                    if (Enum.IsDefined(typeof(T), intValue))
-                        return (T)Enum.ToObject(typeof(T), intValue);
-                }
-            }
-            catch { }
-
-            return default; // 非可空枚举 → 返回默认值
+            writer.WriteNull();
+            return;
         }
-
-        public override void Write(Utf8JsonWriter writer, T value, JsonSerializerOptions options)
-        {
-            writer.WriteStringValue(value.ToString());
-        }
-    }
-
-    private class SafeNullableEnumConverterInner<T> : JsonConverter<T?> where T : struct, Enum
-    {
-        public override T? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
-        {
-            try
-            {
-                if (reader.TokenType == JsonTokenType.String)
-                {
-                    var value = reader.GetString();
-                    if (Enum.TryParse<T>(value, true, out var result))
-                        return result;
-                }
-                else if (reader.TokenType == JsonTokenType.Number)
-                {
-                    int intValue = reader.GetInt32();
-                    if (Enum.IsDefined(typeof(T), intValue))
-                        return (T)Enum.ToObject(typeof(T), intValue);
-                }
-            }
-            catch { }
-
-            return null; // 可空枚举 → 返回 null
-        }
-
-        public override void Write(Utf8JsonWriter writer, T? value, JsonSerializerOptions options)
-        {
-            if (value.HasValue)
-                writer.WriteStringValue(value.Value.ToString());
-            else
-                writer.WriteNullValue();
-        }
+        writer.WriteValue(value.ToString());
     }
 }

@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text.Json;
+using Newtonsoft.Json;
 using com.alipay.ams.api.response;
 using com.alipay.ams.util;
 
@@ -15,7 +15,7 @@ namespace com.alipay.ams.api.request
         public virtual String BuildBody()
         {
             validate();
-            return JsonSerializer.Serialize(this, this.GetType(), JsonSerializerOptionsFactory.WriteNotIndented);
+            return JsonConvert.SerializeObject(this, this.GetType(), JsonSerializerOptionsFactory.WriteNotIndented);
         }
 
         public virtual void validate(){}
@@ -56,7 +56,7 @@ namespace com.alipay.ams.api.request
 
         public override string ToString()
         {
-            return JsonSerializer.Serialize(this, this.GetType(), JsonSerializerOptionsFactory.WriteIndented);
+            return JsonConvert.SerializeObject(this, this.GetType(), JsonSerializerOptionsFactory.WriteIndented);
         }
         
         public string BuildRequestUrl(string clientId,string originPath)

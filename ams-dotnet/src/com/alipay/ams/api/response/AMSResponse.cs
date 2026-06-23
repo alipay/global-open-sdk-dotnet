@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Net.Http;
-using System.Text.Json;
+using Newtonsoft.Json;
 using com.alipay.ams.api.entities;
 using com.alipay.ams.util;
 
@@ -40,7 +40,7 @@ namespace com.alipay.ams.api.response
 
 
                         //3. So far so good. continue to parse body content.
-                        return JsonSerializer.Deserialize<TAMSResponse>(responseBody, JsonSerializerOptionsFactory.WriteNotIndented);
+                        return JsonConvert.DeserializeObject<TAMSResponse>(responseBody, JsonSerializerOptionsFactory.WriteNotIndented);
                         
                     }
 
@@ -51,7 +51,7 @@ namespace com.alipay.ams.api.response
 
         public override string ToString()
         {
-            return JsonSerializer.Serialize(this, this.GetType(), JsonSerializerOptionsFactory.WriteIndented);
+            return JsonConvert.SerializeObject(this, this.GetType(), JsonSerializerOptionsFactory.WriteIndented);
         }
 
     }

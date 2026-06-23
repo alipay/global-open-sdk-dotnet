@@ -1,7 +1,7 @@
 ﻿using com.alipay.ams.api.response.auth;
 using com.alipay.ams.util;
 using System;
-using System.Text.Json;
+using Newtonsoft.Json;
 
 
 namespace com.alipay.ams.api.request.auth
