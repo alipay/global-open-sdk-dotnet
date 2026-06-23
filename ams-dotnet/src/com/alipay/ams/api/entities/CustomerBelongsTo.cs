@@ -35,6 +35,6 @@ public enum CustomerBelongsTo
             BKASH,
             EASYPAISA,
             DIRECTDEBIT_YAPILY,
-            ANTIM_BIZ_ACCOUNT,
+            ANTOM_BIZ_ACCOUNT,
     }
 }

@@ -6,8 +6,9 @@
     <Version>2.1.24</Version>
     <Authors>wangzunjiao</Authors>
     <Company>antom</Company>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp8</TargetFramework>
+    <OutputType>Library</OutputType>
+    <TargetFramework>net45</TargetFramework>
+    <AssemblyName>ams-dotnet</AssemblyName>
     <RootNamespace>ams_dotnet</RootNamespace>
     <BaseDirectory>src</BaseDirectory>
   </PropertyGroup>

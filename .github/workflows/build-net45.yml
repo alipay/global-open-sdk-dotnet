@@ -1,0 +1,31 @@
+name: Build .NET 4.5 DLL
+
+on:
+  push:
+    branches: [jixiang_aba]
+  workflow_dispatch:
+
+jobs:
+  build-net45:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.x'
+
+      - name: Restore and Build
+        run: dotnet build -c Release
+        working-directory: ams-dotnet
+
+      - name: Upload DLL
+        uses: actions/upload-artifact@v4
+        with:
+          name: ams-dotnet-net45
+          path: |
+            ams-dotnet/bin/Release/net45/ams-dotnet.dll
+            ams-dotnet/bin/Release/net45/*.pdb
+          if-no-files-found: error
