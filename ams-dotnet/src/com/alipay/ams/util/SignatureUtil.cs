@@ -19,10 +19,7 @@ namespace com.alipay.ams.util
             string content = string.Format("POST {0}\n{1}.{2}.{3}", requestURI, clientId, requestTime,
                 requestBody);
 
-            AsymmetricKeyParameter keyParam = ImportPrivateKey(privateKey);
-
-            if (keyParam is AsymmetricCipherKeyPair pair)
-                keyParam = pair.Private;
+            var keyParam = ImportPrivateKey(privateKey);
 
             var rsaParams = DotNetUtilities.ToRSAParameters((RsaPrivateCrtKeyParameters)keyParam);
 
@@ -40,10 +37,7 @@ namespace com.alipay.ams.util
             string content = string.Format("POST {0}\n{1}.{2}.{3}", requestURI, clientId, responseTime,
                 responseBody);
 
-            AsymmetricKeyParameter keyParam = ImportPublicKey(alipayPublicKey);
-
-            if (keyParam is AsymmetricCipherKeyPair pair)
-                keyParam = pair.Public;
+            var keyParam = ImportPublicKey(alipayPublicKey);
 
             var rsaParams = DotNetUtilities.ToRSAParameters((RsaKeyParameters)keyParam);
 
@@ -70,7 +64,12 @@ namespace com.alipay.ams.util
                              FormatPemBase64(base64Key) +
                              "\n-----END RSA PRIVATE KEY-----";
                 using (var reader = new StringReader(pem))
-                    return new PemReader(reader).ReadObject();
+                {
+                    var obj = new PemReader(reader).ReadObject();
+                    if (obj is AsymmetricCipherKeyPair pemPair)
+                        return pemPair.Private;
+                    return (AsymmetricKeyParameter)obj;
+                }
             }
         }
 
@@ -89,7 +88,12 @@ namespace com.alipay.ams.util
                              FormatPemBase64(base64Key) +
                              "\n-----END PUBLIC KEY-----";
                 using (var reader = new StringReader(pem))
-                    return new PemReader(reader).ReadObject();
+                {
+                    var obj = new PemReader(reader).ReadObject();
+                    if (obj is AsymmetricCipherKeyPair pemPair)
+                        return pemPair.Public;
+                    return (AsymmetricKeyParameter)obj;
+                }
             }
         }
 

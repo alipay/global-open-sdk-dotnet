@@ -21,8 +21,11 @@ public class SafeEnumConverter : JsonConverter
         if (reader.TokenType == JsonToken.String)
         {
             var value = reader.Value.ToString();
-            if (Enum.TryParse(type, value, true, out var result))
-                return result;
+            object parsedObj;
+            if (Enum.TryParse(type, value, out parsedObj))
+                return parsedObj;
+            // Fallback case-insensitive
+            try { return Enum.Parse(type, value, true); } catch { }
         }
         else if (reader.TokenType == JsonToken.Integer)
         {

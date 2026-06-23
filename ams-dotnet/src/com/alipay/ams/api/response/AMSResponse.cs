@@ -28,7 +28,7 @@ namespace com.alipay.ams.api.response
                         string responseTime = ret.Headers.GetValues("response-time").FirstOrDefault();
                         string signature = ret.Headers.GetValues("signature").FirstOrDefault();
 
-                        string signatureToBeVerified = signature.Split("signature=")[1];
+                        string signatureToBeVerified = signature.Split(new string[] { "signature=" }, StringSplitOptions.None)[1];
 
                         // 2. Now we do signature verification.
                         bool signatureMatch = SignatureUtil.verify(requestURI, clientId, responseTime, alipayPublicKey, responseBody, signatureToBeVerified);
