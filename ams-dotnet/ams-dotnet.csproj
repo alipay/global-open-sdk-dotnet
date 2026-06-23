@@ -8,6 +8,7 @@
     <Company>antom</Company>
     <OutputType>Library</OutputType>
     <TargetFramework>net45</TargetFramework>
+    <LangVersion>10</LangVersion>
     <AssemblyName>ams-dotnet</AssemblyName>
     <RootNamespace>ams_dotnet</RootNamespace>
     <BaseDirectory>src</BaseDirectory>
