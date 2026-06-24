@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -8,6 +9,12 @@ namespace com.alipay.ams.api
 {
     public class DefaultAlipayClient
     {
+        static DefaultAlipayClient()
+        {
+            // .NET Framework 4.5 defaults to TLS 1.0; Alipay servers require TLS 1.2+
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11;
+        }
+
         public DefaultAlipayClient(
             string gatewayUrl,
             string clientId,
