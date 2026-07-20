@@ -14,7 +14,7 @@ public class AlipayInquiryStatementRequest : AMSRequest<AlipayInquiryStatementRe
 
         
 
-        public AlipayInquiryStatementRequest( string customerId , string accessToken , Object startTime , string endTime , List<string> transactionTypeList , List<string> currencyList , int? pageSize , int? pageNumber , string assetId)
+        public AlipayInquiryStatementRequest( string customerId , string accessToken , Object startTime , string endTime , List<string> transactionTypeList , List<string> currencyList , int? pageSize , int? pageNumber , string assetId , string fuzzyName)
         {
             this.CustomerId = customerId;
             this.AccessToken = accessToken;
@@ -25,6 +25,7 @@ public class AlipayInquiryStatementRequest : AMSRequest<AlipayInquiryStatementRe
             this.PageSize = pageSize;
             this.PageNumber = pageNumber;
             this.AssetId = assetId;
+            this.FuzzyName = fuzzyName;
         }
 
             public string CustomerId { get; set; }
@@ -36,6 +37,7 @@ public class AlipayInquiryStatementRequest : AMSRequest<AlipayInquiryStatementRe
             public int? PageSize { get; set; }
             public int? PageNumber { get; set; }
             public string AssetId { get; set; }
+            public string FuzzyName { get; set; }
 
         public override string GetRequestURI(){ return "/ams/api/v1/aba/accounts/inquiryStatement"; } 
 
