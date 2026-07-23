@@ -74,4 +74,14 @@ public class AlipayPayResultNotify:AlipayNotify
     public string SubscriptionOrderId { get; set; }
     public RetryInfo RetryInfo { get; set; }
 
+    /// <summary>
+    /// The updateAmount request ID. Returned when notifyType=UPDATE_AMOUNT_RESULT.
+    /// </summary>
+    public string UpdateRequestId { get; set; }
+
+    /// <summary>
+    /// The absolute expiry time of this pre-authorization. ISO 8601 format string.
+    /// </summary>
+    public string AuthExpiryTime { get; set; }
+
 }

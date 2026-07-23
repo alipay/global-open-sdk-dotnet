@@ -12,5 +12,6 @@ public enum TransactionType
             CANCEL,
             AUTHORIZATION,
             VOID,
+            INCREMENTAL,
     }
 }

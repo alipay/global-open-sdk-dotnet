@@ -11,7 +11,7 @@ public class Plan
 
         
 
-        public Plan( string interestRate , Amount minInstallmentAmount , Amount maxInstallmentAmount , string installmentNum , string interval , bool? enabled)
+        public Plan( string interestRate , Amount minInstallmentAmount , Amount maxInstallmentAmount , string installmentNum , string interval , bool? enabled , string extendInfo)
         {
             this.InterestRate = interestRate;
             this.MinInstallmentAmount = minInstallmentAmount;
@@ -19,6 +19,7 @@ public class Plan
             this.InstallmentNum = installmentNum;
             this.Interval = interval;
             this.Enabled = enabled;
+            this.ExtendInfo = extendInfo;
         }
 
             public string InterestRate { get; set; }
@@ -27,6 +28,7 @@ public class Plan
             public string InstallmentNum { get; set; }
             public string Interval { get; set; }
             public bool? Enabled { get; set; }
+            public string ExtendInfo { get; set; }
 
         
 
