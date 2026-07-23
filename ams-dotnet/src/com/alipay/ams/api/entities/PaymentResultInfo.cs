@@ -11,7 +11,7 @@ public class PaymentResultInfo
 
         
 
-        public PaymentResultInfo( string issuerName , string refusalCodeRaw , string refusalReasonRaw , string merchantAdviceCode , AcquirerInfo acquirerInfo , string cardNo , string cardBrand , string cardToken , string issuingCountry , string funding , string paymentMethodRegion , ThreeDSResult threeDSResult , string avsResultRaw , string cvvResultRaw , string networkTransactionId , CreditPayPlan creditPayPlan , string cardholderName , string cardBin , string lastFour , string expiryMonth , string expiryYear , string cardCategory , string accountNo , string exemptionRequested , string credentialTypeUsed , string rrn , string userAuthorizationStatus , string authorizationCode)
+        public PaymentResultInfo( string issuerName , string refusalCodeRaw , string refusalReasonRaw , string merchantAdviceCode , AcquirerInfo acquirerInfo , string cardNo , string cardBrand , string cardToken , string issuingCountry , string funding , string paymentMethodRegion , ThreeDSResult threeDSResult , string avsResultRaw , string cvvResultRaw , string networkTransactionId , CreditPayPlan creditPayPlan , string cardholderName , string cardBin , string lastFour , string expiryMonth , string expiryYear , string cardCategory , string accountNo , string exemptionRequested , string credentialTypeUsed , string rrn , string userAuthorizationStatus , string authorizationCode , bool? incrementalAuthorizationAvailable , bool? extendedAuthorizationAvailable , bool? refundOnAuthorizationAvailable)
         {
             this.IssuerName = issuerName;
             this.RefusalCodeRaw = refusalCodeRaw;
@@ -41,6 +41,9 @@ public class PaymentResultInfo
             this.Rrn = rrn;
             this.UserAuthorizationStatus = userAuthorizationStatus;
             this.AuthorizationCode = authorizationCode;
+            this.IncrementalAuthorizationAvailable = incrementalAuthorizationAvailable;
+            this.ExtendedAuthorizationAvailable = extendedAuthorizationAvailable;
+            this.RefundOnAuthorizationAvailable = refundOnAuthorizationAvailable;
         }
 
             public string IssuerName { get; set; }
@@ -71,6 +74,9 @@ public class PaymentResultInfo
             public string Rrn { get; set; }
             public string UserAuthorizationStatus { get; set; }
             public string AuthorizationCode { get; set; }
+            public bool? IncrementalAuthorizationAvailable { get; set; }
+            public bool? ExtendedAuthorizationAvailable { get; set; }
+            public bool? RefundOnAuthorizationAvailable { get; set; }
 
         
 
