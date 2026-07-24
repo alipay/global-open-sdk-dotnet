@@ -12,7 +12,7 @@ public class AlipayPayResponse : AMSResponse
 
         
 
-        public AlipayPayResponse( Result result , Amount processingAmount , string paymentRequestId , string paymentId , Amount paymentAmount , string paymentData , Amount actualPaymentAmount , Quote paymentQuote , string paymentTime , string paymentCreateTime , string authExpiryTime , Amount nonGuaranteeCouponValue , string paymentActionForm , PspCustomerInfo pspCustomerInfo , ChallengeActionForm challengeActionForm , RedirectActionForm redirectActionForm , OrderCodeForm orderCodeForm , Amount grossSettlementAmount , Quote settlementQuote , string extendInfo , string normalUrl , string schemeUrl , string applinkUrl , string appIdentifier , PaymentResultInfo paymentResultInfo , AcquirerInfo acquirerInfo , PromotionResult[] promotionResult)
+        public AlipayPayResponse( Result result , Amount processingAmount , string paymentRequestId , string paymentId , Amount paymentAmount , string paymentData , Amount actualPaymentAmount , Quote paymentQuote , string paymentTime , string paymentCreateTime , string authExpiryTime , Amount nonGuaranteeCouponValue , string paymentActionForm , PspCustomerInfo pspCustomerInfo , ChallengeActionForm challengeActionForm , RedirectActionForm redirectActionForm , OrderCodeForm orderCodeForm , Amount grossSettlementAmount , Quote settlementQuote , string extendInfo , string normalUrl , string schemeUrl , string applinkUrl , string appIdentifier , PaymentResultInfo paymentResultInfo , AcquirerInfo acquirerInfo , PromotionResult[] promotionResult , string subscriptionId , string status , string currentPeriodStart , string currentPeriodEnd)
         {
             this.Result = result;
             this.ProcessingAmount = processingAmount;
@@ -41,6 +41,10 @@ public class AlipayPayResponse : AMSResponse
             this.PaymentResultInfo = paymentResultInfo;
             this.AcquirerInfo = acquirerInfo;
             this.PromotionResult = promotionResult;
+            this.SubscriptionId = subscriptionId;
+            this.Status = status;
+            this.CurrentPeriodStart = currentPeriodStart;
+            this.CurrentPeriodEnd = currentPeriodEnd;
         }
 
             public Result Result { get; set; }
@@ -70,6 +74,10 @@ public class AlipayPayResponse : AMSResponse
             public PaymentResultInfo PaymentResultInfo { get; set; }
             public AcquirerInfo AcquirerInfo { get; set; }
             public PromotionResult[] PromotionResult { get; set; }
+            public string SubscriptionId { get; set; }
+            public string Status { get; set; }
+            public string CurrentPeriodStart { get; set; }
+            public string CurrentPeriodEnd { get; set; }
 
         
 
