@@ -104,7 +104,9 @@ namespace com.alipay.ams.api
         public string BuildRequestUrl(string originPath)
         {
 
-            if (ClientId != null && ClientId.StartsWith("SANDBOX_", StringComparison.Ordinal))
+            if (ClientId != null
+                && ClientId.StartsWith("SANDBOX_", StringComparison.Ordinal)
+                && !SandboxPathResolver.ShouldUseProductionPathInSandbox(originPath))
             {
                 originPath = originPath.Replace("/ams/api", "/ams/sandbox/api");
             }
@@ -117,11 +119,14 @@ namespace com.alipay.ams.api
         public string BuildRequestUri(string originPath)
         {
 
-            if (ClientId != null && ClientId.StartsWith("SANDBOX_", StringComparison.Ordinal))
+            if (ClientId != null
+                && ClientId.StartsWith("SANDBOX_", StringComparison.Ordinal)
+                && !SandboxPathResolver.ShouldUseProductionPathInSandbox(originPath))
             {
                 originPath = originPath.Replace("/ams/api", "/ams/sandbox/api");
             }
             return originPath;
         } 
+
     }
 }

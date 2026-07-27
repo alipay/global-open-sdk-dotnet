@@ -9,7 +9,6 @@ namespace com.alipay.ams.api.request
     public abstract class AMSRequest<TAMSResponse>
         where TAMSResponse : AMSResponse
     {
-
         public abstract string GetRequestURI();
 
         public virtual String BuildBody()
@@ -62,13 +61,16 @@ namespace com.alipay.ams.api.request
         public string BuildRequestUrl(string clientId,string originPath)
         {
 
-            if (clientId != null && clientId.StartsWith("SANDBOX_", StringComparison.Ordinal))
+            if (clientId != null
+                && clientId.StartsWith("SANDBOX_", StringComparison.Ordinal)
+                && !com.alipay.ams.api.SandboxPathResolver.ShouldUseProductionPathInSandbox(originPath))
             {
                 originPath = originPath.Replace("/ams/api", "/ams/sandbox/api");
             }
 
             return originPath;
         }
+
     }
 
     
