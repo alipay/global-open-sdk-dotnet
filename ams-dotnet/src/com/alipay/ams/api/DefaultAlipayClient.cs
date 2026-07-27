@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -8,6 +9,9 @@ namespace com.alipay.ams.api
 {
     public class DefaultAlipayClient
     {
+        private static readonly HashSet<string> ReservedHeaders = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
+        { "Signature", "client-id", "Request-Time", "Content-Type", "agent-token" };
+
         public DefaultAlipayClient(
             string gatewayUrl,
             string clientId,
@@ -52,6 +56,47 @@ namespace com.alipay.ams.api
 
             var ret = client.SendAsync(requestMessage).ConfigureAwait(false).GetAwaiter().GetResult(); ;
             
+
+            return AMSResponse.ParseResponse<TAMSResponse>(ret, BuildRequestUri(request.GetRequestURI()), this.ClientId,this.AlipayPublicKey);
+        }
+
+        public  TAMSResponse ExecuteWithHeaders<TAMSResponse>(request.AMSRequest<TAMSResponse> request, Dictionary<string, string> extraHeaders)
+            where TAMSResponse : AMSResponse
+        {
+            var requestUrl = BuildRequestUrl(request.GetRequestURI());
+
+            var requestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUrl );
+
+            var body = request.BuildBody();
+            var headers = request.BuildRequestHeader(this.ClientId,this.AgentToken,this.MerchantPrivateKey);
+
+
+            foreach (var header in headers)
+            {
+                requestMessage.Headers.Add(header.Key, header.Value);
+            }
+
+            if (extraHeaders != null)
+            {
+                foreach (var entry in extraHeaders)
+                {
+                    if (entry.Key == null)
+                    {
+                        continue;
+                    }
+                    if (!ReservedHeaders.Contains(entry.Key))
+                    {
+                        requestMessage.Headers.Add(entry.Key, entry.Value);
+                    }
+                }
+            }
+
+            requestMessage.Content = new ByteArrayContent(Encoding.UTF8.GetBytes(body));
+            requestMessage.Content.Headers.Add("Content-Type", "application/json; charset=UTF-8");
+
+
+            var ret = client.SendAsync(requestMessage).ConfigureAwait(false).GetAwaiter().GetResult(); ;
+
 
             return AMSResponse.ParseResponse<TAMSResponse>(ret, BuildRequestUri(request.GetRequestURI()), this.ClientId,this.AlipayPublicKey);
         }
