@@ -84,4 +84,9 @@ public class AlipayPayResultNotify:AlipayNotify
     /// </summary>
     public string AuthExpiryTime { get; set; }
 
+    /// <summary>
+    /// The tax calculation ID for billing.
+    /// </summary>
+    public string TaxCalculationId { get; set; }
+
 }
