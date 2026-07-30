@@ -10,7 +10,7 @@ namespace com.alipay.ams.api
     public class DefaultAlipayClient
     {
         private static readonly HashSet<string> ReservedHeaders = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
-        { "Signature", "client-id", "Request-Time", "Content-Type", "agent-token" };
+        { "Signature", "client-id", "Request-Time", "Content-Type", "agent-token", "User-Agent", "X-sdkVersion" };
 
         public DefaultAlipayClient(
             string gatewayUrl,
