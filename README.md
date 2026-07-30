@@ -1,7 +1,7 @@
 # Alipay AMS(Alipay Merchant Services) C# Bindings 
 ```
 Language：C#
-Releass ^2.1.29
+Release ^2.2.2
 Copyright：Ant financial services group
 ```
 
@@ -74,4 +74,3 @@ See [Digital signature](https://global.alipay.com/doc/ams/digital_signature) for
 |---|---|---|---|
 |2020/11/13|1.1|Add Cashier Payment and Auto Debit support.|YES|
 |2020/10/10|1.0|v1 release|-|
-

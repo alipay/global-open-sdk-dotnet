@@ -34,6 +34,7 @@ namespace com.alipay.ams.api.request
             
 
             headers.Add("request-time", requestTime);
+            headers.Add("User-Agent", com.alipay.ams.api.SdkVersion.UserAgent);
             headers.Add("X-sdkVersion", "ams-dotnet.20201113");
 
             Dictionary<String, String> extraHeaders = GetExtraHeaders();
