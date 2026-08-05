@@ -14,14 +14,14 @@ public class AlipayPriceInquireListRequest : AMSRequest<AlipayPriceInquireListRe
 
         
 
-        public AlipayPriceInquireListRequest( string productId , string pricingModel , bool? active , string startingAfter , string endingBefore , int? list , bool? includeTotal)
+        public AlipayPriceInquireListRequest( string productId , string pricingModel , bool? active , string startingAfter , string endingBefore , int? limit , bool? includeTotal)
         {
             this.ProductId = productId;
             this.PricingModel = pricingModel;
             this.Active = active;
             this.StartingAfter = startingAfter;
             this.EndingBefore = endingBefore;
-            this.List = list;
+            this.Limit = limit;
             this.IncludeTotal = includeTotal;
         }
 
@@ -30,7 +30,7 @@ public class AlipayPriceInquireListRequest : AMSRequest<AlipayPriceInquireListRe
             public bool? Active { get; set; }
             public string StartingAfter { get; set; }
             public string EndingBefore { get; set; }
-            public int? List { get; set; }
+            public int? Limit { get; set; }
             public bool? IncludeTotal { get; set; }
 
         public override string GetRequestURI(){ return "/ams/api/v1/billing/price/inquireList"; } 

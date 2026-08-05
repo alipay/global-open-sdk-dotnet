@@ -12,14 +12,14 @@ public class AlipayCreditGrantInquireListResponse : AMSResponse
 
         
 
-        public AlipayCreditGrantInquireListResponse( Result result , CreditGrant creditGrants)
+        public AlipayCreditGrantInquireListResponse( Result result , List<CreditGrant> creditGrants)
         {
             this.Result = result;
             this.CreditGrants = creditGrants;
         }
 
             public Result Result { get; set; }
-            public CreditGrant CreditGrants { get; set; }
+            public List<CreditGrant> CreditGrants { get; set; }
 
         
 

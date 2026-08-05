@@ -11,14 +11,14 @@ public class Tier
 
         
 
-        public Tier( int? upTo , Amount unitAmount , Amount flatAmount)
+        public Tier( long? upTo , Amount unitAmount , Amount flatAmount)
         {
             this.UpTo = upTo;
             this.UnitAmount = unitAmount;
             this.FlatAmount = flatAmount;
         }
 
-            public int? UpTo { get; set; }
+            public long? UpTo { get; set; }
             public Amount UnitAmount { get; set; }
             public Amount FlatAmount { get; set; }
 

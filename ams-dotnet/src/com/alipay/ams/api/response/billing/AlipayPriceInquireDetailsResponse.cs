@@ -12,7 +12,7 @@ public class AlipayPriceInquireDetailsResponse : AMSResponse
 
         
 
-        public AlipayPriceInquireDetailsResponse( Result result , string priceId , string productId , string name , string pricingModel , string usageType , string unitLabel , string meterId , Amount unitAmount , RecurringSettings recurring , bool? active , string tiersMode , List<Tier> tiers , Dictionary<string, string> metadata , string createdAt , string deactivatedAt , string updatedAt)
+        public AlipayPriceInquireDetailsResponse( Result result , string priceId , string productId , string name , string pricingModel , string usageType , string unitLabel , string meterId , Amount unitAmount , RecurringSettings recurring , bool? active , long? includedQuantity , string tiersMode , List<Tier> tiers , Dictionary<string, string> metadata , string createdAt , string deactivatedAt , string updatedAt)
         {
             this.Result = result;
             this.PriceId = priceId;
@@ -25,6 +25,7 @@ public class AlipayPriceInquireDetailsResponse : AMSResponse
             this.UnitAmount = unitAmount;
             this.Recurring = recurring;
             this.Active = active;
+            this.IncludedQuantity = includedQuantity;
             this.TiersMode = tiersMode;
             this.Tiers = tiers;
             this.Metadata = metadata;
@@ -44,6 +45,7 @@ public class AlipayPriceInquireDetailsResponse : AMSResponse
             public Amount UnitAmount { get; set; }
             public RecurringSettings Recurring { get; set; }
             public bool? Active { get; set; }
+            public long? IncludedQuantity { get; set; }
             public string TiersMode { get; set; }
             public List<Tier> Tiers { get; set; }
             public Dictionary<string, string> Metadata { get; set; }

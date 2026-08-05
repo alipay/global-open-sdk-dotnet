@@ -11,7 +11,7 @@ public class Price
 
         
 
-        public Price( string priceId , string productId , string name , string pricingModel , string usageType , string unitLabel , string meterId , Amount unitAmount , RecurringSettings recurring , bool? active , int? includedQuantity , string tiersMode , List<Tier> tiers , Dictionary<string, string> metadata , string createdAt , string deactivatedAt , string updatedAt)
+        public Price( string priceId , string productId , string name , string pricingModel , string usageType , string unitLabel , string meterId , Amount unitAmount , RecurringSettings recurring , bool? active , long? includedQuantity , string tiersMode , List<Tier> tiers , Dictionary<string, string> metadata , string createdAt , string deactivatedAt , string updatedAt)
         {
             this.PriceId = priceId;
             this.ProductId = productId;
@@ -42,7 +42,7 @@ public class Price
             public Amount UnitAmount { get; set; }
             public RecurringSettings Recurring { get; set; }
             public bool? Active { get; set; }
-            public int? IncludedQuantity { get; set; }
+            public long? IncludedQuantity { get; set; }
             public string TiersMode { get; set; }
             public List<Tier> Tiers { get; set; }
             public Dictionary<string, string> Metadata { get; set; }

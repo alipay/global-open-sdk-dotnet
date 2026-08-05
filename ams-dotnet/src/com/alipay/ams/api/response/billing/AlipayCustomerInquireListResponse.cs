@@ -12,13 +12,19 @@ public class AlipayCustomerInquireListResponse : AMSResponse
 
         
 
-        public AlipayCustomerInquireListResponse( Result result , List<Customer> customers , int? total , bool? hasMore , string nextCursor)
+        public AlipayCustomerInquireListResponse( Result result , List<Customer> customers , int? total , bool? hasMore , string nextCursor , string phoneNo , string countryCode , string billingEmail , string shippingFirstName , string shippingLastName , string shippingCountryCode)
         {
             this.Result = result;
             this.Customers = customers;
             this.Total = total;
             this.HasMore = hasMore;
             this.NextCursor = nextCursor;
+            this.PhoneNo = phoneNo;
+            this.CountryCode = countryCode;
+            this.BillingEmail = billingEmail;
+            this.ShippingFirstName = shippingFirstName;
+            this.ShippingLastName = shippingLastName;
+            this.ShippingCountryCode = shippingCountryCode;
         }
 
             public Result Result { get; set; }
@@ -26,6 +32,12 @@ public class AlipayCustomerInquireListResponse : AMSResponse
             public int? Total { get; set; }
             public bool? HasMore { get; set; }
             public string NextCursor { get; set; }
+            public string PhoneNo { get; set; }
+            public string CountryCode { get; set; }
+            public string BillingEmail { get; set; }
+            public string ShippingFirstName { get; set; }
+            public string ShippingLastName { get; set; }
+            public string ShippingCountryCode { get; set; }
 
         
 

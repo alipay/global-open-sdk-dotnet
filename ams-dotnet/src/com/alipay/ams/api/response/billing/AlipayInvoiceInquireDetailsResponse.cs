@@ -12,7 +12,7 @@ public class AlipayInvoiceInquireDetailsResponse : AMSResponse
 
         
 
-        public AlipayInvoiceInquireDetailsResponse( Result result , string invoiceId , string invoiceRequestId , string subscriptionId , string customerId , string invoiceNumber , string customerFirstName , string customerLastName , string customerEmail , string reason , string phaseNo , string status , string currency , Amount subtotal , Amount discountAmount , Amount totalAmount , Amount paidAmount , Amount remainingAmount , Amount taxAmount , Amount paymentDeductedAmount , string collectionMethod , PaymentMethod paymentMethod , InvoiceShipping shipping , string hostedInvoiceUrl , string periodStart , string periodEnd , string dueDate , string paidTime , string description , List<InvoiceItem> items , List<Payment> payments , List<InvoiceNote> invoiceNotes , string gmtCreate , string gmtUpdate , List<BillingDiscount> discounts)
+        public AlipayInvoiceInquireDetailsResponse( Result result , string invoiceId , string invoiceRequestId , string subscriptionId , string customerId , string invoiceNumber , string customerFirstName , string customerLastName , string customerEmail , string reason , string phaseNo , string status , string currency , Amount subtotal , Amount discountAmount , Amount totalAmount , Amount paidAmount , Amount remainAmount , Amount taxAmount , Amount paymentDeductedAmount , string collectionMethod , PaymentMethod paymentMethod , InvoiceShipping shipping , string hostedInvoiceUrl , string periodStart , string periodEnd , string dueDate , string paidTime , string description , List<InvoiceItem> items , List<Payment> payments , List<InvoiceNote> invoiceNotes , string gmtCreate , string gmtUpdate , List<BillingDiscount> discounts)
         {
             this.Result = result;
             this.InvoiceId = invoiceId;
@@ -31,7 +31,7 @@ public class AlipayInvoiceInquireDetailsResponse : AMSResponse
             this.DiscountAmount = discountAmount;
             this.TotalAmount = totalAmount;
             this.PaidAmount = paidAmount;
-            this.RemainingAmount = remainingAmount;
+            this.RemainAmount = remainAmount;
             this.TaxAmount = taxAmount;
             this.PaymentDeductedAmount = paymentDeductedAmount;
             this.CollectionMethod = collectionMethod;
@@ -68,7 +68,7 @@ public class AlipayInvoiceInquireDetailsResponse : AMSResponse
             public Amount DiscountAmount { get; set; }
             public Amount TotalAmount { get; set; }
             public Amount PaidAmount { get; set; }
-            public Amount RemainingAmount { get; set; }
+            public Amount RemainAmount { get; set; }
             public Amount TaxAmount { get; set; }
             public Amount PaymentDeductedAmount { get; set; }
             public string CollectionMethod { get; set; }

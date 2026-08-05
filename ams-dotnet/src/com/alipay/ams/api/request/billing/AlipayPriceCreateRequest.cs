@@ -14,7 +14,7 @@ public class AlipayPriceCreateRequest : AMSRequest<AlipayPriceCreateResponse>
 
         
 
-        public AlipayPriceCreateRequest( string priceRequestId , string productId , string name , string pricingModel , string usageType , Amount unitAmount , string unitLabel , string meterId , RecurringSettings recurring , int? includedQuantity , string tiersMode , List<Tier> tiers , Dictionary<string, string> metadata)
+        public AlipayPriceCreateRequest( string priceRequestId , string productId , string name , string pricingModel , string usageType , Amount unitAmount , string unitLabel , string meterId , RecurringSettings recurring , long? includedQuantity , string tiersMode , List<Tier> tiers , Dictionary<string, string> metadata)
         {
             this.PriceRequestId = priceRequestId;
             this.ProductId = productId;
@@ -40,7 +40,7 @@ public class AlipayPriceCreateRequest : AMSRequest<AlipayPriceCreateResponse>
             public string UnitLabel { get; set; }
             public string MeterId { get; set; }
             public RecurringSettings Recurring { get; set; }
-            public int? IncludedQuantity { get; set; }
+            public long? IncludedQuantity { get; set; }
             public string TiersMode { get; set; }
             public List<Tier> Tiers { get; set; }
             public Dictionary<string, string> Metadata { get; set; }

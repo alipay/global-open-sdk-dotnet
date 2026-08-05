@@ -14,7 +14,7 @@ public class AlipaySubscriptionCreateRequest : AMSRequest<AlipaySubscriptionCrea
 
         
 
-        public AlipaySubscriptionCreateRequest( CustomizedInfo customizedInfo , string merchantAccountId , bool? allowAccumulate , Amount maxAccumulateAmount , bool? allowRetry , Amount maxAmountFloor , string subscriptionRequestId , string subscriptionDescription , string subscriptionRedirectUrl , string subscriptionStartTime , string subscriptionEndTime , PeriodRule periodRule , string subscriptionExpiryTime , PaymentMethod paymentMethod , string subscriptionNotificationUrl , string paymentNotificationUrl , OrderInfo orderInfo , Amount paymentAmount , SettlementStrategy settlementStrategy , Env env , List<Trial> trials)
+        public AlipaySubscriptionCreateRequest( CustomizedInfo customizedInfo , string merchantAccountId , bool? allowAccumulate , Amount maxAccumulateAmount , bool? allowRetry , Amount maxAmountFloor , string subscriptionRequestId , string subscriptionDescription , string subscriptionRedirectUrl , string subscriptionStartTime , string subscriptionEndTime , PeriodRule periodRule , string subscriptionExpiryTime , PaymentMethod paymentMethod , string subscriptionNotificationUrl , string paymentNotificationUrl , OrderInfo orderInfo , Amount paymentAmount , SettlementStrategy settlementStrategy , Env env , List<Trial> trials , CreateSubscriptionInfo subscriptionInfo)
         {
             this.CustomizedInfo = customizedInfo;
             this.MerchantAccountId = merchantAccountId;
@@ -37,6 +37,7 @@ public class AlipaySubscriptionCreateRequest : AMSRequest<AlipaySubscriptionCrea
             this.SettlementStrategy = settlementStrategy;
             this.Env = env;
             this.Trials = trials;
+            this.SubscriptionInfo = subscriptionInfo;
         }
 
             public CustomizedInfo CustomizedInfo { get; set; }
@@ -60,6 +61,7 @@ public class AlipaySubscriptionCreateRequest : AMSRequest<AlipaySubscriptionCrea
             public SettlementStrategy SettlementStrategy { get; set; }
             public Env Env { get; set; }
             public List<Trial> Trials { get; set; }
+            public CreateSubscriptionInfo SubscriptionInfo { get; set; }
 
         public override string GetRequestURI(){ return "/ams/api/v1/subscriptions/create"; } 
 

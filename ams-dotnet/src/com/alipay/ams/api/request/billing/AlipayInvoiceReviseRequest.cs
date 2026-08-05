@@ -14,18 +14,20 @@ public class AlipayInvoiceReviseRequest : AMSRequest<AlipayInvoiceReviseResponse
 
         
 
-        public AlipayInvoiceReviseRequest( string invoiceId , string invoiceRequestId , string invoiceRevisionRequestId , bool? _void)
+        public AlipayInvoiceReviseRequest( string invoiceId , string invoiceRequestId , string invoiceRevisionRequestId , bool? _void , string invoiceNotifyUrl)
         {
             this.InvoiceId = invoiceId;
             this.InvoiceRequestId = invoiceRequestId;
             this.InvoiceRevisionRequestId = invoiceRevisionRequestId;
             this.Void = _void;
+            this.InvoiceNotifyUrl = invoiceNotifyUrl;
         }
 
             public string InvoiceId { get; set; }
             public string InvoiceRequestId { get; set; }
             public string InvoiceRevisionRequestId { get; set; }
             public bool? Void { get; set; }
+            public string InvoiceNotifyUrl { get; set; }
 
         public override string GetRequestURI(){ return "/ams/api/v1/billing/invoice/revise"; } 
 
