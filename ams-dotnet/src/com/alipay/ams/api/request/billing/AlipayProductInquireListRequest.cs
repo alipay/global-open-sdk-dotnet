@@ -14,7 +14,7 @@ public class AlipayProductInquireListRequest : AMSRequest<AlipayProductInquireLi
 
         
 
-        public AlipayProductInquireListRequest( string startingAfter , string endingBefore , int? limit , bool? active , string type , string keyword , bool? includeTotal)
+        public AlipayProductInquireListRequest( string startingAfter , string endingBefore , int? limit , bool? active , string type , string keyword , bool? includeTotal , string usageType)
         {
             this.StartingAfter = startingAfter;
             this.EndingBefore = endingBefore;
@@ -23,6 +23,7 @@ public class AlipayProductInquireListRequest : AMSRequest<AlipayProductInquireLi
             this.Type = type;
             this.Keyword = keyword;
             this.IncludeTotal = includeTotal;
+            this.UsageType = usageType;
         }
 
             public string StartingAfter { get; set; }
@@ -32,6 +33,7 @@ public class AlipayProductInquireListRequest : AMSRequest<AlipayProductInquireLi
             public string Type { get; set; }
             public string Keyword { get; set; }
             public bool? IncludeTotal { get; set; }
+            public string UsageType { get; set; }
 
         public override string GetRequestURI(){ return "/ams/api/v1/billing/product/inquireList"; } 
 
