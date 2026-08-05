@@ -14,7 +14,7 @@ public class AlipayInvoiceCreateRequest : AMSRequest<AlipayInvoiceCreateResponse
 
         
 
-        public AlipayInvoiceCreateRequest( string invoiceRequestId , string customerId , string subscriptionId , string currency , List<InvoiceCreateItem> items , string status , bool? autoSend , List<string> ccEmails , string description , string dueDate , string collectionMethod , PaymentMethod paymentMethod , InvoiceShipping shipping , List<BillingDiscount> discounts)
+        public AlipayInvoiceCreateRequest( string invoiceRequestId , string customerId , string subscriptionId , string currency , List<InvoiceCreateItem> items , string status , bool? autoSend , List<string> ccEmails , string description , string dueDate , string collectionMethod , PaymentMethod paymentMethod , InvoiceShipping shipping , List<BillingDiscount> discounts , string invoiceNotifyUrl)
         {
             this.InvoiceRequestId = invoiceRequestId;
             this.CustomerId = customerId;
@@ -30,6 +30,7 @@ public class AlipayInvoiceCreateRequest : AMSRequest<AlipayInvoiceCreateResponse
             this.PaymentMethod = paymentMethod;
             this.Shipping = shipping;
             this.Discounts = discounts;
+            this.InvoiceNotifyUrl = invoiceNotifyUrl;
         }
 
             public string InvoiceRequestId { get; set; }
@@ -46,6 +47,7 @@ public class AlipayInvoiceCreateRequest : AMSRequest<AlipayInvoiceCreateResponse
             public PaymentMethod PaymentMethod { get; set; }
             public InvoiceShipping Shipping { get; set; }
             public List<BillingDiscount> Discounts { get; set; }
+            public string InvoiceNotifyUrl { get; set; }
 
         public override string GetRequestURI(){ return "/ams/api/v1/billing/invoice/create"; } 
 

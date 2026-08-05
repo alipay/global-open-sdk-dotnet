@@ -11,7 +11,7 @@ public class SubscriptionInfo
 
         
 
-        public SubscriptionInfo( string subscriptionId , string description , string subscriptionDescription , SubscriptionStatus status , string subscriptionStartTime , string subscriptionEndTime , PeriodType periodType , int? periodCount , PeriodRule periodRule , string currentPeriodStart , string currentPeriodEnd , int? currentPhaseNo , PaymentMethod paymentMethod , Amount paymentAmount , string lastUpdateTime , string relatedSubscriptionId , TrialPlan trialPlan , List<Trial> trials , string subscriptionNotifyUrl , string subscriptionExpiryTime , bool? allowRetry , Amount maxAmountFloor)
+        public SubscriptionInfo( string subscriptionId , string description , string subscriptionDescription , SubscriptionStatus status , string subscriptionStartTime , string subscriptionEndTime , PeriodType periodType , int? periodCount , PeriodRule periodRule , string currentPeriodStart , string currentPeriodEnd , int? currentPhaseNo , PaymentMethod paymentMethod , Amount paymentAmount , string lastUpdateTime , string relatedSubscriptionId , TrialPlan trialPlan , List<Trial> trials , string subscriptionNotifyUrl , string subscriptionExpiryTime , bool? allowRetry , Amount maxAmountFloor , Amount fixedAmount , string retryMode , string subscriptionOrderId)
         {
             this.SubscriptionId = subscriptionId;
             this.Description = description;
@@ -35,6 +35,9 @@ public class SubscriptionInfo
             this.SubscriptionExpiryTime = subscriptionExpiryTime;
             this.AllowRetry = allowRetry;
             this.MaxAmountFloor = maxAmountFloor;
+            this.FixedAmount = fixedAmount;
+            this.RetryMode = retryMode;
+            this.SubscriptionOrderId = subscriptionOrderId;
         }
 
             public string SubscriptionId { get; set; }
@@ -59,6 +62,9 @@ public class SubscriptionInfo
             public string SubscriptionExpiryTime { get; set; }
             public bool? AllowRetry { get; set; }
             public Amount MaxAmountFloor { get; set; }
+            public Amount FixedAmount { get; set; }
+            public string RetryMode { get; set; }
+            public string SubscriptionOrderId { get; set; }
 
         
 

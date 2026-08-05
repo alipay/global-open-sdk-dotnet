@@ -14,7 +14,7 @@ public class AlipayInvoiceUpdateRequest : AMSRequest<AlipayInvoiceUpdateResponse
 
         
 
-        public AlipayInvoiceUpdateRequest( string invoiceId , string description , string dueDate , string collectionMethod , PaymentMethod paymentMethod , InvoiceShipping shipping)
+        public AlipayInvoiceUpdateRequest( string invoiceId , string description , string dueDate , string collectionMethod , PaymentMethod paymentMethod , InvoiceShipping shipping , string invoiceNotifyUrl)
         {
             this.InvoiceId = invoiceId;
             this.Description = description;
@@ -22,6 +22,7 @@ public class AlipayInvoiceUpdateRequest : AMSRequest<AlipayInvoiceUpdateResponse
             this.CollectionMethod = collectionMethod;
             this.PaymentMethod = paymentMethod;
             this.Shipping = shipping;
+            this.InvoiceNotifyUrl = invoiceNotifyUrl;
         }
 
             public string InvoiceId { get; set; }
@@ -30,6 +31,7 @@ public class AlipayInvoiceUpdateRequest : AMSRequest<AlipayInvoiceUpdateResponse
             public string CollectionMethod { get; set; }
             public PaymentMethod PaymentMethod { get; set; }
             public InvoiceShipping Shipping { get; set; }
+            public string InvoiceNotifyUrl { get; set; }
 
         public override string GetRequestURI(){ return "/ams/api/v1/billing/invoice/update"; } 
 

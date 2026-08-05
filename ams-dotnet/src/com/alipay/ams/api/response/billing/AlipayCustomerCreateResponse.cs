@@ -12,13 +12,19 @@ public class AlipayCustomerCreateResponse : AMSResponse
 
         
 
-        public AlipayCustomerCreateResponse( Result result , string customerId , string customerRequestId , string email , string status)
+        public AlipayCustomerCreateResponse( Result result , string customerId , string customerRequestId , string email , string status , string phoneNo , string countryCode , string billingEmail , string shippingFirstName , string shippingLastName , string shippingCountryCode)
         {
             this.Result = result;
             this.CustomerId = customerId;
             this.CustomerRequestId = customerRequestId;
             this.Email = email;
             this.Status = status;
+            this.PhoneNo = phoneNo;
+            this.CountryCode = countryCode;
+            this.BillingEmail = billingEmail;
+            this.ShippingFirstName = shippingFirstName;
+            this.ShippingLastName = shippingLastName;
+            this.ShippingCountryCode = shippingCountryCode;
         }
 
             public Result Result { get; set; }
@@ -26,6 +32,12 @@ public class AlipayCustomerCreateResponse : AMSResponse
             public string CustomerRequestId { get; set; }
             public string Email { get; set; }
             public string Status { get; set; }
+            public string PhoneNo { get; set; }
+            public string CountryCode { get; set; }
+            public string BillingEmail { get; set; }
+            public string ShippingFirstName { get; set; }
+            public string ShippingLastName { get; set; }
+            public string ShippingCountryCode { get; set; }
 
         
 
