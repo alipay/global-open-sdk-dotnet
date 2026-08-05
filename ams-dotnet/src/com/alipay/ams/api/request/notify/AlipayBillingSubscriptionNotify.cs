@@ -19,4 +19,6 @@ public class AlipayBillingSubscriptionNotify : AlipayNotify
     public string ReasonDescription { get; set; }
 
     public string PreviousStatus { get; set; }
+
+    public Amount FixedAmount { get; set; }
 }
