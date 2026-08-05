@@ -12,18 +12,18 @@ public class AlipayProductInquireListResponse : AMSResponse
 
         
 
-        public AlipayProductInquireListResponse( Result result , List<Product> products , bool? hasMore , int? totalCount)
+        public AlipayProductInquireListResponse( Result result , List<Product> products , bool? hasMore , int? total)
         {
             this.Result = result;
             this.Products = products;
             this.HasMore = hasMore;
-            this.TotalCount = totalCount;
+            this.Total = total;
         }
 
             public Result Result { get; set; }
             public List<Product> Products { get; set; }
             public bool? HasMore { get; set; }
-            public int? TotalCount { get; set; }
+            public int? Total { get; set; }
 
         
 
