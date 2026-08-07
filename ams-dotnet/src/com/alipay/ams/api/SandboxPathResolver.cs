@@ -4,10 +4,9 @@ namespace com.alipay.ams.api
 {
     internal static class SandboxPathResolver
     {
+        // Billing and Meter APIs now support sandbox. Keep the filter logic for future use.
         private static readonly string[] ProductionPathPrefixes =
         {
-            "/ams/api/v1/billing/",
-            "/ams/api/v1/meter/"
         };
 
         internal static bool ShouldUseProductionPathInSandbox(string path)
