@@ -12,10 +12,9 @@ public class AlipayInvoiceVoidResponse : AMSResponse
 
         
 
-        public AlipayInvoiceVoidResponse( Result result , string voidRequestId , string invoiceId , string status , string voidedAt , string invoiceNote)
+        public AlipayInvoiceVoidResponse( Result result , string invoiceId , string status , string voidedAt , string invoiceNote)
         {
             this.Result = result;
-            this.VoidRequestId = voidRequestId;
             this.InvoiceId = invoiceId;
             this.Status = status;
             this.VoidedAt = voidedAt;
@@ -23,7 +22,6 @@ public class AlipayInvoiceVoidResponse : AMSResponse
         }
 
             public Result Result { get; set; }
-            public string VoidRequestId { get; set; }
             public string InvoiceId { get; set; }
             public string Status { get; set; }
             public string VoidedAt { get; set; }

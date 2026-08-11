@@ -14,14 +14,14 @@ public class AlipayReceiptSendRequest : AMSRequest<AlipayReceiptSendResponse>
 
         
 
-        public AlipayReceiptSendRequest( string receiptId , string sendRequestId)
+        public AlipayReceiptSendRequest( string receiptId , List<string> ccEmails)
         {
             this.ReceiptId = receiptId;
-            this.SendRequestId = sendRequestId;
+            this.CcEmails = ccEmails;
         }
 
             public string ReceiptId { get; set; }
-            public string SendRequestId { get; set; }
+            public List<string> CcEmails { get; set; }
 
         public override string GetRequestURI(){ return "/ams/api/v1/billing/receipt/send"; } 
 

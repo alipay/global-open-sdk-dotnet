@@ -11,7 +11,7 @@ public class Coupon
 
         
 
-        public Coupon( string couponId , string couponName , string discountType , string percentOff , Amount amountOff , string redeemBy , string status , string createTime)
+        public Coupon( string couponId , string couponName , string discountType , string percentOff , Amount amountOff , string redeemBy , string status , int? maxRedemptions , int? redeemedCount)
         {
             this.CouponId = couponId;
             this.CouponName = couponName;
@@ -20,7 +20,8 @@ public class Coupon
             this.AmountOff = amountOff;
             this.RedeemBy = redeemBy;
             this.Status = status;
-            this.CreateTime = createTime;
+            this.MaxRedemptions = maxRedemptions;
+            this.RedeemedCount = redeemedCount;
         }
 
             public string CouponId { get; set; }
@@ -30,7 +31,8 @@ public class Coupon
             public Amount AmountOff { get; set; }
             public string RedeemBy { get; set; }
             public string Status { get; set; }
-            public string CreateTime { get; set; }
+            public int? MaxRedemptions { get; set; }
+            public int? RedeemedCount { get; set; }
 
         
 

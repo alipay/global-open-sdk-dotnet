@@ -12,7 +12,7 @@ public class AlipayProductUpdateResponse : AMSResponse
 
         
 
-        public AlipayProductUpdateResponse( Result result , string productId , string name , string type , string description , List<string> images , string unitLabel , Dictionary<string, string> metadata , bool? active , string createdAt , string deactivatedAt , string updatedAt)
+        public AlipayProductUpdateResponse( Result result , string productId , string name , string type , string description , List<string> images , string unitLabel , string metadata , bool? active , string createdAt , string deactivatedAt , string updatedAt , string productRequestId)
         {
             this.Result = result;
             this.ProductId = productId;
@@ -26,6 +26,7 @@ public class AlipayProductUpdateResponse : AMSResponse
             this.CreatedAt = createdAt;
             this.DeactivatedAt = deactivatedAt;
             this.UpdatedAt = updatedAt;
+            this.ProductRequestId = productRequestId;
         }
 
             public Result Result { get; set; }
@@ -35,11 +36,12 @@ public class AlipayProductUpdateResponse : AMSResponse
             public string Description { get; set; }
             public List<string> Images { get; set; }
             public string UnitLabel { get; set; }
-            public Dictionary<string, string> Metadata { get; set; }
+            public string Metadata { get; set; }
             public bool? Active { get; set; }
             public string CreatedAt { get; set; }
             public string DeactivatedAt { get; set; }
             public string UpdatedAt { get; set; }
+            public string ProductRequestId { get; set; }
 
         
 

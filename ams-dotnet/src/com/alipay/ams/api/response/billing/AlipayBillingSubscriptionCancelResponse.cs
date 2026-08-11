@@ -12,26 +12,26 @@ public class AlipayBillingSubscriptionCancelResponse : AMSResponse
 
         
 
-        public AlipayBillingSubscriptionCancelResponse( ResultInfo result , string subscriptionId , string status , string cancellationReason , BillingSubscriptionCancelCancellationDetails cancellationDetails , string canceledAt , bool? cancelAtPeriodEnd , string creditNoteId)
+        public AlipayBillingSubscriptionCancelResponse( ResultInfo result , string subscriptionId , string status , string canceledAt , bool? cancelAtPeriodEnd , string creditNoteId , long? creditNoteAmount , string creditNoteCurrency)
         {
             this.Result = result;
             this.SubscriptionId = subscriptionId;
             this.Status = status;
-            this.CancellationReason = cancellationReason;
-            this.CancellationDetails = cancellationDetails;
             this.CanceledAt = canceledAt;
             this.CancelAtPeriodEnd = cancelAtPeriodEnd;
             this.CreditNoteId = creditNoteId;
+            this.CreditNoteAmount = creditNoteAmount;
+            this.CreditNoteCurrency = creditNoteCurrency;
         }
 
             public ResultInfo Result { get; set; }
             public string SubscriptionId { get; set; }
             public string Status { get; set; }
-            public string CancellationReason { get; set; }
-            public BillingSubscriptionCancelCancellationDetails CancellationDetails { get; set; }
             public string CanceledAt { get; set; }
             public bool? CancelAtPeriodEnd { get; set; }
             public string CreditNoteId { get; set; }
+            public long? CreditNoteAmount { get; set; }
+            public string CreditNoteCurrency { get; set; }
 
         
 

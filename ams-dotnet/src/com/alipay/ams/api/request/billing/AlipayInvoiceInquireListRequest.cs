@@ -14,7 +14,7 @@ public class AlipayInvoiceInquireListRequest : AMSRequest<AlipayInvoiceInquireLi
 
         
 
-        public AlipayInvoiceInquireListRequest( string startingAfter , string endingBefore , int? limit , bool? includeTotal , string subscriptionId , string customerId , string invoiceId , string status , string reason , string startDate , string endDate , Amount minAmount , Amount maxAmount)
+        public AlipayInvoiceInquireListRequest( string startingAfter , string endingBefore , int? limit , bool? includeTotal , string subscriptionId , string customerId , string invoiceId , string status , string reason , string startDate , string endDate , Amount minAmount , Amount maxAmount , bool? excludeDraft)
         {
             this.StartingAfter = startingAfter;
             this.EndingBefore = endingBefore;
@@ -29,6 +29,7 @@ public class AlipayInvoiceInquireListRequest : AMSRequest<AlipayInvoiceInquireLi
             this.EndDate = endDate;
             this.MinAmount = minAmount;
             this.MaxAmount = maxAmount;
+            this.ExcludeDraft = excludeDraft;
         }
 
             public string StartingAfter { get; set; }
@@ -44,6 +45,7 @@ public class AlipayInvoiceInquireListRequest : AMSRequest<AlipayInvoiceInquireLi
             public string EndDate { get; set; }
             public Amount MinAmount { get; set; }
             public Amount MaxAmount { get; set; }
+            public bool? ExcludeDraft { get; set; }
 
         public override string GetRequestURI(){ return "/ams/api/v1/billing/invoice/inquireList"; } 
 

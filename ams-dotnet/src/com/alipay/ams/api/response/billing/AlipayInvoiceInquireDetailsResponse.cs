@@ -12,7 +12,7 @@ public class AlipayInvoiceInquireDetailsResponse : AMSResponse
 
         
 
-        public AlipayInvoiceInquireDetailsResponse( Result result , string invoiceId , string invoiceRequestId , string subscriptionId , string customerId , string invoiceNumber , string customerFirstName , string customerLastName , string customerEmail , string reason , string phaseNo , string status , string currency , Amount subtotal , Amount discountAmount , Amount totalAmount , Amount paidAmount , Amount remainAmount , Amount taxAmount , Amount paymentDeductedAmount , string collectionMethod , PaymentMethod paymentMethod , InvoiceShipping shipping , string hostedInvoiceUrl , string periodStart , string periodEnd , string dueDate , string paidTime , string description , List<InvoiceItem> items , List<Payment> payments , List<InvoiceNote> invoiceNotes , string gmtCreate , string gmtUpdate , List<BillingDiscount> discounts)
+        public AlipayInvoiceInquireDetailsResponse( Result result , string invoiceId , string invoiceRequestId , string subscriptionId , string customerId , string invoiceNumber , string customerFirstName , string customerLastName , string customerEmail , string reason , string phaseNo , string status , string currency , Amount subtotal , Amount discountAmount , Amount totalAmount , Amount paidAmount , Amount remainAmount , Amount taxAmount , string collectionMethod , PaymentMethod paymentMethod , InvoiceShipping shipping , string hostedInvoiceUrl , string periodStart , string periodEnd , string dueDate , string paidTime , string description , List<InvoiceItem> items , List<InvoicePayment> payments , List<InvoiceNote> invoiceNotes , string gmtCreate , string gmtUpdate , List<BillingDiscount> discounts , Amount postPaymentCreditNotesAmount , Amount prePaymentCreditNotesAmount , Amount paymentDeducted)
         {
             this.Result = result;
             this.InvoiceId = invoiceId;
@@ -33,7 +33,6 @@ public class AlipayInvoiceInquireDetailsResponse : AMSResponse
             this.PaidAmount = paidAmount;
             this.RemainAmount = remainAmount;
             this.TaxAmount = taxAmount;
-            this.PaymentDeductedAmount = paymentDeductedAmount;
             this.CollectionMethod = collectionMethod;
             this.PaymentMethod = paymentMethod;
             this.Shipping = shipping;
@@ -49,6 +48,9 @@ public class AlipayInvoiceInquireDetailsResponse : AMSResponse
             this.GmtCreate = gmtCreate;
             this.GmtUpdate = gmtUpdate;
             this.Discounts = discounts;
+            this.PostPaymentCreditNotesAmount = postPaymentCreditNotesAmount;
+            this.PrePaymentCreditNotesAmount = prePaymentCreditNotesAmount;
+            this.PaymentDeducted = paymentDeducted;
         }
 
             public Result Result { get; set; }
@@ -70,7 +72,6 @@ public class AlipayInvoiceInquireDetailsResponse : AMSResponse
             public Amount PaidAmount { get; set; }
             public Amount RemainAmount { get; set; }
             public Amount TaxAmount { get; set; }
-            public Amount PaymentDeductedAmount { get; set; }
             public string CollectionMethod { get; set; }
             public PaymentMethod PaymentMethod { get; set; }
             public InvoiceShipping Shipping { get; set; }
@@ -81,11 +82,14 @@ public class AlipayInvoiceInquireDetailsResponse : AMSResponse
             public string PaidTime { get; set; }
             public string Description { get; set; }
             public List<InvoiceItem> Items { get; set; }
-            public List<Payment> Payments { get; set; }
+            public List<InvoicePayment> Payments { get; set; }
             public List<InvoiceNote> InvoiceNotes { get; set; }
             public string GmtCreate { get; set; }
             public string GmtUpdate { get; set; }
             public List<BillingDiscount> Discounts { get; set; }
+            public Amount PostPaymentCreditNotesAmount { get; set; }
+            public Amount PrePaymentCreditNotesAmount { get; set; }
+            public Amount PaymentDeducted { get; set; }
 
         
 

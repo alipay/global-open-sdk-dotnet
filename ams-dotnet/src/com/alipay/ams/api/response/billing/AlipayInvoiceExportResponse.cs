@@ -12,18 +12,22 @@ public class AlipayInvoiceExportResponse : AMSResponse
 
         
 
-        public AlipayInvoiceExportResponse( Result result , string status , string downloadUrl , string expiresAt)
+        public AlipayInvoiceExportResponse( Result result , string fileFormat , string expiresAt , string fileUrl , long? fileSize , string fileName)
         {
             this.Result = result;
-            this.Status = status;
-            this.DownloadUrl = downloadUrl;
+            this.FileFormat = fileFormat;
             this.ExpiresAt = expiresAt;
+            this.FileUrl = fileUrl;
+            this.FileSize = fileSize;
+            this.FileName = fileName;
         }
 
             public Result Result { get; set; }
-            public string Status { get; set; }
-            public string DownloadUrl { get; set; }
+            public string FileFormat { get; set; }
             public string ExpiresAt { get; set; }
+            public string FileUrl { get; set; }
+            public long? FileSize { get; set; }
+            public string FileName { get; set; }
 
         
 

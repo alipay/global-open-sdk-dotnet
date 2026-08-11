@@ -11,7 +11,7 @@ public class CreditNoteSummary
 
         
 
-        public CreditNoteSummary( string creditNoteId , string customerId , string invoiceId , string type , string status , Amount totalAmount , string reason , string effectiveDate , string refundStatus , string voidedAt , string refundedAt , string createdAt)
+        public CreditNoteSummary( string creditNoteId , string customerId , string invoiceId , string type , string status , Amount totalAmount , Amount refundAmount , string reason , string effectiveDate , string refundStatus , string voidedAt , string refundedAt , string createdAt)
         {
             this.CreditNoteId = creditNoteId;
             this.CustomerId = customerId;
@@ -19,6 +19,7 @@ public class CreditNoteSummary
             this.Type = type;
             this.Status = status;
             this.TotalAmount = totalAmount;
+            this.RefundAmount = refundAmount;
             this.Reason = reason;
             this.EffectiveDate = effectiveDate;
             this.RefundStatus = refundStatus;
@@ -33,6 +34,7 @@ public class CreditNoteSummary
             public string Type { get; set; }
             public string Status { get; set; }
             public Amount TotalAmount { get; set; }
+            public Amount RefundAmount { get; set; }
             public string Reason { get; set; }
             public string EffectiveDate { get; set; }
             public string RefundStatus { get; set; }

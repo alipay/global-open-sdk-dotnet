@@ -14,12 +14,16 @@ public class AlipayCreditGrantInquireListRequest : AMSRequest<AlipayCreditGrantI
 
         
 
-        public AlipayCreditGrantInquireListRequest( string customerId , string status)
+        public AlipayCreditGrantInquireListRequest( int? pageNum , int? pageSize , string customerId , string status)
         {
+            this.PageNum = pageNum;
+            this.PageSize = pageSize;
             this.CustomerId = customerId;
             this.Status = status;
         }
 
+            public int? PageNum { get; set; }
+            public int? PageSize { get; set; }
             public string CustomerId { get; set; }
             public string Status { get; set; }
 

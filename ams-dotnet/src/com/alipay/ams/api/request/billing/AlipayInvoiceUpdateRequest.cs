@@ -14,7 +14,7 @@ public class AlipayInvoiceUpdateRequest : AMSRequest<AlipayInvoiceUpdateResponse
 
         
 
-        public AlipayInvoiceUpdateRequest( string invoiceId , string description , string dueDate , string collectionMethod , PaymentMethod paymentMethod , InvoiceShipping shipping , string invoiceNotifyUrl)
+        public AlipayInvoiceUpdateRequest( string invoiceId , string description , string dueDate , string collectionMethod , PaymentMethod paymentMethod , InvoiceShipping shipping , string customerId , string footer , bool? includePaymentLink , string memo , List<InvoiceCustomField> customFields , string invoiceNotifyUrl)
         {
             this.InvoiceId = invoiceId;
             this.Description = description;
@@ -22,6 +22,11 @@ public class AlipayInvoiceUpdateRequest : AMSRequest<AlipayInvoiceUpdateResponse
             this.CollectionMethod = collectionMethod;
             this.PaymentMethod = paymentMethod;
             this.Shipping = shipping;
+            this.CustomerId = customerId;
+            this.Footer = footer;
+            this.IncludePaymentLink = includePaymentLink;
+            this.Memo = memo;
+            this.CustomFields = customFields;
             this.InvoiceNotifyUrl = invoiceNotifyUrl;
         }
 
@@ -31,6 +36,11 @@ public class AlipayInvoiceUpdateRequest : AMSRequest<AlipayInvoiceUpdateResponse
             public string CollectionMethod { get; set; }
             public PaymentMethod PaymentMethod { get; set; }
             public InvoiceShipping Shipping { get; set; }
+            public string CustomerId { get; set; }
+            public string Footer { get; set; }
+            public bool? IncludePaymentLink { get; set; }
+            public string Memo { get; set; }
+            public List<InvoiceCustomField> CustomFields { get; set; }
             public string InvoiceNotifyUrl { get; set; }
 
         public override string GetRequestURI(){ return "/ams/api/v1/billing/invoice/update"; } 

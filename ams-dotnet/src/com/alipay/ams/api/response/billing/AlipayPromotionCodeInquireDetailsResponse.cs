@@ -12,7 +12,7 @@ public class AlipayPromotionCodeInquireDetailsResponse : AMSResponse
 
         
 
-        public AlipayPromotionCodeInquireDetailsResponse( Result result , string promotionCodeId , string promotionCodeRequestId , string code , string couponId , string status , int? maxRedemptions , int? redeemedCount , string expiryTime , PromotionCodeInquireDetailsMinAmount minAmount , bool? oneTimeOnly , string customerId , Dictionary<string, string> metadata , string createTime , string updateTime)
+        public AlipayPromotionCodeInquireDetailsResponse( Result result , string promotionCodeId , string promotionCodeRequestId , string code , string couponId , string status , int? maxRedemptions , int? redeemedCount , string expiryTime , PromotionCodeInquireDetailsMinAmount minAmount , bool? oneTimeOnly , string customerId , string metadata , string createTime)
         {
             this.Result = result;
             this.PromotionCodeId = promotionCodeId;
@@ -28,7 +28,6 @@ public class AlipayPromotionCodeInquireDetailsResponse : AMSResponse
             this.CustomerId = customerId;
             this.Metadata = metadata;
             this.CreateTime = createTime;
-            this.UpdateTime = updateTime;
         }
 
             public Result Result { get; set; }
@@ -43,9 +42,8 @@ public class AlipayPromotionCodeInquireDetailsResponse : AMSResponse
             public PromotionCodeInquireDetailsMinAmount MinAmount { get; set; }
             public bool? OneTimeOnly { get; set; }
             public string CustomerId { get; set; }
-            public Dictionary<string, string> Metadata { get; set; }
+            public string Metadata { get; set; }
             public string CreateTime { get; set; }
-            public string UpdateTime { get; set; }
 
         
 
