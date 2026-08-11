@@ -12,7 +12,7 @@ public class AlipayBillingSubscriptionCreateResponse : AMSResponse
 
         
 
-        public AlipayBillingSubscriptionCreateResponse( ResultInfo result , string subscriptionRequestId , string subscriptionId , string customerId , string invoiceId , string status , string currentPeriodStart , string currentPeriodEnd , string billingCycleAnchor , string trialStart , string trialEnd , string cancelAt , bool? cancelAtPeriodEnd , string description , string collectionMethod , int? daysUntilDue , List<SubscriptionItem> subscriptionItems , List<BillingSubscriptionCreateDiscount> discounts , string subscriptionNotifyUrl)
+        public AlipayBillingSubscriptionCreateResponse( ResultInfo result , string subscriptionRequestId , string subscriptionId , string customerId , string invoiceId , string status , string currentPeriodStart , string currentPeriodEnd , string billingCycleAnchor , string trialStart , string trialEnd , BillingSubscriptionTrialSettings trialSettings , string cancelAt , string description , string collectionMethod , int? daysUntilDue , List<SubscriptionItem> subscriptionItems , List<BillingDiscount> discounts , string subscriptionNotifyUrl)
         {
             this.Result = result;
             this.SubscriptionRequestId = subscriptionRequestId;
@@ -25,8 +25,8 @@ public class AlipayBillingSubscriptionCreateResponse : AMSResponse
             this.BillingCycleAnchor = billingCycleAnchor;
             this.TrialStart = trialStart;
             this.TrialEnd = trialEnd;
+            this.TrialSettings = trialSettings;
             this.CancelAt = cancelAt;
-            this.CancelAtPeriodEnd = cancelAtPeriodEnd;
             this.Description = description;
             this.CollectionMethod = collectionMethod;
             this.DaysUntilDue = daysUntilDue;
@@ -46,13 +46,13 @@ public class AlipayBillingSubscriptionCreateResponse : AMSResponse
             public string BillingCycleAnchor { get; set; }
             public string TrialStart { get; set; }
             public string TrialEnd { get; set; }
+            public BillingSubscriptionTrialSettings TrialSettings { get; set; }
             public string CancelAt { get; set; }
-            public bool? CancelAtPeriodEnd { get; set; }
             public string Description { get; set; }
             public string CollectionMethod { get; set; }
             public int? DaysUntilDue { get; set; }
             public List<SubscriptionItem> SubscriptionItems { get; set; }
-            public List<BillingSubscriptionCreateDiscount> Discounts { get; set; }
+            public List<BillingDiscount> Discounts { get; set; }
             public string SubscriptionNotifyUrl { get; set; }
 
         

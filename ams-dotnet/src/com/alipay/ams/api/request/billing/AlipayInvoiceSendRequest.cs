@@ -14,14 +14,18 @@ public class AlipayInvoiceSendRequest : AMSRequest<AlipayInvoiceSendResponse>
 
         
 
-        public AlipayInvoiceSendRequest( string invoiceId , string sendRequestId)
+        public AlipayInvoiceSendRequest( string invoiceId , List<string> ccEmails , string internalNote , bool? includePaymentLink)
         {
             this.InvoiceId = invoiceId;
-            this.SendRequestId = sendRequestId;
+            this.CcEmails = ccEmails;
+            this.InternalNote = internalNote;
+            this.IncludePaymentLink = includePaymentLink;
         }
 
             public string InvoiceId { get; set; }
-            public string SendRequestId { get; set; }
+            public List<string> CcEmails { get; set; }
+            public string InternalNote { get; set; }
+            public bool? IncludePaymentLink { get; set; }
 
         public override string GetRequestURI(){ return "/ams/api/v1/billing/invoice/send"; } 
 

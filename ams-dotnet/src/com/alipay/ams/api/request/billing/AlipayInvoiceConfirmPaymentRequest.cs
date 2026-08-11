@@ -14,7 +14,7 @@ public class AlipayInvoiceConfirmPaymentRequest : AMSRequest<AlipayInvoiceConfir
 
         
 
-        public AlipayInvoiceConfirmPaymentRequest( string invoiceId , string confirmationType , string paymentMethod , string reference , bool? autoSend , string invoiceNote)
+        public AlipayInvoiceConfirmPaymentRequest( string invoiceId , string confirmationType , string paymentMethod , string reference , bool? autoSend , string invoiceNote , List<string> ccEmails)
         {
             this.InvoiceId = invoiceId;
             this.ConfirmationType = confirmationType;
@@ -22,6 +22,7 @@ public class AlipayInvoiceConfirmPaymentRequest : AMSRequest<AlipayInvoiceConfir
             this.Reference = reference;
             this.AutoSend = autoSend;
             this.InvoiceNote = invoiceNote;
+            this.CcEmails = ccEmails;
         }
 
             public string InvoiceId { get; set; }
@@ -30,6 +31,7 @@ public class AlipayInvoiceConfirmPaymentRequest : AMSRequest<AlipayInvoiceConfir
             public string Reference { get; set; }
             public bool? AutoSend { get; set; }
             public string InvoiceNote { get; set; }
+            public List<string> CcEmails { get; set; }
 
         public override string GetRequestURI(){ return "/ams/api/v1/billing/invoice/confirmPayment"; } 
 

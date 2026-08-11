@@ -12,7 +12,7 @@ public class AlipayPriceCreateResponse : AMSResponse
 
         
 
-        public AlipayPriceCreateResponse( Result result , string priceId , string priceRequestId , string productId , string name , string pricingModel , string usageType , string unitLabel , string meterId , Amount unitAmount , RecurringSettings recurring , bool? active , long? includedQuantity , string tiersMode , List<Tier> tiers , Dictionary<string, string> metadata , string createdAt , string updatedAt)
+        public AlipayPriceCreateResponse( Result result , string priceId , string priceRequestId , string productId , string name , string pricingModel , string usageType , string unitLabel , string meterId , Amount unitAmount , RecurringSettings recurring , bool? active , long? includedQuantity , string tiersMode , List<Tier> tiers , string metadata , string createdAt , string updatedAt , bool? defaultPrice)
         {
             this.Result = result;
             this.PriceId = priceId;
@@ -32,6 +32,7 @@ public class AlipayPriceCreateResponse : AMSResponse
             this.Metadata = metadata;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
+            this.DefaultPrice = defaultPrice;
         }
 
             public Result Result { get; set; }
@@ -49,9 +50,10 @@ public class AlipayPriceCreateResponse : AMSResponse
             public long? IncludedQuantity { get; set; }
             public string TiersMode { get; set; }
             public List<Tier> Tiers { get; set; }
-            public Dictionary<string, string> Metadata { get; set; }
+            public string Metadata { get; set; }
             public string CreatedAt { get; set; }
             public string UpdatedAt { get; set; }
+            public bool? DefaultPrice { get; set; }
 
         
 

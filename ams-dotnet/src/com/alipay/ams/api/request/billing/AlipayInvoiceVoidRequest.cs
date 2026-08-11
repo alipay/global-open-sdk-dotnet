@@ -14,14 +14,12 @@ public class AlipayInvoiceVoidRequest : AMSRequest<AlipayInvoiceVoidResponse>
 
         
 
-        public AlipayInvoiceVoidRequest( string voidRequestId , string invoiceId , string invoiceNote)
+        public AlipayInvoiceVoidRequest( string invoiceId , string invoiceNote)
         {
-            this.VoidRequestId = voidRequestId;
             this.InvoiceId = invoiceId;
             this.InvoiceNote = invoiceNote;
         }
 
-            public string VoidRequestId { get; set; }
             public string InvoiceId { get; set; }
             public string InvoiceNote { get; set; }
 

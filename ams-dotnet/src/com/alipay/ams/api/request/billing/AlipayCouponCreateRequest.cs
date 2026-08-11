@@ -14,7 +14,7 @@ public class AlipayCouponCreateRequest : AMSRequest<AlipayCouponCreateResponse>
 
         
 
-        public AlipayCouponCreateRequest( string couponRequestId , string couponName , string discountType , string percentOff , Amount amountOff , string durationType , int? durationValue , string durationUnit , int? maxRedemptions , string redeemBy , CouponCreateAppliesTo appliesTo , Dictionary<string, string> metadata , List<PromotionCode> promotionCodes)
+        public AlipayCouponCreateRequest( string couponRequestId , string couponName , string discountType , string percentOff , Amount amountOff , string durationType , int? durationValue , string durationUnit , string redeemBy , CouponCreateAppliesTo appliesTo , string metadata , List<PromotionCode> promotionCodes , int? maxRedemptions)
         {
             this.CouponRequestId = couponRequestId;
             this.CouponName = couponName;
@@ -24,11 +24,11 @@ public class AlipayCouponCreateRequest : AMSRequest<AlipayCouponCreateResponse>
             this.DurationType = durationType;
             this.DurationValue = durationValue;
             this.DurationUnit = durationUnit;
-            this.MaxRedemptions = maxRedemptions;
             this.RedeemBy = redeemBy;
             this.AppliesTo = appliesTo;
             this.Metadata = metadata;
             this.PromotionCodes = promotionCodes;
+            this.MaxRedemptions = maxRedemptions;
         }
 
             public string CouponRequestId { get; set; }
@@ -39,11 +39,11 @@ public class AlipayCouponCreateRequest : AMSRequest<AlipayCouponCreateResponse>
             public string DurationType { get; set; }
             public int? DurationValue { get; set; }
             public string DurationUnit { get; set; }
-            public int? MaxRedemptions { get; set; }
             public string RedeemBy { get; set; }
             public CouponCreateAppliesTo AppliesTo { get; set; }
-            public Dictionary<string, string> Metadata { get; set; }
+            public string Metadata { get; set; }
             public List<PromotionCode> PromotionCodes { get; set; }
+            public int? MaxRedemptions { get; set; }
 
         public override string GetRequestURI(){ return "/ams/api/v1/billing/coupon/create"; } 
 

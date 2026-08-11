@@ -11,12 +11,12 @@ public class CouponInquireDetailsAppliesTo
 
         
 
-        public CouponInquireDetailsAppliesTo( List<string> productIds)
+        public CouponInquireDetailsAppliesTo( List<CouponApplicableProduct> products)
         {
-            this.ProductIds = productIds;
+            this.Products = products;
         }
 
-            public List<string> ProductIds { get; set; }
+            public List<CouponApplicableProduct> Products { get; set; }
 
         
 

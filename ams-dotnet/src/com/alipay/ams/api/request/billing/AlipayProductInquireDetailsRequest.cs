@@ -14,14 +14,12 @@ public class AlipayProductInquireDetailsRequest : AMSRequest<AlipayProductInquir
 
         
 
-        public AlipayProductInquireDetailsRequest( string productId , bool? includePrices)
+        public AlipayProductInquireDetailsRequest( string productId)
         {
             this.ProductId = productId;
-            this.IncludePrices = includePrices;
         }
 
             public string ProductId { get; set; }
-            public bool? IncludePrices { get; set; }
 
         public override string GetRequestURI(){ return "/ams/api/v1/billing/product/inquireDetails"; } 
 

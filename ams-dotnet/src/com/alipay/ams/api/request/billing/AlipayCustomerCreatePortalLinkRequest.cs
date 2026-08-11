@@ -14,11 +14,10 @@ public class AlipayCustomerCreatePortalLinkRequest : AMSRequest<AlipayCustomerCr
 
         
 
-        public AlipayCustomerCreatePortalLinkRequest( string customerId , string email , int? expiryDays , List<string> features , bool? autoSend , string settingId)
+        public AlipayCustomerCreatePortalLinkRequest( string customerId , string email , List<string> features , bool? autoSend , string settingId)
         {
             this.CustomerId = customerId;
             this.Email = email;
-            this.ExpiryDays = expiryDays;
             this.Features = features;
             this.AutoSend = autoSend;
             this.SettingId = settingId;
@@ -26,7 +25,6 @@ public class AlipayCustomerCreatePortalLinkRequest : AMSRequest<AlipayCustomerCr
 
             public string CustomerId { get; set; }
             public string Email { get; set; }
-            public int? ExpiryDays { get; set; }
             public List<string> Features { get; set; }
             public bool? AutoSend { get; set; }
             public string SettingId { get; set; }
