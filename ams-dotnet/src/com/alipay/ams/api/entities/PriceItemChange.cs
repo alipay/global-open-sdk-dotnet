@@ -11,18 +11,20 @@ public class PriceItemChange
 
         
 
-        public PriceItemChange( string changeType , string currentPriceId , string newPriceId , int? quantity)
+        public PriceItemChange( string type , string itemId , string currentPriceId , string newPriceId , int? newQuantity)
         {
-            this.ChangeType = changeType;
+            this.Type = type;
+            this.ItemId = itemId;
             this.CurrentPriceId = currentPriceId;
             this.NewPriceId = newPriceId;
-            this.Quantity = quantity;
+            this.NewQuantity = newQuantity;
         }
 
-            public string ChangeType { get; set; }
+            public string Type { get; set; }
+            public string ItemId { get; set; }
             public string CurrentPriceId { get; set; }
             public string NewPriceId { get; set; }
-            public int? Quantity { get; set; }
+            public int? NewQuantity { get; set; }
 
         
 

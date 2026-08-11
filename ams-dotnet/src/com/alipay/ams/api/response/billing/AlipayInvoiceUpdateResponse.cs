@@ -12,16 +12,18 @@ public class AlipayInvoiceUpdateResponse : AMSResponse
 
         
 
-        public AlipayInvoiceUpdateResponse( Result result , string invoiceId , string status)
+        public AlipayInvoiceUpdateResponse( Result result , string invoiceId , string status , string previousInvoiceId)
         {
             this.Result = result;
             this.InvoiceId = invoiceId;
             this.Status = status;
+            this.PreviousInvoiceId = previousInvoiceId;
         }
 
             public Result Result { get; set; }
             public string InvoiceId { get; set; }
             public string Status { get; set; }
+            public string PreviousInvoiceId { get; set; }
 
         
 

@@ -12,7 +12,7 @@ public class AlipayCreditNoteInquireDetailsResponse : AMSResponse
 
         
 
-        public AlipayCreditNoteInquireDetailsResponse( Result result , string creditNoteId , string creditNoteRequestId , string invoiceId , string customerId , string type , string status , Amount totalAmount , string refundStatus , string refundId , string reason , string reasonDescription , string refundDestination , string effectiveDate , string memo , CreditNoteInquireDetailsItems items , string issuedAt , string refundedAt , string voidedAt , string createdAt)
+        public AlipayCreditNoteInquireDetailsResponse( Result result , string creditNoteId , string creditNoteRequestId , string invoiceId , string customerId , string type , string status , Amount totalAmount , Amount refundAmount , string refundStatus , string refundId , string reason , string reasonDescription , string refundDestination , string effectiveDate , string memo , List<CreditNoteItem> items , string issuedAt , string refundedAt , string voidedAt , string createdAt)
         {
             this.Result = result;
             this.CreditNoteId = creditNoteId;
@@ -22,6 +22,7 @@ public class AlipayCreditNoteInquireDetailsResponse : AMSResponse
             this.Type = type;
             this.Status = status;
             this.TotalAmount = totalAmount;
+            this.RefundAmount = refundAmount;
             this.RefundStatus = refundStatus;
             this.RefundId = refundId;
             this.Reason = reason;
@@ -44,6 +45,7 @@ public class AlipayCreditNoteInquireDetailsResponse : AMSResponse
             public string Type { get; set; }
             public string Status { get; set; }
             public Amount TotalAmount { get; set; }
+            public Amount RefundAmount { get; set; }
             public string RefundStatus { get; set; }
             public string RefundId { get; set; }
             public string Reason { get; set; }
@@ -51,7 +53,7 @@ public class AlipayCreditNoteInquireDetailsResponse : AMSResponse
             public string RefundDestination { get; set; }
             public string EffectiveDate { get; set; }
             public string Memo { get; set; }
-            public CreditNoteInquireDetailsItems Items { get; set; }
+            public List<CreditNoteItem> Items { get; set; }
             public string IssuedAt { get; set; }
             public string RefundedAt { get; set; }
             public string VoidedAt { get; set; }

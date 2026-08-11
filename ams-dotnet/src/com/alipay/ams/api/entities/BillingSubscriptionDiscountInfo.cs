@@ -11,7 +11,7 @@ public class BillingSubscriptionDiscountInfo
 
         
 
-        public BillingSubscriptionDiscountInfo( string discountId , string couponId , string type , int? percentOff , Amount amountOff , string duration , int? times , string status)
+        public BillingSubscriptionDiscountInfo( string discountId , string couponId , string type , string percentOff , Amount amountOff , string duration , int? times , string status)
         {
             this.DiscountId = discountId;
             this.CouponId = couponId;
@@ -26,7 +26,7 @@ public class BillingSubscriptionDiscountInfo
             public string DiscountId { get; set; }
             public string CouponId { get; set; }
             public string Type { get; set; }
-            public int? PercentOff { get; set; }
+            public string PercentOff { get; set; }
             public Amount AmountOff { get; set; }
             public string Duration { get; set; }
             public int? Times { get; set; }

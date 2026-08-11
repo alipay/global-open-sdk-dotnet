@@ -12,15 +12,13 @@ public class AlipayCustomerCreatePortalLinkResponse : AMSResponse
 
         
 
-        public AlipayCustomerCreatePortalLinkResponse( Result result , string token , string portalUrl , string expiresAt , string sendStatus , bool? success , ErrorStack errorContext)
+        public AlipayCustomerCreatePortalLinkResponse( Result result , string token , string portalUrl , string expiresAt , string sendStatus)
         {
             this.Result = result;
             this.Token = token;
             this.PortalUrl = portalUrl;
             this.ExpiresAt = expiresAt;
             this.SendStatus = sendStatus;
-            this.Success = success;
-            this.ErrorContext = errorContext;
         }
 
             public Result Result { get; set; }
@@ -28,8 +26,6 @@ public class AlipayCustomerCreatePortalLinkResponse : AMSResponse
             public string PortalUrl { get; set; }
             public string ExpiresAt { get; set; }
             public string SendStatus { get; set; }
-            public bool? Success { get; set; }
-            public ErrorStack ErrorContext { get; set; }
 
         
 

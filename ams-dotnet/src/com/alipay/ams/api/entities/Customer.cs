@@ -11,7 +11,7 @@ public class Customer
 
         
 
-        public Customer( string customerId , string customerRequestId , string email , string firstName , string lastName , string status , string phoneNo , string countryCode , string billingEmail , string shippingFirstName , string shippingLastName , string shippingCountryCode)
+        public Customer( string customerId , string customerRequestId , string email , string firstName , string lastName , string status , string billingEmail , string country , string gmtCreate)
         {
             this.CustomerId = customerId;
             this.CustomerRequestId = customerRequestId;
@@ -19,12 +19,9 @@ public class Customer
             this.FirstName = firstName;
             this.LastName = lastName;
             this.Status = status;
-            this.PhoneNo = phoneNo;
-            this.CountryCode = countryCode;
             this.BillingEmail = billingEmail;
-            this.ShippingFirstName = shippingFirstName;
-            this.ShippingLastName = shippingLastName;
-            this.ShippingCountryCode = shippingCountryCode;
+            this.Country = country;
+            this.GmtCreate = gmtCreate;
         }
 
             public string CustomerId { get; set; }
@@ -33,12 +30,9 @@ public class Customer
             public string FirstName { get; set; }
             public string LastName { get; set; }
             public string Status { get; set; }
-            public string PhoneNo { get; set; }
-            public string CountryCode { get; set; }
             public string BillingEmail { get; set; }
-            public string ShippingFirstName { get; set; }
-            public string ShippingLastName { get; set; }
-            public string ShippingCountryCode { get; set; }
+            public string Country { get; set; }
+            public string GmtCreate { get; set; }
 
         
 

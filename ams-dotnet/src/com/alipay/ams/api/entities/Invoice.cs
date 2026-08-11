@@ -11,7 +11,7 @@ public class Invoice
 
         
 
-        public Invoice( string invoiceId , string subscriptionId , string customerId , string customerFirstName , string customerLastName , string customerEmail , string reason , string status , Amount totalAmount , Amount paidAmount , Amount remainAmount , string currency , string paidTime , string voidedTime , string periodStart , string periodEnd , string dueDate , string gmtCreate , string gmtUpdate , string description , string pdfFileUrl)
+        public Invoice( string invoiceId , string subscriptionId , string customerId , string customerFirstName , string customerLastName , string customerEmail , string reason , string status , Amount totalAmount , Amount paidAmount , Amount remainAmount , string currency , string periodStart , string periodEnd , string dueDate , string gmtCreate , string gmtUpdate , string description , string pdfFileUrl)
         {
             this.InvoiceId = invoiceId;
             this.SubscriptionId = subscriptionId;
@@ -25,8 +25,6 @@ public class Invoice
             this.PaidAmount = paidAmount;
             this.RemainAmount = remainAmount;
             this.Currency = currency;
-            this.PaidTime = paidTime;
-            this.VoidedTime = voidedTime;
             this.PeriodStart = periodStart;
             this.PeriodEnd = periodEnd;
             this.DueDate = dueDate;
@@ -48,8 +46,6 @@ public class Invoice
             public Amount PaidAmount { get; set; }
             public Amount RemainAmount { get; set; }
             public string Currency { get; set; }
-            public string PaidTime { get; set; }
-            public string VoidedTime { get; set; }
             public string PeriodStart { get; set; }
             public string PeriodEnd { get; set; }
             public string DueDate { get; set; }

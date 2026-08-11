@@ -12,22 +12,22 @@ public class AlipayPromotionCodeInquireListResponse : AMSResponse
 
         
 
-        public AlipayPromotionCodeInquireListResponse( Result result , List<PromotionCodeInfo> promotionCodes , bool? hasMore , string nextCursor , string prevCursor , int? total)
+        public AlipayPromotionCodeInquireListResponse( Result result , List<PromotionCodeInfo> promotionCodes , bool? hasMore , string nextCursor , int? total , string previousCursor)
         {
             this.Result = result;
             this.PromotionCodes = promotionCodes;
             this.HasMore = hasMore;
             this.NextCursor = nextCursor;
-            this.PrevCursor = prevCursor;
             this.Total = total;
+            this.PreviousCursor = previousCursor;
         }
 
             public Result Result { get; set; }
             public List<PromotionCodeInfo> PromotionCodes { get; set; }
             public bool? HasMore { get; set; }
             public string NextCursor { get; set; }
-            public string PrevCursor { get; set; }
             public int? Total { get; set; }
+            public string PreviousCursor { get; set; }
 
         
 

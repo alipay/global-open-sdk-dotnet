@@ -12,7 +12,7 @@ public class AlipayCreditNoteCreateResponse : AMSResponse
 
         
 
-        public AlipayCreditNoteCreateResponse( Result result , string creditNoteId , string creditNoteRequestId , string invoiceId , string type , string status , string customerId , Amount totalAmount , Amount refundAmount , string refundStatus , string refundId , string reason , string reasonDescription , string refundDestination , CreditNoteCreateItems items , string memo , string effectiveDate , string issuedAt , string refundedAt , string voidedAt , string createdAt)
+        public AlipayCreditNoteCreateResponse( Result result , string creditNoteId , string creditNoteRequestId , string invoiceId , string type , string status , string customerId , Amount totalAmount , Amount refundAmount , string refundStatus , string refundId , string reason , string reasonDescription , string refundDestination , List<CreditNoteItem> items , string memo , string effectiveDate , string issuedAt , string refundedAt , string createdAt)
         {
             this.Result = result;
             this.CreditNoteId = creditNoteId;
@@ -33,7 +33,6 @@ public class AlipayCreditNoteCreateResponse : AMSResponse
             this.EffectiveDate = effectiveDate;
             this.IssuedAt = issuedAt;
             this.RefundedAt = refundedAt;
-            this.VoidedAt = voidedAt;
             this.CreatedAt = createdAt;
         }
 
@@ -51,12 +50,11 @@ public class AlipayCreditNoteCreateResponse : AMSResponse
             public string Reason { get; set; }
             public string ReasonDescription { get; set; }
             public string RefundDestination { get; set; }
-            public CreditNoteCreateItems Items { get; set; }
+            public List<CreditNoteItem> Items { get; set; }
             public string Memo { get; set; }
             public string EffectiveDate { get; set; }
             public string IssuedAt { get; set; }
             public string RefundedAt { get; set; }
-            public string VoidedAt { get; set; }
             public string CreatedAt { get; set; }
 
         

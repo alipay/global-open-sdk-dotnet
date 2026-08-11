@@ -12,7 +12,7 @@ public class AlipayReceiptInquireDetailsResponse : AMSResponse
 
         
 
-        public AlipayReceiptInquireDetailsResponse( Result result , string receiptId , string originalReceiptId , string invoiceId , string subscriptionId , string customerId , string paymentId , string refundId , string receiptType , string status , string reason , string customerFirstName , string customerLastName , string customerEmail , string collectionMethod , Amount totalAmount , Amount subtotal , Amount paidAmount , Amount discountAmount , Amount taxAmount , Amount shippingFeeAmount , Amount paymentDeductedAmount , Amount refundAmount , Amount refundedAmount , Amount remainingAmount , Amount settlementAmount , string fxRate , string fxRateId , string paymentMethod , string periodStart , string periodEnd , string paidTime , string dueDate , string paymentRequestId , string payToRequestId , string payToId , string description , string fileUrl , List<ReceiptItem> items , List<Payment> payments , string gmtCreate , string gmtUpdate , string paymentMethodType , string footer)
+        public AlipayReceiptInquireDetailsResponse( Result result , string receiptId , string originalReceiptId , string invoiceId , string subscriptionId , string customerId , string paymentId , string refundId , string receiptType , string status , string reason , string customerFirstName , string customerLastName , string customerEmail , string collectionMethod , Amount totalAmount , Amount subtotal , Amount paidAmount , Amount discountAmount , Amount taxAmount , Amount shippingFeeAmount , Amount paymentDeductedAmount , Amount refundAmount , Amount refundedAmount , Amount remainingAmount , Amount settlementAmount , string fxRate , string fxRateId , string paymentMethod , string periodStart , string periodEnd , string paidTime , string dueDate , string paymentRequestId , string payToRequestId , string payToId , string description , string fileUrl , List<ReceiptItem> items , List<InvoicePayment> payments , string gmtCreate , string gmtUpdate , string paymentMethodType)
         {
             this.Result = result;
             this.ReceiptId = receiptId;
@@ -57,7 +57,6 @@ public class AlipayReceiptInquireDetailsResponse : AMSResponse
             this.GmtCreate = gmtCreate;
             this.GmtUpdate = gmtUpdate;
             this.PaymentMethodType = paymentMethodType;
-            this.Footer = footer;
         }
 
             public Result Result { get; set; }
@@ -99,11 +98,10 @@ public class AlipayReceiptInquireDetailsResponse : AMSResponse
             public string Description { get; set; }
             public string FileUrl { get; set; }
             public List<ReceiptItem> Items { get; set; }
-            public List<Payment> Payments { get; set; }
+            public List<InvoicePayment> Payments { get; set; }
             public string GmtCreate { get; set; }
             public string GmtUpdate { get; set; }
             public string PaymentMethodType { get; set; }
-            public string Footer { get; set; }
 
         
 
