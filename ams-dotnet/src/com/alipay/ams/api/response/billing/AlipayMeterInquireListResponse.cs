@@ -12,13 +12,19 @@ public class AlipayMeterInquireListResponse : AMSResponse
 
         
 
-        public AlipayMeterInquireListResponse( Result result , List<Meter> meters)
+        public AlipayMeterInquireListResponse( Result result , int? pageNum , int? pageSize , int? totalCount , List<Meter> meters)
         {
             this.Result = result;
+            this.PageNum = pageNum;
+            this.PageSize = pageSize;
+            this.TotalCount = totalCount;
             this.Meters = meters;
         }
 
             public Result Result { get; set; }
+            public int? PageNum { get; set; }
+            public int? PageSize { get; set; }
+            public int? TotalCount { get; set; }
             public List<Meter> Meters { get; set; }
 
         

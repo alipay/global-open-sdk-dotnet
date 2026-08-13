@@ -12,7 +12,7 @@ public class AlipayCreditNoteInquireListResponse : AMSResponse
 
         
 
-        public AlipayCreditNoteInquireListResponse( Result result , bool? hasMore , int? totalCount , List<CreditNoteSummary> list)
+        public AlipayCreditNoteInquireListResponse( Result result , bool? hasMore , long? totalCount , List<CreditNoteSummary> list)
         {
             this.Result = result;
             this.HasMore = hasMore;
@@ -22,7 +22,7 @@ public class AlipayCreditNoteInquireListResponse : AMSResponse
 
             public Result Result { get; set; }
             public bool? HasMore { get; set; }
-            public int? TotalCount { get; set; }
+            public long? TotalCount { get; set; }
             public List<CreditNoteSummary> List { get; set; }
 
         

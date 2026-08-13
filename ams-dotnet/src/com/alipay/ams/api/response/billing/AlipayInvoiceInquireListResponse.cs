@@ -12,13 +12,15 @@ public class AlipayInvoiceInquireListResponse : AMSResponse
 
         
 
-        public AlipayInvoiceInquireListResponse( Result result , List<Invoice> invoices , string total , bool? hasMore , string nextCursor)
+        public AlipayInvoiceInquireListResponse( Result result , List<Invoice> invoices , string total , bool? hasMore , string nextCursor , bool? degrade , string previousCursor)
         {
             this.Result = result;
             this.Invoices = invoices;
             this.Total = total;
             this.HasMore = hasMore;
             this.NextCursor = nextCursor;
+            this.Degrade = degrade;
+            this.PreviousCursor = previousCursor;
         }
 
             public Result Result { get; set; }
@@ -26,6 +28,8 @@ public class AlipayInvoiceInquireListResponse : AMSResponse
             public string Total { get; set; }
             public bool? HasMore { get; set; }
             public string NextCursor { get; set; }
+            public bool? Degrade { get; set; }
+            public string PreviousCursor { get; set; }
 
         
 

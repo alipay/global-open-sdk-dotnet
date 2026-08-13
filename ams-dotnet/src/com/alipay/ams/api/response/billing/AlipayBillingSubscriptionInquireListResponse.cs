@@ -12,22 +12,20 @@ public class AlipayBillingSubscriptionInquireListResponse : AMSResponse
 
         
 
-        public AlipayBillingSubscriptionInquireListResponse( ResultInfo result , List<Subscription> subscriptions , bool? hasMore , string nextCursor , string prevCursor , int? total)
+        public AlipayBillingSubscriptionInquireListResponse( ResultInfo result , List<Subscription> subscriptions , bool? hasMore , string nextCursor , string previousCursor)
         {
             this.Result = result;
             this.Subscriptions = subscriptions;
             this.HasMore = hasMore;
             this.NextCursor = nextCursor;
-            this.PrevCursor = prevCursor;
-            this.Total = total;
+            this.PreviousCursor = previousCursor;
         }
 
             public ResultInfo Result { get; set; }
             public List<Subscription> Subscriptions { get; set; }
             public bool? HasMore { get; set; }
             public string NextCursor { get; set; }
-            public string PrevCursor { get; set; }
-            public int? Total { get; set; }
+            public string PreviousCursor { get; set; }
 
         
 

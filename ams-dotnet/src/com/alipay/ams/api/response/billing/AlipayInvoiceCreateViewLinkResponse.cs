@@ -12,7 +12,7 @@ public class AlipayInvoiceCreateViewLinkResponse : AMSResponse
 
         
 
-        public AlipayInvoiceCreateViewLinkResponse( InvoiceCreateViewLinkResult result , string token , string viewUrl , string expiresAt)
+        public AlipayInvoiceCreateViewLinkResponse( Result result , string token , string viewUrl , string expiresAt)
         {
             this.Result = result;
             this.Token = token;
@@ -20,7 +20,7 @@ public class AlipayInvoiceCreateViewLinkResponse : AMSResponse
             this.ExpiresAt = expiresAt;
         }
 
-            public InvoiceCreateViewLinkResult Result { get; set; }
+            public Result Result { get; set; }
             public string Token { get; set; }
             public string ViewUrl { get; set; }
             public string ExpiresAt { get; set; }

@@ -14,20 +14,20 @@ public class AlipayPriceUpdateRequest : AMSRequest<AlipayPriceUpdateResponse>
 
         
 
-        public AlipayPriceUpdateRequest( string priceId , string name , Dictionary<string, string> metadata , string metadataKeysToRemove , bool? active)
+        public AlipayPriceUpdateRequest( string priceId , string name , string metadata , bool? active , bool? defaultPrice)
         {
             this.PriceId = priceId;
             this.Name = name;
             this.Metadata = metadata;
-            this.MetadataKeysToRemove = metadataKeysToRemove;
             this.Active = active;
+            this.DefaultPrice = defaultPrice;
         }
 
             public string PriceId { get; set; }
             public string Name { get; set; }
-            public Dictionary<string, string> Metadata { get; set; }
-            public string MetadataKeysToRemove { get; set; }
+            public string Metadata { get; set; }
             public bool? Active { get; set; }
+            public bool? DefaultPrice { get; set; }
 
         public override string GetRequestURI(){ return "/ams/api/v1/billing/price/update"; } 
 

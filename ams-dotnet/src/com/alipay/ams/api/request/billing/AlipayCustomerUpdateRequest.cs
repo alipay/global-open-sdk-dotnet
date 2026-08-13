@@ -14,7 +14,7 @@ public class AlipayCustomerUpdateRequest : AMSRequest<AlipayCustomerUpdateRespon
 
         
 
-        public AlipayCustomerUpdateRequest( string customerId , string referenceCustomerId , string alipayUserId , string email , string firstName , string lastName , string country , string state , string city , string address , string addressDetail , string zipcode , string shippingPhone , string shippingCountry , string shippingState , string shippingCity , string shippingAddress , string shippingAddressDetail , string shippingZipcode , string description , string currency , List<string> preferredLocales , string defaultPaymentMethod , Dictionary<string, string> metadata , string phoneNo , string countryCode , string billingEmail , string shippingFirstName , string shippingLastName , string shippingCountryCode)
+        public AlipayCustomerUpdateRequest( string customerId , string referenceCustomerId , string alipayUserId , string email , string firstName , string lastName , string country , string state , string city , string address , string addressDetail , string zipcode , string shippingPhone , string shippingCountry , string shippingState , string shippingCity , string shippingAddress , string shippingAddressDetail , string shippingZipcode , string description , string currency , List<string> preferredLocales , string defaultPaymentMethod , string metadata , string phoneNo , string countryCode , string billingEmail , string shippingFirstName , string shippingLastName , string shippingCountryCode)
         {
             this.CustomerId = customerId;
             this.ReferenceCustomerId = referenceCustomerId;
@@ -71,7 +71,7 @@ public class AlipayCustomerUpdateRequest : AMSRequest<AlipayCustomerUpdateRespon
             public string Currency { get; set; }
             public List<string> PreferredLocales { get; set; }
             public string DefaultPaymentMethod { get; set; }
-            public Dictionary<string, string> Metadata { get; set; }
+            public string Metadata { get; set; }
             public string PhoneNo { get; set; }
             public string CountryCode { get; set; }
             public string BillingEmail { get; set; }

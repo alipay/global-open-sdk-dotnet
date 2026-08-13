@@ -4,7 +4,11 @@ namespace com.alipay.ams.api.request.notify;
 
 public class AlipayBillingSubscriptionNotify : AlipayNotify
 {
-    public string MerchantRequestId { get; set; }
+    /// <summary>
+    /// The original subscription request ID and merchant-side idempotency key used for notification
+    /// deduplication.
+    /// </summary>
+    public string SubscriptionRequestId { get; set; }
 
     public string EventTime { get; set; }
 

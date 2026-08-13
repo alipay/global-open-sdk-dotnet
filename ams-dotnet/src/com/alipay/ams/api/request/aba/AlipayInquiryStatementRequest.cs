@@ -14,7 +14,7 @@ public class AlipayInquiryStatementRequest : AMSRequest<AlipayInquiryStatementRe
 
         
 
-        public AlipayInquiryStatementRequest( string customerId , string accessToken , Object startTime , string endTime , List<string> transactionTypeList , List<string> currencyList , int? pageSize , int? pageNumber , string assetId , string fuzzyName)
+        public AlipayInquiryStatementRequest( string customerId , string accessToken , string startTime , string endTime , List<string> transactionTypeList , List<string> currencyList , int? pageSize , int? pageNumber , string assetId , string fuzzyName)
         {
             this.CustomerId = customerId;
             this.AccessToken = accessToken;
@@ -30,7 +30,7 @@ public class AlipayInquiryStatementRequest : AMSRequest<AlipayInquiryStatementRe
 
             public string CustomerId { get; set; }
             public string AccessToken { get; set; }
-            public Object StartTime { get; set; }
+            public string StartTime { get; set; }
             public string EndTime { get; set; }
             public List<string> TransactionTypeList { get; set; }
             public List<string> CurrencyList { get; set; }

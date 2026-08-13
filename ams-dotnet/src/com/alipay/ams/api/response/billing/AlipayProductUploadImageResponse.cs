@@ -12,16 +12,17 @@ public class AlipayProductUploadImageResponse : AMSResponse
 
         
 
-        public AlipayProductUploadImageResponse( Result result , string imageUrl , string imageName)
+        public AlipayProductUploadImageResponse(Result result, string imageUrl, string imageName, string productId)
         {
             this.Result = result;
             this.ImageUrl = imageUrl;
             this.ImageName = imageName;
+            this.ProductId = productId;
         }
 
-            public Result Result { get; set; }
             public string ImageUrl { get; set; }
             public string ImageName { get; set; }
+            public string ProductId { get; set; }
 
         
 

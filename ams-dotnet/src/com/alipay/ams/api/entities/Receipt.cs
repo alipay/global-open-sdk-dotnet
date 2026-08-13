@@ -11,7 +11,7 @@ public class Receipt
 
         
 
-        public Receipt( string receiptId , string invoiceId , string customerId , string subscriptionId , string originalReceiptId , string receiptType , string status , string reason , string collectionMethod , string paymentMethod , Amount subtotal , Amount totalAmount , Amount paidAmount , Amount remainingAmount , Amount refundAmount , Amount refundedAmount , Amount paymentDeductedAmount , string periodStart , string periodEnd , string description , string gmtCreate , string gmtUpdate , string customerFirstName , string customerLastName , string customerEmail , string paymentMethodType , Amount discountAmount , Amount taxAmount , Amount shippingFeeAmount , Amount settlementAmount , string fxRate , string fxRateId , string dueDate , string paidTime , string paymentRequestId , string payToRequestId , string payToId , string footer , string fileUrl)
+        public Receipt( string receiptId , string invoiceId , string customerId , string subscriptionId , string originalReceiptId , string receiptType , string status , string reason , string collectionMethod , ReceiptPaymentMethod paymentMethod , Amount subtotal , Amount totalAmount , Amount paidAmount , Amount remainingAmount , Amount refundAmount , Amount refundedAmount , Amount paymentDeductedAmount , string periodStart , string periodEnd , string description , string gmtCreate , string gmtUpdate , string paymentMethodType , Amount discountAmount , Amount taxAmount , Amount shippingFeeAmount , Amount settlementAmount , string fxRate , string fxRateId , string dueDate , string paidTime , string paymentRequestId , string payToRequestId , string payToId , string footer , string fileUrl)
         {
             this.ReceiptId = receiptId;
             this.InvoiceId = invoiceId;
@@ -35,9 +35,6 @@ public class Receipt
             this.Description = description;
             this.GmtCreate = gmtCreate;
             this.GmtUpdate = gmtUpdate;
-            this.CustomerFirstName = customerFirstName;
-            this.CustomerLastName = customerLastName;
-            this.CustomerEmail = customerEmail;
             this.PaymentMethodType = paymentMethodType;
             this.DiscountAmount = discountAmount;
             this.TaxAmount = taxAmount;
@@ -63,7 +60,7 @@ public class Receipt
             public string Status { get; set; }
             public string Reason { get; set; }
             public string CollectionMethod { get; set; }
-            public string PaymentMethod { get; set; }
+            public ReceiptPaymentMethod PaymentMethod { get; set; }
             public Amount Subtotal { get; set; }
             public Amount TotalAmount { get; set; }
             public Amount PaidAmount { get; set; }
@@ -76,9 +73,6 @@ public class Receipt
             public string Description { get; set; }
             public string GmtCreate { get; set; }
             public string GmtUpdate { get; set; }
-            public string CustomerFirstName { get; set; }
-            public string CustomerLastName { get; set; }
-            public string CustomerEmail { get; set; }
             public string PaymentMethodType { get; set; }
             public Amount DiscountAmount { get; set; }
             public Amount TaxAmount { get; set; }

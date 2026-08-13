@@ -4,14 +4,14 @@ using System.Collections.Generic;
 namespace com.alipay.ams.api.entities
 {
 
-public class BillingSubscriptionUpdateTrialSettingsEndBehavior
+public class BillingSubscriptionTrialSettingsEndBehavior
     {
 
-        public BillingSubscriptionUpdateTrialSettingsEndBehavior() { }
+        public BillingSubscriptionTrialSettingsEndBehavior() { }
 
         
 
-        public BillingSubscriptionUpdateTrialSettingsEndBehavior( string missingPaymentMethod)
+        public BillingSubscriptionTrialSettingsEndBehavior( string missingPaymentMethod)
         {
             this.MissingPaymentMethod = missingPaymentMethod;
         }

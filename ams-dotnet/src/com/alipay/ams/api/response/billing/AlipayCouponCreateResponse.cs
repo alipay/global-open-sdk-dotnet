@@ -12,7 +12,7 @@ public class AlipayCouponCreateResponse : AMSResponse
 
         
 
-        public AlipayCouponCreateResponse( CouponCreateResult result , string couponId , string couponName , string discountType , string status , List<PromotionCode> promotionCodes)
+        public AlipayCouponCreateResponse( ResultInfo result , string couponId , string couponName , string discountType , string status , List<CouponPromotionCode> promotionCodes)
         {
             this.Result = result;
             this.CouponId = couponId;
@@ -22,12 +22,12 @@ public class AlipayCouponCreateResponse : AMSResponse
             this.PromotionCodes = promotionCodes;
         }
 
-            public CouponCreateResult Result { get; set; }
+            public ResultInfo Result { get; set; }
             public string CouponId { get; set; }
             public string CouponName { get; set; }
             public string DiscountType { get; set; }
             public string Status { get; set; }
-            public List<PromotionCode> PromotionCodes { get; set; }
+            public List<CouponPromotionCode> PromotionCodes { get; set; }
 
         
 

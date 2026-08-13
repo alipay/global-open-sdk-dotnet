@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using System.Text.RegularExpressions;
+using com.alipay.ams.api.request;
 using com.alipay.ams.api.response;
 
 namespace com.alipay.ams.api
@@ -31,8 +32,23 @@ namespace com.alipay.ams.api
         public string AgentToken { get; }
         public string MerchantPrivateKey { get; }
         public string AlipayPublicKey { get; }
+        private string UploadGatewayUrl { get; set; }
 
         private HttpClient client = new System.Net.Http.HttpClient();
+
+        public void SetUploadGatewayUrl(string uploadGatewayUrl)
+        {
+            UploadGatewayUrl = UploadGatewayResolver.NormalizeExplicit(uploadGatewayUrl);
+        }
+
+        /// <summary>
+        /// Uploads an SDK-provided file request through the OpenApiV2File transport.
+        /// </summary>
+        public TAMSResponse UploadFile<TAMSResponse>(AMSFileRequest<TAMSResponse> request)
+            where TAMSResponse : AMSResponse
+        {
+            return FileUploadExecutor.Execute(this, UploadGatewayUrl, request);
+        }
 
         public  TAMSResponse Execute<TAMSResponse>(request.AMSRequest<TAMSResponse> request)
             where TAMSResponse : AMSResponse

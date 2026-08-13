@@ -14,19 +14,13 @@ public class AlipayBillingSubscriptionResumeRequest : AMSRequest<AlipayBillingSu
 
         
 
-        public AlipayBillingSubscriptionResumeRequest( string subscriptionId , string billingCycleAnchor , string prorationBehavior , string prorationDate , string reasonCode)
+        public AlipayBillingSubscriptionResumeRequest( string subscriptionId , string reasonCode)
         {
             this.SubscriptionId = subscriptionId;
-            this.BillingCycleAnchor = billingCycleAnchor;
-            this.ProrationBehavior = prorationBehavior;
-            this.ProrationDate = prorationDate;
             this.ReasonCode = reasonCode;
         }
 
             public string SubscriptionId { get; set; }
-            public string BillingCycleAnchor { get; set; }
-            public string ProrationBehavior { get; set; }
-            public string ProrationDate { get; set; }
             public string ReasonCode { get; set; }
 
         public override string GetRequestURI(){ return "/ams/api/v1/billing/subscription/resume"; } 
