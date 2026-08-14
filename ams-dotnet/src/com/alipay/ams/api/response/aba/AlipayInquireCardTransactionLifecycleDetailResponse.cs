@@ -18,7 +18,7 @@ public class AlipayInquireCardTransactionLifecycleDetailResponse : AMSResponse
             this.Lifecycle = lifecycle;
         }
 
-            public Result Result { get; set; }
+            public new Result Result { get; set; }
             public CardTransactionLifecycleDetail Lifecycle { get; set; }
 
         
