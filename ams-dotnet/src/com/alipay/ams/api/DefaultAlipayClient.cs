@@ -79,6 +79,13 @@ namespace com.alipay.ams.api
         public  TAMSResponse ExecuteWithHeaders<TAMSResponse>(request.AMSRequest<TAMSResponse> request, Dictionary<string, string> extraHeaders)
             where TAMSResponse : AMSResponse
         {
+            if (RequestTransportResolver.RequiresSessionHttp2(
+                System.Net.Http.HttpMethod.Post.Method,
+                request.GetRequestURI()))
+            {
+                return SessionHttp2Executor.Execute(this.GatewayUrl, request, extraHeaders);
+            }
+
             var requestUrl = BuildRequestUrl(request.GetRequestURI());
 
             var requestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUrl );
