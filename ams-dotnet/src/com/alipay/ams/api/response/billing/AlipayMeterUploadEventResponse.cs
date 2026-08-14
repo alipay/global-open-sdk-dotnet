@@ -12,7 +12,7 @@ public class AlipayMeterUploadEventResponse : AMSResponse
 
         
 
-        public AlipayMeterUploadEventResponse( Result result , int? retryAfter , List<Error> errors)
+        public AlipayMeterUploadEventResponse( Result result , long? retryAfter , List<Error> errors)
         {
             this.Result = result;
             this.RetryAfter = retryAfter;
@@ -20,7 +20,7 @@ public class AlipayMeterUploadEventResponse : AMSResponse
         }
 
             public Result Result { get; set; }
-            public int? RetryAfter { get; set; }
+            public long? RetryAfter { get; set; }
             public List<Error> Errors { get; set; }
 
         
