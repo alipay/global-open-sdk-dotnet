@@ -12,7 +12,7 @@ public class AlipayCaptureResponse : AMSResponse
 
         
 
-        public AlipayCaptureResponse( Result result , string captureRequestId , string captureId , string paymentId , Amount captureAmount , string captureTime , string acquirerReferenceNo)
+        public AlipayCaptureResponse( Result result , string captureRequestId , string captureId , string paymentId , Amount captureAmount , string captureTime , string acquirerReferenceNo , string yimutestopenapi)
         {
             this.Result = result;
             this.CaptureRequestId = captureRequestId;
@@ -21,6 +21,7 @@ public class AlipayCaptureResponse : AMSResponse
             this.CaptureAmount = captureAmount;
             this.CaptureTime = captureTime;
             this.AcquirerReferenceNo = acquirerReferenceNo;
+            this.Yimutestopenapi = yimutestopenapi;
         }
 
             public Result Result { get; set; }
@@ -30,6 +31,7 @@ public class AlipayCaptureResponse : AMSResponse
             public Amount CaptureAmount { get; set; }
             public string CaptureTime { get; set; }
             public string AcquirerReferenceNo { get; set; }
+            public string Yimutestopenapi { get; set; }
 
         
 
