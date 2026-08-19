@@ -90,3 +90,17 @@ See [Digital signature](https://global.alipay.com/doc/ams/digital_signature) for
 |---|---|---|---|
 |2020/11/13|1.1|Add Cashier Payment and Auto Debit support.|YES|
 |2020/10/10|1.0|v1 release|-|
+
+## Exact amount conversion
+
+```csharp
+using com.alipay.ams.util;
+
+string value = AmountUtil.ToAmount("10.25", "USD"); // "1025"
+string major = AmountUtil.FromAmount(value, "USD"); // "10.25"
+AmountUtil.Validate(value, "USD");
+```
+
+The methods accept strings, convert with the ISO 4217 minor unit, and never
+round. Extra non-zero decimal places are rejected. Payment-method currency
+support and minimum amounts remain subject to the relevant Antom API docs.

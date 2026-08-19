@@ -13,6 +13,7 @@
   </PropertyGroup>
   
   <ItemGroup>
+    <EmbeddedResource Include="src\com\alipay\ams\util\resources\amount-currency-rules.json" />
     <Folder Include="src\com\alipay\ams\util\*.cs" />
     <Folder Include="src\com\alipay\ams\api\request\**\*.cs" />
     <Folder Include="src\com\alipay\ams\api\response\**\*.cs" />
