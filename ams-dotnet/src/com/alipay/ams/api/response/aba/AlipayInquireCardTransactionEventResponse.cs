@@ -21,7 +21,7 @@ public class AlipayInquireCardTransactionEventResponse : AMSResponse
             this.CurrentPageNumber = currentPageNumber;
         }
 
-            public new Result Result { get; set; }
+            public Result Result { get; set; }
             public List<CardTransactionEvent> Events { get; set; }
             public int? TotalCount { get; set; }
             public int? TotalPageNumber { get; set; }
