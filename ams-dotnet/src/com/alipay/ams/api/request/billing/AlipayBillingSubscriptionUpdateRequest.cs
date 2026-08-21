@@ -14,13 +14,14 @@ public class AlipayBillingSubscriptionUpdateRequest : AMSRequest<AlipayBillingSu
 
         
 
-        public AlipayBillingSubscriptionUpdateRequest( string subscriptionId , List<PriceItemChange> priceItemChanges , string prorationBehavior , bool? resetBillingCycleAnchor , BillingTrialSettings trialSettings , bool? cancelAtPeriodEnd , string cancelAt , BillingSubscriptionCancellationDetails cancellationDetails , string collectionMethod , int? daysUntilDue , string description , string metadata)
+        public AlipayBillingSubscriptionUpdateRequest( string subscriptionId , List<PriceItemChange> priceItemChanges , string prorationBehavior , bool? resetBillingCycleAnchor , BillingTrialSettings trialSettings , BillingSubscriptionStatusChange statusChange , bool? cancelAtPeriodEnd , string cancelAt , BillingSubscriptionCancellationDetails cancellationDetails , string collectionMethod , int? daysUntilDue , string description , string metadata)
         {
             this.SubscriptionId = subscriptionId;
             this.PriceItemChanges = priceItemChanges;
             this.ProrationBehavior = prorationBehavior;
             this.ResetBillingCycleAnchor = resetBillingCycleAnchor;
             this.TrialSettings = trialSettings;
+            this.StatusChange = statusChange;
             this.CancelAtPeriodEnd = cancelAtPeriodEnd;
             this.CancelAt = cancelAt;
             this.CancellationDetails = cancellationDetails;
@@ -35,6 +36,7 @@ public class AlipayBillingSubscriptionUpdateRequest : AMSRequest<AlipayBillingSu
             public string ProrationBehavior { get; set; }
             public bool? ResetBillingCycleAnchor { get; set; }
             public BillingTrialSettings TrialSettings { get; set; }
+            public BillingSubscriptionStatusChange StatusChange { get; set; }
             public bool? CancelAtPeriodEnd { get; set; }
             public string CancelAt { get; set; }
             public BillingSubscriptionCancellationDetails CancellationDetails { get; set; }
