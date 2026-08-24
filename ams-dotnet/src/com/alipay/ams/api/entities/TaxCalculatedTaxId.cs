@@ -4,14 +4,14 @@ using System.Collections.Generic;
 namespace com.alipay.ams.api.entities
 {
 
-public class TaxId
+public class TaxCalculatedTaxId
     {
 
-        public TaxId() { }
+        public TaxCalculatedTaxId() { }
 
         
 
-        public TaxId( string value , string country , string region , string name)
+        public TaxCalculatedTaxId( string value , string country , string region , string name)
         {
             this.Value = value;
             this.Country = country;
