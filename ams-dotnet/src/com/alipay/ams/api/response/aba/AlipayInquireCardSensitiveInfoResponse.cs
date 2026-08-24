@@ -12,7 +12,7 @@ public class AlipayInquireCardSensitiveInfoResponse : AMSResponse
 
         
 
-        public AlipayInquireCardSensitiveInfoResponse( Result result , string assetId , string cvv , string cardNo , string expiredMonth , string expiredYear)
+        public AlipayInquireCardSensitiveInfoResponse( Result result , string assetId , string cvv , string cardNo , string expiredMonth , string expiredYear , AlipayInquireCardDetailResponse cardDetail)
         {
             this.Result = result;
             this.AssetId = assetId;
@@ -20,6 +20,7 @@ public class AlipayInquireCardSensitiveInfoResponse : AMSResponse
             this.CardNo = cardNo;
             this.ExpiredMonth = expiredMonth;
             this.ExpiredYear = expiredYear;
+            this.CardDetail = cardDetail;
         }
 
             public Result Result { get; set; }
@@ -28,6 +29,7 @@ public class AlipayInquireCardSensitiveInfoResponse : AMSResponse
             public string CardNo { get; set; }
             public string ExpiredMonth { get; set; }
             public string ExpiredYear { get; set; }
+            public AlipayInquireCardDetailResponse CardDetail { get; set; }
 
         
 
