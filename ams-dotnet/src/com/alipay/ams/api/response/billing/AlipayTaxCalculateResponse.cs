@@ -12,7 +12,7 @@ public class AlipayTaxCalculateResponse : AMSResponse
 
         
 
-        public AlipayTaxCalculateResponse( Result result , string taxCalculationId , string currency , string totalAmount , string exclusiveTaxAmount , string inclusiveTaxAmount , List<TaxCalculatedLineItem> lineItems , List<TaxBreakdown> taxBreakdown , string expireAt , string taxDate , TaxCalculatedShippingCost shippingCost)
+        public AlipayTaxCalculateResponse( Result result , string taxCalculationId , string currency , string totalAmount , string exclusiveTaxAmount , string inclusiveTaxAmount , List<TaxCalculatedLineItem> lineItems , List<TaxBreakdown> taxBreakdown , string expireAt , string taxDate , TaxCalculatedShippingCost shippingCost , TaxCalculatedCustomerDetails customerDetails)
         {
             this.Result = result;
             this.TaxCalculationId = taxCalculationId;
@@ -25,6 +25,7 @@ public class AlipayTaxCalculateResponse : AMSResponse
             this.ExpireAt = expireAt;
             this.TaxDate = taxDate;
             this.ShippingCost = shippingCost;
+            this.CustomerDetails = customerDetails;
         }
 
             public Result Result { get; set; }
@@ -38,6 +39,7 @@ public class AlipayTaxCalculateResponse : AMSResponse
             public string ExpireAt { get; set; }
             public string TaxDate { get; set; }
             public TaxCalculatedShippingCost ShippingCost { get; set; }
+            public TaxCalculatedCustomerDetails CustomerDetails { get; set; }
 
         
 
