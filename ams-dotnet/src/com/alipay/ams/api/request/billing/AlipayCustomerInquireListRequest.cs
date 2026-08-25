@@ -14,7 +14,7 @@ public class AlipayCustomerInquireListRequest : AMSRequest<AlipayCustomerInquire
 
         
 
-        public AlipayCustomerInquireListRequest( string startingAfter , string endingBefore , int? limit , bool? includeTotal , string status , string email , string phoneNo , string countryCode , string gmtCreateEnd , string customerId , List<string> country , string emailPrefix , string gmtCreateStart)
+        public AlipayCustomerInquireListRequest( string startingAfter , string endingBefore , int? limit , bool? includeTotal , string status , string email , string gmtCreateEnd , string customerId , List<string> country , string emailPrefix , string gmtCreateStart)
         {
             this.StartingAfter = startingAfter;
             this.EndingBefore = endingBefore;
@@ -22,8 +22,6 @@ public class AlipayCustomerInquireListRequest : AMSRequest<AlipayCustomerInquire
             this.IncludeTotal = includeTotal;
             this.Status = status;
             this.Email = email;
-            this.PhoneNo = phoneNo;
-            this.CountryCode = countryCode;
             this.GmtCreateEnd = gmtCreateEnd;
             this.CustomerId = customerId;
             this.Country = country;
@@ -37,8 +35,6 @@ public class AlipayCustomerInquireListRequest : AMSRequest<AlipayCustomerInquire
             public bool? IncludeTotal { get; set; }
             public string Status { get; set; }
             public string Email { get; set; }
-            public string PhoneNo { get; set; }
-            public string CountryCode { get; set; }
             public string GmtCreateEnd { get; set; }
             public string CustomerId { get; set; }
             public List<string> Country { get; set; }
