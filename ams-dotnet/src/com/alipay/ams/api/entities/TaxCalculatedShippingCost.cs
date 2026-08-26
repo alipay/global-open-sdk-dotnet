@@ -11,15 +11,15 @@ public class TaxCalculatedShippingCost
 
         
 
-        public TaxCalculatedShippingCost( string amount , string taxAmount , List<TaxBreakdown> taxBreakdown)
+        public TaxCalculatedShippingCost( Amount amount , Amount taxAmount , List<TaxBreakdown> taxBreakdown)
         {
             this.Amount = amount;
             this.TaxAmount = taxAmount;
             this.TaxBreakdown = taxBreakdown;
         }
 
-            public string Amount { get; set; }
-            public string TaxAmount { get; set; }
+            public Amount Amount { get; set; }
+            public Amount TaxAmount { get; set; }
             public List<TaxBreakdown> TaxBreakdown { get; set; }
 
         

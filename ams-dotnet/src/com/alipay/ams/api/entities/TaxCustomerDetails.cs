@@ -11,9 +11,10 @@ public class TaxCustomerDetails
 
         
 
-        public TaxCustomerDetails( TaxBusinessDetails businessDetails , TaxAddress shippingAddress , TaxAddress billingAddress , List<TaxId> taxIds , List<TaxExemption> taxExemptions)
+        public TaxCustomerDetails( TaxBusinessDetails businessDetails , string name , TaxAddress shippingAddress , TaxAddress billingAddress , List<TaxId> taxIds , List<TaxExemption> taxExemptions)
         {
             this.BusinessDetails = businessDetails;
+            this.Name = name;
             this.ShippingAddress = shippingAddress;
             this.BillingAddress = billingAddress;
             this.TaxIds = taxIds;
@@ -21,6 +22,7 @@ public class TaxCustomerDetails
         }
 
             public TaxBusinessDetails BusinessDetails { get; set; }
+            public string Name { get; set; }
             public TaxAddress ShippingAddress { get; set; }
             public TaxAddress BillingAddress { get; set; }
             public List<TaxId> TaxIds { get; set; }

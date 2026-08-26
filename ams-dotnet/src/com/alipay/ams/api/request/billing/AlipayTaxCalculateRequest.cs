@@ -14,10 +14,9 @@ public class AlipayTaxCalculateRequest : AMSRequest<AlipayTaxCalculateResponse>
 
         
 
-        public AlipayTaxCalculateRequest( string taxCalculationRequestId , string currency , List<TaxCalculationLineItem> lineItems , string customerId , TaxCustomerDetails customerDetails , TaxShipFromDetails shipFromDetails , TaxShippingCost shippingCost , string taxDate)
+        public AlipayTaxCalculateRequest( string taxCalculationRequestId , List<TaxCalculationLineItem> lineItems , string customerId , TaxCustomerDetails customerDetails , TaxShipFromDetails shipFromDetails , TaxShippingCost shippingCost , string taxDate)
         {
             this.TaxCalculationRequestId = taxCalculationRequestId;
-            this.Currency = currency;
             this.LineItems = lineItems;
             this.CustomerId = customerId;
             this.CustomerDetails = customerDetails;
@@ -27,7 +26,6 @@ public class AlipayTaxCalculateRequest : AMSRequest<AlipayTaxCalculateResponse>
         }
 
             public string TaxCalculationRequestId { get; set; }
-            public string Currency { get; set; }
             public List<TaxCalculationLineItem> LineItems { get; set; }
             public string CustomerId { get; set; }
             public TaxCustomerDetails CustomerDetails { get; set; }
