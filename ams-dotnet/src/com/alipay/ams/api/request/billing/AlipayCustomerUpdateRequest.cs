@@ -14,7 +14,7 @@ public class AlipayCustomerUpdateRequest : AMSRequest<AlipayCustomerUpdateRespon
 
         
 
-        public AlipayCustomerUpdateRequest( string customerId , string referenceCustomerId , string alipayUserId , string email , string firstName , string lastName , string country , string state , string city , string address , string addressDetail , string zipcode , string shippingPhone , string shippingCountry , string shippingState , string shippingCity , string shippingAddress , string shippingAddressDetail , string shippingZipcode , string description , string currency , List<string> preferredLocales , string defaultPaymentMethod , string metadata , string phoneNo , string countryCode , string billingEmail , string shippingFirstName , string shippingLastName , string shippingCountryCode)
+        public AlipayCustomerUpdateRequest( string customerId , string referenceCustomerId , string alipayUserId , string email , string firstName , string lastName , string country , string state , string city , string address , string addressDetail , string zipcode , string shippingCountry , string shippingState , string shippingCity , string shippingAddress , string shippingAddressDetail , string shippingZipcode , string description , string currency , List<string> preferredLocales , string defaultPaymentMethod , string metadata , string billingEmail , string shippingFirstName , string shippingLastName)
         {
             this.CustomerId = customerId;
             this.ReferenceCustomerId = referenceCustomerId;
@@ -28,7 +28,6 @@ public class AlipayCustomerUpdateRequest : AMSRequest<AlipayCustomerUpdateRespon
             this.Address = address;
             this.AddressDetail = addressDetail;
             this.Zipcode = zipcode;
-            this.ShippingPhone = shippingPhone;
             this.ShippingCountry = shippingCountry;
             this.ShippingState = shippingState;
             this.ShippingCity = shippingCity;
@@ -40,12 +39,9 @@ public class AlipayCustomerUpdateRequest : AMSRequest<AlipayCustomerUpdateRespon
             this.PreferredLocales = preferredLocales;
             this.DefaultPaymentMethod = defaultPaymentMethod;
             this.Metadata = metadata;
-            this.PhoneNo = phoneNo;
-            this.CountryCode = countryCode;
             this.BillingEmail = billingEmail;
             this.ShippingFirstName = shippingFirstName;
             this.ShippingLastName = shippingLastName;
-            this.ShippingCountryCode = shippingCountryCode;
         }
 
             public string CustomerId { get; set; }
@@ -60,7 +56,6 @@ public class AlipayCustomerUpdateRequest : AMSRequest<AlipayCustomerUpdateRespon
             public string Address { get; set; }
             public string AddressDetail { get; set; }
             public string Zipcode { get; set; }
-            public string ShippingPhone { get; set; }
             public string ShippingCountry { get; set; }
             public string ShippingState { get; set; }
             public string ShippingCity { get; set; }
@@ -72,12 +67,9 @@ public class AlipayCustomerUpdateRequest : AMSRequest<AlipayCustomerUpdateRespon
             public List<string> PreferredLocales { get; set; }
             public string DefaultPaymentMethod { get; set; }
             public string Metadata { get; set; }
-            public string PhoneNo { get; set; }
-            public string CountryCode { get; set; }
             public string BillingEmail { get; set; }
             public string ShippingFirstName { get; set; }
             public string ShippingLastName { get; set; }
-            public string ShippingCountryCode { get; set; }
 
         public override string GetRequestURI(){ return "/ams/api/v1/billing/customer/update"; } 
 
