@@ -11,7 +11,7 @@ public class TaxCalculationLineItem
 
         
 
-        public TaxCalculationLineItem( string goodsReferenceId , string amount , int? quantity , string taxCode , string productId , string taxBehavior)
+        public TaxCalculationLineItem( string goodsReferenceId , Amount amount , int? quantity , string taxCode , string productId , string taxBehavior)
         {
             this.GoodsReferenceId = goodsReferenceId;
             this.Amount = amount;
@@ -22,7 +22,7 @@ public class TaxCalculationLineItem
         }
 
             public string GoodsReferenceId { get; set; }
-            public string Amount { get; set; }
+            public Amount Amount { get; set; }
             public int? Quantity { get; set; }
             public string TaxCode { get; set; }
             public string ProductId { get; set; }

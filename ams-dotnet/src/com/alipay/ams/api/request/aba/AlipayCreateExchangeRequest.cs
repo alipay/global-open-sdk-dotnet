@@ -29,7 +29,7 @@ public class AlipayCreateExchangeRequest : AMSRequest<AlipayCreateExchangeRespon
             public string ExchangeRequestId { get; set; }
             public string ExchangeMode { get; set; }
 
-        public override string GetRequestURI(){ return "/ams/v1/aba/funds/createExchange"; } 
+        public override string GetRequestURI(){ return "/ams/api/v1/aba/funds/createExchange"; } 
 
 
     }

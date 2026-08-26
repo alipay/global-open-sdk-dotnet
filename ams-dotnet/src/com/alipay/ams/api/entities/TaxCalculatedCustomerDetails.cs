@@ -11,9 +11,10 @@ public class TaxCalculatedCustomerDetails
 
         
 
-        public TaxCalculatedCustomerDetails( TaxCalculatedBusinessDetails businessDetails , TaxCalculatedAddress shippingAddress , TaxCalculatedAddress billingAddress , List<TaxCalculatedTaxId> taxIds , List<TaxCalculatedExemption> taxExemptions)
+        public TaxCalculatedCustomerDetails( TaxCalculatedBusinessDetails businessDetails , string name , TaxCalculatedAddress shippingAddress , TaxCalculatedAddress billingAddress , List<TaxCalculatedTaxId> taxIds , List<TaxCalculatedExemption> taxExemptions)
         {
             this.BusinessDetails = businessDetails;
+            this.Name = name;
             this.ShippingAddress = shippingAddress;
             this.BillingAddress = billingAddress;
             this.TaxIds = taxIds;
@@ -21,6 +22,7 @@ public class TaxCalculatedCustomerDetails
         }
 
             public TaxCalculatedBusinessDetails BusinessDetails { get; set; }
+            public string Name { get; set; }
             public TaxCalculatedAddress ShippingAddress { get; set; }
             public TaxCalculatedAddress BillingAddress { get; set; }
             public List<TaxCalculatedTaxId> TaxIds { get; set; }
