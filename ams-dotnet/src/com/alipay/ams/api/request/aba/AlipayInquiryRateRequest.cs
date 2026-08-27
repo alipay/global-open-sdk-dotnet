@@ -14,12 +14,14 @@ public class AlipayInquiryRateRequest : AMSRequest<AlipayInquiryRateResponse>
 
         
 
-        public AlipayInquiryRateRequest( List<InquiryRateCondition> rateConditionList)
+        public AlipayInquiryRateRequest( List<InquiryRateCondition> rateConditionList , string testRequestId)
         {
             this.RateConditionList = rateConditionList;
+            this.TestRequestId = testRequestId;
         }
 
             public List<InquiryRateCondition> RateConditionList { get; set; }
+            public string TestRequestId { get; set; }
 
         public override string GetRequestURI(){ return "/ams/api/v1/aba/funds/inquireRate"; } 
 
