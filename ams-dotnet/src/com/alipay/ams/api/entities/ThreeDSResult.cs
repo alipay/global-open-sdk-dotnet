@@ -11,7 +11,7 @@ public class ThreeDSResult
 
         
 
-        public ThreeDSResult( string threeDSVersion , string eci , string cavv , string dsTransactionId , string xid , string threeDStransactionStatusReason , string challengeCancel , bool? challenged , string exemptionType , bool? threeDSOffered)
+        public ThreeDSResult( string threeDSVersion , string eci , string cavv , string dsTransactionId , string xid , string threeDStransactionStatusReason , string challengeCancel , bool? challenged , string exemptionType , bool? threeDSOffered , string paResStatus , int? liabilityShift)
         {
             this.ThreeDSVersion = threeDSVersion;
             this.Eci = eci;
@@ -23,6 +23,8 @@ public class ThreeDSResult
             this.Challenged = challenged;
             this.ExemptionType = exemptionType;
             this.ThreeDSOffered = threeDSOffered;
+            this.PaResStatus = paResStatus;
+            this.LiabilityShift = liabilityShift;
         }
 
             public string ThreeDSVersion { get; set; }
@@ -35,6 +37,8 @@ public class ThreeDSResult
             public bool? Challenged { get; set; }
             public string ExemptionType { get; set; }
             public bool? ThreeDSOffered { get; set; }
+            public string PaResStatus { get; set; }
+            public int? LiabilityShift { get; set; }
 
         
 

@@ -11,7 +11,7 @@ public class Shipping
 
         
 
-        public Shipping( UserName shippingName , Address shippingAddress , string shippingCarrier , string shippingPhoneNo , string shipToEmail , string shippingFeeId , Amount shippingFee , string shippingDescription , DeliveryEstimate deliveryEstimate , string shippingNumber , string notes)
+        public Shipping( UserName shippingName , Address shippingAddress , string shippingCarrier , string shippingPhoneNo , string shipToEmail , string shippingFeeId , Amount shippingFee , string shippingDescription , DeliveryEstimate deliveryEstimate , string shippingNumber , string notes , string trackingUrl)
         {
             this.ShippingName = shippingName;
             this.ShippingAddress = shippingAddress;
@@ -24,6 +24,7 @@ public class Shipping
             this.DeliveryEstimate = deliveryEstimate;
             this.ShippingNumber = shippingNumber;
             this.Notes = notes;
+            this.TrackingUrl = trackingUrl;
         }
 
             public UserName ShippingName { get; set; }
@@ -37,6 +38,7 @@ public class Shipping
             public DeliveryEstimate DeliveryEstimate { get; set; }
             public string ShippingNumber { get; set; }
             public string Notes { get; set; }
+            public string TrackingUrl { get; set; }
 
         
 

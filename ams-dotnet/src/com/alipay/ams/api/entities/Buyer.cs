@@ -11,7 +11,7 @@ public class Buyer
 
         
 
-        public Buyer( string referenceBuyerId , UserName buyerName , string buyerPhoneNo , string buyerEmail , string buyerRegistrationTime , bool? isAccountVerified , int? successfulOrderCount , string buyerPhoneNoContryCode)
+        public Buyer( string referenceBuyerId , UserName buyerName , string buyerPhoneNo , string buyerEmail , string buyerRegistrationTime , bool? isAccountVerified , int? successfulOrderCount , string buyerPhoneNoContryCode , Amount successfulOrderAmount , string dateOfLastPaidPurchase , string dateOfFirstPaidPurchase)
         {
             this.ReferenceBuyerId = referenceBuyerId;
             this.BuyerName = buyerName;
@@ -21,6 +21,9 @@ public class Buyer
             this.IsAccountVerified = isAccountVerified;
             this.SuccessfulOrderCount = successfulOrderCount;
             this.BuyerPhoneNoContryCode = buyerPhoneNoContryCode;
+            this.SuccessfulOrderAmount = successfulOrderAmount;
+            this.DateOfLastPaidPurchase = dateOfLastPaidPurchase;
+            this.DateOfFirstPaidPurchase = dateOfFirstPaidPurchase;
         }
 
             public string ReferenceBuyerId { get; set; }
@@ -31,6 +34,9 @@ public class Buyer
             public bool? IsAccountVerified { get; set; }
             public int? SuccessfulOrderCount { get; set; }
             public string BuyerPhoneNoContryCode { get; set; }
+            public Amount SuccessfulOrderAmount { get; set; }
+            public string DateOfLastPaidPurchase { get; set; }
+            public string DateOfFirstPaidPurchase { get; set; }
 
         
 
