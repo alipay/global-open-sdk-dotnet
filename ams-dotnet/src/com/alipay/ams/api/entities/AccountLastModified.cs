@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-    
+
 namespace com.alipay.ams.api.entities
 {
 
@@ -9,7 +9,7 @@ public class AccountLastModified
 
         public AccountLastModified() { }
 
-        
+
 
         public AccountLastModified( string passwordChangeDate , string emailChangeDate , string listingChangeDate , string loginDate , string addressChangeDate)
         {
@@ -26,7 +26,7 @@ public class AccountLastModified
             public string LoginDate { get; set; }
             public string AddressChangeDate { get; set; }
 
-        
+
 
     }
 
