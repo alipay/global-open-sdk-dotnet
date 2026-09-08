@@ -11,7 +11,7 @@ public class Lodging
 
         
 
-        public Lodging( string hotelName , Address hotelAddress , string checkInDate , string checkOutDate , int? numberOfNights , int? numberOfRooms , List<UserName> guestNames)
+        public Lodging( string hotelName , Address hotelAddress , string checkInDate , string checkOutDate , int? numberOfNights , int? numberOfRooms , List<UserName> guestNames , string roomClass , string ticketDeliveryMethod , string ticketDeliveryRecipient)
         {
             this.HotelName = hotelName;
             this.HotelAddress = hotelAddress;
@@ -20,6 +20,9 @@ public class Lodging
             this.NumberOfNights = numberOfNights;
             this.NumberOfRooms = numberOfRooms;
             this.GuestNames = guestNames;
+            this.RoomClass = roomClass;
+            this.TicketDeliveryMethod = ticketDeliveryMethod;
+            this.TicketDeliveryRecipient = ticketDeliveryRecipient;
         }
 
             public string HotelName { get; set; }
@@ -29,6 +32,9 @@ public class Lodging
             public int? NumberOfNights { get; set; }
             public int? NumberOfRooms { get; set; }
             public List<UserName> GuestNames { get; set; }
+            public string RoomClass { get; set; }
+            public string TicketDeliveryMethod { get; set; }
+            public string TicketDeliveryRecipient { get; set; }
 
         
 

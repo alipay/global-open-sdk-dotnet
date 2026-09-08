@@ -14,7 +14,7 @@ public class AlipayCaptureRequest : AMSRequest<AlipayCaptureResponse>
 
         
 
-        public AlipayCaptureRequest( string captureRequestId , string paymentId , Amount captureAmount , bool? isLastCapture , string captureType , Transit transit)
+        public AlipayCaptureRequest( string captureRequestId , string paymentId , Amount captureAmount , bool? isLastCapture , string captureType , Transit transit , List<Goods> goods , List<Shipping> shippings)
         {
             this.CaptureRequestId = captureRequestId;
             this.PaymentId = paymentId;
@@ -22,6 +22,8 @@ public class AlipayCaptureRequest : AMSRequest<AlipayCaptureResponse>
             this.IsLastCapture = isLastCapture;
             this.CaptureType = captureType;
             this.Transit = transit;
+            this.Goods = goods;
+            this.Shippings = shippings;
         }
 
             public string CaptureRequestId { get; set; }
@@ -30,6 +32,8 @@ public class AlipayCaptureRequest : AMSRequest<AlipayCaptureResponse>
             public bool? IsLastCapture { get; set; }
             public string CaptureType { get; set; }
             public Transit Transit { get; set; }
+            public List<Goods> Goods { get; set; }
+            public List<Shipping> Shippings { get; set; }
 
         public override string GetRequestURI(){ return "/ams/api/v1/payments/capture"; } 
 

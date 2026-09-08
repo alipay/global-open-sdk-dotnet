@@ -17,7 +17,7 @@ public class Merchant
 } 
 
 
-        public Merchant( string referenceMerchantId , string merchantMCC , string merchantName , string merchantDisplayName , Address merchantAddress , string merchantRegisterDate , Store store , MerchantType merchantType)
+        public Merchant( string referenceMerchantId , string merchantMCC , string merchantName , string merchantDisplayName , Address merchantAddress , string merchantRegisterDate , Store store , MerchantType merchantType , int? numberOfTrades , AccountLastModified accountLastModified)
         {
             this.ReferenceMerchantId = referenceMerchantId;
             this.MerchantMCC = merchantMCC;
@@ -27,6 +27,8 @@ public class Merchant
             this.MerchantRegisterDate = merchantRegisterDate;
             this.Store = store;
             this.MerchantType = merchantType;
+            this.NumberOfTrades = numberOfTrades;
+            this.AccountLastModified = accountLastModified;
         }
 
             public string ReferenceMerchantId { get; set; }
@@ -37,6 +39,8 @@ public class Merchant
             public string MerchantRegisterDate { get; set; }
             public Store Store { get; set; }
             public MerchantType MerchantType { get; set; }
+            public int? NumberOfTrades { get; set; }
+            public AccountLastModified AccountLastModified { get; set; }
 
         
 
