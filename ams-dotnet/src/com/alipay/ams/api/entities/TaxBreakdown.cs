@@ -11,10 +11,9 @@ public class TaxBreakdown
 
         
 
-        public TaxBreakdown( string taxType , string authorityName , string taxRate , Amount taxAmount , Amount taxableAmount , string taxabilityReason , bool? inclusive)
+        public TaxBreakdown( string taxType , string taxRate , Amount taxAmount , Amount taxableAmount , string taxabilityReason , bool? inclusive)
         {
             this.TaxType = taxType;
-            this.AuthorityName = authorityName;
             this.TaxRate = taxRate;
             this.TaxAmount = taxAmount;
             this.TaxableAmount = taxableAmount;
@@ -23,7 +22,6 @@ public class TaxBreakdown
         }
 
             public string TaxType { get; set; }
-            public string AuthorityName { get; set; }
             public string TaxRate { get; set; }
             public Amount TaxAmount { get; set; }
             public Amount TaxableAmount { get; set; }
