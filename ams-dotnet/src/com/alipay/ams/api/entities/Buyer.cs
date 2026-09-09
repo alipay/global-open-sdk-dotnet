@@ -11,7 +11,7 @@ public class Buyer
 
         
 
-        public Buyer( string referenceBuyerId , UserName buyerName , string buyerPhoneNo , string buyerEmail , string buyerRegistrationTime , bool? isAccountVerified , int? successfulOrderCount , string buyerPhoneNoContryCode , Amount successfulOrderAmount , string dateOfLastPaidPurchase , string dateOfFirstPaidPurchase)
+        public Buyer( string referenceBuyerId , UserName buyerName , string buyerPhoneNo , string buyerEmail , string buyerRegistrationTime , bool? isAccountVerified , int? successfulOrderCount , string buyerPhoneNoContryCode , Amount successfulOrderAmount , string dateOfLastPaidPurchase , string dateOfFirstPaidPurchase , List<BuyerTaxId> taxIds , Address businessAddress)
         {
             this.ReferenceBuyerId = referenceBuyerId;
             this.BuyerName = buyerName;
@@ -24,6 +24,8 @@ public class Buyer
             this.SuccessfulOrderAmount = successfulOrderAmount;
             this.DateOfLastPaidPurchase = dateOfLastPaidPurchase;
             this.DateOfFirstPaidPurchase = dateOfFirstPaidPurchase;
+            this.TaxIds = taxIds;
+            this.BusinessAddress = businessAddress;
         }
 
             public string ReferenceBuyerId { get; set; }
@@ -37,6 +39,8 @@ public class Buyer
             public Amount SuccessfulOrderAmount { get; set; }
             public string DateOfLastPaidPurchase { get; set; }
             public string DateOfFirstPaidPurchase { get; set; }
+            public List<BuyerTaxId> TaxIds { get; set; }
+            public Address BusinessAddress { get; set; }
 
         
 
