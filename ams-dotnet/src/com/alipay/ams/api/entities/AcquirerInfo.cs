@@ -11,7 +11,7 @@ public class AcquirerInfo
 
         
 
-        public AcquirerInfo( string acquirerName , string referenceRequestId , string acquirerTransactionId , string acquirerMerchantId , string acquirerResultCode , string acquirerResultMessage , string acquirerMerchantName , string acquirerReasonDescription , string ptspTransactionId , string acquirerCardToken)
+        public AcquirerInfo( string acquirerName , string referenceRequestId , string acquirerTransactionId , string acquirerMerchantId , string acquirerResultCode , string acquirerResultMessage , string acquirerMerchantName , string acquirerReasonDescription , string ptspTransactionId , string acquirerCardToken , string acquirerFingerprint)
         {
             this.AcquirerName = acquirerName;
             this.ReferenceRequestId = referenceRequestId;
@@ -23,6 +23,7 @@ public class AcquirerInfo
             this.AcquirerReasonDescription = acquirerReasonDescription;
             this.PtspTransactionId = ptspTransactionId;
             this.AcquirerCardToken = acquirerCardToken;
+            this.AcquirerFingerprint = acquirerFingerprint;
         }
 
             public string AcquirerName { get; set; }
@@ -35,6 +36,7 @@ public class AcquirerInfo
             public string AcquirerReasonDescription { get; set; }
             public string PtspTransactionId { get; set; }
             public string AcquirerCardToken { get; set; }
+            public string AcquirerFingerprint { get; set; }
 
         
 

@@ -14,7 +14,7 @@ public class AlipayPaymentSessionRequest : AMSRequest<AlipayPaymentSessionRespon
 
         
 
-        public AlipayPaymentSessionRequest( string merchantAccountId , string metadata , List<string> allowedPaymentMethodRegions , CustomizedInfo customizedInfo , Quote paymentQuote , Amount processingAmount , SubscriptionPlan subscriptionPlan , SubscriptionInfo subscriptionInfo , string userRegion , List<string> scopes , ProductCodeType productCode , string paymentRequestId , Order order , Amount paymentAmount , PaymentMethod paymentMethod , string paymentSessionExpiryTime , string paymentRedirectUrl , string paymentNotifyUrl , PaymentFactor paymentFactor , SettlementStrategy settlementStrategy , bool? enableInstallmentCollection , CreditPayPlan creditPayPlan , string merchantRegion , Env env , AgreementInfo agreementInfo , RiskData riskData , string productScene , List<PaymentMethod> savedPaymentMethods , string locale , AvailablePaymentMethod availablePaymentMethod , string paymentExpiryTime , BillingSubscription subscription)
+        public AlipayPaymentSessionRequest( string merchantAccountId , string metadata , List<string> allowedPaymentMethodRegions , CustomizedInfo customizedInfo , Quote paymentQuote , Amount processingAmount , SubscriptionPlan subscriptionPlan , SubscriptionInfo subscriptionInfo , string userRegion , List<string> scopes , ProductCodeType productCode , string paymentRequestId , Order order , Amount paymentAmount , PaymentMethod paymentMethod , string paymentSessionExpiryTime , string paymentRedirectUrl , string paymentNotifyUrl , PaymentFactor paymentFactor , SettlementStrategy settlementStrategy , bool? enableInstallmentCollection , CreditPayPlan creditPayPlan , string merchantRegion , Env env , AgreementInfo agreementInfo , RiskData riskData , string productScene , List<PaymentMethod> savedPaymentMethods , string locale , AvailablePaymentMethod availablePaymentMethod , string paymentExpiryTime , BillingSubscription subscription , AutomaticTax automaticTax)
         {
             this.MerchantAccountId = merchantAccountId;
             this.Metadata = metadata;
@@ -48,6 +48,7 @@ public class AlipayPaymentSessionRequest : AMSRequest<AlipayPaymentSessionRespon
             this.AvailablePaymentMethod = availablePaymentMethod;
             this.PaymentExpiryTime = paymentExpiryTime;
             this.Subscription = subscription;
+            this.AutomaticTax = automaticTax;
         }
 
             public string MerchantAccountId { get; set; }
@@ -82,6 +83,7 @@ public class AlipayPaymentSessionRequest : AMSRequest<AlipayPaymentSessionRespon
             public AvailablePaymentMethod AvailablePaymentMethod { get; set; }
             public string PaymentExpiryTime { get; set; }
             public BillingSubscription Subscription { get; set; }
+            public AutomaticTax AutomaticTax { get; set; }
 
         public override string GetRequestURI(){ return "/ams/api/v1/payments/createPaymentSession"; } 
 
