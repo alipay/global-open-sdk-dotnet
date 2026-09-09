@@ -4,23 +4,23 @@ using System.Collections.Generic;
 namespace com.alipay.ams.api.entities
 {
 
-public class TaxJurisdiction
+public class BuyerTaxId
     {
 
-        public TaxJurisdiction() { }
+        public BuyerTaxId() { }
 
         
 
-        public TaxJurisdiction( string country , string region , string city)
+        public BuyerTaxId( string country , string region , string value)
         {
             this.Country = country;
             this.Region = region;
-            this.City = city;
+            this.Value = value;
         }
 
             public string Country { get; set; }
             public string Region { get; set; }
-            public string City { get; set; }
+            public string Value { get; set; }
 
         
 
