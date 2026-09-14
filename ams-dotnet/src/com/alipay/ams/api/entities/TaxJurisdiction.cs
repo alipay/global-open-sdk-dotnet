@@ -11,20 +11,16 @@ public class TaxJurisdiction
 
         
 
-        public TaxJurisdiction( string country , string region , string county , string city , string district)
+        public TaxJurisdiction( string country , string region , string city)
         {
             this.Country = country;
             this.Region = region;
-            this.County = county;
             this.City = city;
-            this.District = district;
         }
 
             public string Country { get; set; }
             public string Region { get; set; }
-            public string County { get; set; }
             public string City { get; set; }
-            public string District { get; set; }
 
         
 

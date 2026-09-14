@@ -11,12 +11,12 @@ public class TaxShippingCost
 
         
 
-        public TaxShippingCost( string amount)
+        public TaxShippingCost( Amount amount)
         {
             this.Amount = amount;
         }
 
-            public string Amount { get; set; }
+            public Amount Amount { get; set; }
 
         
 

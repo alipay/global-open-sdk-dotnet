@@ -11,7 +11,7 @@ public class Goods
 
         
 
-        public Goods( string referenceGoodsId , string goodsName , string goodsCategory , string goodsBrand , Amount goodsUnitAmount , string goodsQuantity , string goodsSkuName , string goodsUrl , string deliveryMethodType , string goodsImageUrl , string priceId , Amount goodsDiscountAmount , string goodsEndsOnTime , Goods crossSell)
+        public Goods( string referenceGoodsId , string goodsName , string goodsCategory , string goodsBrand , Amount goodsUnitAmount , string goodsQuantity , string goodsSkuName , string goodsUrl , string deliveryMethodType , string goodsImageUrl , string priceId , Amount goodsDiscountAmount , string goodsEndsOnTime , Goods crossSell , string taxCode , string taxBehavior)
         {
             this.ReferenceGoodsId = referenceGoodsId;
             this.GoodsName = goodsName;
@@ -27,6 +27,8 @@ public class Goods
             this.GoodsDiscountAmount = goodsDiscountAmount;
             this.GoodsEndsOnTime = goodsEndsOnTime;
             this.CrossSell = crossSell;
+            this.TaxCode = taxCode;
+            this.TaxBehavior = taxBehavior;
         }
 
             public string ReferenceGoodsId { get; set; }
@@ -43,6 +45,8 @@ public class Goods
             public Amount GoodsDiscountAmount { get; set; }
             public string GoodsEndsOnTime { get; set; }
             public Goods CrossSell { get; set; }
+            public string TaxCode { get; set; }
+            public string TaxBehavior { get; set; }
 
         
 

@@ -12,13 +12,14 @@ public class AlipayReceiptInquireListResponse : AMSResponse
 
         
 
-        public AlipayReceiptInquireListResponse( Result result , List<Receipt> receipts , int? total , bool? hasMore , string nextCursor)
+        public AlipayReceiptInquireListResponse( Result result , List<Receipt> receipts , int? total , bool? hasMore , string nextCursor , string previousCursor)
         {
             this.Result = result;
             this.Receipts = receipts;
             this.Total = total;
             this.HasMore = hasMore;
             this.NextCursor = nextCursor;
+            this.PreviousCursor = previousCursor;
         }
 
             public Result Result { get; set; }
@@ -26,6 +27,7 @@ public class AlipayReceiptInquireListResponse : AMSResponse
             public int? Total { get; set; }
             public bool? HasMore { get; set; }
             public string NextCursor { get; set; }
+            public string PreviousCursor { get; set; }
 
         
 

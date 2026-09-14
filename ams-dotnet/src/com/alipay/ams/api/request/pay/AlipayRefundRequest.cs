@@ -14,7 +14,7 @@ public class AlipayRefundRequest : AMSRequest<AlipayRefundResponse>
 
         
 
-        public AlipayRefundRequest( string metadata , CustomizedInfo customizedInfo , string captureId , RefundToBankInfo refundToBankInfo , string refundRequestId , string paymentId , string referenceRefundId , Amount refundAmount , string refundReason , string refundNotifyUrl , bool? isAsyncRefund , string extendInfo , List<RefundDetail> refundDetails , string refundSourceAccountNo , Amount actualRefundAmount)
+        public AlipayRefundRequest( string metadata , CustomizedInfo customizedInfo , string captureId , RefundToBankInfo refundToBankInfo , string refundRequestId , string paymentId , string referenceRefundId , Amount refundAmount , string refundReason , string refundNotifyUrl , bool? isAsyncRefund , string extendInfo , List<RefundDetail> refundDetails , string refundSourceAccountNo , Amount actualRefundAmount , List<Goods> goods)
         {
             this.Metadata = metadata;
             this.CustomizedInfo = customizedInfo;
@@ -31,6 +31,7 @@ public class AlipayRefundRequest : AMSRequest<AlipayRefundResponse>
             this.RefundDetails = refundDetails;
             this.RefundSourceAccountNo = refundSourceAccountNo;
             this.ActualRefundAmount = actualRefundAmount;
+            this.Goods = goods;
         }
 
             public string Metadata { get; set; }
@@ -48,6 +49,7 @@ public class AlipayRefundRequest : AMSRequest<AlipayRefundResponse>
             public List<RefundDetail> RefundDetails { get; set; }
             public string RefundSourceAccountNo { get; set; }
             public Amount ActualRefundAmount { get; set; }
+            public List<Goods> Goods { get; set; }
 
         public override string GetRequestURI(){ return "/ams/api/v1/payments/refund"; } 
 

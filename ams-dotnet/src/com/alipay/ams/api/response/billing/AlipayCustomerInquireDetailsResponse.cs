@@ -12,7 +12,7 @@ public class AlipayCustomerInquireDetailsResponse : AMSResponse
 
         
 
-        public AlipayCustomerInquireDetailsResponse( Result result , string customerId , string customerRequestId , string alipayUserId , string email , string firstName , string lastName , string country , string state , string city , string address , string addressDetail , string zipcode , string shippingPhone , string shippingCountry , string shippingState , string shippingCity , string shippingAddress , string shippingAddressDetail , string description , string currency , List<string> preferredLocales , string defaultPaymentMethod , string status , string referenceCustomerId , string metadata , string phoneNo , string countryCode , string billingEmail , string shippingFirstName , string shippingLastName , string shippingCountryCode , string shippingZipcode , string gmtCreate)
+        public AlipayCustomerInquireDetailsResponse( Result result , string customerId , string customerRequestId , string alipayUserId , string email , string firstName , string lastName , string country , string state , string city , string address , string addressDetail , string zipcode , string shippingCountry , string shippingState , string shippingCity , string shippingAddress , string shippingAddressDetail , string description , string currency , List<string> preferredLocales , string defaultPaymentMethod , string status , string referenceCustomerId , string metadata , string billingEmail , string shippingFirstName , string shippingLastName , string shippingZipcode , string gmtCreate)
         {
             this.Result = result;
             this.CustomerId = customerId;
@@ -27,7 +27,6 @@ public class AlipayCustomerInquireDetailsResponse : AMSResponse
             this.Address = address;
             this.AddressDetail = addressDetail;
             this.Zipcode = zipcode;
-            this.ShippingPhone = shippingPhone;
             this.ShippingCountry = shippingCountry;
             this.ShippingState = shippingState;
             this.ShippingCity = shippingCity;
@@ -40,12 +39,9 @@ public class AlipayCustomerInquireDetailsResponse : AMSResponse
             this.Status = status;
             this.ReferenceCustomerId = referenceCustomerId;
             this.Metadata = metadata;
-            this.PhoneNo = phoneNo;
-            this.CountryCode = countryCode;
             this.BillingEmail = billingEmail;
             this.ShippingFirstName = shippingFirstName;
             this.ShippingLastName = shippingLastName;
-            this.ShippingCountryCode = shippingCountryCode;
             this.ShippingZipcode = shippingZipcode;
             this.GmtCreate = gmtCreate;
         }
@@ -63,7 +59,6 @@ public class AlipayCustomerInquireDetailsResponse : AMSResponse
             public string Address { get; set; }
             public string AddressDetail { get; set; }
             public string Zipcode { get; set; }
-            public string ShippingPhone { get; set; }
             public string ShippingCountry { get; set; }
             public string ShippingState { get; set; }
             public string ShippingCity { get; set; }
@@ -76,12 +71,9 @@ public class AlipayCustomerInquireDetailsResponse : AMSResponse
             public string Status { get; set; }
             public string ReferenceCustomerId { get; set; }
             public string Metadata { get; set; }
-            public string PhoneNo { get; set; }
-            public string CountryCode { get; set; }
             public string BillingEmail { get; set; }
             public string ShippingFirstName { get; set; }
             public string ShippingLastName { get; set; }
-            public string ShippingCountryCode { get; set; }
             public string ShippingZipcode { get; set; }
             public string GmtCreate { get; set; }
 

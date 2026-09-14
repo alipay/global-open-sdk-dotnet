@@ -11,7 +11,7 @@ public class Order
 
         
 
-        public Order( string referenceOrderId , string orderDescription , Amount orderAmount , Amount orderDiscountAmount , Amount subTotalOrderAmount , Merchant merchant , List<Goods> goods , Shipping shipping , Buyer buyer , Env env , string extendInfo , Transit transit , Lodging lodging , Gaming gaming , bool? needDeclaration , Declaration declaration , string orderType)
+        public Order( string referenceOrderId , string orderDescription , Amount orderAmount , Amount orderDiscountAmount , Amount subTotalOrderAmount , Merchant merchant , List<Goods> goods , Shipping shipping , Buyer buyer , Env env , string extendInfo , Transit transit , Lodging lodging , Gaming gaming , bool? needDeclaration , Declaration declaration , string orderType , string taxCalculationId)
         {
             this.ReferenceOrderId = referenceOrderId;
             this.OrderDescription = orderDescription;
@@ -30,6 +30,7 @@ public class Order
             this.NeedDeclaration = needDeclaration;
             this.Declaration = declaration;
             this.OrderType = orderType;
+            this.TaxCalculationId = taxCalculationId;
         }
 
             public string ReferenceOrderId { get; set; }
@@ -49,6 +50,7 @@ public class Order
             public bool? NeedDeclaration { get; set; }
             public Declaration Declaration { get; set; }
             public string OrderType { get; set; }
+            public string TaxCalculationId { get; set; }
 
         
 

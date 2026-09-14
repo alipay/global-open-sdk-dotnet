@@ -47,4 +47,10 @@ public class AlipayRefundNotify:AlipayNotify
     public Amount ActualRefundAmount { get; set; }
     
     public string Metadata { get; set; }
+
+    /**
+     * The authorization code returned by the payment channel for a successful refund. This field is
+     * returned only when the merchant is enabled for this capability.
+     */
+    public string AuthorizationCode { get; set; }
 }

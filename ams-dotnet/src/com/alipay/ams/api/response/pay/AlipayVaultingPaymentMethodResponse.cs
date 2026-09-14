@@ -12,7 +12,7 @@ public class AlipayVaultingPaymentMethodResponse : AMSResponse
 
         
 
-        public AlipayVaultingPaymentMethodResponse( Result result , string vaultingRequestId , PaymentMethodDetail paymentMethodDetail , string normalUrl , string schemeUrl , string applinkUrl)
+        public AlipayVaultingPaymentMethodResponse( Result result , string vaultingRequestId , PaymentMethodDetail paymentMethodDetail , string normalUrl , string schemeUrl , string applinkUrl , AcquirerInfo acquirerInfo)
         {
             this.Result = result;
             this.VaultingRequestId = vaultingRequestId;
@@ -20,6 +20,7 @@ public class AlipayVaultingPaymentMethodResponse : AMSResponse
             this.NormalUrl = normalUrl;
             this.SchemeUrl = schemeUrl;
             this.ApplinkUrl = applinkUrl;
+            this.AcquirerInfo = acquirerInfo;
         }
 
             public Result Result { get; set; }
@@ -28,6 +29,7 @@ public class AlipayVaultingPaymentMethodResponse : AMSResponse
             public string NormalUrl { get; set; }
             public string SchemeUrl { get; set; }
             public string ApplinkUrl { get; set; }
+            public AcquirerInfo AcquirerInfo { get; set; }
 
         
 
