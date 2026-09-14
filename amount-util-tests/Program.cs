@@ -33,6 +33,14 @@ try
 catch (ArgumentNullException exception) when (exception.Message.StartsWith("INVALID_ARGUMENT_TYPE:"))
 {
 }
+try
+{
+    AmountUtil.Validate("1", null);
+    throw new Exception("null currency was accepted");
+}
+catch (ArgumentNullException exception) when (exception.Message.StartsWith("INVALID_ARGUMENT_TYPE:"))
+{
+}
 
 Console.WriteLine("AmountUtil shared vectors passed");
 

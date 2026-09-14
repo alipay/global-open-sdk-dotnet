@@ -101,6 +101,7 @@ string major = AmountUtil.FromAmount(value, "USD"); // "10.25"
 AmountUtil.Validate(value, "USD");
 ```
 
-The methods accept strings, convert with the ISO 4217 minor unit, and never
-round. Extra non-zero decimal places are rejected. Payment-method currency
-support and minimum amounts remain subject to the relevant Antom API docs.
+The methods accept strings, use Antom's supported-currency rules, and never
+round. Extra non-zero decimal places are rejected. ISO 4217 is reference
+evidence only. Payment-method currency support and minimum amounts remain
+subject to the relevant Antom API docs.

@@ -4,6 +4,8 @@ namespace com.alipay.ams.util
 {
     public static class AmountUtil
     {
+        private const int MaxValueLength = 16;
+
         public static string ToAmount(string amount, string currency)
         {
             int minorUnit = MinorUnit(currency);
@@ -58,9 +60,9 @@ namespace com.alipay.ams.util
                 Fail("INVALID_CURRENCY", "currency must be three uppercase ASCII letters");
             AmountRuleSet rules = AmountRuleLoader.Rules;
             if (!rules.Currencies.TryGetValue(currency, out int? minorUnit))
-                Fail("UNKNOWN_CURRENCY", "currency is not present in the ISO snapshot");
+                Fail("UNSUPPORTED_CURRENCY", "currency is not supported by AmountUtil");
             if (!minorUnit.HasValue)
-                Fail("UNSUPPORTED_MINOR_UNIT", "currency has no numeric minor unit");
+                throw new InvalidOperationException("RULE_DATA_ERROR: supported currency has no numeric minor unit");
             return minorUnit.Value;
         }
 
@@ -70,13 +72,13 @@ namespace com.alipay.ams.util
             if (value.Length == 0) Fail("INVALID_VALUE_FORMAT", "value must contain ASCII digits only");
             foreach (char character in value)
                 if (character < '0' || character > '9') Fail("INVALID_VALUE_FORMAT", "value must contain ASCII digits only");
-            if (value.Length > 16) Fail("VALUE_TOO_LONG", "value exceeds 16 digits");
+            if (value.Length > MaxValueLength) Fail("VALUE_TOO_LONG", "value must contain at most 16 digits");
         }
 
         private static void ValidateCanonical(string value, string currency)
         {
             if (AllZeros(value)) Fail("AMOUNT_NOT_POSITIVE", "value must be greater than zero");
-            if (value.Length > 16) Fail("VALUE_TOO_LONG", "value exceeds 16 digits");
+            if (value.Length > MaxValueLength) Fail("VALUE_TOO_LONG", "value must contain at most 16 digits");
             if (AmountRuleLoader.Rules.Multiples.TryGetValue(currency, out string multiple))
             {
                 string suffix = multiple.Substring(1);
