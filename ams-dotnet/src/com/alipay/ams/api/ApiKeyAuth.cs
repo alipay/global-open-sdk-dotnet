@@ -39,6 +39,8 @@ namespace com.alipay.ams.api
             return sandbox ? normal.Replace("/ams/api/", "/ams/sandbox/api/") : normal;
         }
 
-        internal string Redact(string message) => message.Replace(apiKey, "[REDACTED]");
+        internal bool ContainsKey(Exception error) => error.ToString().Contains(apiKey);
+
+        internal string Redact(string message) => message?.Replace(apiKey, "[REDACTED]");
     }
 }

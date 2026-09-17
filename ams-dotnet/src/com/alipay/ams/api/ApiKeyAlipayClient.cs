@@ -55,7 +55,17 @@ namespace com.alipay.ams.api
                         || entry.Value == null || entry.Value.Contains('\r') || entry.Value.Contains('\n'))
                         throw new ArgumentException("Invalid custom header", nameof(extraHeaders));
                     if (!ApiKeyAuth.ReservedHeaders.Contains(entry.Key))
-                        message.Headers.Add(entry.Key, entry.Value);
+                    {
+                        try { message.Headers.Add(entry.Key, entry.Value); }
+                        catch (FormatException)
+                        {
+                            throw new ArgumentException("Invalid custom header", nameof(extraHeaders));
+                        }
+                        catch (InvalidOperationException)
+                        {
+                            throw new ArgumentException("Unsupported custom request header", nameof(extraHeaders));
+                        }
+                    }
                 }
             }
             message.Content = new StringContent(request.BuildBody(), Encoding.UTF8, "application/json");
@@ -67,8 +77,17 @@ namespace com.alipay.ams.api
                 var body = response.Content.ReadAsStringAsync().ConfigureAwait(false).GetAwaiter().GetResult();
                 return JsonSerializer.Deserialize<TAMSResponse>(body, JsonSerializerOptionsFactory.WriteNotIndented);
             }
-            catch (JsonException error) { throw new JsonException(auth.Redact(error.Message)); }
-            catch (HttpRequestException error) { throw new HttpRequestException(auth.Redact(error.Message)); }
+            // Keep the original exception and its diagnostics when the entire chain is safe.
+            catch (JsonException error) when (auth.ContainsKey(error))
+            {
+                throw new JsonException(auth.Redact(error.Message), auth.Redact(error.Path),
+                    error.LineNumber, error.BytePositionInLine);
+            }
+            catch (HttpRequestException error) when (auth.ContainsKey(error))
+            {
+                throw new HttpRequestException(error.HttpRequestError, auth.Redact(error.Message),
+                    null, error.StatusCode);
+            }
         }
 
         public void Dispose() => client.Dispose();
