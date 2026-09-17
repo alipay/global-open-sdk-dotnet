@@ -5,6 +5,24 @@ Release ^2.2.8
 Copyright：Ant financial services group
 ```
 
+## API Key client (current branch, not yet released)
+
+Use `ApiKeyAlipayClient` with a regional HTTPS gateway and API Key. Existing request
+models are shared with the RSA client; ClientId and RSA keys are not required.
+
+```csharp
+using com.alipay.ams.api;
+
+using var client = new ApiKeyAlipayClient(
+    Environment.GetEnvironmentVariable("ANTOM_GATEWAY_URL"),
+    Environment.GetEnvironmentVariable("ANTOM_API_KEY"));
+```
+
+Start with the [sandbox createPaymentSession example](examples/ApiKeyPaymentSession/Program.cs) and its
+[configuration and run instructions](docs/api-key-client.md). Existing RSA usage below remains supported.
+
+
+
 `## Documentation
 `
 Please see the [API docs](https://global.alipay.com/docs/) for the most up-to-date documentation.
