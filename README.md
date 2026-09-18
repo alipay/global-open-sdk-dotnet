@@ -1,9 +1,31 @@
 # Alipay AMS(Alipay Merchant Services) C# Bindings 
 ```
 Language：C#
-Release ^2.2.8
+Release ^2.3.0
 Copyright：Ant financial services group
 ```
+
+
+Planned release: **2.3.0**. This version is not published yet; package/tag references
+below describe the target release. Build this branch to try it before publication.
+
+## API Key client (planned for 2.3.0)
+
+Use `ApiKeyAlipayClient` with a regional HTTPS gateway and API Key. Existing request
+models are shared with the RSA client; ClientId and RSA keys are not required.
+
+```csharp
+using com.alipay.ams.api;
+
+using var client = new ApiKeyAlipayClient(
+    Environment.GetEnvironmentVariable("ANTOM_GATEWAY_URL"),
+    Environment.GetEnvironmentVariable("ANTOM_API_KEY"));
+```
+
+Start with the [sandbox createPaymentSession example](examples/ApiKeyPaymentSession/Program.cs) and its
+[configuration and run instructions](docs/api-key-client.md). Existing RSA usage below remains supported.
+
+
 
 `## Documentation
 `
@@ -55,6 +77,7 @@ Below are some of the default out-of-box mocking rules that basically use the pa
 
 |API|when which input parameter|equals what|then you get a response of|
 |---|---|---|---|
+|Planned|2.3.0|Add independent API Key client and runnable sandbox example; preserve safe error diagnostics and sanitize header failures.|YES|
 |ams/api/v1/payments/pay|payToAmount.value|9901|UNKNOWN_EXCEPTION|
 |ams/api/v1/payments/pay|payToAmount.value|9902|network timeout|
 |ams/api/v1/payments/inquiryPayment|payToAmount.value of the corresponding PAY request|9903|UNKNOWN_EXCEPTION|
