@@ -11,7 +11,7 @@ public class CreditGrant
 
         
 
-        public CreditGrant( string creditGrantId , string creditGrantName , string customerId , string status , Amount amount , AvailableAmount availableAmount , Applicability applicability , int? priority , string category , string effectiveDateTime , string expiryDateTime , string createdDateTime , string updatedDateTime)
+        public CreditGrant( string creditGrantId , string creditGrantName , string customerId , string status , Amount amount , Amount availableAmount , Applicability applicability , int? priority , string category , string effectiveDateTime , string expiryDateTime , string createdDateTime , string updatedDateTime)
         {
             this.CreditGrantId = creditGrantId;
             this.CreditGrantName = creditGrantName;
@@ -33,7 +33,7 @@ public class CreditGrant
             public string CustomerId { get; set; }
             public string Status { get; set; }
             public Amount Amount { get; set; }
-            public AvailableAmount AvailableAmount { get; set; }
+            public Amount AvailableAmount { get; set; }
             public Applicability Applicability { get; set; }
             public int? Priority { get; set; }
             public string Category { get; set; }
