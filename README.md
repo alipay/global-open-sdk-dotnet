@@ -4,6 +4,9 @@ Latest release: **2.3.1**
 
 ## Installation
 
+Requires a project targeting .NET 8 (`net8.0`) or a compatible newer framework.
+Run this command in the directory containing your project file:
+
 ```sh
 dotnet add package global-open-sdk-dotnet
 ```
