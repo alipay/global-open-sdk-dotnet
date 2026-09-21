@@ -1,115 +1,32 @@
-# Alipay AMS(Alipay Merchant Services) C# Bindings 
-```
-Language：C#
-Release ^2.3.1
-Copyright：Ant financial services group
-```
+# Antom SDK for .NET
 
+Latest release: **2.3.1**
 
-Planned release: **2.3.0**. This version is not published yet; package/tag references
-below describe the target release. Build this branch to try it before publication.
+## Installation
 
-## API Key client (planned for 2.3.0)
-
-Use `ApiKeyAlipayClient` with a regional HTTPS gateway and API Key. Existing request
-models are shared with the RSA client; ClientId and RSA keys are not required.
-
-```csharp
-using com.alipay.ams.api;
-
-using var client = new ApiKeyAlipayClient(
-    Environment.GetEnvironmentVariable("ANTOM_GATEWAY_URL"),
-    Environment.GetEnvironmentVariable("ANTOM_API_KEY"));
+```sh
+dotnet add package global-open-sdk-dotnet
 ```
 
-Start with the [sandbox createPaymentSession example](examples/ApiKeyPaymentSession/Program.cs) and its
-[configuration and run instructions](docs/api-key-client.md). Existing RSA usage below remains supported.
+## Quick start
 
+- **API Key:** follow the [setup guide](docs/api-key-client.md) and run the [sandbox example](examples/ApiKeyPaymentSession/Program.cs).
+- **RSA:** start with the [payment example](ams-dotnet/src/example/Program.cs).
+- Browse [more examples](ams-dotnet/src/example) and the [API documentation](https://global.alipay.com/docs/).
 
+API Key and RSA clients share request/response models. File uploads and notification
+verification still require RSA credentials.
 
-`## Documentation
-`
-Please see the [API docs](https://global.alipay.com/docs/) for the most up-to-date documentation.
+## Upgrade notes
 
-## Usage
+Billing integrations: `availableAmount` now uses `Amount`; the `AvailableAmount`
+model has been removed.
 
-### Preparing
+## Meter event upload
 
-You need the following Integration information before starting:
-```
-clientId=your_client_id_here
-privateKey=your_private_key_here
-alipayPublicKey=your_public_key_here
-gatewayUrl=the_alipay_gateway_endpoint
-```
+`meter/uploadEvent` requires HTTP/2 and `X-Session-Id`. See the
+[usage and requirements](docs/meter-event-upload.md).
 
-Please see the [developer docs](https://global.alipay.com/developer) for help with getting the above information.
+## Support
 
-see `./ams-dotnet/src/example/Program.cs` for more demo usage.
-
-### Meter event upload
-
-`meter/createSession` uses the regular signed AMS transport. Use its session ID
-to call `meter/uploadEvent` through `ExecuteWithHeaders`:
-
-```csharp
-var request = new AlipayMeterUploadEventRequest { Meters = meters };
-var response = client.ExecuteWithHeaders(
-    request,
-    new Dictionary<string, string> { ["X-Session-Id"] = sessionId });
-```
-
-The SDK sends `meter/uploadEvent` to the gateway URL configured on the client,
-without sandbox path rewriting, request signing, response signature verification,
-or automatic retries. This API requires HTTP/2.
-
-## Advanced Topic
-
-### Integration Best Practice
-
-Create optimal payment experiences for your customers by following these [best practices](https://global.alipay.com/doc/ams_upm/bp) for integrations.
-
-### Using API Mock
-
-We provide an API mocking tool(currently in BETA version) for you to easily test exceptional cases. 
-
-Below are some of the default out-of-box mocking rules that basically use the payment amount value to identify the desired mock response:
-
-|API|when which input parameter|equals what|then you get a response of|
-|---|---|---|---|
-|Planned|2.3.0|Add independent API Key client and runnable sandbox example; preserve safe error diagnostics and sanitize header failures.|YES|
-|ams/api/v1/payments/pay|payToAmount.value|9901|UNKNOWN_EXCEPTION|
-|ams/api/v1/payments/pay|payToAmount.value|9902|network timeout|
-|ams/api/v1/payments/inquiryPayment|payToAmount.value of the corresponding PAY request|9903|UNKNOWN_EXCEPTION|
-|ams/api/v1/payments/inquiryPayment|payToAmount.value of the corresponding PAY request|9904|network timeout|
-
-To use this mocking tool:
-
-1. Set gatewayUrl=https://isandbox.alipaydev.com
-2. Set alipayPublicKey to a fixed value that you can get from us through sandbox_service@alibaba-inc.com.
-
-### Acceptance testing
-
-Pass all the acceptance test cases in the Alipay Developer Center to ensure a high quality integration. Especially, test exceptions by using test cases.
-
-## To get help
-
-If you have any question or feedbacks regarding this sdk, please contact us at sandbox_service@alibaba-inc.com.
-
-For other tech integration related issues, please reach us through overseas_support@service.alibaba.com. 
-
-
-## FAQ
-
-### What if I only need to use the digital signature feature ?
-
-See [Digital signature](https://global.alipay.com/doc/ams/digital_signature) for details about the signature algorithm used for data transmission.
-
-`./ams-dotnet/src/com/alipay/ams/util/SignatureUtil.cs` provides static utility methods that you can directly use.
-
-## Change history
-
-|Date|Version|Content|Backward compatible?|
-|---|---|---|---|
-|2020/11/13|1.1|Add Cashier Payment and Auto Debit support.|YES|
-|2020/10/10|1.0|v1 release|-|
+For integration questions, contact overseas_support@service.alibaba.com.
