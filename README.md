@@ -10,27 +10,12 @@ dotnet add package global-open-sdk-dotnet
 
 ## Quick start
 
-- **API Key:** follow the [setup guide](docs/api-key-client.md) and run the [sandbox example](examples/ApiKeyPaymentSession/Program.cs).
 - **RSA:** follow the [configuration](#rsa-configuration) and [inline example](#rsa-client) below.
+- **API Key (limited availability):** follow the [setup guide](docs/api-key-client.md) and run the [sandbox example](examples/ApiKeyPaymentSession/Program.cs).
 - Browse [more examples](ams-dotnet/src/example) and the [API documentation](https://global.alipay.com/docs/).
 
-API Key and RSA clients share request/response models. File uploads and notification
+RSA and API Key clients share request/response models. File uploads and notification
 verification still require RSA credentials.
-
-### API Key client
-
-Set `ANTOM_GATEWAY_URL` and `ANTOM_API_KEY` in your server environment.
-This initializes the client; see the [setup guide](docs/api-key-client.md) for a
-complete sandbox request and its additional configuration. Place the using
-directive at file scope and the initialization statements inside a method.
-
-```csharp
-using com.alipay.ams.api;
-
-using var client = new ApiKeyAlipayClient(
-    Environment.GetEnvironmentVariable("ANTOM_GATEWAY_URL"),
-    Environment.GetEnvironmentVariable("ANTOM_API_KEY"));
-```
 
 ### RSA configuration
 
@@ -61,6 +46,24 @@ var client = new com.alipay.ams.api.DefaultAlipayClient(
     System.Environment.GetEnvironmentVariable("ANTOM_CLIENT_ID"),
     System.Environment.GetEnvironmentVariable("ANTOM_MERCHANT_PRIVATE_KEY"),
     System.Environment.GetEnvironmentVariable("ANTOM_PUBLIC_KEY"));
+```
+
+### API Key client (limited availability)
+
+> API Key access is not yet available to all merchants. Use this client only if
+> API Key access has been enabled for your account; otherwise, use RSA.
+
+Set `ANTOM_GATEWAY_URL` and `ANTOM_API_KEY` in your server environment.
+This initializes the client; see the [setup guide](docs/api-key-client.md) for a
+complete sandbox request and its additional configuration. Place the using
+directive at file scope and the initialization statements inside a method.
+
+```csharp
+using com.alipay.ams.api;
+
+using var client = new ApiKeyAlipayClient(
+    Environment.GetEnvironmentVariable("ANTOM_GATEWAY_URL"),
+    Environment.GetEnvironmentVariable("ANTOM_API_KEY"));
 ```
 
 ## Upgrade notes
