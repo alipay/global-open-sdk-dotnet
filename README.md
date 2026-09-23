@@ -93,6 +93,11 @@ See [Digital signature](https://global.alipay.com/doc/ams/digital_signature) for
 
 ## Exact amount conversion
 
+All three AmountUtil operations accept zero, including IDR. Zero converts to
+`"0"` in minor units; conversion back uses the currency's fixed decimal precision.
+The 16-digit value limit still applies. Callers must check whether their target
+API accepts a zero amount.
+
 ```csharp
 using com.alipay.ams.util;
 

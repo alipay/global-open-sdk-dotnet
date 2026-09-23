@@ -77,8 +77,8 @@ namespace com.alipay.ams.util
 
         private static void ValidateCanonical(string value, string currency)
         {
-            if (AllZeros(value)) Fail("AMOUNT_NOT_POSITIVE", "value must be greater than zero");
             if (value.Length > MaxValueLength) Fail("VALUE_TOO_LONG", "value must contain at most 16 digits");
+            if (AllZeros(value)) return;
             if (AmountRuleLoader.Rules.Multiples.TryGetValue(currency, out string multiple))
             {
                 string suffix = multiple.Substring(1);
