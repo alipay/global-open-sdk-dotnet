@@ -11,8 +11,9 @@ public class PaymentFactor
 
         
 
-        public PaymentFactor( bool? isPaymentEvaluation , InStorePaymentScenario inStorePaymentScenario , PresentmentMode presentmentMode , string captureMode , bool? isAuthorization)
+        public PaymentFactor( bool? storePaymentMethodForBuyer , bool? isPaymentEvaluation , InStorePaymentScenario inStorePaymentScenario , PresentmentMode presentmentMode , string captureMode , bool? isAuthorization)
         {
+            this.StorePaymentMethodForBuyer = storePaymentMethodForBuyer;
             this.IsPaymentEvaluation = isPaymentEvaluation;
             this.InStorePaymentScenario = inStorePaymentScenario;
             this.PresentmentMode = presentmentMode;
@@ -20,6 +21,7 @@ public class PaymentFactor
             this.IsAuthorization = isAuthorization;
         }
 
+            public bool? StorePaymentMethodForBuyer { get; set; }
             public bool? IsPaymentEvaluation { get; set; }
             public InStorePaymentScenario InStorePaymentScenario { get; set; }
             public PresentmentMode PresentmentMode { get; set; }
