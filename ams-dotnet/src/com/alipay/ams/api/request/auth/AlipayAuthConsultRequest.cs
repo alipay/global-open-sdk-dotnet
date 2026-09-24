@@ -14,8 +14,10 @@ public class AlipayAuthConsultRequest : AMSRequest<AlipayAuthConsultResponse>
 
         
 
-        public AlipayAuthConsultRequest( string merchantAccountId , string authNotifyUrl , CustomerBelongsTo customerBelongsTo , string authClientId , string authRedirectUrl , ScopeType[] scopes , string authState , TerminalType terminalType , OsType osType , string osVersion , string extendInfo , string merchantRegion , bool? recurringPayment , AuthMetaData authMetaData , Env env)
+        public AlipayAuthConsultRequest( Amount amount , AuthorizationConsultDirectDebitInfo directDebitInfo , string merchantAccountId , string authNotifyUrl , CustomerBelongsTo customerBelongsTo , string authClientId , string authRedirectUrl , ScopeType[] scopes , string authState , TerminalType terminalType , OsType osType , string osVersion , string extendInfo , string merchantRegion , bool? recurringPayment , AuthMetaData authMetaData , Env env)
         {
+            this.Amount = amount;
+            this.DirectDebitInfo = directDebitInfo;
             this.MerchantAccountId = merchantAccountId;
             this.AuthNotifyUrl = authNotifyUrl;
             this.CustomerBelongsTo = customerBelongsTo;
@@ -33,6 +35,8 @@ public class AlipayAuthConsultRequest : AMSRequest<AlipayAuthConsultResponse>
             this.Env = env;
         }
 
+            public Amount Amount { get; set; }
+            public AuthorizationConsultDirectDebitInfo DirectDebitInfo { get; set; }
             public string MerchantAccountId { get; set; }
             public string AuthNotifyUrl { get; set; }
             public CustomerBelongsTo CustomerBelongsTo { get; set; }
