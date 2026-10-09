@@ -14,8 +14,11 @@ public class AlipayInvoiceCreateRequest : AMSRequest<AlipayInvoiceCreateResponse
 
         
 
-        public AlipayInvoiceCreateRequest( string invoiceRequestId , string customerId , string subscriptionId , string currency , List<InvoiceCreateItem> items , string status , bool? autoSend , List<string> ccEmails , string description , string dueDate , string collectionMethod , PaymentMethod paymentMethod , InvoiceShipping shipping , List<BillingDiscount> discounts , string invoiceNotifyUrl)
+        public AlipayInvoiceCreateRequest( bool? includePaymentLink , AutomaticTax automaticTax , InvoiceCustomerDetails customerDetails , string invoiceRequestId , string customerId , string subscriptionId , string currency , List<InvoiceCreateItem> items , string status , bool? autoSend , List<string> ccEmails , string description , string dueDate , string collectionMethod , PaymentMethod paymentMethod , InvoiceShipping shipping , List<BillingDiscount> discounts , string invoiceNotifyUrl)
         {
+            this.IncludePaymentLink = includePaymentLink;
+            this.AutomaticTax = automaticTax;
+            this.CustomerDetails = customerDetails;
             this.InvoiceRequestId = invoiceRequestId;
             this.CustomerId = customerId;
             this.SubscriptionId = subscriptionId;
@@ -33,6 +36,9 @@ public class AlipayInvoiceCreateRequest : AMSRequest<AlipayInvoiceCreateResponse
             this.InvoiceNotifyUrl = invoiceNotifyUrl;
         }
 
+            public bool? IncludePaymentLink { get; set; }
+            public AutomaticTax AutomaticTax { get; set; }
+            public InvoiceCustomerDetails CustomerDetails { get; set; }
             public string InvoiceRequestId { get; set; }
             public string CustomerId { get; set; }
             public string SubscriptionId { get; set; }
