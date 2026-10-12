@@ -11,8 +11,11 @@ public class InvoiceCreateItem
 
         
 
-        public InvoiceCreateItem( string description , Amount itemAmount , Amount unitAmount , string priceId , string productId , int? quantity , string itemId , string supplyStart , string supplyEnd)
+        public InvoiceCreateItem( Amount discountAmount , string taxBehavior , string taxCode , string description , Amount itemAmount , Amount unitAmount , string priceId , string productId , int? quantity , string itemId , string supplyStart , string supplyEnd)
         {
+            this.DiscountAmount = discountAmount;
+            this.TaxBehavior = taxBehavior;
+            this.TaxCode = taxCode;
             this.Description = description;
             this.ItemAmount = itemAmount;
             this.UnitAmount = unitAmount;
@@ -24,6 +27,9 @@ public class InvoiceCreateItem
             this.SupplyEnd = supplyEnd;
         }
 
+            public Amount DiscountAmount { get; set; }
+            public string TaxBehavior { get; set; }
+            public string TaxCode { get; set; }
             public string Description { get; set; }
             public Amount ItemAmount { get; set; }
             public Amount UnitAmount { get; set; }

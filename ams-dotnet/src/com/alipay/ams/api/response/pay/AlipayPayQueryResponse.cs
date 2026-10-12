@@ -12,7 +12,7 @@ public class AlipayPayQueryResponse : AMSResponse
 
         
 
-        public AlipayPayQueryResponse( string metadata , Result result , CustomizedInfo customizedInfo , Amount processingAmount , TransactionStatusType paymentStatus , string paymentResultCode , string paymentResultMessage , string paymentRequestId , string paymentId , string authPaymentId , Amount paymentAmount , Amount actualPaymentAmount , Quote paymentQuote , string authExpiryTime , string paymentCreateTime , string paymentTime , Amount nonGuaranteeCouponAmount , PspCustomerInfo pspCustomerInfo , RedirectActionForm redirectActionForm , CardInfo cardInfo , string acquirerReferenceNo , string extendInfo , List<Transaction> transactions , Amount customsDeclarationAmount , Amount grossSettlementAmount , Quote settlementQuote , PaymentResultInfo paymentResultInfo , AcquirerInfo acquirerInfo , string merchantAccountId , List<PromotionResult> promotionResults , string earliestSettlementTime , string paymentMethodType , RetryInfo retryInfo)
+        public AlipayPayQueryResponse( string metadata , Result result , CustomizedInfo customizedInfo , Amount processingAmount , TransactionStatusType paymentStatus , string paymentResultCode , string paymentResultMessage , string paymentRequestId , string paymentId , string authPaymentId , string authReviewStatus , string authReviewSource , Amount paymentAmount , Amount actualPaymentAmount , Quote paymentQuote , string authExpiryTime , string paymentCreateTime , string paymentTime , Amount nonGuaranteeCouponAmount , PspCustomerInfo pspCustomerInfo , RedirectActionForm redirectActionForm , CardInfo cardInfo , string acquirerReferenceNo , string extendInfo , List<Transaction> transactions , Amount customsDeclarationAmount , Amount grossSettlementAmount , Quote settlementQuote , PaymentResultInfo paymentResultInfo , AcquirerInfo acquirerInfo , string merchantAccountId , List<PromotionResult> promotionResults , string earliestSettlementTime , string paymentMethodType , RetryInfo retryInfo , PopRiskDecisionResultInfo popRiskDecisionResultInfo)
         {
             this.Metadata = metadata;
             this.Result = result;
@@ -24,6 +24,8 @@ public class AlipayPayQueryResponse : AMSResponse
             this.PaymentRequestId = paymentRequestId;
             this.PaymentId = paymentId;
             this.AuthPaymentId = authPaymentId;
+            this.AuthReviewStatus = authReviewStatus;
+            this.AuthReviewSource = authReviewSource;
             this.PaymentAmount = paymentAmount;
             this.ActualPaymentAmount = actualPaymentAmount;
             this.PaymentQuote = paymentQuote;
@@ -47,6 +49,7 @@ public class AlipayPayQueryResponse : AMSResponse
             this.EarliestSettlementTime = earliestSettlementTime;
             this.PaymentMethodType = paymentMethodType;
             this.RetryInfo = retryInfo;
+            this.PopRiskDecisionResultInfo = popRiskDecisionResultInfo;
         }
 
             public string Metadata { get; set; }
@@ -59,6 +62,8 @@ public class AlipayPayQueryResponse : AMSResponse
             public string PaymentRequestId { get; set; }
             public string PaymentId { get; set; }
             public string AuthPaymentId { get; set; }
+            public string AuthReviewStatus { get; set; }
+            public string AuthReviewSource { get; set; }
             public Amount PaymentAmount { get; set; }
             public Amount ActualPaymentAmount { get; set; }
             public Quote PaymentQuote { get; set; }
@@ -82,6 +87,7 @@ public class AlipayPayQueryResponse : AMSResponse
             public string EarliestSettlementTime { get; set; }
             public string PaymentMethodType { get; set; }
             public RetryInfo RetryInfo { get; set; }
+            public PopRiskDecisionResultInfo PopRiskDecisionResultInfo { get; set; }
 
         
 

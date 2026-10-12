@@ -14,8 +14,9 @@ public class AlipayCreateExchangeRequest : AMSRequest<AlipayCreateExchangeRespon
 
         
 
-        public AlipayCreateExchangeRequest( Amount buyAmount , Amount sellAmount , string exchangeTradeType , string exchangeRequestId , string exchangeMode)
+        public AlipayCreateExchangeRequest( Quote quote , Amount buyAmount , Amount sellAmount , string exchangeTradeType , string exchangeRequestId , string exchangeMode)
         {
+            this.Quote = quote;
             this.BuyAmount = buyAmount;
             this.SellAmount = sellAmount;
             this.ExchangeTradeType = exchangeTradeType;
@@ -23,6 +24,7 @@ public class AlipayCreateExchangeRequest : AMSRequest<AlipayCreateExchangeRespon
             this.ExchangeMode = exchangeMode;
         }
 
+            public Quote Quote { get; set; }
             public Amount BuyAmount { get; set; }
             public Amount SellAmount { get; set; }
             public string ExchangeTradeType { get; set; }

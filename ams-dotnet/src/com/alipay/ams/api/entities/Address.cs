@@ -11,8 +11,9 @@ public class Address
 
         
 
-        public Address( string region , string state , string city , string address1 , string address2 , string zipCode , string label , string address3)
+        public Address( string country , string region , string state , string city , string address1 , string address2 , string zipCode , string label , string address3)
         {
+            this.Country = country;
             this.Region = region;
             this.State = state;
             this.City = city;
@@ -23,6 +24,7 @@ public class Address
             this.Address3 = address3;
         }
 
+            public string Country { get; set; }
             public string Region { get; set; }
             public string State { get; set; }
             public string City { get; set; }

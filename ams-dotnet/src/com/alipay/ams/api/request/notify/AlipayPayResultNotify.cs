@@ -91,4 +91,23 @@ public class AlipayPayResultNotify:AlipayNotify
     /// </summary>
     public string TaxCalculationId { get; set; }
 
+    /// <summary>
+    /// The status of the post-authorization manual review. Valid values are PROCESSING, ACCEPT,
+    /// and REJECT. Returned when the channel authorization requires manual review, or when the
+    /// value of PopRiskDecisionResultInfo.PostRiskDecision is REVIEW; when returned,
+    /// AuthReviewSource is returned at the same time.
+    /// </summary>
+    public string AuthReviewStatus { get; set; }
+
+    /// <summary>
+    /// The source of the post-authorization risk review. Valid values are ANTOM_SHIELD and PSP.
+    /// Returned only when AuthReviewStatus is returned.
+    /// </summary>
+    public string AuthReviewSource { get; set; }
+
+    /// <summary>
+    /// The post-authorization risk review result of the payment.
+    /// </summary>
+    public PopRiskDecisionResultInfo PopRiskDecisionResultInfo { get; set; }
+
 }

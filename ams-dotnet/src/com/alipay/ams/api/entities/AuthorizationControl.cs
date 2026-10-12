@@ -11,7 +11,7 @@ public class AuthorizationControl
 
         
 
-        public AuthorizationControl( string cardActiveTime , string cardCancelTime , List<string> allowedMerchantCategoryList , int? allowedAuthTimes , List<string> allowedCurrencies , List<string> paymentPreferenceCurrencies , CardLimitDetail cardLimitDetail , CardLimitInfo cardLimitInfo , RefundPreference refundPreference)
+        public AuthorizationControl( string cardActiveTime , string cardCancelTime , List<string> allowedMerchantCategoryList , int? allowedAuthTimes , List<string> allowedCurrencies , List<string> paymentPreferenceCurrencies , bool? sameCurrencyPreference , string threeDSMode , string phoneNo , string email , CardLimitDetail cardLimitDetail , CardLimitInfo cardLimitInfo , RefundPreference refundPreference)
         {
             this.CardActiveTime = cardActiveTime;
             this.CardCancelTime = cardCancelTime;
@@ -19,6 +19,10 @@ public class AuthorizationControl
             this.AllowedAuthTimes = allowedAuthTimes;
             this.AllowedCurrencies = allowedCurrencies;
             this.PaymentPreferenceCurrencies = paymentPreferenceCurrencies;
+            this.SameCurrencyPreference = sameCurrencyPreference;
+            this.ThreeDSMode = threeDSMode;
+            this.PhoneNo = phoneNo;
+            this.Email = email;
             this.CardLimitDetail = cardLimitDetail;
             this.CardLimitInfo = cardLimitInfo;
             this.RefundPreference = refundPreference;
@@ -30,6 +34,10 @@ public class AuthorizationControl
             public int? AllowedAuthTimes { get; set; }
             public List<string> AllowedCurrencies { get; set; }
             public List<string> PaymentPreferenceCurrencies { get; set; }
+            public bool? SameCurrencyPreference { get; set; }
+            public string ThreeDSMode { get; set; }
+            public string PhoneNo { get; set; }
+            public string Email { get; set; }
             public CardLimitDetail CardLimitDetail { get; set; }
             public CardLimitInfo CardLimitInfo { get; set; }
             public RefundPreference RefundPreference { get; set; }
