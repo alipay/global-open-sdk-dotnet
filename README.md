@@ -98,3 +98,23 @@ or automatic retries. This API requires HTTP/2.
 ## Support
 
 For integration questions, contact overseas_support@service.alibaba.com.
+
+## Exact amount conversion
+
+All three AmountUtil operations accept zero, including IDR. Zero converts to
+`"0"` in minor units; conversion back uses the currency's fixed decimal precision.
+The 16-digit value limit still applies. Callers must check whether their target
+API accepts a zero amount.
+
+```csharp
+using com.alipay.ams.util;
+
+string value = AmountUtil.ToAmount("10.25", "USD"); // "1025"
+string major = AmountUtil.FromAmount(value, "USD"); // "10.25"
+AmountUtil.Validate(value, "USD");
+```
+
+The methods accept strings, use Antom's supported-currency rules, and never
+round. Extra non-zero decimal places are rejected. ISO 4217 is reference
+evidence only. Payment-method currency support and minimum amounts remain
+subject to the relevant Antom API docs.
