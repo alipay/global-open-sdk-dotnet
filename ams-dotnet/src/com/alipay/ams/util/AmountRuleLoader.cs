@@ -50,7 +50,7 @@ namespace com.alipay.ams.util
                 JsonElement root = document.RootElement;
                 if (root.ValueKind != JsonValueKind.Object
                     || !root.TryGetProperty("schemaVersion", out JsonElement schema)
-                    || schema.GetInt32() != 1
+                    || schema.ValueKind != JsonValueKind.Number || !schema.TryGetInt32(out int schemaVersion) || schemaVersion != 1
                     || !root.TryGetProperty("currencies", out JsonElement currenciesElement)
                     || currenciesElement.ValueKind != JsonValueKind.Object
                     || !root.TryGetProperty("antomConstraints", out JsonElement constraintsElement)
@@ -60,17 +60,15 @@ namespace com.alipay.ams.util
                 var currencies = new Dictionary<string, int?>(StringComparer.Ordinal);
                 foreach (JsonProperty property in currenciesElement.EnumerateObject())
                 {
-                    JsonElement minor = property.Value.GetProperty("minorUnit");
-                    if (minor.ValueKind == JsonValueKind.Null)
-                        currencies.Add(property.Name, null);
-                    else
-                    {
-                        int value = minor.GetInt32();
-                        if (value < 0 || value > 4)
-                            throw new InvalidOperationException("RULE_DATA_ERROR: invalid minor unit");
-                        currencies.Add(property.Name, value);
-                    }
+                    if (property.Value.ValueKind != JsonValueKind.Object
+                        || !property.Value.TryGetProperty("minorUnit", out JsonElement minor)
+                        || minor.ValueKind != JsonValueKind.Number || !minor.TryGetInt32(out int value)
+                        || value < 0 || value > 4)
+                        throw new InvalidOperationException("RULE_DATA_ERROR: invalid minor unit");
+                    currencies.Add(property.Name, value);
                 }
+                if (currencies.Count == 0)
+                    throw new InvalidOperationException("RULE_DATA_ERROR: invalid amount currency rules structure");
 
                 var multiples = new Dictionary<string, string>(StringComparer.Ordinal);
                 foreach (JsonProperty property in constraintsElement.EnumerateObject())
@@ -82,7 +80,7 @@ namespace com.alipay.ams.util
                 }
                 return new AmountRuleSet(currencies, multiples);
             }
-            catch (InvalidOperationException)
+            catch (InvalidOperationException exception) when (exception.Message.StartsWith("RULE_DATA_ERROR:", StringComparison.Ordinal))
             {
                 throw;
             }
