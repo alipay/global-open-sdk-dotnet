@@ -8,6 +8,10 @@ public class AlipayDisputeNotify:AlipayNotify
     public string DisputeId{ get; set; }
     public string PaymentId{ get; set; }
     public string DisputeTime{ get; set; }
+    /// <summary>Optional ISO 8601 cancellation time with timezone, returned for DISPUTE_CANCELLED.</summary>
+    public string DisputeCancelledTime { get; set; }
+    /// <summary>Optional ISO 8601 defense acceptance time with timezone, returned for DEFENSE_SUPPLIED.</summary>
+    public string DefenseSuppliedTime { get; set; }
     public Amount DisputeAmount{ get; set; }
     public DisputeNotificationType DisputeNotificationType{ get; set; }
     public string DisputeReasonMsg{ get; set; }
