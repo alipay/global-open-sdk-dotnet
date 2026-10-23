@@ -11,7 +11,7 @@ public class CardTransactionLifecycle
 
         
 
-        public CardTransactionLifecycle( string lifecycleId , string latestEventType , string latestEventStatus , string lastUpdateTime , string transactionTime , Amount totalBillingAmount , Amount totalAuthAmount , Amount totalCancelAmount , Amount totalRefundAmount , Amount totalChargebackAmount , string assetId , string maskedCardNo)
+        public CardTransactionLifecycle( string lifecycleId , string latestEventType , string latestEventStatus , string lastUpdateTime , string transactionTime , Amount totalBillingAmount , Amount totalAuthAmount , Amount totalCancelAmount , Amount totalRefundAmount , Amount totalChargebackAmount , string assetId , string cardProduct , string maskedCardNo)
         {
             this.LifecycleId = lifecycleId;
             this.LatestEventType = latestEventType;
@@ -24,6 +24,7 @@ public class CardTransactionLifecycle
             this.TotalRefundAmount = totalRefundAmount;
             this.TotalChargebackAmount = totalChargebackAmount;
             this.AssetId = assetId;
+            this.CardProduct = cardProduct;
             this.MaskedCardNo = maskedCardNo;
         }
 
@@ -38,6 +39,7 @@ public class CardTransactionLifecycle
             public Amount TotalRefundAmount { get; set; }
             public Amount TotalChargebackAmount { get; set; }
             public string AssetId { get; set; }
+            public string CardProduct { get; set; }
             public string MaskedCardNo { get; set; }
 
         

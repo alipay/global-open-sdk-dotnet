@@ -11,12 +11,13 @@ public class CardTransactionEvent
 
         
 
-        public CardTransactionEvent( string eventId , string lifecycleId , string eventType , string authExpireTime , string authType , string authCode , string failureReason , string status , string balanceType , string transactionTime , string billType , Amount outAmount , Amount inAmount , string exchangeCurrencyPair , string exchangeRate , Amount transactionAmount , string assetId , string maskedCardNo , EventMerchantInfo merchantInfo , Dictionary<string, string> metadata)
+        public CardTransactionEvent( string eventId , string lifecycleId , string eventType , string authExpireTime , string authTime , string authType , string authCode , string failureReason , string status , string balanceType , string transactionTime , string billType , Amount outAmount , Amount inAmount , string exchangeCurrencyPair , string exchangeRate , Amount transactionAmount , string assetId , string cardProduct , string maskedCardNo , EventMerchantInfo merchantInfo , Dictionary<string, string> metadata)
         {
             this.EventId = eventId;
             this.LifecycleId = lifecycleId;
             this.EventType = eventType;
             this.AuthExpireTime = authExpireTime;
+            this.AuthTime = authTime;
             this.AuthType = authType;
             this.AuthCode = authCode;
             this.FailureReason = failureReason;
@@ -30,6 +31,7 @@ public class CardTransactionEvent
             this.ExchangeRate = exchangeRate;
             this.TransactionAmount = transactionAmount;
             this.AssetId = assetId;
+            this.CardProduct = cardProduct;
             this.MaskedCardNo = maskedCardNo;
             this.MerchantInfo = merchantInfo;
             this.Metadata = metadata;
@@ -39,6 +41,7 @@ public class CardTransactionEvent
             public string LifecycleId { get; set; }
             public string EventType { get; set; }
             public string AuthExpireTime { get; set; }
+            public string AuthTime { get; set; }
             public string AuthType { get; set; }
             public string AuthCode { get; set; }
             public string FailureReason { get; set; }
@@ -52,6 +55,7 @@ public class CardTransactionEvent
             public string ExchangeRate { get; set; }
             public Amount TransactionAmount { get; set; }
             public string AssetId { get; set; }
+            public string CardProduct { get; set; }
             public string MaskedCardNo { get; set; }
             public EventMerchantInfo MerchantInfo { get; set; }
             public Dictionary<string, string> Metadata { get; set; }
