@@ -22,3 +22,5 @@ foreach (var body in new[] { "{\"disputeId\":\"legacy\"}", "{\"disputeCancelledT
     if (notify.DisputeCancelledTime != null || notify.DefenseSuppliedTime != null) throw new Exception("Missing times must remain null");
 }
 Console.WriteLine("Dispute notify times: PASS");
+
+DefenseNotificationsTests.Run();
