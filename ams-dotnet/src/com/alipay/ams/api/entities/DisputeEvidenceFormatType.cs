@@ -8,5 +8,7 @@ public enum DisputeEvidenceFormatType
     {
             PDF,
             WORD,
+            ZIP,
+            JPG,
     }
 }
