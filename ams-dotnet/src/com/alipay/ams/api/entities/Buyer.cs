@@ -11,7 +11,7 @@ public class Buyer
 
         
 
-        public Buyer( string preferredLocales , string businessName , string buyerType , string referenceBuyerId , UserName buyerName , string buyerPhoneNo , string buyerEmail , string buyerRegistrationTime , bool? isAccountVerified , int? successfulOrderCount , string buyerPhoneNoContryCode , Amount successfulOrderAmount , string dateOfLastPaidPurchase , string dateOfFirstPaidPurchase , List<BuyerTaxId> taxIds , Address businessAddress)
+        public Buyer( List<string> preferredLocales , string businessName , string buyerType , string referenceBuyerId , UserName buyerName , string buyerPhoneNo , string buyerEmail , string buyerRegistrationTime , bool? isAccountVerified , int? successfulOrderCount , string buyerPhoneNoContryCode , Amount successfulOrderAmount , string dateOfLastPaidPurchase , string dateOfFirstPaidPurchase , List<BuyerTaxId> taxIds , Address businessAddress)
         {
             this.PreferredLocales = preferredLocales;
             this.BusinessName = businessName;
@@ -31,7 +31,7 @@ public class Buyer
             this.BusinessAddress = businessAddress;
         }
 
-            public string PreferredLocales { get; set; }
+            public List<string> PreferredLocales { get; set; }
             public string BusinessName { get; set; }
             public string BuyerType { get; set; }
             public string ReferenceBuyerId { get; set; }
