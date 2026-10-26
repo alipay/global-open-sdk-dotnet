@@ -11,7 +11,7 @@ public class InvoiceCustomerDetails
 
         
 
-        public InvoiceCustomerDetails( string email , string customerType , string businessName , string firstName , string lastName , CustomerBusinessAddress businessAddress , string preferredLocales , List<BuyerTaxId> taxIds)
+        public InvoiceCustomerDetails( string email , string customerType , string businessName , string firstName , string lastName , CustomerBusinessAddress businessAddress , List<string> preferredLocales , List<BuyerTaxId> taxIds)
         {
             this.Email = email;
             this.CustomerType = customerType;
@@ -29,7 +29,7 @@ public class InvoiceCustomerDetails
             public string FirstName { get; set; }
             public string LastName { get; set; }
             public CustomerBusinessAddress BusinessAddress { get; set; }
-            public string PreferredLocales { get; set; }
+            public List<string> PreferredLocales { get; set; }
             public List<BuyerTaxId> TaxIds { get; set; }
 
         
