@@ -14,7 +14,7 @@ public class AlipayPayRequest : AMSRequest<AlipayPayResponse>
 
         
 
-        public AlipayPayRequest( string metadata , CustomizedInfo customizedInfo , Quote paymentQuote , AgreementInfo agreementInfo , SubscriptionInfo subscriptionInfo , Amount processingAmount , ProductCodeType productCode , string paymentRequestId , Order order , Amount paymentAmount , PaymentMethod paymentMethod , string paymentExpiryTime , string paymentRedirectUrl , string paymentNotifyUrl , PaymentFactor paymentFactor , SettlementStrategy settlementStrategy , CreditPayPlan creditPayPlan , string appId , string merchantRegion , string userRegion , Env env , PaymentMethod payToMethod , bool? isAuthorization , Merchant merchant , PaymentVerificationData paymentVerificationData , string extendInfo , string merchantAccountId , bool? dualOfflinePayment , string subscriptionId , string locale)
+        public AlipayPayRequest( string metadata , CustomizedInfo customizedInfo , Quote paymentQuote , AgreementInfo agreementInfo , SubscriptionInfo subscriptionInfo , Amount processingAmount , ProductCodeType productCode , string paymentRequestId , Order order , Amount paymentAmount , PaymentMethod paymentMethod , string paymentExpiryTime , string paymentRedirectUrl , string paymentNotifyUrl , PaymentFactor paymentFactor , SettlementStrategy settlementStrategy , CreditPayPlan creditPayPlan , string appId , string merchantRegion , string userRegion , Env env , PaymentMethod payToMethod , bool? isAuthorization , Merchant merchant , PaymentVerificationData paymentVerificationData , string extendInfo , string merchantAccountId , bool? dualOfflinePayment , string subscriptionId , FundTransferInfo fundTransferInfo , string locale)
         {
             this.Metadata = metadata;
             this.CustomizedInfo = customizedInfo;
@@ -45,6 +45,7 @@ public class AlipayPayRequest : AMSRequest<AlipayPayResponse>
             this.MerchantAccountId = merchantAccountId;
             this.DualOfflinePayment = dualOfflinePayment;
             this.SubscriptionId = subscriptionId;
+            this.FundTransferInfo = fundTransferInfo;
             this.Locale = locale;
         }
 
@@ -77,6 +78,7 @@ public class AlipayPayRequest : AMSRequest<AlipayPayResponse>
             public string MerchantAccountId { get; set; }
             public bool? DualOfflinePayment { get; set; }
             public string SubscriptionId { get; set; }
+            public FundTransferInfo FundTransferInfo { get; set; }
             public string Locale { get; set; }
 
         public override string GetRequestURI(){ return "/ams/api/v1/payments/pay"; } 
