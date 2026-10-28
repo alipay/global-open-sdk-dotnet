@@ -14,8 +14,9 @@ public class AlipayPaymentSessionRequest : AMSRequest<AlipayPaymentSessionRespon
 
         
 
-        public AlipayPaymentSessionRequest( string merchantAccountId , string metadata , List<string> allowedPaymentMethodRegions , CustomizedInfo customizedInfo , Quote paymentQuote , Amount processingAmount , SubscriptionPlan subscriptionPlan , SubscriptionInfo subscriptionInfo , string userRegion , List<string> scopes , ProductCodeType productCode , string paymentRequestId , Order order , Amount paymentAmount , PaymentMethod paymentMethod , string paymentSessionExpiryTime , string paymentRedirectUrl , string paymentNotifyUrl , PaymentFactor paymentFactor , SettlementStrategy settlementStrategy , bool? enableInstallmentCollection , CreditPayPlan creditPayPlan , string merchantRegion , Env env , AgreementInfo agreementInfo , RiskData riskData , string productScene , List<PaymentMethod> savedPaymentMethods , string locale , AvailablePaymentMethod availablePaymentMethod , string paymentExpiryTime , BillingSubscription subscription , AutomaticTax automaticTax)
+        public AlipayPaymentSessionRequest( FundTransferInfo fundTransferInfo , string merchantAccountId , string metadata , List<string> allowedPaymentMethodRegions , CustomizedInfo customizedInfo , Quote paymentQuote , Amount processingAmount , SubscriptionPlan subscriptionPlan , SubscriptionInfo subscriptionInfo , string userRegion , List<string> scopes , ProductCodeType productCode , string paymentRequestId , Order order , Amount paymentAmount , PaymentMethod paymentMethod , string paymentSessionExpiryTime , string paymentRedirectUrl , string paymentNotifyUrl , PaymentFactor paymentFactor , SettlementStrategy settlementStrategy , bool? enableInstallmentCollection , CreditPayPlan creditPayPlan , string merchantRegion , Env env , AgreementInfo agreementInfo , RiskData riskData , string productScene , List<PaymentMethod> savedPaymentMethods , string locale , AvailablePaymentMethod availablePaymentMethod , string paymentExpiryTime , BillingSubscription subscription , AutomaticTax automaticTax)
         {
+            this.FundTransferInfo = fundTransferInfo;
             this.MerchantAccountId = merchantAccountId;
             this.Metadata = metadata;
             this.AllowedPaymentMethodRegions = allowedPaymentMethodRegions;
@@ -51,6 +52,7 @@ public class AlipayPaymentSessionRequest : AMSRequest<AlipayPaymentSessionRespon
             this.AutomaticTax = automaticTax;
         }
 
+            public FundTransferInfo FundTransferInfo { get; set; }
             public string MerchantAccountId { get; set; }
             public string Metadata { get; set; }
             public List<string> AllowedPaymentMethodRegions { get; set; }
