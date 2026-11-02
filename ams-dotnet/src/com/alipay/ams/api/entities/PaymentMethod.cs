@@ -14,7 +14,7 @@ public class PaymentMethod
 } 
 
 
-        public PaymentMethod( string paymentMethodType , string paymentMethodId , FundingType funding , string customerId , string extendInfo , bool? requireIssuerAuthentication , Dictionary<string, Object> paymentMethodMetaData)
+        public PaymentMethod( string paymentMethodType , string paymentMethodId , FundingType funding , string customerId , string extendInfo , bool? requireIssuerAuthentication , Dictionary<string, Object> paymentMethodMetaData , string cardBrand)
         {
             this.PaymentMethodType = paymentMethodType;
             this.PaymentMethodId = paymentMethodId;
@@ -23,6 +23,7 @@ public class PaymentMethod
             this.ExtendInfo = extendInfo;
             this.RequireIssuerAuthentication = requireIssuerAuthentication;
             this.PaymentMethodMetaData = paymentMethodMetaData;
+            this.CardBrand = cardBrand;
         }
 
             public string PaymentMethodType { get; set; }
@@ -32,6 +33,7 @@ public class PaymentMethod
             public string ExtendInfo { get; set; }
             public bool? RequireIssuerAuthentication { get; set; }
             public Dictionary<string, Object> PaymentMethodMetaData { get; set; }
+            public string CardBrand { get; set; }
 
         
 
