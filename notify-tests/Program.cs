@@ -24,3 +24,4 @@ foreach (var body in new[] { "{\"disputeId\":\"legacy\"}", "{\"disputeCancelledT
 Console.WriteLine("Dispute notify times: PASS");
 
 DefenseNotificationsTests.Run();
+CardTransactionEventNotifyTests.Run();
