@@ -14,7 +14,7 @@ public class AlipayVaultingPaymentMethodRequest : AMSRequest<AlipayVaultingPayme
 
         
 
-        public AlipayVaultingPaymentMethodRequest( string merchantAccountId , string metadata , string vaultingRequestId , string vaultingNotificationUrl , string redirectUrl , string merchantRegion , PaymentMethodDetail paymentMethodDetail , Env env , string vaultingCurrency , CustomizedInfo customizedInfo)
+        public AlipayVaultingPaymentMethodRequest( string merchantAccountId , string metadata , string vaultingRequestId , string vaultingNotificationUrl , string redirectUrl , string merchantRegion , VaultingPaymentMethodDetailPayload paymentMethodDetail , Env env , string vaultingCurrency , CustomizedInfo customizedInfo)
         {
             this.MerchantAccountId = merchantAccountId;
             this.Metadata = metadata;
@@ -34,7 +34,7 @@ public class AlipayVaultingPaymentMethodRequest : AMSRequest<AlipayVaultingPayme
             public string VaultingNotificationUrl { get; set; }
             public string RedirectUrl { get; set; }
             public string MerchantRegion { get; set; }
-            public PaymentMethodDetail PaymentMethodDetail { get; set; }
+            public VaultingPaymentMethodDetailPayload PaymentMethodDetail { get; set; }
             public Env Env { get; set; }
             public string VaultingCurrency { get; set; }
             public CustomizedInfo CustomizedInfo { get; set; }
