@@ -1,6 +1,6 @@
 # Antom SDK for .NET
 
-Latest release: **2.4.2**
+Latest release: **2.4.3**
 
 ## Installation
 
