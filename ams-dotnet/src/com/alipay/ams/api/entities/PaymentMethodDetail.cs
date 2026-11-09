@@ -11,7 +11,7 @@ public class PaymentMethodDetail
 
         
 
-        public PaymentMethodDetail( PaymentMethodDetailType paymentMethodDetailType , CardPaymentMethodDetail card , ExternalPaymentMethodDetail externalAccount , DiscountPaymentMethodDetail discount , CouponPaymentMethodDetail coupon , string paymentMethodType , string extendInfo , Wallet wallet , string interactionType)
+        public PaymentMethodDetail( PaymentMethodDetailType paymentMethodDetailType , CardPaymentMethodDetail card , ExternalPaymentMethodDetail externalAccount , DiscountPaymentMethodDetail discount , CouponPaymentMethodDetail coupon , string paymentMethodType , string extendInfo , Wallet wallet , string interactionType , PaymentMethodDetailPaymentMethodMetaData paymentMethodMetaData)
         {
             this.PaymentMethodDetailType = paymentMethodDetailType;
             this.Card = card;
@@ -22,6 +22,7 @@ public class PaymentMethodDetail
             this.ExtendInfo = extendInfo;
             this.Wallet = wallet;
             this.InteractionType = interactionType;
+            this.PaymentMethodMetaData = paymentMethodMetaData;
         }
 
             public PaymentMethodDetailType PaymentMethodDetailType { get; set; }
@@ -33,6 +34,7 @@ public class PaymentMethodDetail
             public string ExtendInfo { get; set; }
             public Wallet Wallet { get; set; }
             public string InteractionType { get; set; }
+            public PaymentMethodDetailPaymentMethodMetaData PaymentMethodMetaData { get; set; }
 
         
 
