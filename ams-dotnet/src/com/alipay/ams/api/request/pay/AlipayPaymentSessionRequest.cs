@@ -14,7 +14,7 @@ public class AlipayPaymentSessionRequest : AMSRequest<AlipayPaymentSessionRespon
 
         
 
-        public AlipayPaymentSessionRequest( FundTransferInfo fundTransferInfo , string merchantAccountId , string metadata , List<string> allowedPaymentMethodRegions , CustomizedInfo customizedInfo , Quote paymentQuote , Amount processingAmount , SubscriptionPlan subscriptionPlan , SubscriptionInfo subscriptionInfo , string userRegion , List<string> scopes , ProductCodeType productCode , string paymentRequestId , Order order , Amount paymentAmount , PaymentMethod paymentMethod , string paymentSessionExpiryTime , string paymentRedirectUrl , string paymentNotifyUrl , PaymentFactor paymentFactor , SettlementStrategy settlementStrategy , bool? enableInstallmentCollection , CreditPayPlan creditPayPlan , string merchantRegion , Env env , AgreementInfo agreementInfo , RiskData riskData , string productScene , List<PaymentMethod> savedPaymentMethods , string locale , AvailablePaymentMethod availablePaymentMethod , string paymentExpiryTime , BillingSubscription subscription , AutomaticTax automaticTax)
+        public AlipayPaymentSessionRequest( FundTransferInfo fundTransferInfo , string merchantAccountId , string metadata , List<string> allowedPaymentMethodRegions , CustomizedInfo customizedInfo , Quote paymentQuote , Amount processingAmount , SubscriptionPlan subscriptionPlan , SubscriptionInfo subscriptionInfo , string userRegion , List<string> scopes , ProductCodeType productCode , string paymentRequestId , Order order , Amount paymentAmount , PaymentMethod paymentMethod , string paymentSessionExpiryTime , string paymentRedirectUrl , string paymentNotifyUrl , PaymentFactor paymentFactor , ExcludedPaymentMethod excludedPaymentMethod , SettlementStrategy settlementStrategy , bool? enableInstallmentCollection , CreditPayPlan creditPayPlan , string merchantRegion , Env env , AgreementInfo agreementInfo , RiskData riskData , string productScene , List<PaymentMethod> savedPaymentMethods , string locale , AvailablePaymentMethod availablePaymentMethod , string paymentExpiryTime , BillingSubscription subscription , AutomaticTax automaticTax)
         {
             this.FundTransferInfo = fundTransferInfo;
             this.MerchantAccountId = merchantAccountId;
@@ -36,6 +36,7 @@ public class AlipayPaymentSessionRequest : AMSRequest<AlipayPaymentSessionRespon
             this.PaymentRedirectUrl = paymentRedirectUrl;
             this.PaymentNotifyUrl = paymentNotifyUrl;
             this.PaymentFactor = paymentFactor;
+            this.ExcludedPaymentMethod = excludedPaymentMethod;
             this.SettlementStrategy = settlementStrategy;
             this.EnableInstallmentCollection = enableInstallmentCollection;
             this.CreditPayPlan = creditPayPlan;
@@ -72,6 +73,7 @@ public class AlipayPaymentSessionRequest : AMSRequest<AlipayPaymentSessionRespon
             public string PaymentRedirectUrl { get; set; }
             public string PaymentNotifyUrl { get; set; }
             public PaymentFactor PaymentFactor { get; set; }
+            public ExcludedPaymentMethod ExcludedPaymentMethod { get; set; }
             public SettlementStrategy SettlementStrategy { get; set; }
             public bool? EnableInstallmentCollection { get; set; }
             public CreditPayPlan CreditPayPlan { get; set; }

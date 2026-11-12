@@ -33,7 +33,6 @@ public class PaymentMethodDetail
             public string ExtendInfo { get; set; }
             public Wallet Wallet { get; set; }
             public string InteractionType { get; set; }
-            public PaymentMethodMetaData PaymentMethodMetaData { get; set; }
 
         
 
