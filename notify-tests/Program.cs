@@ -25,3 +25,4 @@ Console.WriteLine("Dispute notify times: PASS");
 
 DefenseNotificationsTests.Run();
 CardTransactionEventNotifyTests.Run();
+        VaultingPaymentMethodModelTests.Run();
