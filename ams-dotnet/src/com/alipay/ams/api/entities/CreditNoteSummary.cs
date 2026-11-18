@@ -1,17 +1,17 @@
 using System;
 using System.Collections.Generic;
-
+    
 namespace com.alipay.ams.api.entities
 {
 
-    public class CreditNoteSummary
+public class CreditNoteSummary
     {
 
         public CreditNoteSummary() { }
 
+        
 
-
-        public CreditNoteSummary(string creditNoteId, string customerId, string invoiceId, string type, string status, Amount totalAmount, Amount refundAmount, string reason, string effectiveDate, string refundStatus, string voidedAt, string refundedAt, string createdAt)
+        public CreditNoteSummary( string creditNoteId , string customerId , string invoiceId , string type , string status , Amount totalAmount , Amount refundAmount , string reason , string effectiveDate , string refundStatus , string voidedAt , string refundedAt , string createdAt)
         {
             this.CreditNoteId = creditNoteId;
             this.CustomerId = customerId;
@@ -28,21 +28,21 @@ namespace com.alipay.ams.api.entities
             this.CreatedAt = createdAt;
         }
 
-        public string CreditNoteId { get; set; }
-        public string CustomerId { get; set; }
-        public string InvoiceId { get; set; }
-        public string Type { get; set; }
-        public string Status { get; set; }
-        public Amount TotalAmount { get; set; }
-        public Amount RefundAmount { get; set; }
-        public string Reason { get; set; }
-        public string EffectiveDate { get; set; }
-        public string RefundStatus { get; set; }
-        public string VoidedAt { get; set; }
-        public string RefundedAt { get; set; }
-        public string CreatedAt { get; set; }
+            public string CreditNoteId { get; set; }
+            public string CustomerId { get; set; }
+            public string InvoiceId { get; set; }
+            public string Type { get; set; }
+            public string Status { get; set; }
+            public Amount TotalAmount { get; set; }
+            public Amount RefundAmount { get; set; }
+            public string Reason { get; set; }
+            public string EffectiveDate { get; set; }
+            public string RefundStatus { get; set; }
+            public string VoidedAt { get; set; }
+            public string RefundedAt { get; set; }
+            public string CreatedAt { get; set; }
 
-
+        
 
     }
 

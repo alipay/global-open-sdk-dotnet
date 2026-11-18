@@ -2,7 +2,7 @@ using com.alipay.ams.api.entities;
 
 namespace com.alipay.ams.api.request.notify;
 
-public class AlipayPayResultNotify : AlipayNotify
+public class AlipayPayResultNotify:AlipayNotify
 {
     /**
      * The unique ID that is assigned by a merchant to identify a payment request.
@@ -63,14 +63,14 @@ public class AlipayPayResultNotify : AlipayNotify
      * The information of the acquirer that processes the payment.
      */
     public AcquirerInfo AcquirerInfo { get; set; }
-
+    
     public PromotionResult[] PromotionResult { get; set; }
 
 
     public string PaymentMethodType { get; set; }
-
+    
     public string Metadata { get; set; }
-
+    
     public string SubscriptionOrderId { get; set; }
     public RetryInfo RetryInfo { get; set; }
 

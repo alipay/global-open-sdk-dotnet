@@ -3,18 +3,18 @@ using com.alipay.ams.api.request;
 using com.alipay.ams.api.entities;
 using System;
 using System.Collections.Generic;
-
+    
 namespace com.alipay.ams.api.request.auth
 {
 
-    public class AlipayAuthConsultRequest : AMSRequest<AlipayAuthConsultResponse>
+public class AlipayAuthConsultRequest : AMSRequest<AlipayAuthConsultResponse>
     {
 
         public AlipayAuthConsultRequest() { }
 
+        
 
-
-        public AlipayAuthConsultRequest(Amount amount, AuthorizationConsultDirectDebitInfo directDebitInfo, string merchantAccountId, string authNotifyUrl, CustomerBelongsTo customerBelongsTo, string authClientId, string authRedirectUrl, ScopeType[] scopes, string authState, TerminalType terminalType, OsType osType, string osVersion, string extendInfo, string merchantRegion, bool? recurringPayment, AuthMetaData authMetaData, Env env)
+        public AlipayAuthConsultRequest( Amount amount , AuthorizationConsultDirectDebitInfo directDebitInfo , string merchantAccountId , string authNotifyUrl , CustomerBelongsTo customerBelongsTo , string authClientId , string authRedirectUrl , ScopeType[] scopes , string authState , TerminalType terminalType , OsType osType , string osVersion , string extendInfo , string merchantRegion , bool? recurringPayment , AuthMetaData authMetaData , Env env)
         {
             this.Amount = amount;
             this.DirectDebitInfo = directDebitInfo;
@@ -35,25 +35,25 @@ namespace com.alipay.ams.api.request.auth
             this.Env = env;
         }
 
-        public Amount Amount { get; set; }
-        public AuthorizationConsultDirectDebitInfo DirectDebitInfo { get; set; }
-        public string MerchantAccountId { get; set; }
-        public string AuthNotifyUrl { get; set; }
-        public CustomerBelongsTo CustomerBelongsTo { get; set; }
-        public string AuthClientId { get; set; }
-        public string AuthRedirectUrl { get; set; }
-        public ScopeType[] Scopes { get; set; }
-        public string AuthState { get; set; }
-        public TerminalType TerminalType { get; set; }
-        public OsType OsType { get; set; }
-        public string OsVersion { get; set; }
-        public string ExtendInfo { get; set; }
-        public string MerchantRegion { get; set; }
-        public bool? RecurringPayment { get; set; }
-        public AuthMetaData AuthMetaData { get; set; }
-        public Env Env { get; set; }
+            public Amount Amount { get; set; }
+            public AuthorizationConsultDirectDebitInfo DirectDebitInfo { get; set; }
+            public string MerchantAccountId { get; set; }
+            public string AuthNotifyUrl { get; set; }
+            public CustomerBelongsTo CustomerBelongsTo { get; set; }
+            public string AuthClientId { get; set; }
+            public string AuthRedirectUrl { get; set; }
+            public ScopeType[] Scopes { get; set; }
+            public string AuthState { get; set; }
+            public TerminalType TerminalType { get; set; }
+            public OsType OsType { get; set; }
+            public string OsVersion { get; set; }
+            public string ExtendInfo { get; set; }
+            public string MerchantRegion { get; set; }
+            public bool? RecurringPayment { get; set; }
+            public AuthMetaData AuthMetaData { get; set; }
+            public Env Env { get; set; }
 
-        public override string GetRequestURI() { return "/ams/api/v1/authorizations/consult"; }
+        public override string GetRequestURI(){ return "/ams/api/v1/authorizations/consult"; } 
 
 
     }

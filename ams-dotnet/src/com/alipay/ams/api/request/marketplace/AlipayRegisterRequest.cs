@@ -3,18 +3,18 @@ using com.alipay.ams.api.request;
 using com.alipay.ams.api.entities;
 using System;
 using System.Collections.Generic;
-
+    
 namespace com.alipay.ams.api.request.marketplace
 {
 
-    public class AlipayRegisterRequest : AMSRequest<AlipayRegisterResponse>
+public class AlipayRegisterRequest : AMSRequest<AlipayRegisterResponse>
     {
 
         public AlipayRegisterRequest() { }
 
+        
 
-
-        public AlipayRegisterRequest(string registrationRequestId, SettlementInfo[] settlementInfos, MerchantInfo merchantInfo, PaymentMethod[] paymentMethods)
+        public AlipayRegisterRequest( string registrationRequestId , SettlementInfo[] settlementInfos , MerchantInfo merchantInfo , PaymentMethod[] paymentMethods)
         {
             this.RegistrationRequestId = registrationRequestId;
             this.SettlementInfos = settlementInfos;
@@ -22,12 +22,12 @@ namespace com.alipay.ams.api.request.marketplace
             this.PaymentMethods = paymentMethods;
         }
 
-        public string RegistrationRequestId { get; set; }
-        public SettlementInfo[] SettlementInfos { get; set; }
-        public MerchantInfo MerchantInfo { get; set; }
-        public PaymentMethod[] PaymentMethods { get; set; }
+            public string RegistrationRequestId { get; set; }
+            public SettlementInfo[] SettlementInfos { get; set; }
+            public MerchantInfo MerchantInfo { get; set; }
+            public PaymentMethod[] PaymentMethods { get; set; }
 
-        public override string GetRequestURI() { return "/ams/api/v1/merchants/register"; }
+        public override string GetRequestURI(){ return "/ams/api/v1/merchants/register"; } 
 
 
     }

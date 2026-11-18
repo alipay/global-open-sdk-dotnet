@@ -1,17 +1,17 @@
 using System;
 using System.Collections.Generic;
-
+    
 namespace com.alipay.ams.api.entities
 {
 
-    public class CreditPayPlan
+public class CreditPayPlan
     {
 
         public CreditPayPlan() { }
 
+        
 
-
-        public CreditPayPlan(int? installmentNum, string interval, CreditPayFeeType creditPayFeeType, int? feePercentage, string interestRate)
+        public CreditPayPlan( int? installmentNum , string interval , CreditPayFeeType creditPayFeeType , int? feePercentage , string interestRate)
         {
             this.InstallmentNum = installmentNum;
             this.Interval = interval;
@@ -20,13 +20,13 @@ namespace com.alipay.ams.api.entities
             this.InterestRate = interestRate;
         }
 
-        public int? InstallmentNum { get; set; }
-        public string Interval { get; set; }
-        public CreditPayFeeType CreditPayFeeType { get; set; }
-        public int? FeePercentage { get; set; }
-        public string InterestRate { get; set; }
+            public int? InstallmentNum { get; set; }
+            public string Interval { get; set; }
+            public CreditPayFeeType CreditPayFeeType { get; set; }
+            public int? FeePercentage { get; set; }
+            public string InterestRate { get; set; }
 
-
+        
 
     }
 

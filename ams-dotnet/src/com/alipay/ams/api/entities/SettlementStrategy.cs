@@ -1,24 +1,24 @@
 using System;
 using System.Collections.Generic;
-
+    
 namespace com.alipay.ams.api.entities
 {
 
-    public class SettlementStrategy
+public class SettlementStrategy
     {
 
         public SettlementStrategy() { }
 
+        
 
-
-        public SettlementStrategy(string settlementCurrency)
+        public SettlementStrategy( string settlementCurrency)
         {
             this.SettlementCurrency = settlementCurrency;
         }
 
-        public string SettlementCurrency { get; set; }
+            public string SettlementCurrency { get; set; }
 
-
+        
 
     }
 

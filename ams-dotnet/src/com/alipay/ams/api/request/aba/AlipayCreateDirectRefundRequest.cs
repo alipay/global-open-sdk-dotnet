@@ -3,18 +3,18 @@ using com.alipay.ams.api.request;
 using com.alipay.ams.api.entities;
 using System;
 using System.Collections.Generic;
-
+    
 namespace com.alipay.ams.api.request.aba
 {
 
-    public class AlipayCreateDirectRefundRequest : AMSRequest<AlipayCreateDirectRefundResponse>
+public class AlipayCreateDirectRefundRequest : AMSRequest<AlipayCreateDirectRefundResponse>
     {
 
         public AlipayCreateDirectRefundRequest() { }
 
+        
 
-
-        public AlipayCreateDirectRefundRequest(string paymentId, string refundRequestId, string referenceRefundId, RefundFromMethod refundFromMethod, Amount refundFromAmount, string memo, string remark, string refundReason, string refundNotifyUrl)
+        public AlipayCreateDirectRefundRequest( string paymentId , string refundRequestId , string referenceRefundId , RefundFromMethod refundFromMethod , Amount refundFromAmount , string memo , string remark , string refundReason , string refundNotifyUrl)
         {
             this.PaymentId = paymentId;
             this.RefundRequestId = refundRequestId;
@@ -27,17 +27,17 @@ namespace com.alipay.ams.api.request.aba
             this.RefundNotifyUrl = refundNotifyUrl;
         }
 
-        public string PaymentId { get; set; }
-        public string RefundRequestId { get; set; }
-        public string ReferenceRefundId { get; set; }
-        public RefundFromMethod RefundFromMethod { get; set; }
-        public Amount RefundFromAmount { get; set; }
-        public string Memo { get; set; }
-        public string Remark { get; set; }
-        public string RefundReason { get; set; }
-        public string RefundNotifyUrl { get; set; }
+            public string PaymentId { get; set; }
+            public string RefundRequestId { get; set; }
+            public string ReferenceRefundId { get; set; }
+            public RefundFromMethod RefundFromMethod { get; set; }
+            public Amount RefundFromAmount { get; set; }
+            public string Memo { get; set; }
+            public string Remark { get; set; }
+            public string RefundReason { get; set; }
+            public string RefundNotifyUrl { get; set; }
 
-        public override string GetRequestURI() { return "/ams/api/v1/aba/funds/createDirectRefund"; }
+        public override string GetRequestURI(){ return "/ams/api/v1/aba/funds/createDirectRefund"; } 
 
 
     }

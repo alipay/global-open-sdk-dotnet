@@ -3,18 +3,18 @@ using com.alipay.ams.api.request;
 using com.alipay.ams.api.entities;
 using System;
 using System.Collections.Generic;
-
+    
 namespace com.alipay.ams.api.request.billing
 {
 
-    public class AlipayCreditGrantCreateRequest : AMSRequest<AlipayCreditGrantCreateResponse>
+public class AlipayCreditGrantCreateRequest : AMSRequest<AlipayCreditGrantCreateResponse>
     {
 
         public AlipayCreditGrantCreateRequest() { }
 
+        
 
-
-        public AlipayCreditGrantCreateRequest(string customerId, string creditGrantName, Amount amount, Applicability applicability, int? priority, string category, string effectiveDateTime, string expiryDateTime)
+        public AlipayCreditGrantCreateRequest( string customerId , string creditGrantName , Amount amount , Applicability applicability , int? priority , string category , string effectiveDateTime , string expiryDateTime)
         {
             this.CustomerId = customerId;
             this.CreditGrantName = creditGrantName;
@@ -26,16 +26,16 @@ namespace com.alipay.ams.api.request.billing
             this.ExpiryDateTime = expiryDateTime;
         }
 
-        public string CustomerId { get; set; }
-        public string CreditGrantName { get; set; }
-        public Amount Amount { get; set; }
-        public Applicability Applicability { get; set; }
-        public int? Priority { get; set; }
-        public string Category { get; set; }
-        public string EffectiveDateTime { get; set; }
-        public string ExpiryDateTime { get; set; }
+            public string CustomerId { get; set; }
+            public string CreditGrantName { get; set; }
+            public Amount Amount { get; set; }
+            public Applicability Applicability { get; set; }
+            public int? Priority { get; set; }
+            public string Category { get; set; }
+            public string EffectiveDateTime { get; set; }
+            public string ExpiryDateTime { get; set; }
 
-        public override string GetRequestURI() { return "/ams/api/v1/meter/creditGrant/create"; }
+        public override string GetRequestURI(){ return "/ams/api/v1/meter/creditGrant/create"; } 
 
 
     }

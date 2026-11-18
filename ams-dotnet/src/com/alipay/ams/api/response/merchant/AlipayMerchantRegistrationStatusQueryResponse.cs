@@ -5,8 +5,8 @@ namespace com.alipay.ams.api.response.merchant
 {
     public class AlipayMerchantRegistrationStatusQueryResponse : AMSResponse
     {
-        public RegistrationResult RegistrationResult { get; set; }
+       public RegistrationResult RegistrationResult { get; set; }
 
-        public List<PSPRegistrationResult> pspRegistrationResultList { get; set; }
+       public List<PSPRegistrationResult> pspRegistrationResultList { get; set; }
     }
 }

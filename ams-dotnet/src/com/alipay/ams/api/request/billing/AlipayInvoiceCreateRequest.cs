@@ -3,18 +3,18 @@ using com.alipay.ams.api.request;
 using com.alipay.ams.api.entities;
 using System;
 using System.Collections.Generic;
-
+    
 namespace com.alipay.ams.api.request.billing
 {
 
-    public class AlipayInvoiceCreateRequest : AMSRequest<AlipayInvoiceCreateResponse>
+public class AlipayInvoiceCreateRequest : AMSRequest<AlipayInvoiceCreateResponse>
     {
 
         public AlipayInvoiceCreateRequest() { }
 
+        
 
-
-        public AlipayInvoiceCreateRequest(bool? includePaymentLink, AutomaticTax automaticTax, InvoiceCustomerDetails customerDetails, string invoiceRequestId, string customerId, string subscriptionId, string currency, List<InvoiceCreateItem> items, string status, bool? autoSend, List<string> ccEmails, string description, string dueDate, string collectionMethod, PaymentMethod paymentMethod, InvoiceShipping shipping, List<BillingDiscount> discounts, string invoiceNotifyUrl)
+        public AlipayInvoiceCreateRequest( bool? includePaymentLink , AutomaticTax automaticTax , InvoiceCustomerDetails customerDetails , string invoiceRequestId , string customerId , string subscriptionId , string currency , List<InvoiceCreateItem> items , string status , bool? autoSend , List<string> ccEmails , string description , string dueDate , string collectionMethod , PaymentMethod paymentMethod , InvoiceShipping shipping , List<BillingDiscount> discounts , string invoiceNotifyUrl)
         {
             this.IncludePaymentLink = includePaymentLink;
             this.AutomaticTax = automaticTax;
@@ -36,26 +36,26 @@ namespace com.alipay.ams.api.request.billing
             this.InvoiceNotifyUrl = invoiceNotifyUrl;
         }
 
-        public bool? IncludePaymentLink { get; set; }
-        public AutomaticTax AutomaticTax { get; set; }
-        public InvoiceCustomerDetails CustomerDetails { get; set; }
-        public string InvoiceRequestId { get; set; }
-        public string CustomerId { get; set; }
-        public string SubscriptionId { get; set; }
-        public string Currency { get; set; }
-        public List<InvoiceCreateItem> Items { get; set; }
-        public string Status { get; set; }
-        public bool? AutoSend { get; set; }
-        public List<string> CcEmails { get; set; }
-        public string Description { get; set; }
-        public string DueDate { get; set; }
-        public string CollectionMethod { get; set; }
-        public PaymentMethod PaymentMethod { get; set; }
-        public InvoiceShipping Shipping { get; set; }
-        public List<BillingDiscount> Discounts { get; set; }
-        public string InvoiceNotifyUrl { get; set; }
+            public bool? IncludePaymentLink { get; set; }
+            public AutomaticTax AutomaticTax { get; set; }
+            public InvoiceCustomerDetails CustomerDetails { get; set; }
+            public string InvoiceRequestId { get; set; }
+            public string CustomerId { get; set; }
+            public string SubscriptionId { get; set; }
+            public string Currency { get; set; }
+            public List<InvoiceCreateItem> Items { get; set; }
+            public string Status { get; set; }
+            public bool? AutoSend { get; set; }
+            public List<string> CcEmails { get; set; }
+            public string Description { get; set; }
+            public string DueDate { get; set; }
+            public string CollectionMethod { get; set; }
+            public PaymentMethod PaymentMethod { get; set; }
+            public InvoiceShipping Shipping { get; set; }
+            public List<BillingDiscount> Discounts { get; set; }
+            public string InvoiceNotifyUrl { get; set; }
 
-        public override string GetRequestURI() { return "/ams/api/v1/billing/invoice/create"; }
+        public override string GetRequestURI(){ return "/ams/api/v1/billing/invoice/create"; } 
 
 
     }

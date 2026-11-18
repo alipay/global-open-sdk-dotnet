@@ -2,7 +2,7 @@ using com.alipay.ams.api.entities;
 
 namespace com.alipay.ams.api.request.notify;
 
-public class AlipayABATransferNotify : AlipayNotify
+public class AlipayABATransferNotify:AlipayNotify
 {
     /**
      * The unique ID assigned by the merchant to identify a transfer request.

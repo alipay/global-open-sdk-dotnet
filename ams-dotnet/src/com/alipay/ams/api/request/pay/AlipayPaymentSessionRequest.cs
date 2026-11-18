@@ -3,18 +3,18 @@ using com.alipay.ams.api.request;
 using com.alipay.ams.api.entities;
 using System;
 using System.Collections.Generic;
-
+    
 namespace com.alipay.ams.api.request.pay
 {
 
-    public class AlipayPaymentSessionRequest : AMSRequest<AlipayPaymentSessionResponse>
+public class AlipayPaymentSessionRequest : AMSRequest<AlipayPaymentSessionResponse>
     {
 
         public AlipayPaymentSessionRequest() { }
 
+        
 
-
-        public AlipayPaymentSessionRequest(FundTransferInfo fundTransferInfo, string merchantAccountId, string metadata, List<string> allowedPaymentMethodRegions, CustomizedInfo customizedInfo, Quote paymentQuote, Amount processingAmount, SubscriptionPlan subscriptionPlan, SubscriptionInfo subscriptionInfo, string userRegion, List<string> scopes, ProductCodeType productCode, string paymentRequestId, Order order, Amount paymentAmount, PaymentMethod paymentMethod, string paymentSessionExpiryTime, string paymentRedirectUrl, string paymentNotifyUrl, PaymentFactor paymentFactor, SettlementStrategy settlementStrategy, bool? enableInstallmentCollection, CreditPayPlan creditPayPlan, string merchantRegion, Env env, AgreementInfo agreementInfo, RiskData riskData, string productScene, List<PaymentMethod> savedPaymentMethods, string locale, AvailablePaymentMethod availablePaymentMethod, string paymentExpiryTime, BillingSubscription subscription, AutomaticTax automaticTax)
+        public AlipayPaymentSessionRequest( FundTransferInfo fundTransferInfo , string merchantAccountId , string metadata , List<string> allowedPaymentMethodRegions , CustomizedInfo customizedInfo , Quote paymentQuote , Amount processingAmount , SubscriptionPlan subscriptionPlan , SubscriptionInfo subscriptionInfo , string userRegion , List<string> scopes , ProductCodeType productCode , string paymentRequestId , Order order , Amount paymentAmount , PaymentMethod paymentMethod , string paymentSessionExpiryTime , string paymentRedirectUrl , string paymentNotifyUrl , PaymentFactor paymentFactor , SettlementStrategy settlementStrategy , bool? enableInstallmentCollection , CreditPayPlan creditPayPlan , string merchantRegion , Env env , AgreementInfo agreementInfo , RiskData riskData , string productScene , List<PaymentMethod> savedPaymentMethods , string locale , AvailablePaymentMethod availablePaymentMethod , string paymentExpiryTime , BillingSubscription subscription , AutomaticTax automaticTax)
         {
             this.FundTransferInfo = fundTransferInfo;
             this.MerchantAccountId = merchantAccountId;
@@ -52,42 +52,42 @@ namespace com.alipay.ams.api.request.pay
             this.AutomaticTax = automaticTax;
         }
 
-        public FundTransferInfo FundTransferInfo { get; set; }
-        public string MerchantAccountId { get; set; }
-        public string Metadata { get; set; }
-        public List<string> AllowedPaymentMethodRegions { get; set; }
-        public CustomizedInfo CustomizedInfo { get; set; }
-        public Quote PaymentQuote { get; set; }
-        public Amount ProcessingAmount { get; set; }
-        public SubscriptionPlan SubscriptionPlan { get; set; }
-        public SubscriptionInfo SubscriptionInfo { get; set; }
-        public string UserRegion { get; set; }
-        public List<string> Scopes { get; set; }
-        public ProductCodeType ProductCode { get; set; }
-        public string PaymentRequestId { get; set; }
-        public Order Order { get; set; }
-        public Amount PaymentAmount { get; set; }
-        public PaymentMethod PaymentMethod { get; set; }
-        public string PaymentSessionExpiryTime { get; set; }
-        public string PaymentRedirectUrl { get; set; }
-        public string PaymentNotifyUrl { get; set; }
-        public PaymentFactor PaymentFactor { get; set; }
-        public SettlementStrategy SettlementStrategy { get; set; }
-        public bool? EnableInstallmentCollection { get; set; }
-        public CreditPayPlan CreditPayPlan { get; set; }
-        public string MerchantRegion { get; set; }
-        public Env Env { get; set; }
-        public AgreementInfo AgreementInfo { get; set; }
-        public RiskData RiskData { get; set; }
-        public string ProductScene { get; set; }
-        public List<PaymentMethod> SavedPaymentMethods { get; set; }
-        public string Locale { get; set; }
-        public AvailablePaymentMethod AvailablePaymentMethod { get; set; }
-        public string PaymentExpiryTime { get; set; }
-        public BillingSubscription Subscription { get; set; }
-        public AutomaticTax AutomaticTax { get; set; }
+            public FundTransferInfo FundTransferInfo { get; set; }
+            public string MerchantAccountId { get; set; }
+            public string Metadata { get; set; }
+            public List<string> AllowedPaymentMethodRegions { get; set; }
+            public CustomizedInfo CustomizedInfo { get; set; }
+            public Quote PaymentQuote { get; set; }
+            public Amount ProcessingAmount { get; set; }
+            public SubscriptionPlan SubscriptionPlan { get; set; }
+            public SubscriptionInfo SubscriptionInfo { get; set; }
+            public string UserRegion { get; set; }
+            public List<string> Scopes { get; set; }
+            public ProductCodeType ProductCode { get; set; }
+            public string PaymentRequestId { get; set; }
+            public Order Order { get; set; }
+            public Amount PaymentAmount { get; set; }
+            public PaymentMethod PaymentMethod { get; set; }
+            public string PaymentSessionExpiryTime { get; set; }
+            public string PaymentRedirectUrl { get; set; }
+            public string PaymentNotifyUrl { get; set; }
+            public PaymentFactor PaymentFactor { get; set; }
+            public SettlementStrategy SettlementStrategy { get; set; }
+            public bool? EnableInstallmentCollection { get; set; }
+            public CreditPayPlan CreditPayPlan { get; set; }
+            public string MerchantRegion { get; set; }
+            public Env Env { get; set; }
+            public AgreementInfo AgreementInfo { get; set; }
+            public RiskData RiskData { get; set; }
+            public string ProductScene { get; set; }
+            public List<PaymentMethod> SavedPaymentMethods { get; set; }
+            public string Locale { get; set; }
+            public AvailablePaymentMethod AvailablePaymentMethod { get; set; }
+            public string PaymentExpiryTime { get; set; }
+            public BillingSubscription Subscription { get; set; }
+            public AutomaticTax AutomaticTax { get; set; }
 
-        public override string GetRequestURI() { return "/ams/api/v1/payments/createPaymentSession"; }
+        public override string GetRequestURI(){ return "/ams/api/v1/payments/createPaymentSession"; } 
 
 
     }

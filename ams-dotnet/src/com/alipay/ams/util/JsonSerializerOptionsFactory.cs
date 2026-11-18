@@ -19,7 +19,7 @@ namespace com.alipay.ams.util
             PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
             IgnoreNullValues = false,
             WriteIndented = false,
-            Converters = { new SafeEnumConverterFactory() }
+            Converters = {  new SafeEnumConverterFactory() }
         };
 
         static JsonSerializerOptionsFactory()

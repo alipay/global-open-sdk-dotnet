@@ -7,7 +7,7 @@ public class AlipaySyncArrearRequest : AMSRequest<AlipaySyncArrearResponse>
 {
     public string PaymentId { get; set; }
     public string PaymentRequestId { get; set; }
-
+    
     public override string GetRequestURI()
     {
         return AntomPathConstants.SYNC_ARREAR_PATH;
@@ -15,6 +15,6 @@ public class AlipaySyncArrearRequest : AMSRequest<AlipaySyncArrearResponse>
 
     public override void validate()
     {
-
+           
     }
 }

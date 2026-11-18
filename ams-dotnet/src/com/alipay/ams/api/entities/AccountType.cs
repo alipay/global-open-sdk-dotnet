@@ -1,12 +1,12 @@
 using System;
 using System.Collections.Generic;
-
+    
 namespace com.alipay.ams.api.entities
 {
 
-    public enum AccountType
+public enum AccountType
     {
-        CHECKING,
-        FIXED_DEPOSIT,
+            CHECKING,
+            FIXED_DEPOSIT,
     }
 }

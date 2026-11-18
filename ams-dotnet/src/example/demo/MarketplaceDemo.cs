@@ -31,7 +31,7 @@ public class MarketplaceDemo
         merchantInfo.LoginId = (DateTime.Now - new DateTime(1970, 1, 1)).TotalMilliseconds +
                                "wangzunj3ao.wzj@digital-engine.com";
         merchantInfo.LegalEntityType = LegalEntityType.COMPANY;
-
+        
         var company = new Company();
         company.LegalName = "legalName";
         var address = new Address();
@@ -53,7 +53,7 @@ public class MarketplaceDemo
         certificate.CertificateNo = "12312412";
         certificate.CertificateType = CertificateType.ENTERPRISE_REGISTRATION;
         company.Certificates = certificate;
-
+        
         merchantInfo.Company = company;
 
         var businessInfo = new BusinessInfo();
@@ -62,7 +62,7 @@ public class MarketplaceDemo
         webSite.Url = "https://www.alipay.com";
         businessInfo.Websites = [webSite];
         merchantInfo.BusinessInfo = businessInfo;
-
+        
         merchantInfo.ReferenceMerchantId = "referenceMerchantId" + (DateTime.Now - new DateTime(1970, 1, 1)).TotalMilliseconds;
 
         var entityAssociations = new EntityAssociations();
@@ -81,7 +81,7 @@ public class MarketplaceDemo
         entityAssociations.Individual = individual;
         entityAssociations.LegalEntityType = LegalEntityType.INDIVIDUAL;
         entityAssociations.AssociationType = AssociationType.LEGAL_REPRESENTATIVE;
-
+        
         var entityAssociations1 = new EntityAssociations();
         var individual1 = new Individual();
         var certificate2 = new Certificate();
@@ -94,14 +94,14 @@ public class MarketplaceDemo
         entityAssociations1.Individual = individual1;
         entityAssociations1.LegalEntityType = LegalEntityType.INDIVIDUAL;
         entityAssociations1.AssociationType = AssociationType.UBO;
-
+        
         merchantInfo.EntityAssociations = [entityAssociations, entityAssociations1];
         alipayRegisterRequest.MerchantInfo = merchantInfo;
-
+        
         var response = client.Execute(alipayRegisterRequest);
-
+        
         Console.WriteLine(response);
-
+        
     }
 
     public static void update(DefaultAlipayClient client, string referenceMerchantId)
@@ -121,12 +121,12 @@ public class MarketplaceDemo
         settlementBankAccount.BankAccountNo = "12312412421";
         settlementBankAccount.AccountHolderType = AccountHolderType.ENTERPRISE;
         alipaySettlementInfoUpdateRequest.SettlementBankAccount = settlementBankAccount;
-
+        
         var response = client.Execute(alipaySettlementInfoUpdateRequest);
-
+        
         Console.WriteLine(response);
     }
-
+    
     public static void queryBalance(DefaultAlipayClient client, string referenceMerchantId)
     {
         var alipayInquireBalanceRequest = new AlipayInquireBalanceRequest();
@@ -148,7 +148,7 @@ public class MarketplaceDemo
         settlementDetail1.SettleTo = SettleToType.MARKETPLACE;
         settlementDetail1.SettlementAmount = new Amount("BRL", "10");
         alipaySettleRequest.SettlementDetails = [settlementDetail, settlementDetail1];
-
+        
         var response = client.Execute(alipaySettleRequest);
         Console.WriteLine(response);
 
@@ -170,14 +170,14 @@ public class MarketplaceDemo
 
         var transferToDetail = new TransferToDetail();
         var method = new PaymentMethod(WalletPaymentMethodType.SETTLEMENT_CARD.ToString());
-        method.PaymentMethodId = "paymentMethodId" + (DateTime.Now - new DateTime(1970, 1, 1)).TotalMilliseconds;
+        method.PaymentMethodId = "paymentMethodId" + (DateTime.Now - new DateTime(1970, 1, 1)).TotalMilliseconds; 
         transferToDetail.TransferToMethod = method;
         transferToDetail.TransferToCurrency = "BRL";
         transferToDetail.PurposeCode = "GSD";
         transferToDetail.TransferNotifyUrl = "http://www.yourNotifyUrl.com";
-
+        
         alipayCreatePayoutRequest.TransferToDetail = transferToDetail;
-
+        
         var response = client.Execute(alipayCreatePayoutRequest);
         Console.WriteLine(response);
     }
@@ -187,7 +187,7 @@ public class MarketplaceDemo
     {
         var alipayCreateTransferRequest = new AlipayCreateTransferRequest();
         alipayCreateTransferRequest.TransferRequestId = "transfer_" + (DateTime.Now - new DateTime(1970, 1, 1)).TotalMilliseconds;
-
+       
         var transferFromDetail = new TransferFromDetail();
         var paymentMethod = new PaymentMethod(WalletPaymentMethodType.BALANCE_ACCOUNT.ToString());
         paymentMethod.PaymentMethodId = "paymentMethodId" + (DateTime.Now - new DateTime(1970, 1, 1)).TotalMilliseconds;
@@ -199,14 +199,14 @@ public class MarketplaceDemo
 
         var transferToDetail = new TransferToDetail();
         var method = new PaymentMethod(WalletPaymentMethodType.SETTLEMENT_CARD.ToString());
-        method.PaymentMethodId = "paymentMethodId" + (DateTime.Now - new DateTime(1970, 1, 1)).TotalMilliseconds;
+        method.PaymentMethodId = "paymentMethodId" + (DateTime.Now - new DateTime(1970, 1, 1)).TotalMilliseconds; 
         transferToDetail.TransferToMethod = method;
         transferToDetail.TransferToCurrency = "BRL";
         transferToDetail.PurposeCode = "GSD";
         transferToDetail.TransferNotifyUrl = "http://www.yourNotifyUrl.com";
-
+        
         alipayCreateTransferRequest.TransferToDetail = transferToDetail;
     }
-
-
+    
+    
 }

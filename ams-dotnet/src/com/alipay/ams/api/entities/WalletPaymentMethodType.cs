@@ -71,9 +71,9 @@
         SETTLEMENT_CARD,
 
         BALANCE_ACCOUNT,
-
+        
         APPLEPAY,
-
+        
         DIDI_PAY_LATER,
     }
 }

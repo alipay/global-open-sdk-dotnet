@@ -1,16 +1,16 @@
 using System;
 using System.Collections.Generic;
-
+    
 namespace com.alipay.ams.api.entities
 {
 
-    public enum CardTransactionEventFilterType
+public enum CardTransactionEventFilterType
     {
-        AUTH,
-        AUTH_CANCEL,
-        CAPTURE,
-        REFUND,
-        CHARGEBACK,
-        REPAYMENT,
+            AUTH,
+            AUTH_CANCEL,
+            CAPTURE,
+            REFUND,
+            CHARGEBACK,
+            REPAYMENT,
     }
 }

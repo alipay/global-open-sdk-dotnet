@@ -3,18 +3,18 @@ using com.alipay.ams.api.request;
 using com.alipay.ams.api.entities;
 using System;
 using System.Collections.Generic;
-
+    
 namespace com.alipay.ams.api.request.subscription
 {
 
-    public class AlipaySubscriptionChangeRequest : AMSRequest<AlipaySubscriptionChangeResponse>
+public class AlipaySubscriptionChangeRequest : AMSRequest<AlipaySubscriptionChangeResponse>
     {
 
         public AlipaySubscriptionChangeRequest() { }
 
+        
 
-
-        public AlipaySubscriptionChangeRequest(bool? allowAccumulate, Amount maxAccumulateAmount, string subscriptionChangeRequestId, string subscriptionId, string subscriptionDescription, string subscriptionStartTime, string subscriptionEndTime, PeriodRule periodRule, string subscriptionExpiryTime, OrderInfo orderInfo, Amount paymentAmount, Amount paymentAmountDifference)
+        public AlipaySubscriptionChangeRequest( bool? allowAccumulate , Amount maxAccumulateAmount , string subscriptionChangeRequestId , string subscriptionId , string subscriptionDescription , string subscriptionStartTime , string subscriptionEndTime , PeriodRule periodRule , string subscriptionExpiryTime , OrderInfo orderInfo , Amount paymentAmount , Amount paymentAmountDifference)
         {
             this.AllowAccumulate = allowAccumulate;
             this.MaxAccumulateAmount = maxAccumulateAmount;
@@ -30,20 +30,20 @@ namespace com.alipay.ams.api.request.subscription
             this.PaymentAmountDifference = paymentAmountDifference;
         }
 
-        public bool? AllowAccumulate { get; set; }
-        public Amount MaxAccumulateAmount { get; set; }
-        public string SubscriptionChangeRequestId { get; set; }
-        public string SubscriptionId { get; set; }
-        public string SubscriptionDescription { get; set; }
-        public string SubscriptionStartTime { get; set; }
-        public string SubscriptionEndTime { get; set; }
-        public PeriodRule PeriodRule { get; set; }
-        public string SubscriptionExpiryTime { get; set; }
-        public OrderInfo OrderInfo { get; set; }
-        public Amount PaymentAmount { get; set; }
-        public Amount PaymentAmountDifference { get; set; }
+            public bool? AllowAccumulate { get; set; }
+            public Amount MaxAccumulateAmount { get; set; }
+            public string SubscriptionChangeRequestId { get; set; }
+            public string SubscriptionId { get; set; }
+            public string SubscriptionDescription { get; set; }
+            public string SubscriptionStartTime { get; set; }
+            public string SubscriptionEndTime { get; set; }
+            public PeriodRule PeriodRule { get; set; }
+            public string SubscriptionExpiryTime { get; set; }
+            public OrderInfo OrderInfo { get; set; }
+            public Amount PaymentAmount { get; set; }
+            public Amount PaymentAmountDifference { get; set; }
 
-        public override string GetRequestURI() { return "/ams/api/v1/subscriptions/change"; }
+        public override string GetRequestURI(){ return "/ams/api/v1/subscriptions/change"; } 
 
 
     }

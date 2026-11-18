@@ -1,18 +1,18 @@
 using com.alipay.ams.api.entities;
 using System;
 using System.Collections.Generic;
-
+    
 namespace com.alipay.ams.api.response.billing
 {
 
-    public class AlipayTaxInquireCalculationResponse : AMSResponse
+public class AlipayTaxInquireCalculationResponse : AMSResponse
     {
 
         public AlipayTaxInquireCalculationResponse() { }
 
+        
 
-
-        public AlipayTaxInquireCalculationResponse(Result result, string taxCalculationId, TaxCalculatedCustomerDetails customerDetails, TaxCalculatedShipFromDetails shipFromDetails, Amount totalAmount, Amount exclusiveTaxAmount, Amount inclusiveTaxAmount, List<TaxCalculatedLineItem> lineItems, List<TaxBreakdown> taxBreakdown, string expireAt, string taxDate, TaxCalculatedShippingCost shippingCost)
+        public AlipayTaxInquireCalculationResponse( Result result , string taxCalculationId , TaxCalculatedCustomerDetails customerDetails , TaxCalculatedShipFromDetails shipFromDetails , Amount totalAmount , Amount exclusiveTaxAmount , Amount inclusiveTaxAmount , List<TaxCalculatedLineItem> lineItems , List<TaxBreakdown> taxBreakdown , string expireAt , string taxDate , TaxCalculatedShippingCost shippingCost)
         {
             this.Result = result;
             this.TaxCalculationId = taxCalculationId;
@@ -28,20 +28,20 @@ namespace com.alipay.ams.api.response.billing
             this.ShippingCost = shippingCost;
         }
 
-        public Result Result { get; set; }
-        public string TaxCalculationId { get; set; }
-        public TaxCalculatedCustomerDetails CustomerDetails { get; set; }
-        public TaxCalculatedShipFromDetails ShipFromDetails { get; set; }
-        public Amount TotalAmount { get; set; }
-        public Amount ExclusiveTaxAmount { get; set; }
-        public Amount InclusiveTaxAmount { get; set; }
-        public List<TaxCalculatedLineItem> LineItems { get; set; }
-        public List<TaxBreakdown> TaxBreakdown { get; set; }
-        public string ExpireAt { get; set; }
-        public string TaxDate { get; set; }
-        public TaxCalculatedShippingCost ShippingCost { get; set; }
+            public Result Result { get; set; }
+            public string TaxCalculationId { get; set; }
+            public TaxCalculatedCustomerDetails CustomerDetails { get; set; }
+            public TaxCalculatedShipFromDetails ShipFromDetails { get; set; }
+            public Amount TotalAmount { get; set; }
+            public Amount ExclusiveTaxAmount { get; set; }
+            public Amount InclusiveTaxAmount { get; set; }
+            public List<TaxCalculatedLineItem> LineItems { get; set; }
+            public List<TaxBreakdown> TaxBreakdown { get; set; }
+            public string ExpireAt { get; set; }
+            public string TaxDate { get; set; }
+            public TaxCalculatedShippingCost ShippingCost { get; set; }
 
-
+        
 
     }
 

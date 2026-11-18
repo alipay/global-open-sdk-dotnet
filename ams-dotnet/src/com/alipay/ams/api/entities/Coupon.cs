@@ -1,17 +1,17 @@
 using System;
 using System.Collections.Generic;
-
+    
 namespace com.alipay.ams.api.entities
 {
 
-    public class Coupon
+public class Coupon
     {
 
         public Coupon() { }
 
+        
 
-
-        public Coupon(string couponId, string couponName, string discountType, string percentOff, Amount amountOff, string redeemBy, string status, int? maxRedemptions, int? redeemedCount)
+        public Coupon( string couponId , string couponName , string discountType , string percentOff , Amount amountOff , string redeemBy , string status , int? maxRedemptions , int? redeemedCount)
         {
             this.CouponId = couponId;
             this.CouponName = couponName;
@@ -24,17 +24,17 @@ namespace com.alipay.ams.api.entities
             this.RedeemedCount = redeemedCount;
         }
 
-        public string CouponId { get; set; }
-        public string CouponName { get; set; }
-        public string DiscountType { get; set; }
-        public string PercentOff { get; set; }
-        public Amount AmountOff { get; set; }
-        public string RedeemBy { get; set; }
-        public string Status { get; set; }
-        public int? MaxRedemptions { get; set; }
-        public int? RedeemedCount { get; set; }
+            public string CouponId { get; set; }
+            public string CouponName { get; set; }
+            public string DiscountType { get; set; }
+            public string PercentOff { get; set; }
+            public Amount AmountOff { get; set; }
+            public string RedeemBy { get; set; }
+            public string Status { get; set; }
+            public int? MaxRedemptions { get; set; }
+            public int? RedeemedCount { get; set; }
 
-
+        
 
     }
 

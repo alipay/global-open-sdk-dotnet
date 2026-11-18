@@ -3,7 +3,7 @@ using com.alipay.ams.api.entities;
 
 namespace com.alipay.ams.api.request.risk;
 
-public class RiskReportRequest : AMSRequest<RiskReportResponse>
+public class RiskReportRequest:AMSRequest<RiskReportResponse>
 {
     /**
     * A unique ID assigned to a merchant who provides a service or product directly to a customer and is used to identify the transaction.
@@ -40,16 +40,16 @@ public class RiskReportRequest : AMSRequest<RiskReportResponse>
      * 如果 riskType 的值为 FRAUD，该字段的值为支付方式向您发送的通知中包含的盗卡发生时间。
      */
     public string RiskOccurrenceTime { get; set; }
-
-
+    
+    
     public override string GetRequestURI()
     {
-        return AntomPathConstants.RISK_REPORT_PATH;
+     return AntomPathConstants.RISK_REPORT_PATH;
     }
-
+    
     public override void validate()
     {
-
+           
     }
 
 

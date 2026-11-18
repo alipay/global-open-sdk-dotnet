@@ -1,13 +1,13 @@
 using System;
 using System.Collections.Generic;
-
+    
 namespace com.alipay.ams.api.entities
 {
 
-    public enum SubscriptionStatus
+public enum SubscriptionStatus
     {
-        ACTIVE,
-        CANCELLED,
-        TERMINATED,
+            ACTIVE,
+            CANCELLED,
+            TERMINATED,
     }
 }

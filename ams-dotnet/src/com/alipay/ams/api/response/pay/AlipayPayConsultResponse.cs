@@ -1,18 +1,18 @@
 using com.alipay.ams.api.entities;
 using System;
 using System.Collections.Generic;
-
+    
 namespace com.alipay.ams.api.response.pay
 {
 
-    public class AlipayPayConsultResponse : AMSResponse
+public class AlipayPayConsultResponse : AMSResponse
     {
 
         public AlipayPayConsultResponse() { }
 
+        
 
-
-        public AlipayPayConsultResponse(Result result, List<PaymentOption> paymentOptions, List<PaymentMethodInfo> paymentMethodInfos, string extendInfo)
+        public AlipayPayConsultResponse( Result result , List<PaymentOption> paymentOptions , List<PaymentMethodInfo> paymentMethodInfos , string extendInfo)
         {
             this.Result = result;
             this.PaymentOptions = paymentOptions;
@@ -20,12 +20,12 @@ namespace com.alipay.ams.api.response.pay
             this.ExtendInfo = extendInfo;
         }
 
-        public Result Result { get; set; }
-        public List<PaymentOption> PaymentOptions { get; set; }
-        public List<PaymentMethodInfo> PaymentMethodInfos { get; set; }
-        public string ExtendInfo { get; set; }
+            public Result Result { get; set; }
+            public List<PaymentOption> PaymentOptions { get; set; }
+            public List<PaymentMethodInfo> PaymentMethodInfos { get; set; }
+            public string ExtendInfo { get; set; }
 
-
+        
 
     }
 

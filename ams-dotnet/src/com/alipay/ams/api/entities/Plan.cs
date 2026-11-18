@@ -1,17 +1,17 @@
 using System;
 using System.Collections.Generic;
-
+    
 namespace com.alipay.ams.api.entities
 {
 
-    public class Plan
+public class Plan
     {
 
         public Plan() { }
 
+        
 
-
-        public Plan(string interestRate, Amount minInstallmentAmount, Amount maxInstallmentAmount, string installmentNum, string interval, bool? enabled, string extendInfo)
+        public Plan( string interestRate , Amount minInstallmentAmount , Amount maxInstallmentAmount , string installmentNum , string interval , bool? enabled , string extendInfo)
         {
             this.InterestRate = interestRate;
             this.MinInstallmentAmount = minInstallmentAmount;
@@ -22,15 +22,15 @@ namespace com.alipay.ams.api.entities
             this.ExtendInfo = extendInfo;
         }
 
-        public string InterestRate { get; set; }
-        public Amount MinInstallmentAmount { get; set; }
-        public Amount MaxInstallmentAmount { get; set; }
-        public string InstallmentNum { get; set; }
-        public string Interval { get; set; }
-        public bool? Enabled { get; set; }
-        public string ExtendInfo { get; set; }
+            public string InterestRate { get; set; }
+            public Amount MinInstallmentAmount { get; set; }
+            public Amount MaxInstallmentAmount { get; set; }
+            public string InstallmentNum { get; set; }
+            public string Interval { get; set; }
+            public bool? Enabled { get; set; }
+            public string ExtendInfo { get; set; }
 
-
+        
 
     }
 

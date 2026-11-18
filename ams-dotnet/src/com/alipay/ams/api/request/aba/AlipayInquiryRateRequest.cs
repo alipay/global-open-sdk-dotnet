@@ -3,25 +3,25 @@ using com.alipay.ams.api.request;
 using com.alipay.ams.api.entities;
 using System;
 using System.Collections.Generic;
-
+    
 namespace com.alipay.ams.api.request.aba
 {
 
-    public class AlipayInquiryRateRequest : AMSRequest<AlipayInquiryRateResponse>
+public class AlipayInquiryRateRequest : AMSRequest<AlipayInquiryRateResponse>
     {
 
         public AlipayInquiryRateRequest() { }
 
+        
 
-
-        public AlipayInquiryRateRequest(List<InquiryRateCondition> rateConditionList)
+        public AlipayInquiryRateRequest( List<InquiryRateCondition> rateConditionList)
         {
             this.RateConditionList = rateConditionList;
         }
 
-        public List<InquiryRateCondition> RateConditionList { get; set; }
+            public List<InquiryRateCondition> RateConditionList { get; set; }
 
-        public override string GetRequestURI() { return "/ams/api/v1/aba/funds/inquireRate"; }
+        public override string GetRequestURI(){ return "/ams/api/v1/aba/funds/inquireRate"; } 
 
 
     }

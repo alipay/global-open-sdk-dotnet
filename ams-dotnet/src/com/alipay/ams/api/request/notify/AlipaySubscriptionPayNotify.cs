@@ -1,6 +1,6 @@
 namespace com.alipay.ams.api.request.notify;
 
-public class AlipaySubscriptionPayNotify : AlipayPayResultNotify
+public class AlipaySubscriptionPayNotify:AlipayPayResultNotify
 {
     public string SubscriptionRequestId { get; set; }
     public string SubscriptionId { get; set; }

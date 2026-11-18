@@ -3,18 +3,18 @@ using com.alipay.ams.api.request;
 using com.alipay.ams.api.entities;
 using System;
 using System.Collections.Generic;
-
+    
 namespace com.alipay.ams.api.request.aba
 {
 
-    public class AlipayInquiryStatementRequest : AMSRequest<AlipayInquiryStatementResponse>
+public class AlipayInquiryStatementRequest : AMSRequest<AlipayInquiryStatementResponse>
     {
 
         public AlipayInquiryStatementRequest() { }
 
+        
 
-
-        public AlipayInquiryStatementRequest(string customerId, string accessToken, string startTime, string endTime, List<string> transactionTypeList, List<string> currencyList, int? pageSize, int? pageNumber, string assetId, string fuzzyName)
+        public AlipayInquiryStatementRequest( string customerId , string accessToken , string startTime , string endTime , List<string> transactionTypeList , List<string> currencyList , int? pageSize , int? pageNumber , string assetId , string fuzzyName)
         {
             this.CustomerId = customerId;
             this.AccessToken = accessToken;
@@ -28,18 +28,18 @@ namespace com.alipay.ams.api.request.aba
             this.FuzzyName = fuzzyName;
         }
 
-        public string CustomerId { get; set; }
-        public string AccessToken { get; set; }
-        public string StartTime { get; set; }
-        public string EndTime { get; set; }
-        public List<string> TransactionTypeList { get; set; }
-        public List<string> CurrencyList { get; set; }
-        public int? PageSize { get; set; }
-        public int? PageNumber { get; set; }
-        public string AssetId { get; set; }
-        public string FuzzyName { get; set; }
+            public string CustomerId { get; set; }
+            public string AccessToken { get; set; }
+            public string StartTime { get; set; }
+            public string EndTime { get; set; }
+            public List<string> TransactionTypeList { get; set; }
+            public List<string> CurrencyList { get; set; }
+            public int? PageSize { get; set; }
+            public int? PageNumber { get; set; }
+            public string AssetId { get; set; }
+            public string FuzzyName { get; set; }
 
-        public override string GetRequestURI() { return "/ams/api/v1/aba/accounts/inquiryStatement"; }
+        public override string GetRequestURI(){ return "/ams/api/v1/aba/accounts/inquiryStatement"; } 
 
 
     }

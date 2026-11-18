@@ -3,18 +3,18 @@ using com.alipay.ams.api.request;
 using com.alipay.ams.api.entities;
 using System;
 using System.Collections.Generic;
-
+    
 namespace com.alipay.ams.api.request.pay
 {
 
-    public class AlipayPayRequest : AMSRequest<AlipayPayResponse>
+public class AlipayPayRequest : AMSRequest<AlipayPayResponse>
     {
 
         public AlipayPayRequest() { }
 
+        
 
-
-        public AlipayPayRequest(FundTransferInfo fundTransferInfo, string metadata, CustomizedInfo customizedInfo, Quote paymentQuote, AgreementInfo agreementInfo, SubscriptionInfo subscriptionInfo, Amount processingAmount, ProductCodeType productCode, string paymentRequestId, Order order, Amount paymentAmount, PaymentMethod paymentMethod, string paymentExpiryTime, string paymentRedirectUrl, string paymentNotifyUrl, PaymentFactor paymentFactor, SettlementStrategy settlementStrategy, CreditPayPlan creditPayPlan, string appId, string merchantRegion, string userRegion, Env env, PaymentMethod payToMethod, bool? isAuthorization, Merchant merchant, PaymentVerificationData paymentVerificationData, string extendInfo, string merchantAccountId, bool? dualOfflinePayment, string subscriptionId, string locale)
+        public AlipayPayRequest( FundTransferInfo fundTransferInfo , string metadata , CustomizedInfo customizedInfo , Quote paymentQuote , AgreementInfo agreementInfo , SubscriptionInfo subscriptionInfo , Amount processingAmount , ProductCodeType productCode , string paymentRequestId , Order order , Amount paymentAmount , PaymentMethod paymentMethod , string paymentExpiryTime , string paymentRedirectUrl , string paymentNotifyUrl , PaymentFactor paymentFactor , SettlementStrategy settlementStrategy , CreditPayPlan creditPayPlan , string appId , string merchantRegion , string userRegion , Env env , PaymentMethod payToMethod , bool? isAuthorization , Merchant merchant , PaymentVerificationData paymentVerificationData , string extendInfo , string merchantAccountId , bool? dualOfflinePayment , string subscriptionId , string locale)
         {
             this.FundTransferInfo = fundTransferInfo;
             this.Metadata = metadata;
@@ -49,39 +49,39 @@ namespace com.alipay.ams.api.request.pay
             this.Locale = locale;
         }
 
-        public FundTransferInfo FundTransferInfo { get; set; }
-        public string Metadata { get; set; }
-        public CustomizedInfo CustomizedInfo { get; set; }
-        public Quote PaymentQuote { get; set; }
-        public AgreementInfo AgreementInfo { get; set; }
-        public SubscriptionInfo SubscriptionInfo { get; set; }
-        public Amount ProcessingAmount { get; set; }
-        public ProductCodeType ProductCode { get; set; }
-        public string PaymentRequestId { get; set; }
-        public Order Order { get; set; }
-        public Amount PaymentAmount { get; set; }
-        public PaymentMethod PaymentMethod { get; set; }
-        public string PaymentExpiryTime { get; set; }
-        public string PaymentRedirectUrl { get; set; }
-        public string PaymentNotifyUrl { get; set; }
-        public PaymentFactor PaymentFactor { get; set; }
-        public SettlementStrategy SettlementStrategy { get; set; }
-        public CreditPayPlan CreditPayPlan { get; set; }
-        public string AppId { get; set; }
-        public string MerchantRegion { get; set; }
-        public string UserRegion { get; set; }
-        public Env Env { get; set; }
-        public PaymentMethod PayToMethod { get; set; }
-        public bool? IsAuthorization { get; set; }
-        public Merchant Merchant { get; set; }
-        public PaymentVerificationData PaymentVerificationData { get; set; }
-        public string ExtendInfo { get; set; }
-        public string MerchantAccountId { get; set; }
-        public bool? DualOfflinePayment { get; set; }
-        public string SubscriptionId { get; set; }
-        public string Locale { get; set; }
+            public FundTransferInfo FundTransferInfo { get; set; }
+            public string Metadata { get; set; }
+            public CustomizedInfo CustomizedInfo { get; set; }
+            public Quote PaymentQuote { get; set; }
+            public AgreementInfo AgreementInfo { get; set; }
+            public SubscriptionInfo SubscriptionInfo { get; set; }
+            public Amount ProcessingAmount { get; set; }
+            public ProductCodeType ProductCode { get; set; }
+            public string PaymentRequestId { get; set; }
+            public Order Order { get; set; }
+            public Amount PaymentAmount { get; set; }
+            public PaymentMethod PaymentMethod { get; set; }
+            public string PaymentExpiryTime { get; set; }
+            public string PaymentRedirectUrl { get; set; }
+            public string PaymentNotifyUrl { get; set; }
+            public PaymentFactor PaymentFactor { get; set; }
+            public SettlementStrategy SettlementStrategy { get; set; }
+            public CreditPayPlan CreditPayPlan { get; set; }
+            public string AppId { get; set; }
+            public string MerchantRegion { get; set; }
+            public string UserRegion { get; set; }
+            public Env Env { get; set; }
+            public PaymentMethod PayToMethod { get; set; }
+            public bool? IsAuthorization { get; set; }
+            public Merchant Merchant { get; set; }
+            public PaymentVerificationData PaymentVerificationData { get; set; }
+            public string ExtendInfo { get; set; }
+            public string MerchantAccountId { get; set; }
+            public bool? DualOfflinePayment { get; set; }
+            public string SubscriptionId { get; set; }
+            public string Locale { get; set; }
 
-        public override string GetRequestURI() { return "/ams/api/v1/payments/pay"; }
+        public override string GetRequestURI(){ return "/ams/api/v1/payments/pay"; } 
 
 
     }

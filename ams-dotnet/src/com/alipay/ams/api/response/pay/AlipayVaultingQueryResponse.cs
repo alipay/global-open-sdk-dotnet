@@ -1,18 +1,18 @@
 using com.alipay.ams.api.entities;
 using System;
 using System.Collections.Generic;
-
+    
 namespace com.alipay.ams.api.response.pay
 {
 
-    public class AlipayVaultingQueryResponse : AMSResponse
+public class AlipayVaultingQueryResponse : AMSResponse
     {
 
         public AlipayVaultingQueryResponse() { }
 
+        
 
-
-        public AlipayVaultingQueryResponse(Result result, string vaultingRequestId, string normalUrl, string schemeUrl, string applinkUrl, string vaultingStatus, PaymentMethodDetail paymentMethodDetail, string metadata, string vaultingResultCode, string vaultingResultMessage, AcquirerInfo acquirerInfo)
+        public AlipayVaultingQueryResponse( Result result , string vaultingRequestId , string normalUrl , string schemeUrl , string applinkUrl , string vaultingStatus , PaymentMethodDetail paymentMethodDetail , string metadata , string vaultingResultCode , string vaultingResultMessage , AcquirerInfo acquirerInfo)
         {
             this.Result = result;
             this.VaultingRequestId = vaultingRequestId;
@@ -27,19 +27,19 @@ namespace com.alipay.ams.api.response.pay
             this.AcquirerInfo = acquirerInfo;
         }
 
-        public Result Result { get; set; }
-        public string VaultingRequestId { get; set; }
-        public string NormalUrl { get; set; }
-        public string SchemeUrl { get; set; }
-        public string ApplinkUrl { get; set; }
-        public string VaultingStatus { get; set; }
-        public PaymentMethodDetail PaymentMethodDetail { get; set; }
-        public string Metadata { get; set; }
-        public string VaultingResultCode { get; set; }
-        public string VaultingResultMessage { get; set; }
-        public AcquirerInfo AcquirerInfo { get; set; }
+            public Result Result { get; set; }
+            public string VaultingRequestId { get; set; }
+            public string NormalUrl { get; set; }
+            public string SchemeUrl { get; set; }
+            public string ApplinkUrl { get; set; }
+            public string VaultingStatus { get; set; }
+            public PaymentMethodDetail PaymentMethodDetail { get; set; }
+            public string Metadata { get; set; }
+            public string VaultingResultCode { get; set; }
+            public string VaultingResultMessage { get; set; }
+            public AcquirerInfo AcquirerInfo { get; set; }
 
-
+        
 
     }
 

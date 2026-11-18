@@ -3,18 +3,18 @@ using com.alipay.ams.api.request;
 using com.alipay.ams.api.entities;
 using System;
 using System.Collections.Generic;
-
+    
 namespace com.alipay.ams.api.request.subscription
 {
 
-    public class AlipayInquireSubscriptionListRequest : AMSRequest<AlipayInquireSubscriptionListResponse>
+public class AlipayInquireSubscriptionListRequest : AMSRequest<AlipayInquireSubscriptionListResponse>
     {
 
         public AlipayInquireSubscriptionListRequest() { }
 
+        
 
-
-        public AlipayInquireSubscriptionListRequest(string merchantAccountId, string startTimeFrom, string startTimeTo, List<SubscriptionStatus> statuses, List<string> paymentMethodTypes, List<string> currencies, List<PeriodType> periodTypes, int? currentPage, int? pageSize)
+        public AlipayInquireSubscriptionListRequest( string merchantAccountId , string startTimeFrom , string startTimeTo , List<SubscriptionStatus> statuses , List<string> paymentMethodTypes , List<string> currencies , List<PeriodType> periodTypes , int? currentPage , int? pageSize)
         {
             this.MerchantAccountId = merchantAccountId;
             this.StartTimeFrom = startTimeFrom;
@@ -27,17 +27,17 @@ namespace com.alipay.ams.api.request.subscription
             this.PageSize = pageSize;
         }
 
-        public string MerchantAccountId { get; set; }
-        public string StartTimeFrom { get; set; }
-        public string StartTimeTo { get; set; }
-        public List<SubscriptionStatus> Statuses { get; set; }
-        public List<string> PaymentMethodTypes { get; set; }
-        public List<string> Currencies { get; set; }
-        public List<PeriodType> PeriodTypes { get; set; }
-        public int? CurrentPage { get; set; }
-        public int? PageSize { get; set; }
+            public string MerchantAccountId { get; set; }
+            public string StartTimeFrom { get; set; }
+            public string StartTimeTo { get; set; }
+            public List<SubscriptionStatus> Statuses { get; set; }
+            public List<string> PaymentMethodTypes { get; set; }
+            public List<string> Currencies { get; set; }
+            public List<PeriodType> PeriodTypes { get; set; }
+            public int? CurrentPage { get; set; }
+            public int? PageSize { get; set; }
 
-        public override string GetRequestURI() { return "/ams/api/v1/subscriptions/inquireSubscriptionList"; }
+        public override string GetRequestURI(){ return "/ams/api/v1/subscriptions/inquireSubscriptionList"; } 
 
 
     }

@@ -6,7 +6,7 @@ namespace com.alipay.ams.api.request;
 public class AlipayDeviceCertificateRequest : AMSRequest<AlipayDeviceCertificateResponse>
 {
     public string DevicePublicKey { get; set; }
-
+    
     public string DeviceRequestId { get; set; }
 
     public override string GetRequestURI()
@@ -16,6 +16,6 @@ public class AlipayDeviceCertificateRequest : AMSRequest<AlipayDeviceCertificate
 
     public override void validate()
     {
-
+           
     }
 }

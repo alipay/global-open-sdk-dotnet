@@ -1,17 +1,17 @@
 using System;
 using System.Collections.Generic;
-
+    
 namespace com.alipay.ams.api.entities
 {
 
-    public class Customer
+public class Customer
     {
 
         public Customer() { }
 
+        
 
-
-        public Customer(string customerId, string customerRequestId, string email, string firstName, string lastName, string status, string billingEmail, string country, string gmtCreate)
+        public Customer( string customerId , string customerRequestId , string email , string firstName , string lastName , string status , string billingEmail , string country , string gmtCreate)
         {
             this.CustomerId = customerId;
             this.CustomerRequestId = customerRequestId;
@@ -24,17 +24,17 @@ namespace com.alipay.ams.api.entities
             this.GmtCreate = gmtCreate;
         }
 
-        public string CustomerId { get; set; }
-        public string CustomerRequestId { get; set; }
-        public string Email { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Status { get; set; }
-        public string BillingEmail { get; set; }
-        public string Country { get; set; }
-        public string GmtCreate { get; set; }
+            public string CustomerId { get; set; }
+            public string CustomerRequestId { get; set; }
+            public string Email { get; set; }
+            public string FirstName { get; set; }
+            public string LastName { get; set; }
+            public string Status { get; set; }
+            public string BillingEmail { get; set; }
+            public string Country { get; set; }
+            public string GmtCreate { get; set; }
 
-
+        
 
     }
 

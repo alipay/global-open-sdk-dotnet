@@ -1,6 +1,6 @@
 namespace com.alipay.ams.api.request.notify;
 
-public class AlipayAuthNotify : AlipayNotify
+public class AlipayAuthNotify:AlipayNotify
 {
     /**
      * Authorization notification type
@@ -42,5 +42,5 @@ public class AlipayAuthNotify : AlipayNotify
      */
     public string UserId { get; set; }
 
-    public string PassThroughInfo { get; set; }
+    public string PassThroughInfo  { get; set; }
 }

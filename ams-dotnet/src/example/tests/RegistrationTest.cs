@@ -49,7 +49,7 @@ namespace ams_dotnet.example.tests
 
             //step3. query registration info.
             queryRegistrationInfo(client, referenceMerchantId);
-
+          
         }
 
         private static void registerMerchant(DefaultAlipayClient client, string registrationRequestId, string referenceMerchantId)
@@ -116,7 +116,7 @@ namespace ams_dotnet.example.tests
             merchant.ReferenceMerchantId = registrationRequestId;
             request.MerchantInfo = merchant;
 
-
+            
 
             Console.WriteLine(request);
 
@@ -145,7 +145,7 @@ namespace ams_dotnet.example.tests
 
             Console.WriteLine(response);
 
-
+ 
         }
 
         private static void queryRegistrationInfo(DefaultAlipayClient client, string referenceMerchantId)

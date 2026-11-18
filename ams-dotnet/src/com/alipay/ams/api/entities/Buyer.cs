@@ -1,17 +1,17 @@
 using System;
 using System.Collections.Generic;
-
+    
 namespace com.alipay.ams.api.entities
 {
 
-    public class Buyer
+public class Buyer
     {
 
         public Buyer() { }
 
+        
 
-
-        public Buyer(List<string> preferredLocales, string businessName, string buyerType, string referenceBuyerId, UserName buyerName, string buyerPhoneNo, string buyerEmail, string buyerRegistrationTime, bool? isAccountVerified, int? successfulOrderCount, string buyerPhoneNoContryCode, Amount successfulOrderAmount, string dateOfLastPaidPurchase, string dateOfFirstPaidPurchase, List<BuyerTaxId> taxIds, Address businessAddress)
+        public Buyer( List<string> preferredLocales , string businessName , string buyerType , string referenceBuyerId , UserName buyerName , string buyerPhoneNo , string buyerEmail , string buyerRegistrationTime , bool? isAccountVerified , int? successfulOrderCount , string buyerPhoneNoContryCode , Amount successfulOrderAmount , string dateOfLastPaidPurchase , string dateOfFirstPaidPurchase , List<BuyerTaxId> taxIds , Address businessAddress)
         {
             this.PreferredLocales = preferredLocales;
             this.BusinessName = businessName;
@@ -31,24 +31,24 @@ namespace com.alipay.ams.api.entities
             this.BusinessAddress = businessAddress;
         }
 
-        public List<string> PreferredLocales { get; set; }
-        public string BusinessName { get; set; }
-        public string BuyerType { get; set; }
-        public string ReferenceBuyerId { get; set; }
-        public UserName BuyerName { get; set; }
-        public string BuyerPhoneNo { get; set; }
-        public string BuyerEmail { get; set; }
-        public string BuyerRegistrationTime { get; set; }
-        public bool? IsAccountVerified { get; set; }
-        public int? SuccessfulOrderCount { get; set; }
-        public string BuyerPhoneNoContryCode { get; set; }
-        public Amount SuccessfulOrderAmount { get; set; }
-        public string DateOfLastPaidPurchase { get; set; }
-        public string DateOfFirstPaidPurchase { get; set; }
-        public List<BuyerTaxId> TaxIds { get; set; }
-        public Address BusinessAddress { get; set; }
+            public List<string> PreferredLocales { get; set; }
+            public string BusinessName { get; set; }
+            public string BuyerType { get; set; }
+            public string ReferenceBuyerId { get; set; }
+            public UserName BuyerName { get; set; }
+            public string BuyerPhoneNo { get; set; }
+            public string BuyerEmail { get; set; }
+            public string BuyerRegistrationTime { get; set; }
+            public bool? IsAccountVerified { get; set; }
+            public int? SuccessfulOrderCount { get; set; }
+            public string BuyerPhoneNoContryCode { get; set; }
+            public Amount SuccessfulOrderAmount { get; set; }
+            public string DateOfLastPaidPurchase { get; set; }
+            public string DateOfFirstPaidPurchase { get; set; }
+            public List<BuyerTaxId> TaxIds { get; set; }
+            public Address BusinessAddress { get; set; }
 
-
+        
 
     }
 

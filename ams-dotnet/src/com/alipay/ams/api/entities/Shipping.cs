@@ -1,17 +1,17 @@
 using System;
 using System.Collections.Generic;
-
+    
 namespace com.alipay.ams.api.entities
 {
 
-    public class Shipping
+public class Shipping
     {
 
         public Shipping() { }
 
+        
 
-
-        public Shipping(UserName shippingName, Address shippingAddress, string shippingCarrier, string shippingPhoneNo, string shipToEmail, string shippingFeeId, Amount shippingFee, string shippingDescription, DeliveryEstimate deliveryEstimate, string shippingNumber, string notes, string trackingUrl, string taxCode, string taxBehavior)
+        public Shipping( UserName shippingName , Address shippingAddress , string shippingCarrier , string shippingPhoneNo , string shipToEmail , string shippingFeeId , Amount shippingFee , string shippingDescription , DeliveryEstimate deliveryEstimate , string shippingNumber , string notes , string trackingUrl , string taxCode , string taxBehavior)
         {
             this.ShippingName = shippingName;
             this.ShippingAddress = shippingAddress;
@@ -29,22 +29,22 @@ namespace com.alipay.ams.api.entities
             this.TaxBehavior = taxBehavior;
         }
 
-        public UserName ShippingName { get; set; }
-        public Address ShippingAddress { get; set; }
-        public string ShippingCarrier { get; set; }
-        public string ShippingPhoneNo { get; set; }
-        public string ShipToEmail { get; set; }
-        public string ShippingFeeId { get; set; }
-        public Amount ShippingFee { get; set; }
-        public string ShippingDescription { get; set; }
-        public DeliveryEstimate DeliveryEstimate { get; set; }
-        public string ShippingNumber { get; set; }
-        public string Notes { get; set; }
-        public string TrackingUrl { get; set; }
-        public string TaxCode { get; set; }
-        public string TaxBehavior { get; set; }
+            public UserName ShippingName { get; set; }
+            public Address ShippingAddress { get; set; }
+            public string ShippingCarrier { get; set; }
+            public string ShippingPhoneNo { get; set; }
+            public string ShipToEmail { get; set; }
+            public string ShippingFeeId { get; set; }
+            public Amount ShippingFee { get; set; }
+            public string ShippingDescription { get; set; }
+            public DeliveryEstimate DeliveryEstimate { get; set; }
+            public string ShippingNumber { get; set; }
+            public string Notes { get; set; }
+            public string TrackingUrl { get; set; }
+            public string TaxCode { get; set; }
+            public string TaxBehavior { get; set; }
 
-
+        
 
     }
 

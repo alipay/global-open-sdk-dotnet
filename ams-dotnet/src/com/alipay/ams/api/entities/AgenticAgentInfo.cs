@@ -1,17 +1,17 @@
 using System;
 using System.Collections.Generic;
-
+    
 namespace com.alipay.ams.api.entities
 {
 
-    public class AgenticAgentInfo
+public class AgenticAgentInfo
     {
 
         public AgenticAgentInfo() { }
 
+        
 
-
-        public AgenticAgentInfo(string agentId, string agentName, string agentUrl, string agentJwk)
+        public AgenticAgentInfo( string agentId , string agentName , string agentUrl , string agentJwk)
         {
             this.AgentId = agentId;
             this.AgentName = agentName;
@@ -19,12 +19,12 @@ namespace com.alipay.ams.api.entities
             this.AgentJwk = agentJwk;
         }
 
-        public string AgentId { get; set; }
-        public string AgentName { get; set; }
-        public string AgentUrl { get; set; }
-        public string AgentJwk { get; set; }
+            public string AgentId { get; set; }
+            public string AgentName { get; set; }
+            public string AgentUrl { get; set; }
+            public string AgentJwk { get; set; }
 
-
+        
 
     }
 

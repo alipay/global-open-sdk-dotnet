@@ -3,18 +3,18 @@ using com.alipay.ams.api.request;
 using com.alipay.ams.api.entities;
 using System;
 using System.Collections.Generic;
-
+    
 namespace com.alipay.ams.api.request.agentic
 {
 
-    public class AlipayCreateBindingSessionRequest : AMSRequest<AlipayCreateBindingSessionResponse>
+public class AlipayCreateBindingSessionRequest : AMSRequest<AlipayCreateBindingSessionResponse>
     {
 
         public AlipayCreateBindingSessionRequest() { }
 
+        
 
-
-        public AlipayCreateBindingSessionRequest(string bindingRequestId, string userLoginId, AgenticAgentInfo agent, bool? authorizeOnBind, AgenticPaymentMethod paymentMethod, string purchaseType, AgenticMandate mandate, string countryCode, string redirectUrl, Env env)
+        public AlipayCreateBindingSessionRequest( string bindingRequestId , string userLoginId , AgenticAgentInfo agent , bool? authorizeOnBind , AgenticPaymentMethod paymentMethod , string purchaseType , AgenticMandate mandate , string countryCode , string redirectUrl , Env env)
         {
             this.BindingRequestId = bindingRequestId;
             this.UserLoginId = userLoginId;
@@ -28,18 +28,18 @@ namespace com.alipay.ams.api.request.agentic
             this.Env = env;
         }
 
-        public string BindingRequestId { get; set; }
-        public string UserLoginId { get; set; }
-        public AgenticAgentInfo Agent { get; set; }
-        public bool? AuthorizeOnBind { get; set; }
-        public AgenticPaymentMethod PaymentMethod { get; set; }
-        public string PurchaseType { get; set; }
-        public AgenticMandate Mandate { get; set; }
-        public string CountryCode { get; set; }
-        public string RedirectUrl { get; set; }
-        public Env Env { get; set; }
+            public string BindingRequestId { get; set; }
+            public string UserLoginId { get; set; }
+            public AgenticAgentInfo Agent { get; set; }
+            public bool? AuthorizeOnBind { get; set; }
+            public AgenticPaymentMethod PaymentMethod { get; set; }
+            public string PurchaseType { get; set; }
+            public AgenticMandate Mandate { get; set; }
+            public string CountryCode { get; set; }
+            public string RedirectUrl { get; set; }
+            public Env Env { get; set; }
 
-        public override string GetRequestURI() { return "/ams/api/v1/agenticPayment/createBindingSession"; }
+        public override string GetRequestURI(){ return "/ams/api/v1/agenticPayment/createBindingSession"; } 
 
 
     }

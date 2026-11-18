@@ -3,18 +3,18 @@ using com.alipay.ams.api.request;
 using com.alipay.ams.api.entities;
 using System;
 using System.Collections.Generic;
-
+    
 namespace com.alipay.ams.api.request.billing
 {
 
-    public class AlipayPromotionCodeCreateRequest : AMSRequest<AlipayPromotionCodeCreateResponse>
+public class AlipayPromotionCodeCreateRequest : AMSRequest<AlipayPromotionCodeCreateResponse>
     {
 
         public AlipayPromotionCodeCreateRequest() { }
 
+        
 
-
-        public AlipayPromotionCodeCreateRequest(string promotionCodeRequestId, string couponId, string code, string expiryTime, PromotionCodeCreateMinAmount minAmount, bool? oneTimeOnly, string customerId, string metadata, int? maxRedemptions)
+        public AlipayPromotionCodeCreateRequest( string promotionCodeRequestId , string couponId , string code , string expiryTime , PromotionCodeCreateMinAmount minAmount , bool? oneTimeOnly , string customerId , string metadata , int? maxRedemptions)
         {
             this.PromotionCodeRequestId = promotionCodeRequestId;
             this.CouponId = couponId;
@@ -27,17 +27,17 @@ namespace com.alipay.ams.api.request.billing
             this.MaxRedemptions = maxRedemptions;
         }
 
-        public string PromotionCodeRequestId { get; set; }
-        public string CouponId { get; set; }
-        public string Code { get; set; }
-        public string ExpiryTime { get; set; }
-        public PromotionCodeCreateMinAmount MinAmount { get; set; }
-        public bool? OneTimeOnly { get; set; }
-        public string CustomerId { get; set; }
-        public string Metadata { get; set; }
-        public int? MaxRedemptions { get; set; }
+            public string PromotionCodeRequestId { get; set; }
+            public string CouponId { get; set; }
+            public string Code { get; set; }
+            public string ExpiryTime { get; set; }
+            public PromotionCodeCreateMinAmount MinAmount { get; set; }
+            public bool? OneTimeOnly { get; set; }
+            public string CustomerId { get; set; }
+            public string Metadata { get; set; }
+            public int? MaxRedemptions { get; set; }
 
-        public override string GetRequestURI() { return "/ams/api/v1/billing/promotionCode/create"; }
+        public override string GetRequestURI(){ return "/ams/api/v1/billing/promotionCode/create"; } 
 
 
     }

@@ -11,9 +11,9 @@ public class DisputeDemo
     {
         var alipayAcceptDisputeRequest = new AlipayAcceptDisputeRequest();
         alipayAcceptDisputeRequest.DisputeId = disputeId;
-
+        
         var response = client.Execute(alipayAcceptDisputeRequest);
-
+        
         Console.WriteLine(response);
     }
 
@@ -22,9 +22,9 @@ public class DisputeDemo
         var alipaySupplyDefenseDocumentRequest = new AlipaySupplyDefenseDocumentRequest();
         alipaySupplyDefenseDocumentRequest.DisputeId = disputeId;
         alipaySupplyDefenseDocumentRequest.DisputeEvidence = "test";
-
+        
         var response = client.Execute(alipaySupplyDefenseDocumentRequest);
-
+        
         Console.WriteLine(response);
     }
 
@@ -34,7 +34,7 @@ public class DisputeDemo
         alipayDownloadDisputeEvidenceRequest.DisputeId = disputeId;
         alipayDownloadDisputeEvidenceRequest.DisputeEvidenceType = DisputeEvidenceType.DISPUTE_EVIDENCE_TEMPLATE;
         var response = client.Execute(alipayDownloadDisputeEvidenceRequest);
-
+        
         Console.WriteLine(response);
     }
 }

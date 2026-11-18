@@ -1,17 +1,17 @@
 using System;
 using System.Collections.Generic;
-
+    
 namespace com.alipay.ams.api.entities
 {
 
-    public class CardTransactionEvent
+public class CardTransactionEvent
     {
 
         public CardTransactionEvent() { }
 
+        
 
-
-        public CardTransactionEvent(string eventId, string lifecycleId, string eventType, string authExpireTime, string authTime, string authType, string authCode, string failureReason, string status, string balanceType, string transactionTime, string billType, Amount outAmount, Amount inAmount, string exchangeCurrencyPair, string exchangeRate, Amount transactionAmount, string assetId, string cardProduct, string maskedCardNo, EventMerchantInfo merchantInfo, Dictionary<string, string> metadata)
+        public CardTransactionEvent( string eventId , string lifecycleId , string eventType , string authExpireTime , string authTime , string authType , string authCode , string failureReason , string status , string balanceType , string transactionTime , string billType , Amount outAmount , Amount inAmount , string exchangeCurrencyPair , string exchangeRate , Amount transactionAmount , string assetId , string cardProduct , string maskedCardNo , EventMerchantInfo merchantInfo , Dictionary<string, string> metadata)
         {
             this.EventId = eventId;
             this.LifecycleId = lifecycleId;
@@ -37,30 +37,30 @@ namespace com.alipay.ams.api.entities
             this.Metadata = metadata;
         }
 
-        public string EventId { get; set; }
-        public string LifecycleId { get; set; }
-        public string EventType { get; set; }
-        public string AuthExpireTime { get; set; }
-        public string AuthTime { get; set; }
-        public string AuthType { get; set; }
-        public string AuthCode { get; set; }
-        public string FailureReason { get; set; }
-        public string Status { get; set; }
-        public string BalanceType { get; set; }
-        public string TransactionTime { get; set; }
-        public string BillType { get; set; }
-        public Amount OutAmount { get; set; }
-        public Amount InAmount { get; set; }
-        public string ExchangeCurrencyPair { get; set; }
-        public string ExchangeRate { get; set; }
-        public Amount TransactionAmount { get; set; }
-        public string AssetId { get; set; }
-        public string CardProduct { get; set; }
-        public string MaskedCardNo { get; set; }
-        public EventMerchantInfo MerchantInfo { get; set; }
-        public Dictionary<string, string> Metadata { get; set; }
+            public string EventId { get; set; }
+            public string LifecycleId { get; set; }
+            public string EventType { get; set; }
+            public string AuthExpireTime { get; set; }
+            public string AuthTime { get; set; }
+            public string AuthType { get; set; }
+            public string AuthCode { get; set; }
+            public string FailureReason { get; set; }
+            public string Status { get; set; }
+            public string BalanceType { get; set; }
+            public string TransactionTime { get; set; }
+            public string BillType { get; set; }
+            public Amount OutAmount { get; set; }
+            public Amount InAmount { get; set; }
+            public string ExchangeCurrencyPair { get; set; }
+            public string ExchangeRate { get; set; }
+            public Amount TransactionAmount { get; set; }
+            public string AssetId { get; set; }
+            public string CardProduct { get; set; }
+            public string MaskedCardNo { get; set; }
+            public EventMerchantInfo MerchantInfo { get; set; }
+            public Dictionary<string, string> Metadata { get; set; }
 
-
+        
 
     }
 

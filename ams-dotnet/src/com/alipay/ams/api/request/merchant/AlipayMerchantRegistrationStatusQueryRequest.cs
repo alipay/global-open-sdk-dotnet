@@ -16,7 +16,7 @@ namespace com.alipay.ams.api.request.merchant
 
         public override void validate()
         {
-
+            
         }
     }
 }

@@ -1,17 +1,17 @@
 using System;
 using System.Collections.Generic;
-
+    
 namespace com.alipay.ams.api.entities
 {
 
-    public class CardInfo
+public class CardInfo
     {
 
         public CardInfo() { }
 
+        
 
-
-        public CardInfo(string cardNo, string cardBrand, string cardToken, string issuingCountry, string funding, string paymentMethodRegion, ThreeDSResult threeDSResult)
+        public CardInfo( string cardNo , string cardBrand , string cardToken , string issuingCountry , string funding , string paymentMethodRegion , ThreeDSResult threeDSResult)
         {
             this.CardNo = cardNo;
             this.CardBrand = cardBrand;
@@ -22,15 +22,15 @@ namespace com.alipay.ams.api.entities
             this.ThreeDSResult = threeDSResult;
         }
 
-        public string CardNo { get; set; }
-        public string CardBrand { get; set; }
-        public string CardToken { get; set; }
-        public string IssuingCountry { get; set; }
-        public string Funding { get; set; }
-        public string PaymentMethodRegion { get; set; }
-        public ThreeDSResult ThreeDSResult { get; set; }
+            public string CardNo { get; set; }
+            public string CardBrand { get; set; }
+            public string CardToken { get; set; }
+            public string IssuingCountry { get; set; }
+            public string Funding { get; set; }
+            public string PaymentMethodRegion { get; set; }
+            public ThreeDSResult ThreeDSResult { get; set; }
 
-
+        
 
     }
 

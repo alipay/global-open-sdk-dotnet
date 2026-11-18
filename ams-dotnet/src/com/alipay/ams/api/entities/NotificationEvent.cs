@@ -1,17 +1,17 @@
 using System;
 using System.Collections.Generic;
-
+    
 namespace com.alipay.ams.api.entities
 {
 
-    public class NotificationEvent
+public class NotificationEvent
     {
 
         public NotificationEvent() { }
 
+        
 
-
-        public NotificationEvent(string eventId, string notifyType, string eventCreateTime, string deliveryStatus, string referenceMerchantId, Dictionary<string, Object> notificationData)
+        public NotificationEvent( string eventId , string notifyType , string eventCreateTime , string deliveryStatus , string referenceMerchantId , Dictionary<string, Object> notificationData)
         {
             this.EventId = eventId;
             this.NotifyType = notifyType;
@@ -21,14 +21,14 @@ namespace com.alipay.ams.api.entities
             this.NotificationData = notificationData;
         }
 
-        public string EventId { get; set; }
-        public string NotifyType { get; set; }
-        public string EventCreateTime { get; set; }
-        public string DeliveryStatus { get; set; }
-        public string ReferenceMerchantId { get; set; }
-        public Dictionary<string, Object> NotificationData { get; set; }
+            public string EventId { get; set; }
+            public string NotifyType { get; set; }
+            public string EventCreateTime { get; set; }
+            public string DeliveryStatus { get; set; }
+            public string ReferenceMerchantId { get; set; }
+            public Dictionary<string, Object> NotificationData { get; set; }
 
-
+        
 
     }
 

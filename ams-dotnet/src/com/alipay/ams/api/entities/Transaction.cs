@@ -1,17 +1,17 @@
 using System;
 using System.Collections.Generic;
-
+    
 namespace com.alipay.ams.api.entities
 {
 
-    public class Transaction
+public class Transaction
     {
 
         public Transaction() { }
 
+        
 
-
-        public Transaction(Result transactionResult, string transactionId, TransactionType transactionType, TransactionStatusType transactionStatus, Amount transactionAmount, string transactionRequestId, string transactionTime, AcquirerInfo acquirerInfo, Amount grossSettlementAmount, Quote settlementQuote)
+        public Transaction( Result transactionResult , string transactionId , TransactionType transactionType , TransactionStatusType transactionStatus , Amount transactionAmount , string transactionRequestId , string transactionTime , AcquirerInfo acquirerInfo , Amount grossSettlementAmount , Quote settlementQuote)
         {
             this.TransactionResult = transactionResult;
             this.TransactionId = transactionId;
@@ -25,18 +25,18 @@ namespace com.alipay.ams.api.entities
             this.SettlementQuote = settlementQuote;
         }
 
-        public Result TransactionResult { get; set; }
-        public string TransactionId { get; set; }
-        public TransactionType TransactionType { get; set; }
-        public TransactionStatusType TransactionStatus { get; set; }
-        public Amount TransactionAmount { get; set; }
-        public string TransactionRequestId { get; set; }
-        public string TransactionTime { get; set; }
-        public AcquirerInfo AcquirerInfo { get; set; }
-        public Amount GrossSettlementAmount { get; set; }
-        public Quote SettlementQuote { get; set; }
+            public Result TransactionResult { get; set; }
+            public string TransactionId { get; set; }
+            public TransactionType TransactionType { get; set; }
+            public TransactionStatusType TransactionStatus { get; set; }
+            public Amount TransactionAmount { get; set; }
+            public string TransactionRequestId { get; set; }
+            public string TransactionTime { get; set; }
+            public AcquirerInfo AcquirerInfo { get; set; }
+            public Amount GrossSettlementAmount { get; set; }
+            public Quote SettlementQuote { get; set; }
 
-
+        
 
     }
 

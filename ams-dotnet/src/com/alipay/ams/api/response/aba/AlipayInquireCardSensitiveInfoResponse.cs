@@ -1,18 +1,18 @@
 using com.alipay.ams.api.entities;
 using System;
 using System.Collections.Generic;
-
+    
 namespace com.alipay.ams.api.response.aba
 {
 
-    public class AlipayInquireCardSensitiveInfoResponse : AMSResponse
+public class AlipayInquireCardSensitiveInfoResponse : AMSResponse
     {
 
         public AlipayInquireCardSensitiveInfoResponse() { }
 
+        
 
-
-        public AlipayInquireCardSensitiveInfoResponse(Result result, string assetId, string cvv, string cardNo, string expiredMonth, string expiredYear, AuthorizationControl authorizationControl, CardDetail cardDetail)
+        public AlipayInquireCardSensitiveInfoResponse( Result result , string assetId , string cvv , string cardNo , string expiredMonth , string expiredYear , AuthorizationControl authorizationControl , CardDetail cardDetail)
         {
             this.Result = result;
             this.AssetId = assetId;
@@ -24,16 +24,16 @@ namespace com.alipay.ams.api.response.aba
             this.CardDetail = cardDetail;
         }
 
-        public Result Result { get; set; }
-        public string AssetId { get; set; }
-        public string Cvv { get; set; }
-        public string CardNo { get; set; }
-        public string ExpiredMonth { get; set; }
-        public string ExpiredYear { get; set; }
-        public AuthorizationControl AuthorizationControl { get; set; }
-        public CardDetail CardDetail { get; set; }
+            public Result Result { get; set; }
+            public string AssetId { get; set; }
+            public string Cvv { get; set; }
+            public string CardNo { get; set; }
+            public string ExpiredMonth { get; set; }
+            public string ExpiredYear { get; set; }
+            public AuthorizationControl AuthorizationControl { get; set; }
+            public CardDetail CardDetail { get; set; }
 
-
+        
 
     }
 

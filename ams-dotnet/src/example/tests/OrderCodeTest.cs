@@ -18,7 +18,7 @@ namespace ams_dotnet.example.tests
 
         private static string testOrderCode(DefaultAlipayClient client, string paymentRequestId, string currency)
         {
-
+            
             var request = new OrderCodePaymentRequest();
 
 
@@ -36,7 +36,7 @@ namespace ams_dotnet.example.tests
             order.Env.StoreTerminalId = "some_setStoreTerminalId";
             order.Env.StoreTerminalRequestTime = "2020-06-11T13:35:02+08:00";
 
-
+            
             request.PaymentRequestId = paymentRequestId;
             request.Order = order;
 

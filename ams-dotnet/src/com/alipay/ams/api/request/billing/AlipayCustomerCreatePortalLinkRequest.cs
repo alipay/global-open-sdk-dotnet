@@ -3,18 +3,18 @@ using com.alipay.ams.api.request;
 using com.alipay.ams.api.entities;
 using System;
 using System.Collections.Generic;
-
+    
 namespace com.alipay.ams.api.request.billing
 {
 
-    public class AlipayCustomerCreatePortalLinkRequest : AMSRequest<AlipayCustomerCreatePortalLinkResponse>
+public class AlipayCustomerCreatePortalLinkRequest : AMSRequest<AlipayCustomerCreatePortalLinkResponse>
     {
 
         public AlipayCustomerCreatePortalLinkRequest() { }
 
+        
 
-
-        public AlipayCustomerCreatePortalLinkRequest(string customerId, string email, List<string> features, bool? autoSend, string settingId)
+        public AlipayCustomerCreatePortalLinkRequest( string customerId , string email , List<string> features , bool? autoSend , string settingId)
         {
             this.CustomerId = customerId;
             this.Email = email;
@@ -23,13 +23,13 @@ namespace com.alipay.ams.api.request.billing
             this.SettingId = settingId;
         }
 
-        public string CustomerId { get; set; }
-        public string Email { get; set; }
-        public List<string> Features { get; set; }
-        public bool? AutoSend { get; set; }
-        public string SettingId { get; set; }
+            public string CustomerId { get; set; }
+            public string Email { get; set; }
+            public List<string> Features { get; set; }
+            public bool? AutoSend { get; set; }
+            public string SettingId { get; set; }
 
-        public override string GetRequestURI() { return "/ams/api/v1/billing/customer/createPortalLink"; }
+        public override string GetRequestURI(){ return "/ams/api/v1/billing/customer/createPortalLink"; } 
 
 
     }

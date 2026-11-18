@@ -1,17 +1,17 @@
 using System;
 using System.Collections.Generic;
-
+    
 namespace com.alipay.ams.api.entities
 {
 
-    public class TaxCalculatedAddress
+public class TaxCalculatedAddress
     {
 
         public TaxCalculatedAddress() { }
 
+        
 
-
-        public TaxCalculatedAddress(string country, string region, string county, string city, string district, string line1, string line2, string postalCode)
+        public TaxCalculatedAddress( string country , string region , string county , string city , string district , string line1 , string line2 , string postalCode)
         {
             this.Country = country;
             this.Region = region;
@@ -23,16 +23,16 @@ namespace com.alipay.ams.api.entities
             this.PostalCode = postalCode;
         }
 
-        public string Country { get; set; }
-        public string Region { get; set; }
-        public string County { get; set; }
-        public string City { get; set; }
-        public string District { get; set; }
-        public string Line1 { get; set; }
-        public string Line2 { get; set; }
-        public string PostalCode { get; set; }
+            public string Country { get; set; }
+            public string Region { get; set; }
+            public string County { get; set; }
+            public string City { get; set; }
+            public string District { get; set; }
+            public string Line1 { get; set; }
+            public string Line2 { get; set; }
+            public string PostalCode { get; set; }
 
-
+        
 
     }
 

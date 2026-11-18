@@ -1,17 +1,17 @@
 using System;
 using System.Collections.Generic;
-
+    
 namespace com.alipay.ams.api.entities
 {
 
-    public class TaxCalculationLineItem
+public class TaxCalculationLineItem
     {
 
         public TaxCalculationLineItem() { }
 
+        
 
-
-        public TaxCalculationLineItem(string goodsReferenceId, Amount amount, int? quantity, string taxCode, string productId, string taxBehavior)
+        public TaxCalculationLineItem( string goodsReferenceId , Amount amount , int? quantity , string taxCode , string productId , string taxBehavior)
         {
             this.GoodsReferenceId = goodsReferenceId;
             this.Amount = amount;
@@ -21,14 +21,14 @@ namespace com.alipay.ams.api.entities
             this.TaxBehavior = taxBehavior;
         }
 
-        public string GoodsReferenceId { get; set; }
-        public Amount Amount { get; set; }
-        public int? Quantity { get; set; }
-        public string TaxCode { get; set; }
-        public string ProductId { get; set; }
-        public string TaxBehavior { get; set; }
+            public string GoodsReferenceId { get; set; }
+            public Amount Amount { get; set; }
+            public int? Quantity { get; set; }
+            public string TaxCode { get; set; }
+            public string ProductId { get; set; }
+            public string TaxBehavior { get; set; }
 
-
+        
 
     }
 

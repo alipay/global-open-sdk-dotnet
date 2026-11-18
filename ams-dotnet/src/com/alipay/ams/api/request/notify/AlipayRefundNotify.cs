@@ -2,7 +2,7 @@ using com.alipay.ams.api.entities;
 
 namespace com.alipay.ams.api.request.notify;
 
-public class AlipayRefundNotify : AlipayNotify
+public class AlipayRefundNotify:AlipayNotify
 {
     /**
      * Indicates the refund result. SUCCESS/FAIL
@@ -38,14 +38,14 @@ public class AlipayRefundNotify : AlipayNotify
      * The exchange rate between the settlement currency and transaction currency
      */
     public Quote SettlementQuote { get; set; }
-
-
+    
+    
     public CustomizedInfo CustomizedInfo { get; set; }
 
     public string Arn { get; set; }
 
     public Amount ActualRefundAmount { get; set; }
-
+    
     public string Metadata { get; set; }
 
     /**

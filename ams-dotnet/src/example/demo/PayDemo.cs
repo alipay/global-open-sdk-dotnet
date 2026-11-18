@@ -8,7 +8,7 @@ namespace ams_dotnet.demo
 {
     public class PayDemo
     {
-
+        
         public static string alipay(DefaultAlipayClient client)
         {
             var request = new PaymentCreateRequest();
@@ -27,14 +27,14 @@ namespace ams_dotnet.demo
             order.ReferenceOrderId = "0001213243200001";
             order.Merchant = new Merchant("example merchant", "seller231117459", "7011", new Store(
                 "Some_store", "store231117459", "7011"));
-
+            
             var env = new Env();
             env.OsType = OsType.ANDROID;
             env.TerminalType = TerminalType.WEB;
-
+            
             order.Env = env;
 
-            request.PaymentRequestId = "PR20190000000001_" + (DateTime.Now - new DateTime(1970, 1, 1)).TotalMilliseconds;
+            request.PaymentRequestId =  "PR20190000000001_" + (DateTime.Now - new DateTime(1970, 1, 1)).TotalMilliseconds;
             request.Order = order;
 
             var response = client.Execute(request);
@@ -76,7 +76,7 @@ namespace ams_dotnet.demo
 
             var paymentRefundResponse = client.Execute(paymentRefundRequest);
 
-            Console.WriteLine("     \n" + paymentRefundResponse);
+            Console.WriteLine("     \n" +  paymentRefundResponse );
         }
         public static void queryRefund(DefaultAlipayClient client, string refundRequestId)
         {
@@ -113,13 +113,13 @@ namespace ams_dotnet.demo
         public static void createSession(DefaultAlipayClient client)
         {
             var request = new AlipayPaymentSessionRequest();
-            request.PaymentRequestId = "PR20190000000001_" + (DateTime.Now - new DateTime(1970, 1, 1)).TotalMilliseconds;
+            request.PaymentRequestId =  "PR20190000000001_" + (DateTime.Now - new DateTime(1970, 1, 1)).TotalMilliseconds;
             Order order = new Order();
             order.OrderAmount = new Amount("HKD", 100);
             order.OrderDescription = "example order";
             order.ReferenceOrderId = "0001213243200001";
             var buyer = new Buyer();
-            buyer.ReferenceBuyerId = "111112132143434";
+            buyer.ReferenceBuyerId  = "111112132143434";
             order.Buyer = buyer;
             var env = new Env();
             env.OsType = OsType.IOS;
@@ -132,11 +132,11 @@ namespace ams_dotnet.demo
             request.PaymentMethod = paymentMethod;
             request.PaymentNotifyUrl = "https://www.yourNotifyUrl.com";
             request.PaymentRedirectUrl = "https://www.yourRedirectUrl.com";
-
+            
             var response = client.Execute(request);
 
             Console.WriteLine(" \n" + response);
-
+            
         }
     }
 }

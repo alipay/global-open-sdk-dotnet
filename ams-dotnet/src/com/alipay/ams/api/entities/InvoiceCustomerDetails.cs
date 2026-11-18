@@ -1,17 +1,17 @@
 using System;
 using System.Collections.Generic;
-
+    
 namespace com.alipay.ams.api.entities
 {
 
-    public class InvoiceCustomerDetails
+public class InvoiceCustomerDetails
     {
 
         public InvoiceCustomerDetails() { }
 
+        
 
-
-        public InvoiceCustomerDetails(string email, string customerType, string businessName, string firstName, string lastName, CustomerBusinessAddress businessAddress, List<string> preferredLocales, List<BuyerTaxId> taxIds)
+        public InvoiceCustomerDetails( string email , string customerType , string businessName , string firstName , string lastName , CustomerBusinessAddress businessAddress , List<string> preferredLocales , List<BuyerTaxId> taxIds)
         {
             this.Email = email;
             this.CustomerType = customerType;
@@ -23,16 +23,16 @@ namespace com.alipay.ams.api.entities
             this.TaxIds = taxIds;
         }
 
-        public string Email { get; set; }
-        public string CustomerType { get; set; }
-        public string BusinessName { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public CustomerBusinessAddress BusinessAddress { get; set; }
-        public List<string> PreferredLocales { get; set; }
-        public List<BuyerTaxId> TaxIds { get; set; }
+            public string Email { get; set; }
+            public string CustomerType { get; set; }
+            public string BusinessName { get; set; }
+            public string FirstName { get; set; }
+            public string LastName { get; set; }
+            public CustomerBusinessAddress BusinessAddress { get; set; }
+            public List<string> PreferredLocales { get; set; }
+            public List<BuyerTaxId> TaxIds { get; set; }
 
-
+        
 
     }
 

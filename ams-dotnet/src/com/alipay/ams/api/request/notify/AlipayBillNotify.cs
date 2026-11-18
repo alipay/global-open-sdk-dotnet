@@ -8,7 +8,7 @@ namespace com.alipay.ams.api.request.notify;
 /// </summary>
 public class AlipayBillNotify
 {
-
+    
     public string BillNo { get; set; }
     /// <summary>
     /// 卡资产ID

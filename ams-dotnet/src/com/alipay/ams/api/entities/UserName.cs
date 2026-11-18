@@ -1,17 +1,17 @@
 using System;
 using System.Collections.Generic;
-
+    
 namespace com.alipay.ams.api.entities
 {
 
-    public class UserName
+public class UserName
     {
 
         public UserName() { }
 
+        
 
-
-        public UserName(string firstName, string middleName, string lastName, string fullName)
+        public UserName( string firstName , string middleName , string lastName , string fullName)
         {
             this.FirstName = firstName;
             this.MiddleName = middleName;
@@ -19,12 +19,12 @@ namespace com.alipay.ams.api.entities
             this.FullName = fullName;
         }
 
-        public string FirstName { get; set; }
-        public string MiddleName { get; set; }
-        public string LastName { get; set; }
-        public string FullName { get; set; }
+            public string FirstName { get; set; }
+            public string MiddleName { get; set; }
+            public string LastName { get; set; }
+            public string FullName { get; set; }
 
-
+        
 
     }
 

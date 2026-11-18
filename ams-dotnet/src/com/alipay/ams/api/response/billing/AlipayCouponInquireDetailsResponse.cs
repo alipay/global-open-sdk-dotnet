@@ -1,18 +1,18 @@
 using com.alipay.ams.api.entities;
 using System;
 using System.Collections.Generic;
-
+    
 namespace com.alipay.ams.api.response.billing
 {
 
-    public class AlipayCouponInquireDetailsResponse : AMSResponse
+public class AlipayCouponInquireDetailsResponse : AMSResponse
     {
 
         public AlipayCouponInquireDetailsResponse() { }
 
+        
 
-
-        public AlipayCouponInquireDetailsResponse(ResultInfo result, string couponId, string couponRequestId, string couponName, string discountType, string percentOff, Amount amountOff, string durationType, int? durationValue, string durationUnit, string redeemBy, CouponInquireDetailsAppliesTo appliesTo, string status, string metadata, string gmtCreate, int? maxRedemptions, int? redeemedCount)
+        public AlipayCouponInquireDetailsResponse( ResultInfo result , string couponId , string couponRequestId , string couponName , string discountType , string percentOff , Amount amountOff , string durationType , int? durationValue , string durationUnit , string redeemBy , CouponInquireDetailsAppliesTo appliesTo , string status , string metadata , string gmtCreate , int? maxRedemptions , int? redeemedCount)
         {
             this.Result = result;
             this.CouponId = couponId;
@@ -33,25 +33,25 @@ namespace com.alipay.ams.api.response.billing
             this.RedeemedCount = redeemedCount;
         }
 
-        public ResultInfo Result { get; set; }
-        public string CouponId { get; set; }
-        public string CouponRequestId { get; set; }
-        public string CouponName { get; set; }
-        public string DiscountType { get; set; }
-        public string PercentOff { get; set; }
-        public Amount AmountOff { get; set; }
-        public string DurationType { get; set; }
-        public int? DurationValue { get; set; }
-        public string DurationUnit { get; set; }
-        public string RedeemBy { get; set; }
-        public CouponInquireDetailsAppliesTo AppliesTo { get; set; }
-        public string Status { get; set; }
-        public string Metadata { get; set; }
-        public string GmtCreate { get; set; }
-        public int? MaxRedemptions { get; set; }
-        public int? RedeemedCount { get; set; }
+            public ResultInfo Result { get; set; }
+            public string CouponId { get; set; }
+            public string CouponRequestId { get; set; }
+            public string CouponName { get; set; }
+            public string DiscountType { get; set; }
+            public string PercentOff { get; set; }
+            public Amount AmountOff { get; set; }
+            public string DurationType { get; set; }
+            public int? DurationValue { get; set; }
+            public string DurationUnit { get; set; }
+            public string RedeemBy { get; set; }
+            public CouponInquireDetailsAppliesTo AppliesTo { get; set; }
+            public string Status { get; set; }
+            public string Metadata { get; set; }
+            public string GmtCreate { get; set; }
+            public int? MaxRedemptions { get; set; }
+            public int? RedeemedCount { get; set; }
 
-
+        
 
     }
 

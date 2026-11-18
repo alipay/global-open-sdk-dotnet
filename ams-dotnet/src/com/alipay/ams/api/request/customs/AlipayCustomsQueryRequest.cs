@@ -7,7 +7,7 @@ namespace com.alipay.ams.api.request.customs
     public class AlipayCustomsQueryRequest : AMSRequest<AlipayCustomsQueryResponse>
     {
         public List<string> DeclarationRequestIds { get; set; }
-
+        
         public override string GetRequestURI()
         {
             return AntomPathConstants.INQUIRY_DECLARE_PATH;
@@ -15,7 +15,7 @@ namespace com.alipay.ams.api.request.customs
 
         public override void validate()
         {
-
+            
         }
     }
 }

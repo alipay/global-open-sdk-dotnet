@@ -8,7 +8,7 @@ namespace com.alipay.ams.api.request
         where TCommonPaymentResponse : CommonPaymentResponse
     {
         public ProductCodeType ProductCode { get; set; }
-
+         
         public string PaymentRequestId { get; set; }
 
         public Order Order { get; set; }

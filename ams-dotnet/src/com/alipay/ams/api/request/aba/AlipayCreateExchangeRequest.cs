@@ -3,18 +3,18 @@ using com.alipay.ams.api.request;
 using com.alipay.ams.api.entities;
 using System;
 using System.Collections.Generic;
-
+    
 namespace com.alipay.ams.api.request.aba
 {
 
-    public class AlipayCreateExchangeRequest : AMSRequest<AlipayCreateExchangeResponse>
+public class AlipayCreateExchangeRequest : AMSRequest<AlipayCreateExchangeResponse>
     {
 
         public AlipayCreateExchangeRequest() { }
 
+        
 
-
-        public AlipayCreateExchangeRequest(Quote quote, Amount buyAmount, Amount sellAmount, string exchangeTradeType, string exchangeRequestId, string exchangeMode)
+        public AlipayCreateExchangeRequest( Quote quote , Amount buyAmount , Amount sellAmount , string exchangeTradeType , string exchangeRequestId , string exchangeMode)
         {
             this.Quote = quote;
             this.BuyAmount = buyAmount;
@@ -24,14 +24,14 @@ namespace com.alipay.ams.api.request.aba
             this.ExchangeMode = exchangeMode;
         }
 
-        public Quote Quote { get; set; }
-        public Amount BuyAmount { get; set; }
-        public Amount SellAmount { get; set; }
-        public string ExchangeTradeType { get; set; }
-        public string ExchangeRequestId { get; set; }
-        public string ExchangeMode { get; set; }
+            public Quote Quote { get; set; }
+            public Amount BuyAmount { get; set; }
+            public Amount SellAmount { get; set; }
+            public string ExchangeTradeType { get; set; }
+            public string ExchangeRequestId { get; set; }
+            public string ExchangeMode { get; set; }
 
-        public override string GetRequestURI() { return "/ams/api/v1/aba/funds/createExchange"; }
+        public override string GetRequestURI(){ return "/ams/api/v1/aba/funds/createExchange"; } 
 
 
     }

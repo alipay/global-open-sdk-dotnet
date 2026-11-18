@@ -1,17 +1,17 @@
 using System;
 using System.Collections.Generic;
-
+    
 namespace com.alipay.ams.api.entities
 {
 
-    public class CreditGrant
+public class CreditGrant
     {
 
         public CreditGrant() { }
 
+        
 
-
-        public CreditGrant(string creditGrantId, string creditGrantName, string customerId, string status, Amount amount, Amount availableAmount, Applicability applicability, int? priority, string category, string effectiveDateTime, string expiryDateTime, string createdDateTime, string updatedDateTime)
+        public CreditGrant( string creditGrantId , string creditGrantName , string customerId , string status , Amount amount , Amount availableAmount , Applicability applicability , int? priority , string category , string effectiveDateTime , string expiryDateTime , string createdDateTime , string updatedDateTime)
         {
             this.CreditGrantId = creditGrantId;
             this.CreditGrantName = creditGrantName;
@@ -28,21 +28,21 @@ namespace com.alipay.ams.api.entities
             this.UpdatedDateTime = updatedDateTime;
         }
 
-        public string CreditGrantId { get; set; }
-        public string CreditGrantName { get; set; }
-        public string CustomerId { get; set; }
-        public string Status { get; set; }
-        public Amount Amount { get; set; }
-        public Amount AvailableAmount { get; set; }
-        public Applicability Applicability { get; set; }
-        public int? Priority { get; set; }
-        public string Category { get; set; }
-        public string EffectiveDateTime { get; set; }
-        public string ExpiryDateTime { get; set; }
-        public string CreatedDateTime { get; set; }
-        public string UpdatedDateTime { get; set; }
+            public string CreditGrantId { get; set; }
+            public string CreditGrantName { get; set; }
+            public string CustomerId { get; set; }
+            public string Status { get; set; }
+            public Amount Amount { get; set; }
+            public Amount AvailableAmount { get; set; }
+            public Applicability Applicability { get; set; }
+            public int? Priority { get; set; }
+            public string Category { get; set; }
+            public string EffectiveDateTime { get; set; }
+            public string ExpiryDateTime { get; set; }
+            public string CreatedDateTime { get; set; }
+            public string UpdatedDateTime { get; set; }
 
-
+        
 
     }
 

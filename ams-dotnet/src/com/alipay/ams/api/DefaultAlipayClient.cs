@@ -50,15 +50,15 @@ namespace com.alipay.ams.api
             return FileUploadExecutor.Execute(this, UploadGatewayUrl, request);
         }
 
-        public TAMSResponse Execute<TAMSResponse>(request.AMSRequest<TAMSResponse> request)
+        public  TAMSResponse Execute<TAMSResponse>(request.AMSRequest<TAMSResponse> request)
             where TAMSResponse : AMSResponse
         {
             var requestUrl = BuildRequestUrl(request.GetRequestURI());
 
-            var requestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUrl);
+            var requestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUrl );
 
             var body = request.BuildBody();
-            var headers = request.BuildRequestHeader(this.ClientId, this.AgentToken, this.MerchantPrivateKey);
+            var headers = request.BuildRequestHeader(this.ClientId,this.AgentToken,this.MerchantPrivateKey);
 
 
             foreach (var header in headers)
@@ -71,12 +71,12 @@ namespace com.alipay.ams.api
 
 
             var ret = client.SendAsync(requestMessage).ConfigureAwait(false).GetAwaiter().GetResult(); ;
+            
 
-
-            return AMSResponse.ParseResponse<TAMSResponse>(ret, BuildRequestUri(request.GetRequestURI()), this.ClientId, this.AlipayPublicKey);
+            return AMSResponse.ParseResponse<TAMSResponse>(ret, BuildRequestUri(request.GetRequestURI()), this.ClientId,this.AlipayPublicKey);
         }
 
-        public TAMSResponse ExecuteWithHeaders<TAMSResponse>(request.AMSRequest<TAMSResponse> request, Dictionary<string, string> extraHeaders)
+        public  TAMSResponse ExecuteWithHeaders<TAMSResponse>(request.AMSRequest<TAMSResponse> request, Dictionary<string, string> extraHeaders)
             where TAMSResponse : AMSResponse
         {
             if (RequestTransportResolver.RequiresSessionHttp2(
@@ -88,10 +88,10 @@ namespace com.alipay.ams.api
 
             var requestUrl = BuildRequestUrl(request.GetRequestURI());
 
-            var requestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUrl);
+            var requestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUrl );
 
             var body = request.BuildBody();
-            var headers = request.BuildRequestHeader(this.ClientId, this.AgentToken, this.MerchantPrivateKey);
+            var headers = request.BuildRequestHeader(this.ClientId,this.AgentToken,this.MerchantPrivateKey);
 
 
             foreach (var header in headers)
@@ -121,9 +121,9 @@ namespace com.alipay.ams.api
             var ret = client.SendAsync(requestMessage).ConfigureAwait(false).GetAwaiter().GetResult(); ;
 
 
-            return AMSResponse.ParseResponse<TAMSResponse>(ret, BuildRequestUri(request.GetRequestURI()), this.ClientId, this.AlipayPublicKey);
+            return AMSResponse.ParseResponse<TAMSResponse>(ret, BuildRequestUri(request.GetRequestURI()), this.ClientId,this.AlipayPublicKey);
         }
-
+        
         public string BuildRequestUrl(string originPath)
         {
 
@@ -138,7 +138,7 @@ namespace com.alipay.ams.api
             var fullUri = new Uri(baseUri, originPath);
             return fullUri.ToString();
         }
-
+        
         public string BuildRequestUri(string originPath)
         {
 
@@ -149,7 +149,7 @@ namespace com.alipay.ams.api
                 originPath = originPath.Replace("/ams/api", "/ams/sandbox/api");
             }
             return originPath;
-        }
+        } 
 
     }
 }

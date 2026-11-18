@@ -10,7 +10,7 @@ public class RiskDecideRequest : AMSRequest<RiskDecideResponse>
     * A unique ID assigned to a merchant who provides a service or product directly to a customer and is used to identify the transaction.
     * 直接向买家提供服务或商品的商户分配的唯一ID，用于识别交易。
     */
-    public string ReferenceTransactionId { get; set; }
+    public string ReferenceTransactionId  { get; set; }
     /**
      * The stage at which the API is called. Valid values are as follows:
      * PRE_AUTHORIZATION: Indicates that you initiated this call before the card payment was authorized.
@@ -50,15 +50,15 @@ public class RiskDecideRequest : AMSRequest<RiskDecideResponse>
      * 下单环境信息，例如设备信息。
      */
     public Env Env { get; set; }
-
+    
     public override string GetRequestURI()
     {
-        return AntomPathConstants.RISK_DECIDE_PATH;
+     return AntomPathConstants.RISK_DECIDE_PATH;
     }
-
+    
     public override void validate()
     {
-
+           
     }
 
 }

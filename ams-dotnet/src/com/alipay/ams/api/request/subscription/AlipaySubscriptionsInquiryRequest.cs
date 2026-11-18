@@ -3,27 +3,27 @@ using com.alipay.ams.api.request;
 using com.alipay.ams.api.entities;
 using System;
 using System.Collections.Generic;
-
+    
 namespace com.alipay.ams.api.request.subscription
 {
 
-    public class AlipaySubscriptionsInquiryRequest : AMSRequest<AlipaySubscriptionsInquiryResponse>
+public class AlipaySubscriptionsInquiryRequest : AMSRequest<AlipaySubscriptionsInquiryResponse>
     {
 
         public AlipaySubscriptionsInquiryRequest() { }
 
+        
 
-
-        public AlipaySubscriptionsInquiryRequest(string subscriptionId, string subscriptionRequestId)
+        public AlipaySubscriptionsInquiryRequest( string subscriptionId , string subscriptionRequestId)
         {
             this.SubscriptionId = subscriptionId;
             this.SubscriptionRequestId = subscriptionRequestId;
         }
 
-        public string SubscriptionId { get; set; }
-        public string SubscriptionRequestId { get; set; }
+            public string SubscriptionId { get; set; }
+            public string SubscriptionRequestId { get; set; }
 
-        public override string GetRequestURI() { return "/ams/api/v1/subscriptions/inquiry"; }
+        public override string GetRequestURI(){ return "/ams/api/v1/subscriptions/inquiry"; } 
 
 
     }

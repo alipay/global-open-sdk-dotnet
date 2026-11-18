@@ -17,7 +17,7 @@ public class AuthDemo
         alipayAuthConsultRequest.OsVersion = "1.0.0";
         alipayAuthConsultRequest.Scopes = new[] { ScopeType.AGREEMENT_PAY };
         alipayAuthConsultRequest.TerminalType = TerminalType.APP;
-
+        
         var response = client.Execute(alipayAuthConsultRequest);
 
         Console.WriteLine("\n============================================================\n");
@@ -45,5 +45,5 @@ public class AuthDemo
         Console.WriteLine("\n============================================================\n");
         Console.WriteLine(response);
     }
-
+    
 }

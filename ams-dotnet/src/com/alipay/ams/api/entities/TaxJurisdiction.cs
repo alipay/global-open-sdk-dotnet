@@ -1,28 +1,28 @@
 using System;
 using System.Collections.Generic;
-
+    
 namespace com.alipay.ams.api.entities
 {
 
-    public class TaxJurisdiction
+public class TaxJurisdiction
     {
 
         public TaxJurisdiction() { }
 
+        
 
-
-        public TaxJurisdiction(string country, string region, string city)
+        public TaxJurisdiction( string country , string region , string city)
         {
             this.Country = country;
             this.Region = region;
             this.City = city;
         }
 
-        public string Country { get; set; }
-        public string Region { get; set; }
-        public string City { get; set; }
+            public string Country { get; set; }
+            public string Region { get; set; }
+            public string City { get; set; }
 
-
+        
 
     }
 
