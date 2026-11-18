@@ -1,12 +1,12 @@
 using System;
 using System.Collections.Generic;
-    
+
 namespace com.alipay.ams.api.entities
 {
 
-public enum PaymentStatus
+    public enum PaymentStatus
     {
-            SUCCESS,
-            FAIL,
+        SUCCESS,
+        FAIL,
     }
 }

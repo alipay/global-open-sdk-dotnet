@@ -3,7 +3,7 @@ using com.alipay.ams.api.response;
 
 namespace ams_dotnet.com.alipay.ams.api.response.vaulting;
 
-public class AlipayVaultingQueryResponse:AMSResponse
+public class AlipayVaultingQueryResponse : AMSResponse
 {
     public string VaultingRequestId { get; set; }
 
@@ -14,6 +14,6 @@ public class AlipayVaultingQueryResponse:AMSResponse
     public string SchemeUrl { get; set; }
 
     public string ApplinkUrl { get; set; }
-    
+
     public string VaultingStatus { get; set; }
 }

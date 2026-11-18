@@ -29,11 +29,11 @@ namespace com.alipay.ams.api.request
 
 
         public bool IsAsyncRefund { get; set; }
-        
+
         public string RefundNotifyUrl { get; set; }
         public List<RefundDetail> RefundDetails { get; set; }
 
-        public String RefundSourceAccountNo  { get; set; }
+        public String RefundSourceAccountNo { get; set; }
 
         public override string GetRequestURI()
         {

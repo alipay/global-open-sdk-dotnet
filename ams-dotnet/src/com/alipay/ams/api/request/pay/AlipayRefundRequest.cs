@@ -3,18 +3,18 @@ using com.alipay.ams.api.request;
 using com.alipay.ams.api.entities;
 using System;
 using System.Collections.Generic;
-    
+
 namespace com.alipay.ams.api.request.pay
 {
 
-public class AlipayRefundRequest : AMSRequest<AlipayRefundResponse>
+    public class AlipayRefundRequest : AMSRequest<AlipayRefundResponse>
     {
 
         public AlipayRefundRequest() { }
 
-        
 
-        public AlipayRefundRequest( string metadata , CustomizedInfo customizedInfo , string captureId , RefundToBankInfo refundToBankInfo , string refundRequestId , string paymentId , string referenceRefundId , Amount refundAmount , string refundReason , string refundNotifyUrl , bool? isAsyncRefund , string extendInfo , List<RefundDetail> refundDetails , string refundSourceAccountNo , Amount actualRefundAmount , List<Goods> goods , List<SplitDetail> splitDetails)
+
+        public AlipayRefundRequest(string metadata, CustomizedInfo customizedInfo, string captureId, RefundToBankInfo refundToBankInfo, string refundRequestId, string paymentId, string referenceRefundId, Amount refundAmount, string refundReason, string refundNotifyUrl, bool? isAsyncRefund, string extendInfo, List<RefundDetail> refundDetails, string refundSourceAccountNo, Amount actualRefundAmount, List<Goods> goods, List<SplitDetail> splitDetails)
         {
             this.Metadata = metadata;
             this.CustomizedInfo = customizedInfo;
@@ -35,25 +35,25 @@ public class AlipayRefundRequest : AMSRequest<AlipayRefundResponse>
             this.SplitDetails = splitDetails;
         }
 
-            public string Metadata { get; set; }
-            public CustomizedInfo CustomizedInfo { get; set; }
-            public string CaptureId { get; set; }
-            public RefundToBankInfo RefundToBankInfo { get; set; }
-            public string RefundRequestId { get; set; }
-            public string PaymentId { get; set; }
-            public string ReferenceRefundId { get; set; }
-            public Amount RefundAmount { get; set; }
-            public string RefundReason { get; set; }
-            public string RefundNotifyUrl { get; set; }
-            public bool? IsAsyncRefund { get; set; }
-            public string ExtendInfo { get; set; }
-            public List<RefundDetail> RefundDetails { get; set; }
-            public string RefundSourceAccountNo { get; set; }
-            public Amount ActualRefundAmount { get; set; }
-            public List<Goods> Goods { get; set; }
-            public List<SplitDetail> SplitDetails { get; set; }
+        public string Metadata { get; set; }
+        public CustomizedInfo CustomizedInfo { get; set; }
+        public string CaptureId { get; set; }
+        public RefundToBankInfo RefundToBankInfo { get; set; }
+        public string RefundRequestId { get; set; }
+        public string PaymentId { get; set; }
+        public string ReferenceRefundId { get; set; }
+        public Amount RefundAmount { get; set; }
+        public string RefundReason { get; set; }
+        public string RefundNotifyUrl { get; set; }
+        public bool? IsAsyncRefund { get; set; }
+        public string ExtendInfo { get; set; }
+        public List<RefundDetail> RefundDetails { get; set; }
+        public string RefundSourceAccountNo { get; set; }
+        public Amount ActualRefundAmount { get; set; }
+        public List<Goods> Goods { get; set; }
+        public List<SplitDetail> SplitDetails { get; set; }
 
-        public override string GetRequestURI(){ return "/ams/api/v1/payments/refund"; } 
+        public override string GetRequestURI() { return "/ams/api/v1/payments/refund"; }
 
 
     }

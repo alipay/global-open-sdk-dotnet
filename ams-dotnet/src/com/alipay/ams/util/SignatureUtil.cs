@@ -24,7 +24,7 @@ namespace com.alipay.ams.util
         }
 
         public static bool verify(string requestURI, string clientId, string responseTime,
-                              string alipayPublicKey, string responseBody,string signatureToBeVerified)
+                              string alipayPublicKey, string responseBody, string signatureToBeVerified)
         {
 
             string content = string.Format("POST {0}\n{1}.{2}.{3}", requestURI, clientId, responseTime,

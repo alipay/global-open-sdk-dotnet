@@ -7,11 +7,15 @@ static class VaultingPaymentMethodModelTests
 {
     public static void Run()
     {
-        var detail = new VaultingRequestPaymentMethodDetail {
+        var detail = new VaultingRequestPaymentMethodDetail
+        {
             PaymentMethodType = "CARD",
-            PaymentMethodMetaData = new Dictionary<string, object> {
-                ["recurringType"] = "UNSCHEDULED", ["enabled"] = false,
-                ["count"] = 0, ["items"] = Array.Empty<string>()
+            PaymentMethodMetaData = new Dictionary<string, object>
+            {
+                ["recurringType"] = "UNSCHEDULED",
+                ["enabled"] = false,
+                ["count"] = 0,
+                ["items"] = Array.Empty<string>()
             }
         };
         var request = new AlipayVaultingPaymentMethodRequest { PaymentMethodDetail = detail };

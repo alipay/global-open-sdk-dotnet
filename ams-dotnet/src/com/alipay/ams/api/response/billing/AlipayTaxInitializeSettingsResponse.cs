@@ -1,18 +1,18 @@
 using com.alipay.ams.api.entities;
 using System;
 using System.Collections.Generic;
-    
+
 namespace com.alipay.ams.api.response.billing
 {
 
-public class AlipayTaxInitializeSettingsResponse : AMSResponse
+    public class AlipayTaxInitializeSettingsResponse : AMSResponse
     {
 
         public AlipayTaxInitializeSettingsResponse() { }
 
-        
 
-        public AlipayTaxInitializeSettingsResponse( Result result , string defaultTaxCode , string defaultTaxBehavior , TaxHeadOffice headOffice , string status)
+
+        public AlipayTaxInitializeSettingsResponse(Result result, string defaultTaxCode, string defaultTaxBehavior, TaxHeadOffice headOffice, string status)
         {
             this.Result = result;
             this.DefaultTaxCode = defaultTaxCode;
@@ -21,13 +21,13 @@ public class AlipayTaxInitializeSettingsResponse : AMSResponse
             this.Status = status;
         }
 
-            public Result Result { get; set; }
-            public string DefaultTaxCode { get; set; }
-            public string DefaultTaxBehavior { get; set; }
-            public TaxHeadOffice HeadOffice { get; set; }
-            public string Status { get; set; }
+        public Result Result { get; set; }
+        public string DefaultTaxCode { get; set; }
+        public string DefaultTaxBehavior { get; set; }
+        public TaxHeadOffice HeadOffice { get; set; }
+        public string Status { get; set; }
 
-        
+
 
     }
 

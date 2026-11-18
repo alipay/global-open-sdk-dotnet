@@ -2,7 +2,7 @@ using com.alipay.ams.api.response;
 
 namespace ams_dotnet.com.alipay.ams.api.response.risk;
 
-public class RiskDecideResponse:AMSResponse
+public class RiskDecideResponse : AMSResponse
 {
     /**
     * Ant Group's risk decisions. Valid values are as follows:

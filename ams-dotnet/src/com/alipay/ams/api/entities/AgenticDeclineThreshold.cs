@@ -1,26 +1,26 @@
 using System;
 using System.Collections.Generic;
-    
+
 namespace com.alipay.ams.api.entities
 {
 
-public class AgenticDeclineThreshold
+    public class AgenticDeclineThreshold
     {
 
         public AgenticDeclineThreshold() { }
 
-        
 
-        public AgenticDeclineThreshold( string currency , string value)
+
+        public AgenticDeclineThreshold(string currency, string value)
         {
             this.Currency = currency;
             this.Value = value;
         }
 
-            public string Currency { get; set; }
-            public string Value { get; set; }
+        public string Currency { get; set; }
+        public string Value { get; set; }
 
-        
+
 
     }
 

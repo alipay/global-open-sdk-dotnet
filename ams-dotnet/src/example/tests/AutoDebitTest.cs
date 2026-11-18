@@ -135,9 +135,9 @@ namespace ams_dotnet.example.tests
         {
             SandboxAlipayAuthConsultRequest sandboxAlipayAuthConsultRequest = new SandboxAlipayAuthConsultRequest();
             sandboxAlipayAuthConsultRequest.AuthClientId = "FOO";
-            sandboxAlipayAuthConsultRequest.AuthRedirectUrl= "https://www.yourRedirectUrl.com";
+            sandboxAlipayAuthConsultRequest.AuthRedirectUrl = "https://www.yourRedirectUrl.com";
             sandboxAlipayAuthConsultRequest.CustomerBelongsTo = CustomerBelongsTo.GCASH;
-            sandboxAlipayAuthConsultRequest.Scopes = new ScopeType[] { ScopeType.AGREEMENT_PAY};
+            sandboxAlipayAuthConsultRequest.Scopes = new ScopeType[] { ScopeType.AGREEMENT_PAY };
             sandboxAlipayAuthConsultRequest.AuthState = authState;
             sandboxAlipayAuthConsultRequest.TerminalType = TerminalType.APP;
             sandboxAlipayAuthConsultRequest.OsType = OsType.IOS;

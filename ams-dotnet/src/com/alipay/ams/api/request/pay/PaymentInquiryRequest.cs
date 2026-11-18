@@ -10,12 +10,12 @@ namespace com.alipay.ams.api.request
     public class PaymentInquiryRequest : AMSRequest<PaymentInquiryResponse>
     {
         public string PaymentRequestId { get; set; }
-        
+
         public string PaymentId { get; set; }
-        
+
         public string MerchantAccountId { get; set; }
-        
-        
+
+
 
         public override string GetRequestURI()
         {
@@ -24,7 +24,7 @@ namespace com.alipay.ams.api.request
 
         public override void validate()
         {
- 
+
         }
     }
 }

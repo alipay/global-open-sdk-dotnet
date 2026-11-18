@@ -1,11 +1,11 @@
 using System;
 using System.Collections.Generic;
-    
+
 namespace com.alipay.ams.api.entities
 {
 
-public enum FundsType
+    public enum FundsType
     {
-            COLLATERAL,
+        COLLATERAL,
     }
 }

@@ -3,18 +3,18 @@ using com.alipay.ams.api.request;
 using com.alipay.ams.api.entities;
 using System;
 using System.Collections.Generic;
-    
+
 namespace com.alipay.ams.api.request.billing
 {
 
-public class AlipayProductInquireListRequest : AMSRequest<AlipayProductInquireListResponse>
+    public class AlipayProductInquireListRequest : AMSRequest<AlipayProductInquireListResponse>
     {
 
         public AlipayProductInquireListRequest() { }
 
-        
 
-        public AlipayProductInquireListRequest( string startingAfter , string endingBefore , int? limit , bool? active , string type , string keyword , bool? includeTotal , string usageType)
+
+        public AlipayProductInquireListRequest(string startingAfter, string endingBefore, int? limit, bool? active, string type, string keyword, bool? includeTotal, string usageType)
         {
             this.StartingAfter = startingAfter;
             this.EndingBefore = endingBefore;
@@ -26,16 +26,16 @@ public class AlipayProductInquireListRequest : AMSRequest<AlipayProductInquireLi
             this.UsageType = usageType;
         }
 
-            public string StartingAfter { get; set; }
-            public string EndingBefore { get; set; }
-            public int? Limit { get; set; }
-            public bool? Active { get; set; }
-            public string Type { get; set; }
-            public string Keyword { get; set; }
-            public bool? IncludeTotal { get; set; }
-            public string UsageType { get; set; }
+        public string StartingAfter { get; set; }
+        public string EndingBefore { get; set; }
+        public int? Limit { get; set; }
+        public bool? Active { get; set; }
+        public string Type { get; set; }
+        public string Keyword { get; set; }
+        public bool? IncludeTotal { get; set; }
+        public string UsageType { get; set; }
 
-        public override string GetRequestURI(){ return "/ams/api/v1/billing/product/inquireList"; } 
+        public override string GetRequestURI() { return "/ams/api/v1/billing/product/inquireList"; }
 
 
     }

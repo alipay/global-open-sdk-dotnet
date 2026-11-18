@@ -17,21 +17,21 @@ namespace com.alipay.ams.api.request
             return JsonSerializer.Serialize(this, this.GetType(), JsonSerializerOptionsFactory.WriteNotIndented);
         }
 
-        public virtual void validate(){}
+        public virtual void validate() { }
 
         public Dictionary<string, string> BuildRequestHeader(string clientId, string agentToken, string privateKey)
         {
             var headers = new Dictionary<string, string>();
 
-            var requestTime = DateTime.UtcNow.ToString("o"); 
+            var requestTime = DateTime.UtcNow.ToString("o");
             headers.Add("client-id", clientId);
-            headers.Add("signature", "algorithm=RSA256,keyVersion=1,signature=" + SignatureUtil.sign(BuildRequestUrl(clientId,GetRequestURI()), clientId, requestTime, privateKey, BuildBody()));
+            headers.Add("signature", "algorithm=RSA256,keyVersion=1,signature=" + SignatureUtil.sign(BuildRequestUrl(clientId, GetRequestURI()), clientId, requestTime, privateKey, BuildBody()));
 
-            if(agentToken != null)
+            if (agentToken != null)
             {
                 headers.Add("Agent-Token", agentToken);
             }
-            
+
 
             headers.Add("request-time", requestTime);
             headers.Add("User-Agent", com.alipay.ams.api.SdkVersion.UserAgent);
@@ -40,7 +40,7 @@ namespace com.alipay.ams.api.request
             Dictionary<String, String> extraHeaders = GetExtraHeaders();
             if (extraHeaders != null)
             {
-                foreach(var extHeader in extraHeaders)
+                foreach (var extHeader in extraHeaders)
                 {
                     headers.Add(extHeader.Key, extHeader.Value);
                 }
@@ -49,7 +49,8 @@ namespace com.alipay.ams.api.request
             return headers;
         }
 
-        protected Dictionary<string, string> GetExtraHeaders() {
+        protected Dictionary<string, string> GetExtraHeaders()
+        {
             return null;
         }
 
@@ -58,8 +59,8 @@ namespace com.alipay.ams.api.request
         {
             return JsonSerializer.Serialize(this, this.GetType(), JsonSerializerOptionsFactory.WriteIndented);
         }
-        
-        public string BuildRequestUrl(string clientId,string originPath)
+
+        public string BuildRequestUrl(string clientId, string originPath)
         {
 
             if (clientId != null
@@ -74,5 +75,5 @@ namespace com.alipay.ams.api.request
 
     }
 
-    
+
 }

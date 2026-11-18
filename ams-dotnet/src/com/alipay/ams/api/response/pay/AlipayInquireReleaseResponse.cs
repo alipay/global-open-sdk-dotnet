@@ -1,18 +1,18 @@
 using com.alipay.ams.api.entities;
 using System;
 using System.Collections.Generic;
-    
+
 namespace com.alipay.ams.api.response.pay
 {
 
-public class AlipayInquireReleaseResponse : AMSResponse
+    public class AlipayInquireReleaseResponse : AMSResponse
     {
 
         public AlipayInquireReleaseResponse() { }
 
-        
 
-        public AlipayInquireReleaseResponse( Result result , string releaseRequestId , string releaseId , string holdId , Amount releaseAmount , string releaseStatus)
+
+        public AlipayInquireReleaseResponse(Result result, string releaseRequestId, string releaseId, string holdId, Amount releaseAmount, string releaseStatus)
         {
             this.Result = result;
             this.ReleaseRequestId = releaseRequestId;
@@ -22,14 +22,14 @@ public class AlipayInquireReleaseResponse : AMSResponse
             this.ReleaseStatus = releaseStatus;
         }
 
-            public Result Result { get; set; }
-            public string ReleaseRequestId { get; set; }
-            public string ReleaseId { get; set; }
-            public string HoldId { get; set; }
-            public Amount ReleaseAmount { get; set; }
-            public string ReleaseStatus { get; set; }
+        public Result Result { get; set; }
+        public string ReleaseRequestId { get; set; }
+        public string ReleaseId { get; set; }
+        public string HoldId { get; set; }
+        public Amount ReleaseAmount { get; set; }
+        public string ReleaseStatus { get; set; }
 
-        
+
 
     }
 

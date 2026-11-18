@@ -1,30 +1,31 @@
 using System;
 using System.Collections.Generic;
-    
+
 namespace com.alipay.ams.api.entities
 {
 
-public class Amount
+    public class Amount
     {
 
         public Amount() { }
 
-        public Amount(string currency, long amountInCents){ 
-    this.Currency = currency; 
-    this.Value = amountInCents.ToString(); 
-} 
+        public Amount(string currency, long amountInCents)
+        {
+            this.Currency = currency;
+            this.Value = amountInCents.ToString();
+        }
 
 
-        public Amount( string currency , string value)
+        public Amount(string currency, string value)
         {
             this.Currency = currency;
             this.Value = value;
         }
 
-            public string Currency { get; set; }
-            public string Value { get; set; }
+        public string Currency { get; set; }
+        public string Value { get; set; }
 
-        
+
 
     }
 

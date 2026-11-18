@@ -30,8 +30,8 @@ public class CustomsDemo
         userName.LastName = "lastName";
         userName.FullName = "fullName";
         certificate.HolderName = userName;
-        alipayCustomsDeclareRequest.BuyerCertificate =certificate;
-        
+        alipayCustomsDeclareRequest.BuyerCertificate = certificate;
+
         var response = client.Execute(alipayCustomsDeclareRequest);
 
         Console.WriteLine("\n============================================================\n");

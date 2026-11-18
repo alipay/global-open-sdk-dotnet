@@ -1,17 +1,17 @@
 using System;
 using System.Collections.Generic;
-    
+
 namespace com.alipay.ams.api.entities
 {
 
-public class Price
+    public class Price
     {
 
         public Price() { }
 
-        
 
-        public Price( string priceId , string productId , string name , string pricingModel , string usageType , bool? defaultPrice , string unitLabel , string meterId , Amount unitAmount , RecurringSettings recurring , bool? active , long? includedQuantity , string tiersMode , List<Tier> tiers , string metadata , string createdAt , string deactivatedAt , string updatedAt)
+
+        public Price(string priceId, string productId, string name, string pricingModel, string usageType, bool? defaultPrice, string unitLabel, string meterId, Amount unitAmount, RecurringSettings recurring, bool? active, long? includedQuantity, string tiersMode, List<Tier> tiers, string metadata, string createdAt, string deactivatedAt, string updatedAt)
         {
             this.PriceId = priceId;
             this.ProductId = productId;
@@ -33,26 +33,26 @@ public class Price
             this.UpdatedAt = updatedAt;
         }
 
-            public string PriceId { get; set; }
-            public string ProductId { get; set; }
-            public string Name { get; set; }
-            public string PricingModel { get; set; }
-            public string UsageType { get; set; }
-            public bool? DefaultPrice { get; set; }
-            public string UnitLabel { get; set; }
-            public string MeterId { get; set; }
-            public Amount UnitAmount { get; set; }
-            public RecurringSettings Recurring { get; set; }
-            public bool? Active { get; set; }
-            public long? IncludedQuantity { get; set; }
-            public string TiersMode { get; set; }
-            public List<Tier> Tiers { get; set; }
-            public string Metadata { get; set; }
-            public string CreatedAt { get; set; }
-            public string DeactivatedAt { get; set; }
-            public string UpdatedAt { get; set; }
+        public string PriceId { get; set; }
+        public string ProductId { get; set; }
+        public string Name { get; set; }
+        public string PricingModel { get; set; }
+        public string UsageType { get; set; }
+        public bool? DefaultPrice { get; set; }
+        public string UnitLabel { get; set; }
+        public string MeterId { get; set; }
+        public Amount UnitAmount { get; set; }
+        public RecurringSettings Recurring { get; set; }
+        public bool? Active { get; set; }
+        public long? IncludedQuantity { get; set; }
+        public string TiersMode { get; set; }
+        public List<Tier> Tiers { get; set; }
+        public string Metadata { get; set; }
+        public string CreatedAt { get; set; }
+        public string DeactivatedAt { get; set; }
+        public string UpdatedAt { get; set; }
 
-        
+
 
     }
 

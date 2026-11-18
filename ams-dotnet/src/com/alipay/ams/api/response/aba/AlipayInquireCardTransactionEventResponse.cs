@@ -1,18 +1,18 @@
 using com.alipay.ams.api.entities;
 using System;
 using System.Collections.Generic;
-    
+
 namespace com.alipay.ams.api.response.aba
 {
 
-public class AlipayInquireCardTransactionEventResponse : AMSResponse
+    public class AlipayInquireCardTransactionEventResponse : AMSResponse
     {
 
         public AlipayInquireCardTransactionEventResponse() { }
 
-        
 
-        public AlipayInquireCardTransactionEventResponse( Result result , List<CardTransactionEvent> events , int? totalCount , int? totalPageNumber , int? currentPageNumber)
+
+        public AlipayInquireCardTransactionEventResponse(Result result, List<CardTransactionEvent> events, int? totalCount, int? totalPageNumber, int? currentPageNumber)
         {
             this.Result = result;
             this.Events = events;
@@ -21,13 +21,13 @@ public class AlipayInquireCardTransactionEventResponse : AMSResponse
             this.CurrentPageNumber = currentPageNumber;
         }
 
-            public Result Result { get; set; }
-            public List<CardTransactionEvent> Events { get; set; }
-            public int? TotalCount { get; set; }
-            public int? TotalPageNumber { get; set; }
-            public int? CurrentPageNumber { get; set; }
+        public Result Result { get; set; }
+        public List<CardTransactionEvent> Events { get; set; }
+        public int? TotalCount { get; set; }
+        public int? TotalPageNumber { get; set; }
+        public int? CurrentPageNumber { get; set; }
 
-        
+
 
     }
 

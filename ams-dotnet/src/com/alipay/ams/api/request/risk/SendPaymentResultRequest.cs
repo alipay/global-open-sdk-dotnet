@@ -3,7 +3,7 @@ using com.alipay.ams.api.entities;
 
 namespace com.alipay.ams.api.request.risk;
 
-public class SendPaymentResultRequest:AMSRequest<SendPaymentResultResponse>
+public class SendPaymentResultRequest : AMSRequest<SendPaymentResultResponse>
 {
     /**
      * A unique ID assigned to a merchant who provides a service or product directly to a customer and is used to identify the transaction.
@@ -34,16 +34,16 @@ public class SendPaymentResultRequest:AMSRequest<SendPaymentResultResponse>
      * 支付方式提供商。
      */
     public string PaymentMethodProvider { get; set; }
-    
-    
+
+
     public override string GetRequestURI()
     {
-     return AntomPathConstants.RISK_SEND_PAYMENT_RESULT_PATH;
+        return AntomPathConstants.RISK_SEND_PAYMENT_RESULT_PATH;
     }
-    
+
     public override void validate()
     {
-           
+
     }
 
 }

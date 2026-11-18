@@ -1,17 +1,17 @@
 using System;
 using System.Collections.Generic;
-    
+
 namespace com.alipay.ams.api.entities
 {
 
-public enum TransactionType
+    public enum TransactionType
     {
-            PAYMENT,
-            REFUND,
-            CAPTURE,
-            CANCEL,
-            AUTHORIZATION,
-            VOID,
-            INCREMENTAL,
+        PAYMENT,
+        REFUND,
+        CAPTURE,
+        CANCEL,
+        AUTHORIZATION,
+        VOID,
+        INCREMENTAL,
     }
 }

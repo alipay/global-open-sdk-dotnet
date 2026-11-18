@@ -1,17 +1,17 @@
 using System;
 using System.Collections.Generic;
-    
+
 namespace com.alipay.ams.api.entities
 {
 
-public class Goods
+    public class Goods
     {
 
         public Goods() { }
 
-        
 
-        public Goods( string referenceGoodsId , string goodsName , string goodsCategory , string goodsBrand , Amount goodsUnitAmount , string goodsQuantity , string goodsSkuName , string goodsUrl , string deliveryMethodType , string goodsImageUrl , string priceId , Amount goodsDiscountAmount , string goodsEndsOnTime , Goods crossSell , string taxCode , string taxBehavior)
+
+        public Goods(string referenceGoodsId, string goodsName, string goodsCategory, string goodsBrand, Amount goodsUnitAmount, string goodsQuantity, string goodsSkuName, string goodsUrl, string deliveryMethodType, string goodsImageUrl, string priceId, Amount goodsDiscountAmount, string goodsEndsOnTime, Goods crossSell, string taxCode, string taxBehavior)
         {
             this.ReferenceGoodsId = referenceGoodsId;
             this.GoodsName = goodsName;
@@ -31,24 +31,24 @@ public class Goods
             this.TaxBehavior = taxBehavior;
         }
 
-            public string ReferenceGoodsId { get; set; }
-            public string GoodsName { get; set; }
-            public string GoodsCategory { get; set; }
-            public string GoodsBrand { get; set; }
-            public Amount GoodsUnitAmount { get; set; }
-            public string GoodsQuantity { get; set; }
-            public string GoodsSkuName { get; set; }
-            public string GoodsUrl { get; set; }
-            public string DeliveryMethodType { get; set; }
-            public string GoodsImageUrl { get; set; }
-            public string PriceId { get; set; }
-            public Amount GoodsDiscountAmount { get; set; }
-            public string GoodsEndsOnTime { get; set; }
-            public Goods CrossSell { get; set; }
-            public string TaxCode { get; set; }
-            public string TaxBehavior { get; set; }
+        public string ReferenceGoodsId { get; set; }
+        public string GoodsName { get; set; }
+        public string GoodsCategory { get; set; }
+        public string GoodsBrand { get; set; }
+        public Amount GoodsUnitAmount { get; set; }
+        public string GoodsQuantity { get; set; }
+        public string GoodsSkuName { get; set; }
+        public string GoodsUrl { get; set; }
+        public string DeliveryMethodType { get; set; }
+        public string GoodsImageUrl { get; set; }
+        public string PriceId { get; set; }
+        public Amount GoodsDiscountAmount { get; set; }
+        public string GoodsEndsOnTime { get; set; }
+        public Goods CrossSell { get; set; }
+        public string TaxCode { get; set; }
+        public string TaxBehavior { get; set; }
 
-        
+
 
     }
 

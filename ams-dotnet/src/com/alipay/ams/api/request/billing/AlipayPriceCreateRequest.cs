@@ -3,18 +3,18 @@ using com.alipay.ams.api.request;
 using com.alipay.ams.api.entities;
 using System;
 using System.Collections.Generic;
-    
+
 namespace com.alipay.ams.api.request.billing
 {
 
-public class AlipayPriceCreateRequest : AMSRequest<AlipayPriceCreateResponse>
+    public class AlipayPriceCreateRequest : AMSRequest<AlipayPriceCreateResponse>
     {
 
         public AlipayPriceCreateRequest() { }
 
-        
 
-        public AlipayPriceCreateRequest( string priceRequestId , string productId , string name , string pricingModel , string usageType , Amount unitAmount , string unitLabel , string meterId , RecurringSettings recurring , long? includedQuantity , string tiersMode , List<Tier> tiers , string metadata , bool? defaultPrice)
+
+        public AlipayPriceCreateRequest(string priceRequestId, string productId, string name, string pricingModel, string usageType, Amount unitAmount, string unitLabel, string meterId, RecurringSettings recurring, long? includedQuantity, string tiersMode, List<Tier> tiers, string metadata, bool? defaultPrice)
         {
             this.PriceRequestId = priceRequestId;
             this.ProductId = productId;
@@ -32,22 +32,22 @@ public class AlipayPriceCreateRequest : AMSRequest<AlipayPriceCreateResponse>
             this.DefaultPrice = defaultPrice;
         }
 
-            public string PriceRequestId { get; set; }
-            public string ProductId { get; set; }
-            public string Name { get; set; }
-            public string PricingModel { get; set; }
-            public string UsageType { get; set; }
-            public Amount UnitAmount { get; set; }
-            public string UnitLabel { get; set; }
-            public string MeterId { get; set; }
-            public RecurringSettings Recurring { get; set; }
-            public long? IncludedQuantity { get; set; }
-            public string TiersMode { get; set; }
-            public List<Tier> Tiers { get; set; }
-            public string Metadata { get; set; }
-            public bool? DefaultPrice { get; set; }
+        public string PriceRequestId { get; set; }
+        public string ProductId { get; set; }
+        public string Name { get; set; }
+        public string PricingModel { get; set; }
+        public string UsageType { get; set; }
+        public Amount UnitAmount { get; set; }
+        public string UnitLabel { get; set; }
+        public string MeterId { get; set; }
+        public RecurringSettings Recurring { get; set; }
+        public long? IncludedQuantity { get; set; }
+        public string TiersMode { get; set; }
+        public List<Tier> Tiers { get; set; }
+        public string Metadata { get; set; }
+        public bool? DefaultPrice { get; set; }
 
-        public override string GetRequestURI(){ return "/ams/api/v1/billing/price/create"; } 
+        public override string GetRequestURI() { return "/ams/api/v1/billing/price/create"; }
 
 
     }

@@ -1,18 +1,18 @@
 using com.alipay.ams.api.entities;
 using System;
 using System.Collections.Generic;
-    
+
 namespace com.alipay.ams.api.response.pay
 {
 
-public class AlipayCaptureResponse : AMSResponse
+    public class AlipayCaptureResponse : AMSResponse
     {
 
         public AlipayCaptureResponse() { }
 
-        
 
-        public AlipayCaptureResponse( Result result , string captureRequestId , string captureId , string paymentId , Amount captureAmount , string captureTime , string acquirerReferenceNo , AcquirerInfo acquirerInfo)
+
+        public AlipayCaptureResponse(Result result, string captureRequestId, string captureId, string paymentId, Amount captureAmount, string captureTime, string acquirerReferenceNo, AcquirerInfo acquirerInfo)
         {
             this.Result = result;
             this.CaptureRequestId = captureRequestId;
@@ -24,16 +24,16 @@ public class AlipayCaptureResponse : AMSResponse
             this.AcquirerInfo = acquirerInfo;
         }
 
-            public Result Result { get; set; }
-            public string CaptureRequestId { get; set; }
-            public string CaptureId { get; set; }
-            public string PaymentId { get; set; }
-            public Amount CaptureAmount { get; set; }
-            public string CaptureTime { get; set; }
-            public string AcquirerReferenceNo { get; set; }
-            public AcquirerInfo AcquirerInfo { get; set; }
+        public Result Result { get; set; }
+        public string CaptureRequestId { get; set; }
+        public string CaptureId { get; set; }
+        public string PaymentId { get; set; }
+        public Amount CaptureAmount { get; set; }
+        public string CaptureTime { get; set; }
+        public string AcquirerReferenceNo { get; set; }
+        public AcquirerInfo AcquirerInfo { get; set; }
 
-        
+
 
     }
 

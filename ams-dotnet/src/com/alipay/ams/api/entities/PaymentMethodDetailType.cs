@@ -1,14 +1,14 @@
 using System;
 using System.Collections.Generic;
-    
+
 namespace com.alipay.ams.api.entities
 {
 
-public enum PaymentMethodDetailType
+    public enum PaymentMethodDetailType
     {
-            CARD,
-            EXTERNALACCOUNT,
-            COUPON,
-            DISCOUNT,
+        CARD,
+        EXTERNALACCOUNT,
+        COUPON,
+        DISCOUNT,
     }
 }

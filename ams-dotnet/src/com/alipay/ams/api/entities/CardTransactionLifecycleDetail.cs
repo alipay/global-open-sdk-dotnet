@@ -1,17 +1,17 @@
 using System;
 using System.Collections.Generic;
-    
+
 namespace com.alipay.ams.api.entities
 {
 
-public class CardTransactionLifecycleDetail
+    public class CardTransactionLifecycleDetail
     {
 
         public CardTransactionLifecycleDetail() { }
 
-        
 
-        public CardTransactionLifecycleDetail( string lifecycleId , string latestEventType , string latestEventStatus , string lastUpdateTime , string transactionTime , Amount totalBillingAmount , Amount totalAuthAmount , Amount totalCancelAmount , Amount totalRefundAmount , Amount totalChargebackAmount , string assetId , string cardProduct , string maskedCardNo , List<CardTransactionEvent> events)
+
+        public CardTransactionLifecycleDetail(string lifecycleId, string latestEventType, string latestEventStatus, string lastUpdateTime, string transactionTime, Amount totalBillingAmount, Amount totalAuthAmount, Amount totalCancelAmount, Amount totalRefundAmount, Amount totalChargebackAmount, string assetId, string cardProduct, string maskedCardNo, List<CardTransactionEvent> events)
         {
             this.LifecycleId = lifecycleId;
             this.LatestEventType = latestEventType;
@@ -29,22 +29,22 @@ public class CardTransactionLifecycleDetail
             this.Events = events;
         }
 
-            public string LifecycleId { get; set; }
-            public string LatestEventType { get; set; }
-            public string LatestEventStatus { get; set; }
-            public string LastUpdateTime { get; set; }
-            public string TransactionTime { get; set; }
-            public Amount TotalBillingAmount { get; set; }
-            public Amount TotalAuthAmount { get; set; }
-            public Amount TotalCancelAmount { get; set; }
-            public Amount TotalRefundAmount { get; set; }
-            public Amount TotalChargebackAmount { get; set; }
-            public string AssetId { get; set; }
-            public string CardProduct { get; set; }
-            public string MaskedCardNo { get; set; }
-            public List<CardTransactionEvent> Events { get; set; }
+        public string LifecycleId { get; set; }
+        public string LatestEventType { get; set; }
+        public string LatestEventStatus { get; set; }
+        public string LastUpdateTime { get; set; }
+        public string TransactionTime { get; set; }
+        public Amount TotalBillingAmount { get; set; }
+        public Amount TotalAuthAmount { get; set; }
+        public Amount TotalCancelAmount { get; set; }
+        public Amount TotalRefundAmount { get; set; }
+        public Amount TotalChargebackAmount { get; set; }
+        public string AssetId { get; set; }
+        public string CardProduct { get; set; }
+        public string MaskedCardNo { get; set; }
+        public List<CardTransactionEvent> Events { get; set; }
 
-        
+
 
     }
 

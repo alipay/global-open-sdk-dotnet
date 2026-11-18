@@ -1,17 +1,17 @@
 using System;
 using System.Collections.Generic;
-    
+
 namespace com.alipay.ams.api.entities
 {
 
-public class TaxBreakdown
+    public class TaxBreakdown
     {
 
         public TaxBreakdown() { }
 
-        
 
-        public TaxBreakdown( string taxType , string taxRate , Amount taxAmount , Amount taxableAmount , string taxabilityReason , bool? inclusive)
+
+        public TaxBreakdown(string taxType, string taxRate, Amount taxAmount, Amount taxableAmount, string taxabilityReason, bool? inclusive)
         {
             this.TaxType = taxType;
             this.TaxRate = taxRate;
@@ -21,14 +21,14 @@ public class TaxBreakdown
             this.Inclusive = inclusive;
         }
 
-            public string TaxType { get; set; }
-            public string TaxRate { get; set; }
-            public Amount TaxAmount { get; set; }
-            public Amount TaxableAmount { get; set; }
-            public string TaxabilityReason { get; set; }
-            public bool? Inclusive { get; set; }
+        public string TaxType { get; set; }
+        public string TaxRate { get; set; }
+        public Amount TaxAmount { get; set; }
+        public Amount TaxableAmount { get; set; }
+        public string TaxabilityReason { get; set; }
+        public bool? Inclusive { get; set; }
 
-        
+
 
     }
 

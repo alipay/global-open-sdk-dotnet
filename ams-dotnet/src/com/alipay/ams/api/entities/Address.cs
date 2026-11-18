@@ -1,17 +1,17 @@
 using System;
 using System.Collections.Generic;
-    
+
 namespace com.alipay.ams.api.entities
 {
 
-public class Address
+    public class Address
     {
 
         public Address() { }
 
-        
 
-        public Address( string country , string region , string state , string city , string address1 , string address2 , string zipCode , string label , string address3)
+
+        public Address(string country, string region, string state, string city, string address1, string address2, string zipCode, string label, string address3)
         {
             this.Country = country;
             this.Region = region;
@@ -24,17 +24,17 @@ public class Address
             this.Address3 = address3;
         }
 
-            public string Country { get; set; }
-            public string Region { get; set; }
-            public string State { get; set; }
-            public string City { get; set; }
-            public string Address1 { get; set; }
-            public string Address2 { get; set; }
-            public string ZipCode { get; set; }
-            public string Label { get; set; }
-            public string Address3 { get; set; }
+        public string Country { get; set; }
+        public string Region { get; set; }
+        public string State { get; set; }
+        public string City { get; set; }
+        public string Address1 { get; set; }
+        public string Address2 { get; set; }
+        public string ZipCode { get; set; }
+        public string Label { get; set; }
+        public string Address3 { get; set; }
 
-        
+
 
     }
 

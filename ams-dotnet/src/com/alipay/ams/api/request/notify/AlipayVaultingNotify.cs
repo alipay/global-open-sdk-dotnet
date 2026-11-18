@@ -2,7 +2,7 @@ using com.alipay.ams.api.entities;
 
 namespace com.alipay.ams.api.request.notify;
 
-public class AlipayVaultingNotify:AlipayNotify
+public class AlipayVaultingNotify : AlipayNotify
 {
     /**
      * The unique ID that is assigned by a merchant to identify a card vaulting request.
@@ -17,6 +17,6 @@ public class AlipayVaultingNotify:AlipayNotify
     public string VaultingCreateTime { get; set; }
 
     public AcquirerInfo AcquirerInfo { get; set; }
-    
+
     public string Metadata { get; set; }
 }

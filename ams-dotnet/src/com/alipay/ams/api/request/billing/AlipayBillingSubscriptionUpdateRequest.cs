@@ -3,18 +3,18 @@ using com.alipay.ams.api.request;
 using com.alipay.ams.api.entities;
 using System;
 using System.Collections.Generic;
-    
+
 namespace com.alipay.ams.api.request.billing
 {
 
-public class AlipayBillingSubscriptionUpdateRequest : AMSRequest<AlipayBillingSubscriptionUpdateResponse>
+    public class AlipayBillingSubscriptionUpdateRequest : AMSRequest<AlipayBillingSubscriptionUpdateResponse>
     {
 
         public AlipayBillingSubscriptionUpdateRequest() { }
 
-        
 
-        public AlipayBillingSubscriptionUpdateRequest( string subscriptionId , List<PriceItemChange> priceItemChanges , string prorationBehavior , bool? resetBillingCycleAnchor , BillingTrialSettings trialSettings , BillingSubscriptionStatusChange statusChange , bool? cancelAtPeriodEnd , string cancelAt , BillingSubscriptionCancellationDetails cancellationDetails , string collectionMethod , int? daysUntilDue , string description , string metadata)
+
+        public AlipayBillingSubscriptionUpdateRequest(string subscriptionId, List<PriceItemChange> priceItemChanges, string prorationBehavior, bool? resetBillingCycleAnchor, BillingTrialSettings trialSettings, BillingSubscriptionStatusChange statusChange, bool? cancelAtPeriodEnd, string cancelAt, BillingSubscriptionCancellationDetails cancellationDetails, string collectionMethod, int? daysUntilDue, string description, string metadata)
         {
             this.SubscriptionId = subscriptionId;
             this.PriceItemChanges = priceItemChanges;
@@ -31,21 +31,21 @@ public class AlipayBillingSubscriptionUpdateRequest : AMSRequest<AlipayBillingSu
             this.Metadata = metadata;
         }
 
-            public string SubscriptionId { get; set; }
-            public List<PriceItemChange> PriceItemChanges { get; set; }
-            public string ProrationBehavior { get; set; }
-            public bool? ResetBillingCycleAnchor { get; set; }
-            public BillingTrialSettings TrialSettings { get; set; }
-            public BillingSubscriptionStatusChange StatusChange { get; set; }
-            public bool? CancelAtPeriodEnd { get; set; }
-            public string CancelAt { get; set; }
-            public BillingSubscriptionCancellationDetails CancellationDetails { get; set; }
-            public string CollectionMethod { get; set; }
-            public int? DaysUntilDue { get; set; }
-            public string Description { get; set; }
-            public string Metadata { get; set; }
+        public string SubscriptionId { get; set; }
+        public List<PriceItemChange> PriceItemChanges { get; set; }
+        public string ProrationBehavior { get; set; }
+        public bool? ResetBillingCycleAnchor { get; set; }
+        public BillingTrialSettings TrialSettings { get; set; }
+        public BillingSubscriptionStatusChange StatusChange { get; set; }
+        public bool? CancelAtPeriodEnd { get; set; }
+        public string CancelAt { get; set; }
+        public BillingSubscriptionCancellationDetails CancellationDetails { get; set; }
+        public string CollectionMethod { get; set; }
+        public int? DaysUntilDue { get; set; }
+        public string Description { get; set; }
+        public string Metadata { get; set; }
 
-        public override string GetRequestURI(){ return "/ams/api/v1/billing/subscription/update"; } 
+        public override string GetRequestURI() { return "/ams/api/v1/billing/subscription/update"; }
 
 
     }

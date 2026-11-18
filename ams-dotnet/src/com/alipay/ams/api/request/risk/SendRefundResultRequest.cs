@@ -4,7 +4,7 @@ using com.alipay.ams.api.entities;
 
 namespace com.alipay.ams.api.request.risk;
 
-public class SendRefundResultRequest:AMSRequest<SendRefundResultResponse>
+public class SendRefundResultRequest : AMSRequest<SendRefundResultResponse>
 {
     /**
     * A unique ID assigned to a merchant who provides a service or product directly to a customer and is used to identify the transaction.
@@ -26,15 +26,15 @@ public class SendRefundResultRequest:AMSRequest<SendRefundResultResponse>
      * 本次交易的退款记录。
      */
     public RefundRecord RefundRecords { get; set; }
-    
-    
+
+
     public override string GetRequestURI()
     {
-     return AntomPathConstants.RISK_SEND_REFUND_RESULT_PATH;
+        return AntomPathConstants.RISK_SEND_REFUND_RESULT_PATH;
     }
-    
+
     public override void validate()
     {
-           
+
     }
 }

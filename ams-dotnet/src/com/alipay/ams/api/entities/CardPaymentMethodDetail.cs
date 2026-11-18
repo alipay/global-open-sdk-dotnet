@@ -1,17 +1,17 @@
 using System;
 using System.Collections.Generic;
-    
+
 namespace com.alipay.ams.api.entities
 {
 
-public class CardPaymentMethodDetail
+    public class CardPaymentMethodDetail
     {
 
         public CardPaymentMethodDetail() { }
 
-        
 
-        public CardPaymentMethodDetail( List<string> supportedBrands , string cardToken , string cardNo , CardBrand brand , CardBrand selectedCardBrand , string cardIssuer , string countryIssue , UserName instUserName , string expiryYear , string expiryMonth , Address billingAddress , string mask , string last4 , string paymentMethodDetailMetadata , string maskedCardNo , string fingerprint , string authenticationFlow , string funding , string avsResultRaw , string cvvResultRaw , string bin , string issuerName , string issuingCountry , string lastFour , UserName cardholderName , string cvv , string dateOfBirth , string businessNo , string cardPasswordDigest , string cpf , string payerEmail , string networkTransactionId , bool? is3DSAuthentication , string request3DS , string scaExemptionIndicator , string enableAuthenticationUpgrade , MpiData mpiData)
+
+        public CardPaymentMethodDetail(List<string> supportedBrands, string cardToken, string cardNo, CardBrand brand, CardBrand selectedCardBrand, string cardIssuer, string countryIssue, UserName instUserName, string expiryYear, string expiryMonth, Address billingAddress, string mask, string last4, string paymentMethodDetailMetadata, string maskedCardNo, string fingerprint, string authenticationFlow, string funding, string avsResultRaw, string cvvResultRaw, string bin, string issuerName, string issuingCountry, string lastFour, UserName cardholderName, string cvv, string dateOfBirth, string businessNo, string cardPasswordDigest, string cpf, string payerEmail, string networkTransactionId, bool? is3DSAuthentication, string request3DS, string scaExemptionIndicator, string enableAuthenticationUpgrade, MpiData mpiData)
         {
             this.SupportedBrands = supportedBrands;
             this.CardToken = cardToken;
@@ -52,45 +52,45 @@ public class CardPaymentMethodDetail
             this.MpiData = mpiData;
         }
 
-            public List<string> SupportedBrands { get; set; }
-            public string CardToken { get; set; }
-            public string CardNo { get; set; }
-            public CardBrand Brand { get; set; }
-            public CardBrand SelectedCardBrand { get; set; }
-            public string CardIssuer { get; set; }
-            public string CountryIssue { get; set; }
-            public UserName InstUserName { get; set; }
-            public string ExpiryYear { get; set; }
-            public string ExpiryMonth { get; set; }
-            public Address BillingAddress { get; set; }
-            public string Mask { get; set; }
-            public string Last4 { get; set; }
-            public string PaymentMethodDetailMetadata { get; set; }
-            public string MaskedCardNo { get; set; }
-            public string Fingerprint { get; set; }
-            public string AuthenticationFlow { get; set; }
-            public string Funding { get; set; }
-            public string AvsResultRaw { get; set; }
-            public string CvvResultRaw { get; set; }
-            public string Bin { get; set; }
-            public string IssuerName { get; set; }
-            public string IssuingCountry { get; set; }
-            public string LastFour { get; set; }
-            public UserName CardholderName { get; set; }
-            public string Cvv { get; set; }
-            public string DateOfBirth { get; set; }
-            public string BusinessNo { get; set; }
-            public string CardPasswordDigest { get; set; }
-            public string Cpf { get; set; }
-            public string PayerEmail { get; set; }
-            public string NetworkTransactionId { get; set; }
-            public bool? Is3DSAuthentication { get; set; }
-            public string Request3DS { get; set; }
-            public string ScaExemptionIndicator { get; set; }
-            public string EnableAuthenticationUpgrade { get; set; }
-            public MpiData MpiData { get; set; }
+        public List<string> SupportedBrands { get; set; }
+        public string CardToken { get; set; }
+        public string CardNo { get; set; }
+        public CardBrand Brand { get; set; }
+        public CardBrand SelectedCardBrand { get; set; }
+        public string CardIssuer { get; set; }
+        public string CountryIssue { get; set; }
+        public UserName InstUserName { get; set; }
+        public string ExpiryYear { get; set; }
+        public string ExpiryMonth { get; set; }
+        public Address BillingAddress { get; set; }
+        public string Mask { get; set; }
+        public string Last4 { get; set; }
+        public string PaymentMethodDetailMetadata { get; set; }
+        public string MaskedCardNo { get; set; }
+        public string Fingerprint { get; set; }
+        public string AuthenticationFlow { get; set; }
+        public string Funding { get; set; }
+        public string AvsResultRaw { get; set; }
+        public string CvvResultRaw { get; set; }
+        public string Bin { get; set; }
+        public string IssuerName { get; set; }
+        public string IssuingCountry { get; set; }
+        public string LastFour { get; set; }
+        public UserName CardholderName { get; set; }
+        public string Cvv { get; set; }
+        public string DateOfBirth { get; set; }
+        public string BusinessNo { get; set; }
+        public string CardPasswordDigest { get; set; }
+        public string Cpf { get; set; }
+        public string PayerEmail { get; set; }
+        public string NetworkTransactionId { get; set; }
+        public bool? Is3DSAuthentication { get; set; }
+        public string Request3DS { get; set; }
+        public string ScaExemptionIndicator { get; set; }
+        public string EnableAuthenticationUpgrade { get; set; }
+        public MpiData MpiData { get; set; }
 
-        
+
 
     }
 

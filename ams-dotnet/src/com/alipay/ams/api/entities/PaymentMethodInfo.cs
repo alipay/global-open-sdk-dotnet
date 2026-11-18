@@ -1,17 +1,17 @@
 using System;
 using System.Collections.Generic;
-    
+
 namespace com.alipay.ams.api.entities
 {
 
-public class PaymentMethodInfo
+    public class PaymentMethodInfo
     {
 
         public PaymentMethodInfo() { }
 
-        
 
-        public PaymentMethodInfo( string paymentMethodType , string paymentMethodDetail , bool? enabled , bool? preferred , string extendInfo)
+
+        public PaymentMethodInfo(string paymentMethodType, string paymentMethodDetail, bool? enabled, bool? preferred, string extendInfo)
         {
             this.PaymentMethodType = paymentMethodType;
             this.PaymentMethodDetail = paymentMethodDetail;
@@ -20,13 +20,13 @@ public class PaymentMethodInfo
             this.ExtendInfo = extendInfo;
         }
 
-            public string PaymentMethodType { get; set; }
-            public string PaymentMethodDetail { get; set; }
-            public bool? Enabled { get; set; }
-            public bool? Preferred { get; set; }
-            public string ExtendInfo { get; set; }
+        public string PaymentMethodType { get; set; }
+        public string PaymentMethodDetail { get; set; }
+        public bool? Enabled { get; set; }
+        public bool? Preferred { get; set; }
+        public string ExtendInfo { get; set; }
 
-        
+
 
     }
 

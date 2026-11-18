@@ -1,12 +1,12 @@
 using System;
 using System.Collections.Generic;
-    
+
 namespace com.alipay.ams.api.entities
 {
 
-public enum RuleStatus
+    public enum RuleStatus
     {
-            ACTIVE,
-            DISABLED,
+        ACTIVE,
+        DISABLED,
     }
 }

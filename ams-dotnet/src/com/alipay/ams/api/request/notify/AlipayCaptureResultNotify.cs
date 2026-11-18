@@ -2,7 +2,7 @@ using com.alipay.ams.api.entities;
 
 namespace com.alipay.ams.api.request.notify;
 
-public class AlipayCaptureResultNotify:AlipayNotify
+public class AlipayCaptureResultNotify : AlipayNotify
 {
     /**
     * The unique ID that is assigned by the merchant to identify a capture request

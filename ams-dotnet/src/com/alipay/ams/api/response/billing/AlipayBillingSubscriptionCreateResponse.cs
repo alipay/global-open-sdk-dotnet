@@ -1,18 +1,18 @@
 using com.alipay.ams.api.entities;
 using System;
 using System.Collections.Generic;
-    
+
 namespace com.alipay.ams.api.response.billing
 {
 
-public class AlipayBillingSubscriptionCreateResponse : AMSResponse
+    public class AlipayBillingSubscriptionCreateResponse : AMSResponse
     {
 
         public AlipayBillingSubscriptionCreateResponse() { }
 
-        
 
-        public AlipayBillingSubscriptionCreateResponse( Result result , string subscriptionRequestId , string subscriptionId , string customerId , string invoiceId , string status , string currentPeriodStart , string currentPeriodEnd , string billingCycleAnchor , string trialStart , string trialEnd , string cancelAt , string description , string collectionMethod , int? daysUntilDue , List<SubscriptionItem> subscriptionItems , List<BillingDiscount> discounts , string subscriptionNotifyUrl)
+
+        public AlipayBillingSubscriptionCreateResponse(Result result, string subscriptionRequestId, string subscriptionId, string customerId, string invoiceId, string status, string currentPeriodStart, string currentPeriodEnd, string billingCycleAnchor, string trialStart, string trialEnd, string cancelAt, string description, string collectionMethod, int? daysUntilDue, List<SubscriptionItem> subscriptionItems, List<BillingDiscount> discounts, string subscriptionNotifyUrl)
         {
             this.Result = result;
             this.SubscriptionRequestId = subscriptionRequestId;
@@ -34,26 +34,26 @@ public class AlipayBillingSubscriptionCreateResponse : AMSResponse
             this.SubscriptionNotifyUrl = subscriptionNotifyUrl;
         }
 
-            public Result Result { get; set; }
-            public string SubscriptionRequestId { get; set; }
-            public string SubscriptionId { get; set; }
-            public string CustomerId { get; set; }
-            public string InvoiceId { get; set; }
-            public string Status { get; set; }
-            public string CurrentPeriodStart { get; set; }
-            public string CurrentPeriodEnd { get; set; }
-            public string BillingCycleAnchor { get; set; }
-            public string TrialStart { get; set; }
-            public string TrialEnd { get; set; }
-            public string CancelAt { get; set; }
-            public string Description { get; set; }
-            public string CollectionMethod { get; set; }
-            public int? DaysUntilDue { get; set; }
-            public List<SubscriptionItem> SubscriptionItems { get; set; }
-            public List<BillingDiscount> Discounts { get; set; }
-            public string SubscriptionNotifyUrl { get; set; }
+        public Result Result { get; set; }
+        public string SubscriptionRequestId { get; set; }
+        public string SubscriptionId { get; set; }
+        public string CustomerId { get; set; }
+        public string InvoiceId { get; set; }
+        public string Status { get; set; }
+        public string CurrentPeriodStart { get; set; }
+        public string CurrentPeriodEnd { get; set; }
+        public string BillingCycleAnchor { get; set; }
+        public string TrialStart { get; set; }
+        public string TrialEnd { get; set; }
+        public string CancelAt { get; set; }
+        public string Description { get; set; }
+        public string CollectionMethod { get; set; }
+        public int? DaysUntilDue { get; set; }
+        public List<SubscriptionItem> SubscriptionItems { get; set; }
+        public List<BillingDiscount> Discounts { get; set; }
+        public string SubscriptionNotifyUrl { get; set; }
 
-        
+
 
     }
 

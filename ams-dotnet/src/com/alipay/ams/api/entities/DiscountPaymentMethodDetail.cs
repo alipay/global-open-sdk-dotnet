@@ -1,17 +1,17 @@
 using System;
 using System.Collections.Generic;
-    
+
 namespace com.alipay.ams.api.entities
 {
 
-public class DiscountPaymentMethodDetail
+    public class DiscountPaymentMethodDetail
     {
 
         public DiscountPaymentMethodDetail() { }
 
-        
 
-        public DiscountPaymentMethodDetail( string discountId , Amount availableAmount , string discountName , string discountDescription , string paymentMethodDetailMetadata)
+
+        public DiscountPaymentMethodDetail(string discountId, Amount availableAmount, string discountName, string discountDescription, string paymentMethodDetailMetadata)
         {
             this.DiscountId = discountId;
             this.AvailableAmount = availableAmount;
@@ -20,13 +20,13 @@ public class DiscountPaymentMethodDetail
             this.PaymentMethodDetailMetadata = paymentMethodDetailMetadata;
         }
 
-            public string DiscountId { get; set; }
-            public Amount AvailableAmount { get; set; }
-            public string DiscountName { get; set; }
-            public string DiscountDescription { get; set; }
-            public string PaymentMethodDetailMetadata { get; set; }
+        public string DiscountId { get; set; }
+        public Amount AvailableAmount { get; set; }
+        public string DiscountName { get; set; }
+        public string DiscountDescription { get; set; }
+        public string PaymentMethodDetailMetadata { get; set; }
 
-        
+
 
     }
 

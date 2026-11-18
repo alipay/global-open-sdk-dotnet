@@ -3,18 +3,18 @@ using com.alipay.ams.api.request;
 using com.alipay.ams.api.entities;
 using System;
 using System.Collections.Generic;
-    
+
 namespace com.alipay.ams.api.request.billing
 {
 
-public class AlipayCustomerCreateRequest : AMSRequest<AlipayCustomerCreateResponse>
+    public class AlipayCustomerCreateRequest : AMSRequest<AlipayCustomerCreateResponse>
     {
 
         public AlipayCustomerCreateRequest() { }
 
-        
 
-        public AlipayCustomerCreateRequest( string customerRequestId , string referenceCustomerId , string alipayUserId , string email , string firstName , string lastName , string country , string state , string city , string address , string addressDetail , string zipcode , string shippingCountry , string shippingState , string shippingCity , string shippingAddress , string shippingAddressDetail , string shippingZipcode , string description , string currency , List<string> preferredLocales , string defaultPaymentMethod , string metadata , string billingEmail , string shippingFirstName , string shippingLastName)
+
+        public AlipayCustomerCreateRequest(string customerRequestId, string referenceCustomerId, string alipayUserId, string email, string firstName, string lastName, string country, string state, string city, string address, string addressDetail, string zipcode, string shippingCountry, string shippingState, string shippingCity, string shippingAddress, string shippingAddressDetail, string shippingZipcode, string description, string currency, List<string> preferredLocales, string defaultPaymentMethod, string metadata, string billingEmail, string shippingFirstName, string shippingLastName)
         {
             this.CustomerRequestId = customerRequestId;
             this.ReferenceCustomerId = referenceCustomerId;
@@ -44,34 +44,34 @@ public class AlipayCustomerCreateRequest : AMSRequest<AlipayCustomerCreateRespon
             this.ShippingLastName = shippingLastName;
         }
 
-            public string CustomerRequestId { get; set; }
-            public string ReferenceCustomerId { get; set; }
-            public string AlipayUserId { get; set; }
-            public string Email { get; set; }
-            public string FirstName { get; set; }
-            public string LastName { get; set; }
-            public string Country { get; set; }
-            public string State { get; set; }
-            public string City { get; set; }
-            public string Address { get; set; }
-            public string AddressDetail { get; set; }
-            public string Zipcode { get; set; }
-            public string ShippingCountry { get; set; }
-            public string ShippingState { get; set; }
-            public string ShippingCity { get; set; }
-            public string ShippingAddress { get; set; }
-            public string ShippingAddressDetail { get; set; }
-            public string ShippingZipcode { get; set; }
-            public string Description { get; set; }
-            public string Currency { get; set; }
-            public List<string> PreferredLocales { get; set; }
-            public string DefaultPaymentMethod { get; set; }
-            public string Metadata { get; set; }
-            public string BillingEmail { get; set; }
-            public string ShippingFirstName { get; set; }
-            public string ShippingLastName { get; set; }
+        public string CustomerRequestId { get; set; }
+        public string ReferenceCustomerId { get; set; }
+        public string AlipayUserId { get; set; }
+        public string Email { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Country { get; set; }
+        public string State { get; set; }
+        public string City { get; set; }
+        public string Address { get; set; }
+        public string AddressDetail { get; set; }
+        public string Zipcode { get; set; }
+        public string ShippingCountry { get; set; }
+        public string ShippingState { get; set; }
+        public string ShippingCity { get; set; }
+        public string ShippingAddress { get; set; }
+        public string ShippingAddressDetail { get; set; }
+        public string ShippingZipcode { get; set; }
+        public string Description { get; set; }
+        public string Currency { get; set; }
+        public List<string> PreferredLocales { get; set; }
+        public string DefaultPaymentMethod { get; set; }
+        public string Metadata { get; set; }
+        public string BillingEmail { get; set; }
+        public string ShippingFirstName { get; set; }
+        public string ShippingLastName { get; set; }
 
-        public override string GetRequestURI(){ return "/ams/api/v1/billing/customer/create"; } 
+        public override string GetRequestURI() { return "/ams/api/v1/billing/customer/create"; }
 
 
     }

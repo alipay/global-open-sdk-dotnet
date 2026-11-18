@@ -16,7 +16,8 @@ static class DefenseNotificationsTests
             throw new Exception("Strategy round trip failed");
         if (!JsonNode.DeepEquals(JsonNode.Parse("{\"disputeId\":\"d1\",\"notifyTime\":\"2026-10-22T01:02:03.123+08:00\",\"defenseFile\":{\"fileName\":\"defense.pdf\",\"fileFormat\":\"FUTURE\",\"fileMd5\":\"5d41402abc4b2a76b9719d911017c592\"},\"winRateLevel\":\"FUTURE\",\"recommendedEvidence\":{\"FUTURE_TAG\":\"提供材料\",\"ORDER_INFORMATION\":\"Order proof\"},\"suggestionsForImprovement\":\"Add proof\"}"), JsonNode.Parse(JsonSerializer.Serialize(d, options))))
             throw new Exception("Document round trip failed");
-        foreach (var body in new[] { "{}", "{\"winRateLevel\":null,\"recommendedEvidence\":null,\"suggestionsForImprovement\":null}" }) {
+        foreach (var body in new[] { "{}", "{\"winRateLevel\":null,\"recommendedEvidence\":null,\"suggestionsForImprovement\":null}" })
+        {
             d = JsonSerializer.Deserialize<AlipayDefenseDocumentNotify>(body, options);
             if (d.WinRateLevel != null || d.RecommendedEvidence != null || d.SuggestionsForImprovement != null)
                 throw new Exception("Optional fields must remain null");

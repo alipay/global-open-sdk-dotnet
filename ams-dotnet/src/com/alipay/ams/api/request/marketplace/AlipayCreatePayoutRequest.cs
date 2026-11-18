@@ -3,29 +3,29 @@ using com.alipay.ams.api.request;
 using com.alipay.ams.api.entities;
 using System;
 using System.Collections.Generic;
-    
+
 namespace com.alipay.ams.api.request.marketplace
 {
 
-public class AlipayCreatePayoutRequest : AMSRequest<AlipayCreatePayoutResponse>
+    public class AlipayCreatePayoutRequest : AMSRequest<AlipayCreatePayoutResponse>
     {
 
         public AlipayCreatePayoutRequest() { }
 
-        
 
-        public AlipayCreatePayoutRequest( string transferRequestId , TransferFromDetail transferFromDetail , TransferToDetail transferToDetail)
+
+        public AlipayCreatePayoutRequest(string transferRequestId, TransferFromDetail transferFromDetail, TransferToDetail transferToDetail)
         {
             this.TransferRequestId = transferRequestId;
             this.TransferFromDetail = transferFromDetail;
             this.TransferToDetail = transferToDetail;
         }
 
-            public string TransferRequestId { get; set; }
-            public TransferFromDetail TransferFromDetail { get; set; }
-            public TransferToDetail TransferToDetail { get; set; }
+        public string TransferRequestId { get; set; }
+        public TransferFromDetail TransferFromDetail { get; set; }
+        public TransferToDetail TransferToDetail { get; set; }
 
-        public override string GetRequestURI(){ return "/ams/api/v1/funds/createPayout"; } 
+        public override string GetRequestURI() { return "/ams/api/v1/funds/createPayout"; }
 
 
     }

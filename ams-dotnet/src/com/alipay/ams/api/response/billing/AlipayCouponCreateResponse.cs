@@ -1,18 +1,18 @@
 using com.alipay.ams.api.entities;
 using System;
 using System.Collections.Generic;
-    
+
 namespace com.alipay.ams.api.response.billing
 {
 
-public class AlipayCouponCreateResponse : AMSResponse
+    public class AlipayCouponCreateResponse : AMSResponse
     {
 
         public AlipayCouponCreateResponse() { }
 
-        
 
-        public AlipayCouponCreateResponse( ResultInfo result , string couponId , string couponName , string discountType , string status , List<CouponPromotionCode> promotionCodes)
+
+        public AlipayCouponCreateResponse(ResultInfo result, string couponId, string couponName, string discountType, string status, List<CouponPromotionCode> promotionCodes)
         {
             this.Result = result;
             this.CouponId = couponId;
@@ -22,14 +22,14 @@ public class AlipayCouponCreateResponse : AMSResponse
             this.PromotionCodes = promotionCodes;
         }
 
-            public ResultInfo Result { get; set; }
-            public string CouponId { get; set; }
-            public string CouponName { get; set; }
-            public string DiscountType { get; set; }
-            public string Status { get; set; }
-            public List<CouponPromotionCode> PromotionCodes { get; set; }
+        public ResultInfo Result { get; set; }
+        public string CouponId { get; set; }
+        public string CouponName { get; set; }
+        public string DiscountType { get; set; }
+        public string Status { get; set; }
+        public List<CouponPromotionCode> PromotionCodes { get; set; }
 
-        
+
 
     }
 

@@ -1,17 +1,17 @@
 using System;
 using System.Collections.Generic;
-    
+
 namespace com.alipay.ams.api.entities
 {
 
-public class PaymentResultInfo
+    public class PaymentResultInfo
     {
 
         public PaymentResultInfo() { }
 
-        
 
-        public PaymentResultInfo( string fingerprint , string issuerName , string refusalCodeRaw , string refusalReasonRaw , string merchantAdviceCode , AcquirerInfo acquirerInfo , string cardNo , string cardBrand , string cardToken , string issuingCountry , string funding , string paymentMethodRegion , ThreeDSResult threeDSResult , string avsResultRaw , string cvvResultRaw , string networkTransactionId , CreditPayPlan creditPayPlan , string cardholderName , string cardBin , string lastFour , string expiryMonth , string expiryYear , string cardCategory , string accountNo , string exemptionRequested , string credentialTypeUsed , string rrn , string userAuthorizationStatus , string authorizationCode , bool? incrementalAuthorizationAvailable , bool? extendedAuthorizationAvailable , bool? refundOnAuthorizationAvailable)
+
+        public PaymentResultInfo(string fingerprint, string issuerName, string refusalCodeRaw, string refusalReasonRaw, string merchantAdviceCode, AcquirerInfo acquirerInfo, string cardNo, string cardBrand, string cardToken, string issuingCountry, string funding, string paymentMethodRegion, ThreeDSResult threeDSResult, string avsResultRaw, string cvvResultRaw, string networkTransactionId, CreditPayPlan creditPayPlan, string cardholderName, string cardBin, string lastFour, string expiryMonth, string expiryYear, string cardCategory, string accountNo, string exemptionRequested, string credentialTypeUsed, string rrn, string userAuthorizationStatus, string authorizationCode, bool? incrementalAuthorizationAvailable, bool? extendedAuthorizationAvailable, bool? refundOnAuthorizationAvailable)
         {
             this.Fingerprint = fingerprint;
             this.IssuerName = issuerName;
@@ -47,40 +47,40 @@ public class PaymentResultInfo
             this.RefundOnAuthorizationAvailable = refundOnAuthorizationAvailable;
         }
 
-            public string Fingerprint { get; set; }
-            public string IssuerName { get; set; }
-            public string RefusalCodeRaw { get; set; }
-            public string RefusalReasonRaw { get; set; }
-            public string MerchantAdviceCode { get; set; }
-            public AcquirerInfo AcquirerInfo { get; set; }
-            public string CardNo { get; set; }
-            public string CardBrand { get; set; }
-            public string CardToken { get; set; }
-            public string IssuingCountry { get; set; }
-            public string Funding { get; set; }
-            public string PaymentMethodRegion { get; set; }
-            public ThreeDSResult ThreeDSResult { get; set; }
-            public string AvsResultRaw { get; set; }
-            public string CvvResultRaw { get; set; }
-            public string NetworkTransactionId { get; set; }
-            public CreditPayPlan CreditPayPlan { get; set; }
-            public string CardholderName { get; set; }
-            public string CardBin { get; set; }
-            public string LastFour { get; set; }
-            public string ExpiryMonth { get; set; }
-            public string ExpiryYear { get; set; }
-            public string CardCategory { get; set; }
-            public string AccountNo { get; set; }
-            public string ExemptionRequested { get; set; }
-            public string CredentialTypeUsed { get; set; }
-            public string Rrn { get; set; }
-            public string UserAuthorizationStatus { get; set; }
-            public string AuthorizationCode { get; set; }
-            public bool? IncrementalAuthorizationAvailable { get; set; }
-            public bool? ExtendedAuthorizationAvailable { get; set; }
-            public bool? RefundOnAuthorizationAvailable { get; set; }
+        public string Fingerprint { get; set; }
+        public string IssuerName { get; set; }
+        public string RefusalCodeRaw { get; set; }
+        public string RefusalReasonRaw { get; set; }
+        public string MerchantAdviceCode { get; set; }
+        public AcquirerInfo AcquirerInfo { get; set; }
+        public string CardNo { get; set; }
+        public string CardBrand { get; set; }
+        public string CardToken { get; set; }
+        public string IssuingCountry { get; set; }
+        public string Funding { get; set; }
+        public string PaymentMethodRegion { get; set; }
+        public ThreeDSResult ThreeDSResult { get; set; }
+        public string AvsResultRaw { get; set; }
+        public string CvvResultRaw { get; set; }
+        public string NetworkTransactionId { get; set; }
+        public CreditPayPlan CreditPayPlan { get; set; }
+        public string CardholderName { get; set; }
+        public string CardBin { get; set; }
+        public string LastFour { get; set; }
+        public string ExpiryMonth { get; set; }
+        public string ExpiryYear { get; set; }
+        public string CardCategory { get; set; }
+        public string AccountNo { get; set; }
+        public string ExemptionRequested { get; set; }
+        public string CredentialTypeUsed { get; set; }
+        public string Rrn { get; set; }
+        public string UserAuthorizationStatus { get; set; }
+        public string AuthorizationCode { get; set; }
+        public bool? IncrementalAuthorizationAvailable { get; set; }
+        public bool? ExtendedAuthorizationAvailable { get; set; }
+        public bool? RefundOnAuthorizationAvailable { get; set; }
 
-        
+
 
     }
 

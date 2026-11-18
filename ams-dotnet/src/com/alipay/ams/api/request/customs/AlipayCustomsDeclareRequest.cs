@@ -14,8 +14,8 @@ namespace com.alipay.ams.api.request.customs
         public Boolean SplitOrder { get; set; }
         public string SubOrderId { get; set; }
         public Certificate BuyerCertificate { get; set; }
-        
-        
+
+
         public override string GetRequestURI()
         {
             return AntomPathConstants.DECLARE_PATH;
@@ -23,7 +23,7 @@ namespace com.alipay.ams.api.request.customs
 
         public override void validate()
         {
-            
+
         }
     }
 }

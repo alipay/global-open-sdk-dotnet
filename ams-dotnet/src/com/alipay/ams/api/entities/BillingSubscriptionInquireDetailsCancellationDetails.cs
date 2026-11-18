@@ -1,26 +1,26 @@
 using System;
 using System.Collections.Generic;
-    
+
 namespace com.alipay.ams.api.entities
 {
 
-public class BillingSubscriptionInquireDetailsCancellationDetails
+    public class BillingSubscriptionInquireDetailsCancellationDetails
     {
 
         public BillingSubscriptionInquireDetailsCancellationDetails() { }
 
-        
 
-        public BillingSubscriptionInquireDetailsCancellationDetails( string feedback , string comment)
+
+        public BillingSubscriptionInquireDetailsCancellationDetails(string feedback, string comment)
         {
             this.Feedback = feedback;
             this.Comment = comment;
         }
 
-            public string Feedback { get; set; }
-            public string Comment { get; set; }
+        public string Feedback { get; set; }
+        public string Comment { get; set; }
 
-        
+
 
     }
 

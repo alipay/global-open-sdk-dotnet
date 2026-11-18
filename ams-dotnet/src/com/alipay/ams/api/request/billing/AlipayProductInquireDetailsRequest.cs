@@ -3,25 +3,25 @@ using com.alipay.ams.api.request;
 using com.alipay.ams.api.entities;
 using System;
 using System.Collections.Generic;
-    
+
 namespace com.alipay.ams.api.request.billing
 {
 
-public class AlipayProductInquireDetailsRequest : AMSRequest<AlipayProductInquireDetailsResponse>
+    public class AlipayProductInquireDetailsRequest : AMSRequest<AlipayProductInquireDetailsResponse>
     {
 
         public AlipayProductInquireDetailsRequest() { }
 
-        
 
-        public AlipayProductInquireDetailsRequest( string productId)
+
+        public AlipayProductInquireDetailsRequest(string productId)
         {
             this.ProductId = productId;
         }
 
-            public string ProductId { get; set; }
+        public string ProductId { get; set; }
 
-        public override string GetRequestURI(){ return "/ams/api/v1/billing/product/inquireDetails"; } 
+        public override string GetRequestURI() { return "/ams/api/v1/billing/product/inquireDetails"; }
 
 
     }

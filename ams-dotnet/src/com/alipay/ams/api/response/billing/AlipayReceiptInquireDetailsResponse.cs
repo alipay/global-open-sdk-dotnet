@@ -1,18 +1,18 @@
 using com.alipay.ams.api.entities;
 using System;
 using System.Collections.Generic;
-    
+
 namespace com.alipay.ams.api.response.billing
 {
 
-public class AlipayReceiptInquireDetailsResponse : AMSResponse
+    public class AlipayReceiptInquireDetailsResponse : AMSResponse
     {
 
         public AlipayReceiptInquireDetailsResponse() { }
 
-        
 
-        public AlipayReceiptInquireDetailsResponse( Result result , string receiptId , string originalReceiptId , string invoiceId , string subscriptionId , string customerId , string paymentId , string refundId , string receiptType , string status , string reason , string customerFirstName , string customerLastName , string customerEmail , string collectionMethod , Amount totalAmount , Amount subtotal , Amount paidAmount , Amount discountAmount , Amount taxAmount , Amount shippingFeeAmount , Amount paymentDeductedAmount , Amount refundAmount , Amount refundedAmount , Amount remainingAmount , Amount settlementAmount , string fxRate , string fxRateId , string paymentMethod , string periodStart , string periodEnd , string paidTime , string dueDate , string paymentRequestId , string payToRequestId , string payToId , string description , string fileUrl , List<ReceiptItem> items , List<InvoicePayment> payments , string gmtCreate , string gmtUpdate , string paymentMethodType)
+
+        public AlipayReceiptInquireDetailsResponse(Result result, string receiptId, string originalReceiptId, string invoiceId, string subscriptionId, string customerId, string paymentId, string refundId, string receiptType, string status, string reason, string customerFirstName, string customerLastName, string customerEmail, string collectionMethod, Amount totalAmount, Amount subtotal, Amount paidAmount, Amount discountAmount, Amount taxAmount, Amount shippingFeeAmount, Amount paymentDeductedAmount, Amount refundAmount, Amount refundedAmount, Amount remainingAmount, Amount settlementAmount, string fxRate, string fxRateId, string paymentMethod, string periodStart, string periodEnd, string paidTime, string dueDate, string paymentRequestId, string payToRequestId, string payToId, string description, string fileUrl, List<ReceiptItem> items, List<InvoicePayment> payments, string gmtCreate, string gmtUpdate, string paymentMethodType)
         {
             this.Result = result;
             this.ReceiptId = receiptId;
@@ -59,51 +59,51 @@ public class AlipayReceiptInquireDetailsResponse : AMSResponse
             this.PaymentMethodType = paymentMethodType;
         }
 
-            public Result Result { get; set; }
-            public string ReceiptId { get; set; }
-            public string OriginalReceiptId { get; set; }
-            public string InvoiceId { get; set; }
-            public string SubscriptionId { get; set; }
-            public string CustomerId { get; set; }
-            public string PaymentId { get; set; }
-            public string RefundId { get; set; }
-            public string ReceiptType { get; set; }
-            public string Status { get; set; }
-            public string Reason { get; set; }
-            public string CustomerFirstName { get; set; }
-            public string CustomerLastName { get; set; }
-            public string CustomerEmail { get; set; }
-            public string CollectionMethod { get; set; }
-            public Amount TotalAmount { get; set; }
-            public Amount Subtotal { get; set; }
-            public Amount PaidAmount { get; set; }
-            public Amount DiscountAmount { get; set; }
-            public Amount TaxAmount { get; set; }
-            public Amount ShippingFeeAmount { get; set; }
-            public Amount PaymentDeductedAmount { get; set; }
-            public Amount RefundAmount { get; set; }
-            public Amount RefundedAmount { get; set; }
-            public Amount RemainingAmount { get; set; }
-            public Amount SettlementAmount { get; set; }
-            public string FxRate { get; set; }
-            public string FxRateId { get; set; }
-            public string PaymentMethod { get; set; }
-            public string PeriodStart { get; set; }
-            public string PeriodEnd { get; set; }
-            public string PaidTime { get; set; }
-            public string DueDate { get; set; }
-            public string PaymentRequestId { get; set; }
-            public string PayToRequestId { get; set; }
-            public string PayToId { get; set; }
-            public string Description { get; set; }
-            public string FileUrl { get; set; }
-            public List<ReceiptItem> Items { get; set; }
-            public List<InvoicePayment> Payments { get; set; }
-            public string GmtCreate { get; set; }
-            public string GmtUpdate { get; set; }
-            public string PaymentMethodType { get; set; }
+        public Result Result { get; set; }
+        public string ReceiptId { get; set; }
+        public string OriginalReceiptId { get; set; }
+        public string InvoiceId { get; set; }
+        public string SubscriptionId { get; set; }
+        public string CustomerId { get; set; }
+        public string PaymentId { get; set; }
+        public string RefundId { get; set; }
+        public string ReceiptType { get; set; }
+        public string Status { get; set; }
+        public string Reason { get; set; }
+        public string CustomerFirstName { get; set; }
+        public string CustomerLastName { get; set; }
+        public string CustomerEmail { get; set; }
+        public string CollectionMethod { get; set; }
+        public Amount TotalAmount { get; set; }
+        public Amount Subtotal { get; set; }
+        public Amount PaidAmount { get; set; }
+        public Amount DiscountAmount { get; set; }
+        public Amount TaxAmount { get; set; }
+        public Amount ShippingFeeAmount { get; set; }
+        public Amount PaymentDeductedAmount { get; set; }
+        public Amount RefundAmount { get; set; }
+        public Amount RefundedAmount { get; set; }
+        public Amount RemainingAmount { get; set; }
+        public Amount SettlementAmount { get; set; }
+        public string FxRate { get; set; }
+        public string FxRateId { get; set; }
+        public string PaymentMethod { get; set; }
+        public string PeriodStart { get; set; }
+        public string PeriodEnd { get; set; }
+        public string PaidTime { get; set; }
+        public string DueDate { get; set; }
+        public string PaymentRequestId { get; set; }
+        public string PayToRequestId { get; set; }
+        public string PayToId { get; set; }
+        public string Description { get; set; }
+        public string FileUrl { get; set; }
+        public List<ReceiptItem> Items { get; set; }
+        public List<InvoicePayment> Payments { get; set; }
+        public string GmtCreate { get; set; }
+        public string GmtUpdate { get; set; }
+        public string PaymentMethodType { get; set; }
 
-        
+
 
     }
 

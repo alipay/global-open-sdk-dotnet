@@ -3,18 +3,18 @@ using com.alipay.ams.api.request;
 using com.alipay.ams.api.entities;
 using System;
 using System.Collections.Generic;
-    
+
 namespace com.alipay.ams.api.request.billing
 {
 
-public class AlipayInvoiceSendRequest : AMSRequest<AlipayInvoiceSendResponse>
+    public class AlipayInvoiceSendRequest : AMSRequest<AlipayInvoiceSendResponse>
     {
 
         public AlipayInvoiceSendRequest() { }
 
-        
 
-        public AlipayInvoiceSendRequest( string invoiceId , List<string> ccEmails , string internalNote , bool? includePaymentLink)
+
+        public AlipayInvoiceSendRequest(string invoiceId, List<string> ccEmails, string internalNote, bool? includePaymentLink)
         {
             this.InvoiceId = invoiceId;
             this.CcEmails = ccEmails;
@@ -22,12 +22,12 @@ public class AlipayInvoiceSendRequest : AMSRequest<AlipayInvoiceSendResponse>
             this.IncludePaymentLink = includePaymentLink;
         }
 
-            public string InvoiceId { get; set; }
-            public List<string> CcEmails { get; set; }
-            public string InternalNote { get; set; }
-            public bool? IncludePaymentLink { get; set; }
+        public string InvoiceId { get; set; }
+        public List<string> CcEmails { get; set; }
+        public string InternalNote { get; set; }
+        public bool? IncludePaymentLink { get; set; }
 
-        public override string GetRequestURI(){ return "/ams/api/v1/billing/invoice/send"; } 
+        public override string GetRequestURI() { return "/ams/api/v1/billing/invoice/send"; }
 
 
     }

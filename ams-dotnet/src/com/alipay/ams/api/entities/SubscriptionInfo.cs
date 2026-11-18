@@ -1,17 +1,17 @@
 using System;
 using System.Collections.Generic;
-    
+
 namespace com.alipay.ams.api.entities
 {
 
-public class SubscriptionInfo
+    public class SubscriptionInfo
     {
 
         public SubscriptionInfo() { }
 
-        
 
-        public SubscriptionInfo( string subscriptionId , string description , string subscriptionDescription , SubscriptionStatus status , string subscriptionStartTime , string subscriptionEndTime , PeriodType periodType , int? periodCount , PeriodRule periodRule , string currentPeriodStart , string currentPeriodEnd , int? currentPhaseNo , PaymentMethod paymentMethod , Amount paymentAmount , string lastUpdateTime , string relatedSubscriptionId , TrialPlan trialPlan , List<Trial> trials , string subscriptionNotifyUrl , string subscriptionExpiryTime , bool? allowRetry , Amount maxAmountFloor , Amount fixedAmount , string retryMode , string subscriptionOrderId)
+
+        public SubscriptionInfo(string subscriptionId, string description, string subscriptionDescription, SubscriptionStatus status, string subscriptionStartTime, string subscriptionEndTime, PeriodType periodType, int? periodCount, PeriodRule periodRule, string currentPeriodStart, string currentPeriodEnd, int? currentPhaseNo, PaymentMethod paymentMethod, Amount paymentAmount, string lastUpdateTime, string relatedSubscriptionId, TrialPlan trialPlan, List<Trial> trials, string subscriptionNotifyUrl, string subscriptionExpiryTime, bool? allowRetry, Amount maxAmountFloor, Amount fixedAmount, string retryMode, string subscriptionOrderId)
         {
             this.SubscriptionId = subscriptionId;
             this.Description = description;
@@ -40,33 +40,33 @@ public class SubscriptionInfo
             this.SubscriptionOrderId = subscriptionOrderId;
         }
 
-            public string SubscriptionId { get; set; }
-            public string Description { get; set; }
-            public string SubscriptionDescription { get; set; }
-            public SubscriptionStatus Status { get; set; }
-            public string SubscriptionStartTime { get; set; }
-            public string SubscriptionEndTime { get; set; }
-            public PeriodType PeriodType { get; set; }
-            public int? PeriodCount { get; set; }
-            public PeriodRule PeriodRule { get; set; }
-            public string CurrentPeriodStart { get; set; }
-            public string CurrentPeriodEnd { get; set; }
-            public int? CurrentPhaseNo { get; set; }
-            public PaymentMethod PaymentMethod { get; set; }
-            public Amount PaymentAmount { get; set; }
-            public string LastUpdateTime { get; set; }
-            public string RelatedSubscriptionId { get; set; }
-            public TrialPlan TrialPlan { get; set; }
-            public List<Trial> Trials { get; set; }
-            public string SubscriptionNotifyUrl { get; set; }
-            public string SubscriptionExpiryTime { get; set; }
-            public bool? AllowRetry { get; set; }
-            public Amount MaxAmountFloor { get; set; }
-            public Amount FixedAmount { get; set; }
-            public string RetryMode { get; set; }
-            public string SubscriptionOrderId { get; set; }
+        public string SubscriptionId { get; set; }
+        public string Description { get; set; }
+        public string SubscriptionDescription { get; set; }
+        public SubscriptionStatus Status { get; set; }
+        public string SubscriptionStartTime { get; set; }
+        public string SubscriptionEndTime { get; set; }
+        public PeriodType PeriodType { get; set; }
+        public int? PeriodCount { get; set; }
+        public PeriodRule PeriodRule { get; set; }
+        public string CurrentPeriodStart { get; set; }
+        public string CurrentPeriodEnd { get; set; }
+        public int? CurrentPhaseNo { get; set; }
+        public PaymentMethod PaymentMethod { get; set; }
+        public Amount PaymentAmount { get; set; }
+        public string LastUpdateTime { get; set; }
+        public string RelatedSubscriptionId { get; set; }
+        public TrialPlan TrialPlan { get; set; }
+        public List<Trial> Trials { get; set; }
+        public string SubscriptionNotifyUrl { get; set; }
+        public string SubscriptionExpiryTime { get; set; }
+        public bool? AllowRetry { get; set; }
+        public Amount MaxAmountFloor { get; set; }
+        public Amount FixedAmount { get; set; }
+        public string RetryMode { get; set; }
+        public string SubscriptionOrderId { get; set; }
 
-        
+
 
     }
 

@@ -1,12 +1,12 @@
 using System;
 using System.Collections.Generic;
-    
+
 namespace com.alipay.ams.api.entities
 {
 
-public enum CodeValueType
+    public enum CodeValueType
     {
-            BARCODE,
-            QRCODE,
+        BARCODE,
+        QRCODE,
     }
 }

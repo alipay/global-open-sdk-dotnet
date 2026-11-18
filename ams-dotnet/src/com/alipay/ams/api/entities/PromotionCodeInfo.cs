@@ -1,17 +1,17 @@
 using System;
 using System.Collections.Generic;
-    
+
 namespace com.alipay.ams.api.entities
 {
 
-public class PromotionCodeInfo
+    public class PromotionCodeInfo
     {
 
         public PromotionCodeInfo() { }
 
-        
 
-        public PromotionCodeInfo( string promotionCodeId , string code , string status , int? maxRedemptions , int? redeemedCount , string expiryTime , string createTime)
+
+        public PromotionCodeInfo(string promotionCodeId, string code, string status, int? maxRedemptions, int? redeemedCount, string expiryTime, string createTime)
         {
             this.PromotionCodeId = promotionCodeId;
             this.Code = code;
@@ -22,15 +22,15 @@ public class PromotionCodeInfo
             this.CreateTime = createTime;
         }
 
-            public string PromotionCodeId { get; set; }
-            public string Code { get; set; }
-            public string Status { get; set; }
-            public int? MaxRedemptions { get; set; }
-            public int? RedeemedCount { get; set; }
-            public string ExpiryTime { get; set; }
-            public string CreateTime { get; set; }
+        public string PromotionCodeId { get; set; }
+        public string Code { get; set; }
+        public string Status { get; set; }
+        public int? MaxRedemptions { get; set; }
+        public int? RedeemedCount { get; set; }
+        public string ExpiryTime { get; set; }
+        public string CreateTime { get; set; }
 
-        
+
 
     }
 

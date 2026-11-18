@@ -12,7 +12,7 @@ public class AlipayAuthCreateSessionRequest : AMSRequest<AlipayAuthCreateSession
     public ScopeType[] Scopes { get; set; }
     public PaymentMethod PaymentMethod { get; set; }
     public string PaymentRedirectUrl { get; set; }
-    
+
     public override string GetRequestURI()
     {
         return AntomPathConstants.CREATE_SESSION_PATH;

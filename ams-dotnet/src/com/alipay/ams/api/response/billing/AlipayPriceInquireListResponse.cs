@@ -1,18 +1,18 @@
 using com.alipay.ams.api.entities;
 using System;
 using System.Collections.Generic;
-    
+
 namespace com.alipay.ams.api.response.billing
 {
 
-public class AlipayPriceInquireListResponse : AMSResponse
+    public class AlipayPriceInquireListResponse : AMSResponse
     {
 
         public AlipayPriceInquireListResponse() { }
 
-        
 
-        public AlipayPriceInquireListResponse( Result result , List<Price> prices , bool? hasMore , int? total)
+
+        public AlipayPriceInquireListResponse(Result result, List<Price> prices, bool? hasMore, int? total)
         {
             this.Result = result;
             this.Prices = prices;
@@ -20,12 +20,12 @@ public class AlipayPriceInquireListResponse : AMSResponse
             this.Total = total;
         }
 
-            public Result Result { get; set; }
-            public List<Price> Prices { get; set; }
-            public bool? HasMore { get; set; }
-            public int? Total { get; set; }
+        public Result Result { get; set; }
+        public List<Price> Prices { get; set; }
+        public bool? HasMore { get; set; }
+        public int? Total { get; set; }
 
-        
+
 
     }
 

@@ -1,17 +1,17 @@
 using System;
 using System.Collections.Generic;
-    
+
 namespace com.alipay.ams.api.entities
 {
 
-public class MerchantInfo
+    public class MerchantInfo
     {
 
         public MerchantInfo() { }
 
-        
 
-        public MerchantInfo( string referenceMerchantId , string loginId , LegalEntityType legalEntityType , Company company , BusinessInfo businessInfo , EntityAssociations[] entityAssociations)
+
+        public MerchantInfo(string referenceMerchantId, string loginId, LegalEntityType legalEntityType, Company company, BusinessInfo businessInfo, EntityAssociations[] entityAssociations)
         {
             this.ReferenceMerchantId = referenceMerchantId;
             this.LoginId = loginId;
@@ -21,14 +21,14 @@ public class MerchantInfo
             this.EntityAssociations = entityAssociations;
         }
 
-            public string ReferenceMerchantId { get; set; }
-            public string LoginId { get; set; }
-            public LegalEntityType LegalEntityType { get; set; }
-            public Company Company { get; set; }
-            public BusinessInfo BusinessInfo { get; set; }
-            public EntityAssociations[] EntityAssociations { get; set; }
+        public string ReferenceMerchantId { get; set; }
+        public string LoginId { get; set; }
+        public LegalEntityType LegalEntityType { get; set; }
+        public Company Company { get; set; }
+        public BusinessInfo BusinessInfo { get; set; }
+        public EntityAssociations[] EntityAssociations { get; set; }
 
-        
+
 
     }
 

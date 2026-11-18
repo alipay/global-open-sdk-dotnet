@@ -14,7 +14,7 @@ namespace com.alipay.ams.api.response
 
         public static TAMSResponse ParseResponse<TAMSResponse>(HttpResponseMessage ret, string requestURI, string clientId, string alipayPublicKey)
         {
-            switch(ret.StatusCode)
+            switch (ret.StatusCode)
             {
                 case System.Net.HttpStatusCode.OK:
                     {
@@ -23,7 +23,7 @@ namespace com.alipay.ams.api.response
 
                         // These two headers must be present.
                         Asserts.AssertTrue(ret.Headers.Contains("response-time"), "response-time missing in the response header.");
-                        Asserts.AssertTrue(ret.Headers.Contains("signature"), "signature missing in the response header. responseBody = \n\t"+ responseBody);
+                        Asserts.AssertTrue(ret.Headers.Contains("signature"), "signature missing in the response header. responseBody = \n\t" + responseBody);
 
                         string responseTime = ret.Headers.GetValues("response-time").FirstOrDefault();
                         string signature = ret.Headers.GetValues("signature").FirstOrDefault();
@@ -33,7 +33,7 @@ namespace com.alipay.ams.api.response
                         // 2. Now we do signature verification.
                         bool signatureMatch = SignatureUtil.verify(requestURI, clientId, responseTime, alipayPublicKey, responseBody, signatureToBeVerified);
 
-                        if(! signatureMatch)
+                        if (!signatureMatch)
                         {
                             throw new InvalidOperationException("AMS API response signature invalid: clientId = " + clientId + ", signatureToBeVerified = " + signatureToBeVerified);
                         }
@@ -41,12 +41,12 @@ namespace com.alipay.ams.api.response
 
                         //3. So far so good. continue to parse body content.
                         return JsonSerializer.Deserialize<TAMSResponse>(responseBody, JsonSerializerOptionsFactory.WriteNotIndented);
-                        
+
                     }
 
                 default:
-                    throw new HttpRequestException("AMS API response HTTP StatusCode not 200: " + ret.StatusCode.ToString()+". Check your gatewayUrl and requestURI settings.");
-            }            
+                    throw new HttpRequestException("AMS API response HTTP StatusCode not 200: " + ret.StatusCode.ToString() + ". Check your gatewayUrl and requestURI settings.");
+            }
         }
 
         public override string ToString()

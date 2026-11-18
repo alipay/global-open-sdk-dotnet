@@ -2,7 +2,7 @@ using com.alipay.ams.api.entities;
 
 namespace com.alipay.ams.api.request.notify;
 
-public class AlipaySubscriptionCancelNotify:AlipayNotify
+public class AlipaySubscriptionCancelNotify : AlipayNotify
 {
     public Amount PaymentAmount { get; set; }
     public string PaymentCreateTime { get; set; }

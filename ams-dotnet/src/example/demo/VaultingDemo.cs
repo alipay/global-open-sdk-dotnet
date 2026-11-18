@@ -15,9 +15,9 @@ public class VaultingDemo
         alipayVaultingSessionRequest.VaultingNotificationUrl = "https://www.yourNotifyUrl.com";
         alipayVaultingSessionRequest.RedirectUrl = "https://www.yourRedirectUrl.com";
         alipayVaultingSessionRequest.MerchantRegion = "BR";
-        
+
         var response = client.Execute(alipayVaultingSessionRequest);
-        
+
         Console.WriteLine(response);
     }
 
@@ -57,17 +57,17 @@ public class VaultingDemo
         alipayVaultingPaymentMethodRequest.Env = env;
 
         var response = client.Execute(alipayVaultingPaymentMethodRequest);
-        
+
         Console.WriteLine(response);
     }
 
-    public static void inquireVaulting(DefaultAlipayClient client,string vaultingRequestId)
+    public static void inquireVaulting(DefaultAlipayClient client, string vaultingRequestId)
     {
         var alipayVaultingQueryRequest = new AlipayVaultingQueryRequest();
         alipayVaultingQueryRequest.VaultingRequestId = vaultingRequestId;
-        
+
         var response = client.Execute(alipayVaultingQueryRequest);
-        
+
         Console.WriteLine(response);
     }
 }

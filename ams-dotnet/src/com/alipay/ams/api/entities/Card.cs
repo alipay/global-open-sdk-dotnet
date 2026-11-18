@@ -1,17 +1,17 @@
 using System;
 using System.Collections.Generic;
-    
+
 namespace com.alipay.ams.api.entities
 {
 
-public class Card
+    public class Card
     {
 
         public Card() { }
 
-        
 
-        public Card( string cardNo , string cvv , string expiryYear , string expiryMonth , UserName cardholderName)
+
+        public Card(string cardNo, string cvv, string expiryYear, string expiryMonth, UserName cardholderName)
         {
             this.CardNo = cardNo;
             this.Cvv = cvv;
@@ -20,13 +20,13 @@ public class Card
             this.CardholderName = cardholderName;
         }
 
-            public string CardNo { get; set; }
-            public string Cvv { get; set; }
-            public string ExpiryYear { get; set; }
-            public string ExpiryMonth { get; set; }
-            public UserName CardholderName { get; set; }
+        public string CardNo { get; set; }
+        public string Cvv { get; set; }
+        public string ExpiryYear { get; set; }
+        public string ExpiryMonth { get; set; }
+        public UserName CardholderName { get; set; }
 
-        
+
 
     }
 
