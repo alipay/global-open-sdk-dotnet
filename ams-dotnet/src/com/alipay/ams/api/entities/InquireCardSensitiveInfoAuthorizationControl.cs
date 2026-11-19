@@ -1,0 +1,47 @@
+using System;
+using System.Collections.Generic;
+    
+namespace com.alipay.ams.api.entities
+{
+
+public class InquireCardSensitiveInfoAuthorizationControl
+    {
+
+        public InquireCardSensitiveInfoAuthorizationControl() { }
+
+        
+
+        public InquireCardSensitiveInfoAuthorizationControl( string cardActiveTime , string cardCancelTime , List<string> allowedMerchantCategoryList , int? allowedAuthTimes , List<string> allowedCurrencies , InquireCardSensitiveInfoPaymentPreference paymentPreference , string threeDSMode , string phoneNo , string email , CardLimitDetail cardLimitDetail , CardLimitInfo cardLimitInfo , RefundPreference refundPreference)
+        {
+            this.CardActiveTime = cardActiveTime;
+            this.CardCancelTime = cardCancelTime;
+            this.AllowedMerchantCategoryList = allowedMerchantCategoryList;
+            this.AllowedAuthTimes = allowedAuthTimes;
+            this.AllowedCurrencies = allowedCurrencies;
+            this.PaymentPreference = paymentPreference;
+            this.ThreeDSMode = threeDSMode;
+            this.PhoneNo = phoneNo;
+            this.Email = email;
+            this.CardLimitDetail = cardLimitDetail;
+            this.CardLimitInfo = cardLimitInfo;
+            this.RefundPreference = refundPreference;
+        }
+
+            public string CardActiveTime { get; set; }
+            public string CardCancelTime { get; set; }
+            public List<string> AllowedMerchantCategoryList { get; set; }
+            public int? AllowedAuthTimes { get; set; }
+            public List<string> AllowedCurrencies { get; set; }
+            public InquireCardSensitiveInfoPaymentPreference PaymentPreference { get; set; }
+            public string ThreeDSMode { get; set; }
+            public string PhoneNo { get; set; }
+            public string Email { get; set; }
+            public CardLimitDetail CardLimitDetail { get; set; }
+            public CardLimitInfo CardLimitInfo { get; set; }
+            public RefundPreference RefundPreference { get; set; }
+
+        
+
+    }
+
+}
