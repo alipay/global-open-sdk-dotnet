@@ -11,7 +11,7 @@ public class CardDetail
 
         
 
-        public CardDetail( string assetId , string cardNickName , string cardStatus , string maskedCardNo , string cardBrand , string createdTime , string updatedTime , string purpose , string note , Dictionary<string, string> metadata , AuthorizationControl authorizationControl , CardholderInfo cardholderinfo)
+        public CardDetail( string assetId , string cardNickName , string cardStatus , string maskedCardNo , string cardBrand , string createdTime , string updatedTime , string purpose , string note , Dictionary<string, string> metadata , InquireCardSensitiveInfoAuthorizationControl authorizationControl , CardholderInfo cardholderinfo)
         {
             this.AssetId = assetId;
             this.CardNickName = cardNickName;
@@ -37,7 +37,7 @@ public class CardDetail
             public string Purpose { get; set; }
             public string Note { get; set; }
             public Dictionary<string, string> Metadata { get; set; }
-            public AuthorizationControl AuthorizationControl { get; set; }
+            public InquireCardSensitiveInfoAuthorizationControl AuthorizationControl { get; set; }
             public CardholderInfo Cardholderinfo { get; set; }
 
         
