@@ -14,7 +14,7 @@ public class AlipayApplyCardRequest : AMSRequest<AlipayApplyCardResponse>
 
         
 
-        public AlipayApplyCardRequest( string requestId , string cardNickName , string note , string cardBinRule , string purpose , Dictionary<string, string> metadata , ApplyCardAuthorizationControl authorizationControl)
+        public AlipayApplyCardRequest( string requestId , string cardNickName , string note , string cardBinRule , string purpose , Dictionary<string, string> metadata , AuthorizationControl authorizationControl)
         {
             this.RequestId = requestId;
             this.CardNickName = cardNickName;
@@ -31,7 +31,7 @@ public class AlipayApplyCardRequest : AMSRequest<AlipayApplyCardResponse>
             public string CardBinRule { get; set; }
             public string Purpose { get; set; }
             public Dictionary<string, string> Metadata { get; set; }
-            public ApplyCardAuthorizationControl AuthorizationControl { get; set; }
+            public AuthorizationControl AuthorizationControl { get; set; }
 
         public override string GetRequestURI(){ return "/ams/api/v1/aba/cards/applyCard"; } 
 
