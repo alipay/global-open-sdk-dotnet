@@ -15,6 +15,9 @@ public class {{classname}}{{#lambdas.DotNetParent}} {{classname}} {{serverUrl}} 
 
         {{#vars}}
             {{#lambdas.skipResult}}
+            {{#vendorExtensions.x-sdk-json-string}}
+            [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString | System.Text.Json.Serialization.JsonNumberHandling.WriteAsString)]
+            {{/vendorExtensions.x-sdk-json-string}}
             public {{#lambdas.specificList}} {{name}} | {{{dataType}}} | {{classname}} {{/lambdas.specificList}} {{name}} { get; set; }
             {{/lambdas.skipResult}}
         {{/vars}}

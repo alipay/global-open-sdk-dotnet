@@ -12,7 +12,7 @@ public class AlipayBillingSubscriptionUpdateResponse : AMSResponse
 
         
 
-        public AlipayBillingSubscriptionUpdateResponse( ResultInfo result , string subscriptionId , string status , List<SubscriptionItem> subscriptionItems , string prorationInvoiceId , long? prorationInvoiceAmount , string prorationInvoiceCurrency , string creditNoteId , List<string> creditNoteIds , string creditNoteAmount , string creditNoteCurrency , bool? pendingUpdate)
+        public AlipayBillingSubscriptionUpdateResponse( ResultInfo result , string subscriptionId , string status , List<SubscriptionItem> subscriptionItems , string prorationInvoiceId , long? prorationInvoiceAmount , string prorationInvoiceCurrency , string creditNoteId , List<string> creditNoteIds , long? creditNoteAmount , string creditNoteCurrency , bool? pendingUpdate)
         {
             this.Result = result;
             this.SubscriptionId = subscriptionId;
@@ -37,7 +37,8 @@ public class AlipayBillingSubscriptionUpdateResponse : AMSResponse
             public string ProrationInvoiceCurrency { get; set; }
             public string CreditNoteId { get; set; }
             public List<string> CreditNoteIds { get; set; }
-            public string CreditNoteAmount { get; set; }
+            [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString | System.Text.Json.Serialization.JsonNumberHandling.WriteAsString)]
+            public long? CreditNoteAmount { get; set; }
             public string CreditNoteCurrency { get; set; }
             public bool? PendingUpdate { get; set; }
 
