@@ -12,7 +12,7 @@ public class AlipayBillingSubscriptionUpdateResponse : AMSResponse
 
         
 
-        public AlipayBillingSubscriptionUpdateResponse( ResultInfo result , string subscriptionId , string status , List<SubscriptionItem> subscriptionItems , string prorationInvoiceId , long? prorationInvoiceAmount , string prorationInvoiceCurrency , string creditNoteId , long? creditNoteAmount , string creditNoteCurrency , bool? pendingUpdate)
+        public AlipayBillingSubscriptionUpdateResponse( ResultInfo result , string subscriptionId , string status , List<SubscriptionItem> subscriptionItems , string prorationInvoiceId , long? prorationInvoiceAmount , string prorationInvoiceCurrency , string creditNoteId , List<string> creditNoteIds , string creditNoteAmount , string creditNoteCurrency , bool? pendingUpdate)
         {
             this.Result = result;
             this.SubscriptionId = subscriptionId;
@@ -22,6 +22,7 @@ public class AlipayBillingSubscriptionUpdateResponse : AMSResponse
             this.ProrationInvoiceAmount = prorationInvoiceAmount;
             this.ProrationInvoiceCurrency = prorationInvoiceCurrency;
             this.CreditNoteId = creditNoteId;
+            this.CreditNoteIds = creditNoteIds;
             this.CreditNoteAmount = creditNoteAmount;
             this.CreditNoteCurrency = creditNoteCurrency;
             this.PendingUpdate = pendingUpdate;
@@ -35,7 +36,8 @@ public class AlipayBillingSubscriptionUpdateResponse : AMSResponse
             public long? ProrationInvoiceAmount { get; set; }
             public string ProrationInvoiceCurrency { get; set; }
             public string CreditNoteId { get; set; }
-            public long? CreditNoteAmount { get; set; }
+            public List<string> CreditNoteIds { get; set; }
+            public string CreditNoteAmount { get; set; }
             public string CreditNoteCurrency { get; set; }
             public bool? PendingUpdate { get; set; }
 
