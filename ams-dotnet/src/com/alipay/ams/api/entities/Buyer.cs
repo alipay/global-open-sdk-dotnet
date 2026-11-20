@@ -11,8 +11,9 @@ public class Buyer
 
         
 
-        public Buyer( List<string> preferredLocales , string businessName , string buyerType , string referenceBuyerId , UserName buyerName , string buyerPhoneNo , string buyerEmail , string buyerRegistrationTime , bool? isAccountVerified , int? successfulOrderCount , string buyerPhoneNoContryCode , Amount successfulOrderAmount , string dateOfLastPaidPurchase , string dateOfFirstPaidPurchase , List<BuyerTaxId> taxIds , Address businessAddress)
+        public Buyer( string buyerAccessGroupFlag , List<string> preferredLocales , string businessName , string buyerType , string referenceBuyerId , UserName buyerName , string buyerPhoneNo , string buyerEmail , string buyerRegistrationTime , bool? isAccountVerified , int? successfulOrderCount , string buyerPhoneNoContryCode , Amount successfulOrderAmount , string dateOfLastPaidPurchase , string dateOfFirstPaidPurchase , List<BuyerTaxId> taxIds , Address businessAddress)
         {
+            this.BuyerAccessGroupFlag = buyerAccessGroupFlag;
             this.PreferredLocales = preferredLocales;
             this.BusinessName = businessName;
             this.BuyerType = buyerType;
@@ -31,6 +32,8 @@ public class Buyer
             this.BusinessAddress = businessAddress;
         }
 
+            [System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
+            public string BuyerAccessGroupFlag { get; set; }
             public List<string> PreferredLocales { get; set; }
             public string BusinessName { get; set; }
             public string BuyerType { get; set; }

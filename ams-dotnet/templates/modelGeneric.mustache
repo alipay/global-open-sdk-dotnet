@@ -15,7 +15,8 @@ public class {{classname}}{{#lambdas.DotNetParent}} {{classname}} {{serverUrl}} 
 
         {{#vars}}
             {{#lambdas.skipResult}}
-            public {{#lambdas.specificList}} {{name}} | {{{dataType}}} | {{classname}} {{/lambdas.specificList}} {{name}} { get; set; }
+            {{#vendorExtensions.x-sdk-omit-null}}[System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
+            {{/vendorExtensions.x-sdk-omit-null}}public {{#lambdas.specificList}} {{name}} | {{{dataType}}} | {{classname}} {{/lambdas.specificList}} {{name}} { get; set; }
             {{/lambdas.skipResult}}
         {{/vars}}
 
