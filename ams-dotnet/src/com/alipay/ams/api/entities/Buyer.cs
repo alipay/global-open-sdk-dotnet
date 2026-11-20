@@ -48,6 +48,10 @@ public class Buyer
             public List<BuyerTaxId> TaxIds { get; set; }
             public Address BusinessAddress { get; set; }
 
+            /// <summary>Optional Kwai-Bettr consult-only string "true"/"false" flag; omit for other uses.</summary>
+            [System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
+            public string BuyerAccessGroupFlag { get; set; }
+
         
 
     }

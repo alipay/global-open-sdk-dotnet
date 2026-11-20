@@ -59,7 +59,20 @@ class Program {
       }
       models[targetKey]=new {type="object",properties=props};
     }
-    var buyerType=sdk.GetTypes().FirstOrDefault(t=>t.Name=="ConsultBuyer");
+    var oldBuyer=new com.alipay.ams.api.entities.BaselineBuyer();
+    var shared=new com.alipay.ams.api.entities.Buyer();
+    Check(Wire(oldBuyer)==Wire(shared),"baseline empty Buyer JSON");
+    foreach(var prop in oldBuyer.GetType().GetProperties()) {var value=Sample(prop.PropertyType);prop.SetValue(oldBuyer,value);shared.GetType().GetProperty(prop.Name)!.SetValue(shared,value);}
+    Check(Wire(oldBuyer)==Wire(shared),"baseline populated Buyer JSON and field order");
+    foreach(var ctor in oldBuyer.GetType().GetConstructors()) {var types=ctor.GetParameters().Select(x=>x.ParameterType).ToArray();var current=shared.GetType().GetConstructor(types);Check(current!=null,"legacy constructor signature");var values=types.Select(Sample).ToArray();Check(Wire(ctor.Invoke(values))==Wire(current!.Invoke(values)),"old constructor wire behavior");}
+    int sharedRequests=0;
+    foreach(var q in sdk.GetTypes().Where(t=>t.Name.EndsWith("Request")&&!t.IsAbstract&&t.GetConstructor(Type.EmptyTypes)!=null&&t.GetProperty("Buyer")?.PropertyType==shared.GetType())) {
+      var instance=Activator.CreateInstance(q)!;q.GetProperty("Buyer")!.SetValue(instance,shared);
+      var b=JsonDocument.Parse(Wire(instance)).RootElement.GetProperty("buyer");
+      Check(b.ToString()==JsonDocument.Parse(Wire(oldBuyer)).RootElement.ToString()&&!b.TryGetProperty("buyerAccessGroupFlag",out _),"unset Buyer across "+q.Name);sharedRequests++;
+    }
+    Check(sharedRequests>1,"multiple shared Buyer requests");evidence.Add("Pinned baseline empty/populated JSON, exact old constructors and "+sharedRequests+" shared Buyer request bindings verified with flag unset");
+    var buyerType=sdk.GetTypes().FirstOrDefault(t=>t.Name=="Buyer");
     if(buyerType!=null) {
       com.alipay.ams.api.entities.Buyer legacyBuyer = new com.alipay.ams.api.entities.Buyer { ReferenceBuyerId = "legacy_buyer" };
       com.alipay.ams.api.request.pay.AlipayPayConsultRequest legacyRequest = new com.alipay.ams.api.request.pay.AlipayPayConsultRequest { Buyer = legacyBuyer };
