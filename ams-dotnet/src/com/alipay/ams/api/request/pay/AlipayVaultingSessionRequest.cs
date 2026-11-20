@@ -14,7 +14,7 @@ public class AlipayVaultingSessionRequest : AMSRequest<AlipayVaultingSessionResp
 
         
 
-        public AlipayVaultingSessionRequest( string paymentMethodType , string vaultingRequestId , string vaultingNotificationUrl , string redirectUrl , string merchantRegion , bool? is3DSAuthentication , PaymentMethodMetaData paymentMethodMetaData)
+        public AlipayVaultingSessionRequest( string paymentMethodType , string vaultingRequestId , string vaultingNotificationUrl , string redirectUrl , string merchantRegion , bool? is3DSAuthentication , Dictionary<string, Object> paymentMethodMetaData)
         {
             this.PaymentMethodType = paymentMethodType;
             this.VaultingRequestId = vaultingRequestId;
@@ -31,7 +31,7 @@ public class AlipayVaultingSessionRequest : AMSRequest<AlipayVaultingSessionResp
             public string RedirectUrl { get; set; }
             public string MerchantRegion { get; set; }
             public bool? Is3DSAuthentication { get; set; }
-            public PaymentMethodMetaData PaymentMethodMetaData { get; set; }
+            public Dictionary<string, Object> PaymentMethodMetaData { get; set; }
 
         public override string GetRequestURI(){ return "/ams/api/v1/vaults/createVaultingSession"; } 
 
