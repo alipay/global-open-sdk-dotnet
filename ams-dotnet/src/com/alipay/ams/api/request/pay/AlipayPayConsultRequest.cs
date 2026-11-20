@@ -54,6 +54,7 @@ public class AlipayPayConsultRequest : AMSRequest<AlipayPayConsultResponse>
             public SettlementStrategy SettlementStrategy { get; set; }
             public Merchant Merchant { get; set; }
             public string[] AllowedPspRegions { get; set; }
+            [System.Text.Json.Serialization.JsonConverter(typeof(ConsultBuyerJsonConverter))]
             public Buyer Buyer { get; set; }
             public string MerchantAccountId { get; set; }
 
