@@ -12,7 +12,7 @@ public class AlipayInquireCardDetailResponse : AMSResponse
 
         
 
-        public AlipayInquireCardDetailResponse( Result result , string assetId , string cardNickName , string cardStatus , string maskedCardNo , string cardBrand , string createdTime , string updatedTime , string purpose , string note , Dictionary<string, string> metadata , CardInquiryAuthorizationControl authorizationControl , CardholderInfo cardholderinfo)
+        public AlipayInquireCardDetailResponse( Result result , string assetId , string cardNickName , string cardStatus , string maskedCardNo , string cardBrand , string createdTime , string updatedTime , string purpose , string note , Dictionary<string, string> metadata , AuthorizationControl authorizationControl , CardholderInfo cardholderinfo)
         {
             this.Result = result;
             this.AssetId = assetId;
@@ -40,7 +40,7 @@ public class AlipayInquireCardDetailResponse : AMSResponse
             public string Purpose { get; set; }
             public string Note { get; set; }
             public Dictionary<string, string> Metadata { get; set; }
-            public CardInquiryAuthorizationControl AuthorizationControl { get; set; }
+            public AuthorizationControl AuthorizationControl { get; set; }
             public CardholderInfo Cardholderinfo { get; set; }
 
         
