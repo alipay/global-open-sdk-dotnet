@@ -64,7 +64,7 @@ class Program {
       flag.SetValue(buyer,null);Check(!JsonDocument.Parse(Wire(buyer)).RootElement.TryGetProperty("buyerAccessGroupFlag",out _),"unset flag omission");
     }
     foreach(Type t in sdk.GetTypes().Where(t=>t.Name.EndsWith("Response")&&t.GetProperty("CreditNoteIds")!=null)) {
-      foreach(string fixture in new[]{"{}","{\"creditNoteIds\":null}","{\"creditNoteIds\":[]}","{\"creditNoteId\":\"cn_a\",\"creditNoteIds\":[\"cn_a\"],\"creditNoteAmount\":\"3000\",\"creditNoteCurrency\":\"USD\"}","{\"creditNoteIds\":[\"cn_a\",\"cn_z\"],\"creditNoteAmount\":\"8000\",\"creditNoteCurrency\":\"USD\"}"}) {
+      foreach(string fixture in new[]{"{}","{\"creditNoteIds\":null}","{\"creditNoteIds\":[]}","{\"creditNoteId\":\"cn_a\",\"creditNoteIds\":[\"cn_a\"],\"creditNoteAmount\":3000,\"creditNoteCurrency\":\"USD\"}","{\"creditNoteIds\":[\"cn_a\",\"cn_z\"],\"creditNoteAmount\":8000,\"creditNoteCurrency\":\"USD\"}"}) {
         var input=JsonDocument.Parse(fixture).RootElement;object o=JsonSerializer.Deserialize(fixture,t,Options)!;var actual=JsonDocument.Parse(Wire(o)).RootElement;
         foreach(var p in input.EnumerateObject())if(p.Value.ValueKind!=JsonValueKind.Null)Check(actual.GetProperty(p.Name).ToString()==p.Value.ToString(),"subscription field "+p.Name);
       }
@@ -72,18 +72,19 @@ class Program {
 
     Type amountType=Find("AlipayBillingSubscriptionUpdateResponse");
     var amountProperty=amountType.GetProperty("CreditNoteAmount")!;
-    Check(amountProperty.PropertyType==typeof(long?),"public amount type must be nullable Int64");
+    Check(amountProperty.PropertyType==typeof(long?),"nullable Int64 public type");
+    Check(amountProperty.GetCustomAttribute<JsonNumberHandlingAttribute>()==null,"no field string compatibility annotation");
     foreach(string amount in new[]{"0","3000","8000","9007199254740993","9223372036854775807"}) {
-      object parsed=JsonSerializer.Deserialize("{\"creditNoteAmount\":\""+amount+"\"}",amountType,Options)!;
-      Check((long)amountProperty.GetValue(parsed)! ==long.Parse(amount),"exact int64 parse");
-      var wire=JsonDocument.Parse(Wire(parsed)).RootElement.GetProperty("creditNoteAmount");
-      Check(wire.ValueKind==JsonValueKind.String&&wire.GetString()==amount,"exact string wire");
+      object parsed=JsonSerializer.Deserialize("{\"creditNoteAmount\":"+amount+"}",amountType,Options)!;
+      Check((long)amountProperty.GetValue(parsed)! == long.Parse(amount),"exact numeric Int64 parse");
+      var value=JsonDocument.Parse(Wire(parsed)).RootElement.GetProperty("creditNoteAmount");
+      Check(value.ValueKind==JsonValueKind.Number&&value.GetInt64()==long.Parse(amount),"exact integer JSON wire");
       object byProperty=Activator.CreateInstance(amountType)!;amountProperty.SetValue(byProperty,long.Parse(amount));
-      Check(JsonDocument.Parse(Wire(byProperty)).RootElement.GetProperty("creditNoteAmount").GetString()==amount,"numeric public property");
+      Check(JsonDocument.Parse(Wire(byProperty)).RootElement.GetProperty("creditNoteAmount").GetInt64()==long.Parse(amount),"numeric public property");
     }
     foreach(string missing in new[]{"{}","{\"creditNoteAmount\":null}"})
       Check(amountProperty.GetValue(JsonSerializer.Deserialize(missing,amountType,Options)!)==null,"missing/null amount is not zero");
-    evidence.Add("Nullable Int64 property, string wire, zero and int64 precision/null boundary regressions");
+    evidence.Add("Nullable Int64; exact integer JSON at zero, samples, >2^53, int64 max; absent/null; no field string annotation");
     Check(File.ReadAllText("ams-dotnet/src/com/alipay/ams/api/DefaultAlipayClient.cs").Contains("HttpMethod.Post"),"actual SDK POST transport binding");
     var paths=request.GetProperty("operation_keys").EnumerateArray().Select(x=>x.GetString()!.Split(' ',2)[1].Split("/requestBody/")[0].Split("/responses/")[0]).ToHashSet();
     var bindings=new List<object>();

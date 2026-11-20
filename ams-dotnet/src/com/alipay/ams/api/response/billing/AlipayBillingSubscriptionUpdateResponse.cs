@@ -37,7 +37,6 @@ public class AlipayBillingSubscriptionUpdateResponse : AMSResponse
             public string ProrationInvoiceCurrency { get; set; }
             public string CreditNoteId { get; set; }
             public List<string> CreditNoteIds { get; set; }
-            [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString | System.Text.Json.Serialization.JsonNumberHandling.WriteAsString)]
             public long? CreditNoteAmount { get; set; }
             public string CreditNoteCurrency { get; set; }
             public bool? PendingUpdate { get; set; }
