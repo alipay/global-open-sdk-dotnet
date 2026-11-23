@@ -19,6 +19,7 @@ namespace com.alipay.ams.util
             PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
             IgnoreNullValues = false,
             WriteIndented = false,
+            TypeInfoResolver = PaymentPreferenceJson.CreateResolver(),
             Converters = {  new SafeEnumConverterFactory() }
         };
 
