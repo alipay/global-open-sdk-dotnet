@@ -11,15 +11,14 @@ public class AuthorizationControl
 
         
 
-        public AuthorizationControl( string cardActiveTime , string cardCancelTime , List<string> allowedMerchantCategoryList , int? allowedAuthTimes , List<string> allowedCurrencies , List<string> paymentPreferenceCurrencies , bool? sameCurrencyPreference , string threeDSMode , string phoneNo , string email , CardLimitDetail cardLimitDetail , CardLimitInfo cardLimitInfo , RefundPreference refundPreference)
+        public AuthorizationControl( string cardActiveTime , string cardCancelTime , List<string> allowedMerchantCategoryList , int? allowedAuthTimes , List<string> allowedCurrencies , PaymentPreference paymentPreference , string threeDSMode , string phoneNo , string email , CardLimitDetail cardLimitDetail , CardLimitInfo cardLimitInfo , RefundPreference refundPreference)
         {
             this.CardActiveTime = cardActiveTime;
             this.CardCancelTime = cardCancelTime;
             this.AllowedMerchantCategoryList = allowedMerchantCategoryList;
             this.AllowedAuthTimes = allowedAuthTimes;
             this.AllowedCurrencies = allowedCurrencies;
-            this.PaymentPreferenceCurrencies = paymentPreferenceCurrencies;
-            this.SameCurrencyPreference = sameCurrencyPreference;
+            this.PaymentPreference = paymentPreference;
             this.ThreeDSMode = threeDSMode;
             this.PhoneNo = phoneNo;
             this.Email = email;
@@ -33,8 +32,7 @@ public class AuthorizationControl
             public List<string> AllowedMerchantCategoryList { get; set; }
             public int? AllowedAuthTimes { get; set; }
             public List<string> AllowedCurrencies { get; set; }
-            public List<string> PaymentPreferenceCurrencies { get; set; }
-            public bool? SameCurrencyPreference { get; set; }
+            public PaymentPreference PaymentPreference { get; set; }
             public string ThreeDSMode { get; set; }
             public string PhoneNo { get; set; }
             public string Email { get; set; }
