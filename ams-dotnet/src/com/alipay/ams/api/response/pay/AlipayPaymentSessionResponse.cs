@@ -12,7 +12,7 @@ public class AlipayPaymentSessionResponse : AMSResponse
 
         
 
-        public AlipayPaymentSessionResponse( Result result , string paymentSessionData , string paymentSessionExpiryTime , string paymentSessionId , string normalUrl , string url , string subscriptionId , string invoiceId)
+        public AlipayPaymentSessionResponse( Result result , string paymentSessionData , string paymentSessionExpiryTime , string paymentSessionId , string normalUrl , string url , string subscriptionId , string invoiceId , string customerId)
         {
             this.Result = result;
             this.PaymentSessionData = paymentSessionData;
@@ -22,6 +22,7 @@ public class AlipayPaymentSessionResponse : AMSResponse
             this.Url = url;
             this.SubscriptionId = subscriptionId;
             this.InvoiceId = invoiceId;
+            this.CustomerId = customerId;
         }
 
             public Result Result { get; set; }
@@ -32,6 +33,7 @@ public class AlipayPaymentSessionResponse : AMSResponse
             public string Url { get; set; }
             public string SubscriptionId { get; set; }
             public string InvoiceId { get; set; }
+            public string CustomerId { get; set; }
 
         
 
