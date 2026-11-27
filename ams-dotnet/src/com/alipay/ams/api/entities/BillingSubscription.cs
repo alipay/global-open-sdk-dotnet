@@ -11,7 +11,7 @@ public class BillingSubscription
 
         
 
-        public BillingSubscription( string customerId , BillingTrialSettings trialSettings , string paymentBehavior , string collectionMethod , int? daysUntilDue , string cancelAt , bool? cancelAtPeriodEnd , string description , List<BillingDiscount> discounts , string defaultPaymentMethod , bool? allowPromotionCode , string subscriptionNotifyUrl)
+        public BillingSubscription( string customerId , BillingTrialSettings trialSettings , string paymentBehavior , string collectionMethod , int? daysUntilDue , string cancelAt , bool? cancelAtPeriodEnd , string description , List<BillingDiscount> discounts , string defaultPaymentMethod , bool? allowPromotionCode , string subscriptionNotifyUrl , string customerEmail , BillingCustomerDetails customerDetails)
         {
             this.CustomerId = customerId;
             this.TrialSettings = trialSettings;
@@ -25,6 +25,8 @@ public class BillingSubscription
             this.DefaultPaymentMethod = defaultPaymentMethod;
             this.AllowPromotionCode = allowPromotionCode;
             this.SubscriptionNotifyUrl = subscriptionNotifyUrl;
+            this.CustomerEmail = customerEmail;
+            this.CustomerDetails = customerDetails;
         }
 
             public string CustomerId { get; set; }
@@ -39,6 +41,8 @@ public class BillingSubscription
             public string DefaultPaymentMethod { get; set; }
             public bool? AllowPromotionCode { get; set; }
             public string SubscriptionNotifyUrl { get; set; }
+            public string CustomerEmail { get; set; }
+            public BillingCustomerDetails CustomerDetails { get; set; }
 
         
 
