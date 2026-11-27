@@ -12,7 +12,7 @@ public class AlipayInquiryRefundResponse : AMSResponse
 
         
 
-        public AlipayInquiryRefundResponse( string metadata , CustomizedInfo customizedInfo , string arn , Amount actualRefundAmount , Result result , string refundId , string refundRequestId , Amount refundAmount , TransactionStatusType refundStatus , string refundTime , List<SplitDetail> splitDetails , Amount grossSettlementAmount , Quote settlementQuote , AcquirerInfo acquirerInfo , string rrn , string authorizationCode)
+        public AlipayInquiryRefundResponse( string metadata , CustomizedInfo customizedInfo , string arn , Amount actualRefundAmount , Result result , string refundId , string refundRequestId , Amount refundAmount , TransactionStatusType refundStatus , string refundTime , List<SplitDetail> splitDetails , Amount grossSettlementAmount , Quote settlementQuote , AcquirerInfo acquirerInfo , string rrn , string authorizationCode , string paymentId , string paymentRequestId)
         {
             this.Metadata = metadata;
             this.CustomizedInfo = customizedInfo;
@@ -30,6 +30,8 @@ public class AlipayInquiryRefundResponse : AMSResponse
             this.AcquirerInfo = acquirerInfo;
             this.Rrn = rrn;
             this.AuthorizationCode = authorizationCode;
+            this.PaymentId = paymentId;
+            this.PaymentRequestId = paymentRequestId;
         }
 
             public string Metadata { get; set; }
@@ -48,6 +50,8 @@ public class AlipayInquiryRefundResponse : AMSResponse
             public AcquirerInfo AcquirerInfo { get; set; }
             public string Rrn { get; set; }
             public string AuthorizationCode { get; set; }
+            public string PaymentId { get; set; }
+            public string PaymentRequestId { get; set; }
 
         
 
