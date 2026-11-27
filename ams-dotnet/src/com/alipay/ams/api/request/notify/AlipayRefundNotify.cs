@@ -15,6 +15,16 @@ public class AlipayRefundNotify:AlipayNotify
     public string RefundRequestId { get; set; }
 
     /**
+     * The unique ID assigned by Alipay to identify the original payment. Optional.
+     */
+    public string PaymentId { get; set; }
+
+    /**
+     * The unique ID assigned by the merchant to identify the original payment request. Optional.
+     */
+    public string PaymentRequestId { get; set; }
+
+    /**
      * The unique ID that is assigned by Alipay to identify a refund. A one-to-one correspondence between paymentId and paymentRequestId exists
      */
     public string RefundId { get; set; }
